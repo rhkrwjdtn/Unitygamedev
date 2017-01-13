@@ -9,18 +9,16 @@ public class Probability : MonoBehaviour {
 	GameObject rank1;
 	// Use this for initialization
 
-	void Start(){
-		soil = GameObject.Find ("Panel").transform.FindChild ("Soil").gameObject;
-		plastic = GameObject.Find ("Panel").transform.FindChild ("Plastic").gameObject;
-		bronze = GameObject.Find ("Panel").transform.FindChild ("Bronze").gameObject;
-		silver = GameObject.Find ("Panel").transform.FindChild ("Silver").gameObject;
-		gold = GameObject.Find ("Panel").transform.FindChild ("Gold").gameObject;
-		diamond = GameObject.Find ("Panel").transform.FindChild ("Diamond").gameObject;
-		platinum = GameObject.Find ("Panel").transform.FindChild ("Platinum").gameObject;
-	}
+
 
 	public void ButtonClick () {
-
+		soil = GameObject.Find ("ProbabilityPopup").transform.FindChild ("Soil").gameObject;
+		plastic = GameObject.Find ("ProbabilityPopup").transform.FindChild ("Plastic").gameObject;
+		bronze = GameObject.Find ("ProbabilityPopup").transform.FindChild ("Bronze").gameObject;
+		silver = GameObject.Find ("ProbabilityPopup").transform.FindChild ("Silver").gameObject;
+		gold = GameObject.Find ("ProbabilityPopup").transform.FindChild ("Gold").gameObject;
+		diamond = GameObject.Find ("ProbabilityPopup").transform.FindChild ("Diamond").gameObject;
+		platinum = GameObject.Find ("ProbabilityPopup").transform.FindChild ("Platinum").gameObject;
 
 		if (soil.activeSelf || plastic.activeSelf|| bronze.activeSelf || silver.activeSelf || gold.activeSelf || platinum.activeSelf) {
 			soil.SetActive (false);
