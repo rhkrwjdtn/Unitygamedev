@@ -75,7 +75,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Employment.cs" />
+    <Compile Include="Assets\Scripts\Employment\ButtonEnable.cs" />
+    <Compile Include="Assets\Scripts\Employment\Employment.cs" />
     <Compile Include="Assets\Scripts\Probability.cs" />
     <Compile Include="Assets\Scripts\ShopScrollList.cs" />
     <Compile Include="Assets\Scripts\SimpleObjectPool.cs" />
