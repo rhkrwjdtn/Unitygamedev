@@ -91,6 +91,35 @@ NavMeshSettings:
     cellSize: 0.16666667
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &198498761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1942058608743330, guid: 3a7ae3073b1aa5347961cb90f59d2892,
+    type: 2}
+  m_PrefabInternal: {fileID: 1605866188}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1605866189}
+  - component: {fileID: 198498762}
+  m_Layer: 5
+  m_Name: ProbabilityManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &198498762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114624211111471916, guid: 3a7ae3073b1aa5347961cb90f59d2892,
+    type: 2}
+  m_PrefabInternal: {fileID: 1605866188}
+  m_GameObject: {fileID: 198498761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec13a305e9f2524d943ce9e81d775d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &464829667
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,35 +918,6 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1364344345}
---- !u!1 &1427874130
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 1942058608743330, guid: 3a7ae3073b1aa5347961cb90f59d2892,
-    type: 2}
-  m_PrefabInternal: {fileID: 1605866188}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1605866189}
-  - component: {fileID: 1427874131}
-  m_Layer: 5
-  m_Name: ProbabilityManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1427874131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114624211111471916, guid: 3a7ae3073b1aa5347961cb90f59d2892,
-    type: 2}
-  m_PrefabInternal: {fileID: 1605866188}
-  m_GameObject: {fileID: 1427874130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ec13a305e9f2524d943ce9e81d775d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1605866188
 Prefab:
   m_ObjectHideFlags: 0
@@ -1017,7 +1017,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a7ae3073b1aa5347961cb90f59d2892, type: 2}
-  m_RootGameObject: {fileID: 1427874130}
+  m_RootGameObject: {fileID: 198498761}
   m_IsPrefabParent: 0
 --- !u!224 &1605866189
 RectTransform:
@@ -1025,7 +1025,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224110177232536334, guid: 3a7ae3073b1aa5347961cb90f59d2892,
     type: 2}
   m_PrefabInternal: {fileID: 1605866188}
-  m_GameObject: {fileID: 1427874130}
+  m_GameObject: {fileID: 198498761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
