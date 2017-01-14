@@ -24,6 +24,9 @@ public class ShopScrollList : MonoBehaviour {
 	public SimpleObjectPool buttonObjectPool;
 	public Item thisitem;
 
+	public InputField buyField;
+	public InputField sellField;
+
 	public string Stock = "종목을 선택해주세요";
 	public float gold = 0.0f;
 
@@ -80,13 +83,19 @@ public class ShopScrollList : MonoBehaviour {
 	}
 
 	public void Buybuttonclick(){
+		int num = System.Convert.ToInt32 (buyField.text);
+		thisitem.count += num;
+
 		AddItem(thisitem, otherShop);
 		otherShop.RefreshDisplay();
 		Debug.Log (thisitem.stockName);
 	}
 
 	public void Sellbuttonclick(){
+
+		//if()      count가 0이되면 지워지기
 		RemoveItem(thisitem, this);
+
 		RefreshDisplay();
 		Debug.Log (thisitem.stockName);
 	}

@@ -97,6 +97,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1037150665}
   m_Script: {fileID: 11500000, guid: 4ec13a305e9f2524d943ce9e81d775d5, type: 3}
+--- !u!114 &56325534 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114168364983460060, guid: ba88c273675081c48a253e58d98f6f97,
+    type: 2}
+  m_PrefabInternal: {fileID: 297461102}
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &60631631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2024,6 +2030,26 @@ Prefab:
       propertyPath: m_ChildControlWidth
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114621181244993586, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: buyField
+      value: 
+      objectReference: {fileID: 56325534}
+    - target: {fileID: 114621181244993586, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: sellField
+      value: 
+      objectReference: {fileID: 997143697}
+    - target: {fileID: 114334641365327438, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: sellField
+      value: 
+      objectReference: {fileID: 997143697}
+    - target: {fileID: 114334641365327438, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: buyField
+      value: 
+      objectReference: {fileID: 56325534}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba88c273675081c48a253e58d98f6f97, type: 2}
   m_IsPrefabParent: 0
@@ -3316,6 +3342,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 910360435}
+--- !u!114 &997143697 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114134017666235614, guid: ba88c273675081c48a253e58d98f6f97,
+    type: 2}
+  m_PrefabInternal: {fileID: 297461102}
+  m_Script: {fileID: 575553740, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1037150665
 Prefab:
   m_ObjectHideFlags: 0
