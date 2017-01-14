@@ -9,7 +9,8 @@ public class Item
 {
 	public string stockName;
 	//public Sprite icon;
-	public float price = 1;
+	public float price = 0f;
+	public float count = 0f;
 }
 
 public class ShopScrollList : MonoBehaviour {
@@ -24,7 +25,7 @@ public class ShopScrollList : MonoBehaviour {
 	public Item thisitem;
 
 	public string Stock = "종목을 선택해주세요";
-	public float gold = 0.1f;
+	public float gold = 0.0f;
 
 
 	// Use this for initialization
@@ -79,14 +80,15 @@ public class ShopScrollList : MonoBehaviour {
 	}
 
 	public void Buybuttonclick(){
-		
 		AddItem(thisitem, otherShop);
-		RemoveItem(thisitem, this);
+		otherShop.RefreshDisplay();
 		Debug.Log (thisitem.stockName);
 	}
 
 	public void Sellbuttonclick(){
-
+		RemoveItem(thisitem, this);
+		RefreshDisplay();
+		Debug.Log (thisitem.stockName);
 	}
 
 	/*public void TryTransferItemToOtherShop(Item item)
@@ -107,6 +109,7 @@ public class ShopScrollList : MonoBehaviour {
 
 	void AddItem(Item itemToAdd, ShopScrollList shopList)
 	{
+		Debug.Log (thisitem.stockName+"추가하기");
 		shopList.itemList.Add (itemToAdd);
 	}
 

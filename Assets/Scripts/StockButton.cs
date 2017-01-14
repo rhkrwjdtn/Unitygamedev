@@ -8,6 +8,7 @@ public class StockButton : MonoBehaviour {
 	public Button buttonComponent;
 	public Text nameLabel;
 	public Text priceText;
+	public Text countText;
 
 
 	private Item item;
@@ -25,6 +26,7 @@ public class StockButton : MonoBehaviour {
 		item = currentItem;
 		nameLabel.text = item.stockName;
 		priceText.text = item.price.ToString ();
+		countText.text = item.count.ToString ();
 		scrollList = currentScrollList;
 
 	}
