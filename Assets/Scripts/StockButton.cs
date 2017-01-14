@@ -31,7 +31,7 @@ public class StockButton : MonoBehaviour {
 
 	public void HandleClick()
 	{
-		scrollList.TryTransferItemToOtherShop (item);
+		scrollList.ViewInfo (item);
 	}
 
 }
