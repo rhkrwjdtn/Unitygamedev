@@ -34,7 +34,7 @@ public class ButtonEnable : MonoBehaviour {
         }	
 
 	}
-    public void ShowImage()
+    public void btnClick()
     {
         JugallumLevel = PlayerPrefs.GetInt("FirstJugallumLevel", 0);
         Jugallum.active = true;
