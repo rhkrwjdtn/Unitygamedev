@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Employment\ButtonEnable.cs" />
      <Compile Include="Assets\Scripts\Employment\Employment.cs" />
      <Compile Include="Assets\Scripts\GirlFriend\GirlFriendBtn1.cs" />
+     <Compile Include="Assets\Scripts\Moneyupdate.cs" />
      <Compile Include="Assets\Scripts\Probability.cs" />
      <Compile Include="Assets\Scripts\ShopScrollList.cs" />
      <Compile Include="Assets\Scripts\SimpleObjectPool.cs" />
