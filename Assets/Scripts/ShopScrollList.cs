@@ -8,8 +8,9 @@ using System.Collections.Generic;
 public class Item
 {
 	public string stockName;
-	public Sprite icon;
-	public float price = 1;
+	//public Sprite icon;
+	public float price = 0f;
+	public float count = 0f;
 }
 
 public class ShopScrollList : MonoBehaviour {
@@ -18,11 +19,16 @@ public class ShopScrollList : MonoBehaviour {
 	public List<Item> itemList;
 	public Transform contentPanel;
 	public ShopScrollList otherShop;
-	public Text myGoldDisplay;
+	public Text NameDisplay;
+	public Text PriceDisplay;
 	public SimpleObjectPool buttonObjectPool;
+	public Item thisitem;
 
+	public InputField buyField;
+	public InputField sellField;
 
-	public float gold = 20f;
+	public string Stock = "종목을 선택해주세요";
+	public float gold = 0.0f;
 
 
 	// Use this for initialization
@@ -33,8 +39,9 @@ public class ShopScrollList : MonoBehaviour {
 
 	void RefreshDisplay()
 	{
-		myGoldDisplay.text = "Gold: " + gold.ToString ();
-		RemoveButtons ();
+		NameDisplay.text = "종목명 : " + Stock;
+		PriceDisplay.text = "현재가 : " + gold.ToString ();
+		RemoveButtons ();       
 		AddButtons ();
 	}
 
@@ -61,12 +68,44 @@ public class ShopScrollList : MonoBehaviour {
 		}
 	}
 
-	public void TryTransferItemToOtherShop(Item item)
+	public void ViewInfo(Item item){
+
+		thisitem = item;
+
+		Stock = item.stockName;
+		gold = item.price;
+
+		//AddItem(item, otherShop);
+		//RemoveItem(item, this);
+
+		RefreshDisplay();
+		//otherShop.RefreshDisplay();
+	}
+
+	public void Buybuttonclick(){
+		int num = System.Convert.ToInt32 (buyField.text);
+		thisitem.count += num;
+
+		AddItem(thisitem, otherShop);
+		otherShop.RefreshDisplay();
+		Debug.Log (thisitem.stockName);
+	}
+
+	public void Sellbuttonclick(){
+
+		//if()      count가 0이되면 지워지기
+		RemoveItem(thisitem, this);
+
+		RefreshDisplay();
+		Debug.Log (thisitem.stockName);
+	}
+
+	/*public void TryTransferItemToOtherShop(Item item)
 	{
-		if (otherShop.gold >= item.price) 
-		{
-			gold += item.price;
-			otherShop.gold -= item.price;
+		
+			Stock = item.stockName;
+			gold = item.price;
+			//otherShop.gold -= item.price;
 
 			AddItem(item, otherShop);
 			RemoveItem(item, this);
@@ -75,12 +114,11 @@ public class ShopScrollList : MonoBehaviour {
 			otherShop.RefreshDisplay();
 			Debug.Log ("enough gold");
 
-		}
-		Debug.Log ("attempted");
-	}
+	}*/
 
 	void AddItem(Item itemToAdd, ShopScrollList shopList)
 	{
+		Debug.Log (thisitem.stockName+"추가하기");
 		shopList.itemList.Add (itemToAdd);
 	}
 
