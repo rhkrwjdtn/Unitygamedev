@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StockButton : MonoBehaviour {
+public class MyStockButton : MonoBehaviour {
 
 	public Button buttonComponent;
 	public Text nameLabel;
 	public Text priceText;
 	public Text countText;
+
 
 	private Item item;
 	private ShopScrollList scrollList;
