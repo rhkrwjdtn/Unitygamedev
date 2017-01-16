@@ -585,10 +585,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 0}
+  secondbtn: {fileID: 0}
+  thirdbtn: {fileID: 0}
   money: 30
+  randomnum: 0
   JugallumLevel: 0
+  touchcnt: 0
   Jugallum: {fileID: 0}
+  waren: {fileID: 0}
+  box: {fileID: 0}
+  goldbox: {fileID: 0}
   btn_text: {fileID: 0}
+  waren_exist: 0
+  box_exist: 0
+  goldbox_exist: 0
+  timespan: 0
+  checkTime: 0
 --- !u!114 &114072809990838360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -954,10 +966,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 0}
+  secondbtn: {fileID: 0}
+  thirdbtn: {fileID: 0}
   money: 30
+  randomnum: 0
   JugallumLevel: 0
+  touchcnt: 0
   Jugallum: {fileID: 0}
+  waren: {fileID: 0}
+  box: {fileID: 0}
+  goldbox: {fileID: 0}
   btn_text: {fileID: 0}
+  waren_exist: 0
+  box_exist: 0
+  goldbox_exist: 0
+  timespan: 0
+  checkTime: 0
 --- !u!114 &114338185449875960
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1123,10 +1147,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 0}
+  secondbtn: {fileID: 0}
+  thirdbtn: {fileID: 0}
   money: 30
+  randomnum: 0
   JugallumLevel: 0
+  touchcnt: 0
   Jugallum: {fileID: 0}
+  waren: {fileID: 0}
+  box: {fileID: 0}
+  goldbox: {fileID: 0}
   btn_text: {fileID: 0}
+  waren_exist: 0
+  box_exist: 0
+  goldbox_exist: 0
+  timespan: 0
+  checkTime: 0
 --- !u!114 &114447071001166076
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1386,10 +1422,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   btn: {fileID: 114365978609181290}
+  secondbtn: {fileID: 0}
+  thirdbtn: {fileID: 0}
   money: 10
+  randomnum: 0
   JugallumLevel: 0
+  touchcnt: 0
   Jugallum: {fileID: 0}
+  waren: {fileID: 0}
+  box: {fileID: 0}
+  goldbox: {fileID: 0}
   btn_text: {fileID: 114812889401541650}
+  waren_exist: 0
+  box_exist: 0
+  goldbox_exist: 0
+  timespan: 0
+  checkTime: 0
 --- !u!114 &114650506294179712
 MonoBehaviour:
   m_ObjectHideFlags: 1
