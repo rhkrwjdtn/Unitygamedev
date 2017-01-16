@@ -37,10 +37,9 @@ public class ShopScrollList : MonoBehaviour {
 		RefreshDisplay ();
 	}
 
-	void RefreshDisplay()
+	public void RefreshDisplay()
 	{
-		NameDisplay.text = "종목명 : " + Stock;
-		PriceDisplay.text = "현재가 : " + gold.ToString ();
+
 		RemoveButtons ();       
 		AddButtons ();
 	}
@@ -68,6 +67,30 @@ public class ShopScrollList : MonoBehaviour {
 		}
 	}
 
+
+	private void MyRemoveButtons()
+	{
+		while (contentPanel.childCount > 0) 
+		{
+			GameObject toRemove = transform.GetChild(0).gameObject;
+			buttonObjectPool.ReturnObject(toRemove);
+		}
+	}
+
+	private void MyAddButtons()
+	{
+		for (int i = 0; i < itemList.Count; i++) 
+		{
+			Item item = itemList[i];
+			GameObject newButton = buttonObjectPool.GetObject();
+			newButton.transform.SetParent(contentPanel);
+
+
+			MyStockButton sampleButton = newButton.GetComponent<MyStockButton>();
+			sampleButton.Setup(item, this);
+		}
+	}
+
 	public void ViewInfo(Item item){
 
 		thisitem = item;
@@ -75,10 +98,12 @@ public class ShopScrollList : MonoBehaviour {
 		Stock = item.stockName;
 		gold = item.price;
 
+		NameDisplay.text = "종목명 : " + Stock;
+		PriceDisplay.text = "현재가 : " + gold.ToString ();
 		//AddItem(item, otherShop);
 		//RemoveItem(item, this);
 
-		RefreshDisplay();
+		//RefreshDisplay();
 		//otherShop.RefreshDisplay();
 	}
 
@@ -87,7 +112,8 @@ public class ShopScrollList : MonoBehaviour {
 		thisitem.count += num;
 
 		AddItem(thisitem, otherShop);
-		otherShop.RefreshDisplay();
+		otherShop.MyRemoveButtons();
+		otherShop.MyAddButtons();
 		Debug.Log (thisitem.stockName);
 	}
 
@@ -96,7 +122,9 @@ public class ShopScrollList : MonoBehaviour {
 		//if()      count가 0이되면 지워지기
 		RemoveItem(thisitem, this);
 
-		RefreshDisplay();
+		MyRemoveButtons ();
+		MyAddButtons();
+		//RefreshDisplay();
 		Debug.Log (thisitem.stockName);
 	}
 
