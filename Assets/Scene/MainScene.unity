@@ -170,7 +170,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD655\uB960\uAC8C\uC784"
+  m_Text: Probability
 --- !u!222 &60631634
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 94057272}
   - component: {fileID: 94057271}
   m_Layer: 5
-  m_Name: Button3
+  m_Name: BuyClothesButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3291,7 +3291,7 @@ GameObject:
   - component: {fileID: 703255580}
   - component: {fileID: 703255579}
   m_Layer: 5
-  m_Name: Menu
+  m_Name: MenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3540,7 +3540,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC8FC\uC2DD\uD558\uAE30"
+  m_Text: Stock
 --- !u!222 &808019325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3701,7 +3701,7 @@ GameObject:
   - component: {fileID: 900246599}
   - component: {fileID: 900246598}
   m_Layer: 5
-  m_Name: Button2
+  m_Name: BuyHouseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3812,7 +3812,7 @@ GameObject:
   - component: {fileID: 910360438}
   - component: {fileID: 910360437}
   m_Layer: 5
-  m_Name: GirlFriend
+  m_Name: GirlFriendButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4108,7 +4108,7 @@ GameObject:
   - component: {fileID: 1075000762}
   - component: {fileID: 1075000761}
   m_Layer: 5
-  m_Name: Button0
+  m_Name: StockButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5225,7 +5225,7 @@ GameObject:
   - component: {fileID: 1515653978}
   - component: {fileID: 1515653977}
   m_Layer: 5
-  m_Name: Button4
+  m_Name: BuyLandButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5558,7 +5558,7 @@ GameObject:
   - component: {fileID: 1606656917}
   - component: {fileID: 1606656916}
   m_Layer: 5
-  m_Name: Button1
+  m_Name: ProbabilityButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5915,7 +5915,7 @@ GameObject:
   - component: {fileID: 1693712330}
   - component: {fileID: 1693712329}
   m_Layer: 5
-  m_Name: Employ
+  m_Name: EmployButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6037,7 +6037,7 @@ GameObject:
   - component: {fileID: 1767360613}
   - component: {fileID: 1767360612}
   m_Layer: 5
-  m_Name: Save
+  m_Name: SaveButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
