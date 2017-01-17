@@ -94,6 +94,13 @@ public class ShopScrollList : MonoBehaviour {
 
 	public void ViewInfo(Item item){
 
+		/*
+		 float stockRate = (float)Random.Range(-30, 30)/100;
+		item.price = (int)(item.price + item.price * stockRate);
+
+		Debug.Log ("rate는"+stockRate+"현재가는"+item.price);
+*/
+
 		thisitem = item;
 
 		Stock = item.stockName;
