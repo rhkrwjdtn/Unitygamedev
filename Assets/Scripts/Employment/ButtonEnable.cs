@@ -105,11 +105,12 @@ public class ButtonEnable : MonoBehaviour {
     }
     public void btnClick()
     {
+        Moneyupdate moneyu= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         JugallumLevel = PlayerPrefs.GetInt("FirstJugallumLevel", 0);
         Jugallum.active = true;
         JugallumLevel++;
         PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
-
+        moneyu.money = moneyu.money - 100;
         btn_text.text= "레벨:"+JugallumLevel;
     }   
 
