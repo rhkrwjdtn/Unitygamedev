@@ -74,6 +74,7 @@ public class ButtonEnable : MonoBehaviour {
             btn.enabled = false;
             btn.colors = cd;
         }
+
         if(money>301)
         {
             secondbtn.enabled = true;
