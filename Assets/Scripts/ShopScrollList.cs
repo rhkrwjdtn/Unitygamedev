@@ -9,8 +9,8 @@ public class Item
 {
 	public string stockName;
 	//public Sprite icon;
-	public float price = 0f;
-	public float count = 0f;
+	public int price = 0;
+	public int count = 0;
 }
 
 public class ShopScrollList : MonoBehaviour {
@@ -23,6 +23,7 @@ public class ShopScrollList : MonoBehaviour {
 	public Text PriceDisplay;
 	public SimpleObjectPool buttonObjectPool;
 	public Item thisitem;
+	public Moneyupdate moneyManager;
 
 	public InputField buyField;
 	public InputField sellField;
@@ -109,21 +110,61 @@ public class ShopScrollList : MonoBehaviour {
 
 	public void Buybuttonclick(){
 		int num = System.Convert.ToInt32 (buyField.text);
-		thisitem.count += num;
 
-		AddItem(thisitem, otherShop);
-		otherShop.MyRemoveButtons();
-		otherShop.MyAddButtons();
-		Debug.Log (thisitem.stockName);
+		Debug.Log ("현재돈은"+moneyManager.money);
+		if (thisitem.price != 0 && num != 0) {
+			
+			if (moneyManager.money >= (num * thisitem.price)) {
+
+				thisitem.count += num;
+				moneyManager.money -= num * thisitem.price;     //sub stock price
+
+				if (otherShop.itemList.Contains (thisitem)) {         //if exist other shop
+					otherShop.MyRemoveButtons ();
+					otherShop.MyAddButtons ();
+
+				} else {
+
+					AddItem (thisitem, otherShop);
+					otherShop.MyRemoveButtons ();
+					otherShop.MyAddButtons ();
+
+				}
+
+			} else {
+
+				// lack money
+			}
+
+		}
 	}
 
 	public void Sellbuttonclick(){
+		int num = System.Convert.ToInt32 (sellField.text);
 
-		//if()      count가 0이되면 지워지기
-		RemoveItem(thisitem, this);
 
-		MyRemoveButtons ();
-		MyAddButtons();
+		if (thisitem.count - num < 0) {
+			//popup error message
+		} else if (thisitem.count - num > 0) {
+			
+			moneyManager.money += num * thisitem.price;       //add stock price
+
+			thisitem.count -= num;
+			MyRemoveButtons ();
+			MyAddButtons ();
+		
+		} else if (thisitem.count - num == 0) {
+
+			moneyManager.money += num * thisitem.price;   //add stock price
+
+			thisitem.count -= num;
+			RemoveItem (thisitem, this);
+			MyRemoveButtons ();
+			MyAddButtons ();
+		}
+			
+
+
 		//RefreshDisplay();
 		Debug.Log (thisitem.stockName);
 	}
