@@ -11,6 +11,7 @@ public class Item
 	//public Sprite icon;
 	public int price = 0;
 	public int count = 0;
+	public int Average = 0;
 }
 
 public class ShopScrollList : MonoBehaviour {
@@ -123,6 +124,8 @@ public class ShopScrollList : MonoBehaviour {
 			
 			if (moneyManager.money >= (num * thisitem.price)) {
 
+				thisitem.Average = (int)((thisitem.Average * thisitem.count) + (num * thisitem.price)) / (num + thisitem.count);
+
 				thisitem.count += num;
 				moneyManager.money -= num * thisitem.price;     //sub stock price
 
@@ -131,6 +134,7 @@ public class ShopScrollList : MonoBehaviour {
 					otherShop.MyAddButtons ();
 
 				} else {
+					thisitem.Average = thisitem.price;
 
 					AddItem (thisitem, otherShop);
 					otherShop.MyRemoveButtons ();

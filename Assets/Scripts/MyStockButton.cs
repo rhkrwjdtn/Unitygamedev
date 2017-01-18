@@ -9,7 +9,7 @@ public class MyStockButton : MonoBehaviour {
 	public Text nameLabel;
 	public Text priceText;
 	public Text countText;
-
+	public Text averageText;
 
 	private Item item;
 	private ShopScrollList scrollList;
@@ -27,6 +27,7 @@ public class MyStockButton : MonoBehaviour {
 		nameLabel.text = item.stockName;
 		priceText.text = item.price.ToString ();
 		countText.text = item.count.ToString ();
+		averageText.text = item.Average.ToString ();
 		scrollList = currentScrollList;
 
 	}

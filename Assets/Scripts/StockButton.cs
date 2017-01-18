@@ -9,6 +9,7 @@ public class StockButton : MonoBehaviour {
 	public Text nameLabel;
 	public Text priceText;
 	public Text countText;
+	public Text averageText;
 
 	private int minprice=700;
 	private int maxprice=70000;
@@ -43,7 +44,8 @@ public class StockButton : MonoBehaviour {
 
 		nameLabel.text = item.stockName;
 		priceText.text = item.price.ToString ();
-		countText.text = item.count.ToString ();
+		//countText.text = item.count.ToString ();
+		//averageText.text = item.Average.ToString ();
 		scrollList = currentScrollList;
 
 	}
