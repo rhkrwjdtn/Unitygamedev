@@ -46,13 +46,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
      <Compile Include="Assets\MySimpleObjectPool.cs" />
+=======
+     <Compile Include="Assets\Scripts\CharacterLevel\CharacterInfo.cs" />
+>>>>>>> c42309b5d8b719bc2e8a7db2cff007c45740469d
      <Compile Include="Assets\Scripts\Employment\ButtonEnable.cs" />
      <Compile Include="Assets\Scripts\Employment\Employment.cs" />
      <Compile Include="Assets\Scripts\GirlFriend\GirlFriendBtn1.cs" />
+     <Compile Include="Assets\Scripts\House\HouseButtonEvent.cs" />
+     <Compile Include="Assets\Scripts\MainManager.cs" />
      <Compile Include="Assets\Scripts\Moneyupdate.cs" />
      <Compile Include="Assets\Scripts\MyStockButton.cs" />
      <Compile Include="Assets\Scripts\Probability.cs" />
+     <Compile Include="Assets\Scripts\SaveManager.cs" />
      <Compile Include="Assets\Scripts\ShopScrollList.cs" />
      <Compile Include="Assets\Scripts\SimpleObjectPool.cs" />
      <Compile Include="Assets\Scripts\StockButton.cs" />

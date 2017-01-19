@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class Moneyupdate : MonoBehaviour {
 
 	public Text moneytext;
-	public int money = 0;
-	public int moneytouchspeed = 5;
-	private int moneyspeed = 2;
+	public int money;
+	public int moneytouchspeed = 500;
+	public int moneyspeed = 6;
+
+
 
 
 	void Start() {
