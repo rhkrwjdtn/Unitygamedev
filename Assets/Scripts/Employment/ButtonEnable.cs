@@ -102,6 +102,10 @@ public class ButtonEnable : MonoBehaviour {
             }
 
         }
+        if(waren.active==true)
+        {
+            waren_exist = true;
+        }
     }
     public void btnClick()
     {
@@ -118,6 +122,7 @@ public class ButtonEnable : MonoBehaviour {
     {
         waren.active = true;
         waren_exist = true;
+
 
     }
     public void eventbox()

@@ -9,9 +9,8 @@ public class Item
 {
 	public string stockName;
 	//public Sprite icon;
-	public int price = 0;
-	public int count = 0;
-	public int Average = 0;
+	public float price = 0f;
+	public float count = 0f;
 }
 
 public class ShopScrollList : MonoBehaviour {
@@ -24,7 +23,6 @@ public class ShopScrollList : MonoBehaviour {
 	public Text PriceDisplay;
 	public SimpleObjectPool buttonObjectPool;
 	public Item thisitem;
-	public Moneyupdate moneyManager;
 
 	public InputField buyField;
 	public InputField sellField;
@@ -95,13 +93,6 @@ public class ShopScrollList : MonoBehaviour {
 
 	public void ViewInfo(Item item){
 
-		/*
-		 float stockRate = (float)Random.Range(-30, 30)/100;
-		item.price = (int)(item.price + item.price * stockRate);
-
-		Debug.Log ("rate는"+stockRate+"현재가는"+item.price);
-*/
-
 		thisitem = item;
 
 		Stock = item.stockName;
@@ -118,64 +109,21 @@ public class ShopScrollList : MonoBehaviour {
 
 	public void Buybuttonclick(){
 		int num = System.Convert.ToInt32 (buyField.text);
+		thisitem.count += num;
 
-		Debug.Log ("현재돈은"+moneyManager.money);
-		if (thisitem.price != 0 && num != 0) {
-			
-			if (moneyManager.money >= (num * thisitem.price)) {
-
-				thisitem.Average = (int)((thisitem.Average * thisitem.count) + (num * thisitem.price)) / (num + thisitem.count);
-
-				thisitem.count += num;
-				moneyManager.money -= num * thisitem.price;     //sub stock price
-
-				if (otherShop.itemList.Contains (thisitem)) {         //if exist other shop
-					otherShop.MyRemoveButtons ();
-					otherShop.MyAddButtons ();
-
-				} else {
-					thisitem.Average = thisitem.price;
-
-					AddItem (thisitem, otherShop);
-					otherShop.MyRemoveButtons ();
-					otherShop.MyAddButtons ();
-
-				}
-
-			} else {
-
-				// lack money
-			}
-
-		}
+		AddItem(thisitem, otherShop);
+		otherShop.MyRemoveButtons();
+		otherShop.MyAddButtons();
+		Debug.Log (thisitem.stockName);
 	}
 
 	public void Sellbuttonclick(){
-		int num = System.Convert.ToInt32 (sellField.text);
 
+		//if()      count가 0이되면 지워지기
+		RemoveItem(thisitem, this);
 
-		if (thisitem.count - num < 0) {
-			//popup error message
-		} else if (thisitem.count - num > 0) {
-			
-			moneyManager.money += num * thisitem.price;       //add stock price
-
-			thisitem.count -= num;
-			MyRemoveButtons ();
-			MyAddButtons ();
-		
-		} else if (thisitem.count - num == 0) {
-
-			moneyManager.money += num * thisitem.price;   //add stock price
-
-			thisitem.count -= num;
-			RemoveItem (thisitem, this);
-			MyRemoveButtons ();
-			MyAddButtons ();
-		}
-			
-
-
+		MyRemoveButtons ();
+		MyAddButtons();
 		//RefreshDisplay();
 		Debug.Log (thisitem.stockName);
 	}
