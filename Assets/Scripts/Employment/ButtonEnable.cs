@@ -11,6 +11,8 @@ public class ButtonEnable : MonoBehaviour {
     public int randomnum = 0;
     public int JugallumLevel=0;
     public int touchcnt = 0;
+    public int firstprice = 10000;
+    public int firstplus = 0;
     public GameObject Jugallum = null;
     public GameObject waren = null;
     public GameObject box = null;
@@ -21,6 +23,7 @@ public class ButtonEnable : MonoBehaviour {
     public bool goldbox_exist = false;
     public float timespan;
     public float checkTime;
+
 
 	// Use this for initialization
 	void Start () {
@@ -58,18 +61,20 @@ public class ButtonEnable : MonoBehaviour {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         money = moneyu.money;
 
+        firstprice = PlayerPrefs.GetInt("FirstPrice", 0);
+
         ColorBlock cd = btn.colors;
         ColorBlock dd = btn.colors;
         cd.normalColor = Color.blue;
         dd.normalColor = Color.white;
 
 
-        if (money>101)
+        if (money>firstprice)
         {
             btn.enabled = true;
             btn.colors = dd;
         }	
-        else if(money<100)
+        if(money<firstprice)
         {
             btn.enabled = false;
             btn.colors = cd;
@@ -111,15 +116,22 @@ public class ButtonEnable : MonoBehaviour {
     {
         Moneyupdate moneyu= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         JugallumLevel = PlayerPrefs.GetInt("FirstJugallumLevel", 0);
+        firstplus = firstplus + JugallumLevel;
+        firstprice = 10000 + 200 * (firstplus);
         Jugallum.active = true;
         JugallumLevel++;
+        PlayerPrefs.SetInt("FirstPrice", firstprice);
         PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
-        moneyu.money = moneyu.money - 100;
-        btn_text.text= "레벨:"+JugallumLevel;
+        moneyu.money = moneyu.money - firstprice;
+        moneyu.moneyspeed += 2;
+        btn_text.fontSize = 10;
+        btn_text.text= "레벨:"+JugallumLevel+"\n"+"비용:"+firstprice;
+        
     }   
 
     public void secondbtnClick()
     {
+
         waren.active = true;
         waren_exist = true;
 

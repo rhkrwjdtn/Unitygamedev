@@ -4173,12 +4173,12 @@ Prefab:
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.5
+      value: -0.19999981
       objectReference: {fileID: 0}
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 1.4999986
+      value: 0.375
       objectReference: {fileID: 0}
     - target: {fileID: 224588685959115504, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
@@ -4258,7 +4258,7 @@ Prefab:
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -0.69999695
+      value: -1.2999992
       objectReference: {fileID: 0}
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
@@ -4268,12 +4268,12 @@ Prefab:
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: -1.5
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.80573064
+      value: 0.72220975
       objectReference: {fileID: 0}
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
@@ -4704,6 +4704,10 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1235265669}
+    - target: {fileID: 1432447595149188, guid: a5990c46484fd1d4192359bd76aa540e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114714649898493472, guid: a5990c46484fd1d4192359bd76aa540e, type: 2}
     - {fileID: 114827507776799306, guid: a5990c46484fd1d4192359bd76aa540e, type: 2}
@@ -7344,11 +7348,13 @@ MonoBehaviour:
   randomnum: 0
   JugallumLevel: 0
   touchcnt: 0
+  firstprice: 0
+  firstplus: 0
   Jugallum: {fileID: 1071218195}
   waren: {fileID: 1075479909}
   box: {fileID: 2008107561}
   goldbox: {fileID: 1845770075}
-  btn_text: {fileID: 0}
+  btn_text: {fileID: 1844165621}
   waren_exist: 0
   box_exist: 0
   goldbox_exist: 0
@@ -10002,6 +10008,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1828489897}
+--- !u!114 &1844165621 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114342648322422594, guid: a5990c46484fd1d4192359bd76aa540e,
+    type: 2}
+  m_PrefabInternal: {fileID: 527087143}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1845770075
 GameObject:
   m_ObjectHideFlags: 0
@@ -10361,7 +10373,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneytext: {fileID: 1996832057}
   money: 0
-  moneytouchspeed: 5
+  moneytouchspeed: 3000
+  moneyspeed: 0
 --- !u!224 &1929893891
 RectTransform:
   m_ObjectHideFlags: 0
