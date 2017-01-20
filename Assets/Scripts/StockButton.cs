@@ -9,7 +9,10 @@ public class StockButton : MonoBehaviour {
 	public Text nameLabel;
 	public Text priceText;
 	public Text countText;
+	public Text averageText;
 
+	private int minprice=700;
+	private int maxprice=70000;
 	private Item item;
 	private ShopScrollList scrollList;
 
@@ -17,15 +20,34 @@ public class StockButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
+		//Screen.SetResolution( 320, 480, true );
 		buttonComponent.onClick.AddListener (HandleClick);
 	}
 
 	public void Setup(Item currentItem, ShopScrollList currentScrollList)
 	{
+
 		item = currentItem;
+
+		if (item.price < minprice) {
+			float stockRate = (float)Random.Range (0, 30) / 100;
+			item.price = (int)(item.price + item.price * stockRate);
+
+		} else if (item.price >= minprice) {
+
+			float stockRate = (float)Random.Range (-28, 30) / 100;
+			item.price = (int)(item.price + item.price * stockRate);
+
+		} else if (item.price > maxprice) {
+			float stockRate = (float)Random.Range (-30, 0) / 100;
+			item.price = (int)(item.price + item.price * stockRate);
+		}
+
 		nameLabel.text = item.stockName;
 		priceText.text = item.price.ToString ();
-		countText.text = item.count.ToString ();
+		//countText.text = item.count.ToString ();
+		//averageText.text = item.Average.ToString ();
 		scrollList = currentScrollList;
 
 	}
