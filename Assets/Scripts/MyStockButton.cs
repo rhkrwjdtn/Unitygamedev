@@ -9,7 +9,7 @@ public class MyStockButton : MonoBehaviour {
 	public Text nameLabel;
 	public Text priceText;
 	public Text countText;
-
+	public Text averageText;
 
 	private Item item;
 	private ShopScrollList scrollList;
@@ -18,6 +18,8 @@ public class MyStockButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		Screen.SetResolution(Screen.width, (Screen.width / 2) * 3,true ); 
+		//Screen.SetResolution( 320, 480, true );
 		buttonComponent.onClick.AddListener (HandleClick);
 	}
 
@@ -27,6 +29,7 @@ public class MyStockButton : MonoBehaviour {
 		nameLabel.text = item.stockName;
 		priceText.text = item.price.ToString ();
 		countText.text = item.count.ToString ();
+		averageText.text = item.Average.ToString ();
 		scrollList = currentScrollList;
 
 	}
