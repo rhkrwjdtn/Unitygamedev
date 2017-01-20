@@ -12,14 +12,19 @@ public class HouseButtonEvent : MonoBehaviour {
 	public int money=0;
 
 	/*
-	1. 집 살 돈의 유무
-		a.유 : 버튼 활성화, 아이콘 컬러, HOUSEobj 배경색상 밝음
-		b.무 : 버튼 비활성화, 아이콘 흑백
+	1. 집을 살 만큼의 돈 유무
+		a.유 : BUY 버튼 활성화, 아이콘 컬러,  해당 항목(행) 배경색상 밝음
+			-- BUY 버튼 onClick,
+				>> BUY 글씨 색상 흐리게 변경,
+				>> 아이템(인벤토리)의 집 탭에 구매한 집으로 변경,
+		b.무 : 아이콘 흑백, BUY 글씨 색상 흐리게, BUY 버튼 비활성화
 
-	2. 집을 구매 한 경우
-		--> BUY --> 
-
-	3. 
+	2. 아이템(인벤토리)
+		a. 집, 땅, 국가 3가지를 탭 형식으로 구성
+			ㄱ. 구매한 것 : SELL 버튼 활성화, 아이콘 컬러,  해당 항목(행) 배경 색 밝음,  초기 구매가와 현재 판매가 표기(비교를 위해)
+				-- SELL 버튼 onClinck, 
+					>> 현재 배경을 기본 배경(0원)으로 변경, 현재 판매가 만큼 +money, 해당 집을 미구매한 집으로 변경
+			ㄴ. 미구매한 것 : 아이콘 흑백, SELL 글씨 색상 흐리게, SELL 버튼 비활성화
 	*/
 	// Use this for initialization
 	void Start () {
@@ -32,6 +37,12 @@ public class HouseButtonEvent : MonoBehaviour {
 
 	}
 	public void setBG (int btn){
+		HouseMoneyEvent (btn);
+		HouseChangeBG (btn);
+		//배경 오브젝트의 스프라이트를 변경
+		GameObject.Find ("Background").GetComponent<Image> ().sprite = bg;
+
+		/*
 		switch (btn) {
 		case 0:
 			HouseMoneyEvent (btn);
@@ -57,9 +68,8 @@ public class HouseButtonEvent : MonoBehaviour {
 			HouseMoneyEvent (btn);
 			HouseChangeBG (btn);
 			break;
-		}
-		//배경 오브젝트의 스프라이트를 변경
-		GameObject.Find ("Background").GetComponent<Image> ().sprite = bg;
+
+		}*/
 	}
 	public void HouseCheck(){
 	
