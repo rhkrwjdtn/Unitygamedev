@@ -8,8 +8,11 @@ public class SimpleObjectPool : MonoBehaviour {
 	// collection of currently inactive instances of the prefab
 	private Stack<GameObject> inactiveInstances = new Stack<GameObject>();
 
-	public void Start(){
-		Screen.SetResolution( 200, 360, true );
+	void Start(){
+		
+		Screen.SetResolution( 300, 480, true );
+		//Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
+		//Screen.SetResolution(Screen.width, (Screen.width / 10) * 16 ,true);
 	}
 
 	// Returns an instance of the prefab
