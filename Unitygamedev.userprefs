@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\House\HouseButtonEvent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GirlFriend\GirlFriendBtn1.cs">
     <Files>
-      <File FileName="Assets\Scripts\Probability.cs" Line="24" Column="25" />
+      <File FileName="Assets\Scripts\Probability.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Employment\ButtonEnable.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Employment\Employment.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\House\HouseButtonEvent.cs" Line="44" Column="3" NotebookId="1" />
+      <File FileName="Assets\Scripts\GirlFriend\GirlFriendBtn1.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
