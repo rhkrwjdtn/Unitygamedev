@@ -8,7 +8,7 @@ public class Moneyupdate : MonoBehaviour {
 	public Text moneytext;
 	public int money = 0;
 	public int moneytouchspeed = 3000;
-	public int moneyspeed = 0;
+	public int moneyspeed = 500;
 
 
 	void Start() {

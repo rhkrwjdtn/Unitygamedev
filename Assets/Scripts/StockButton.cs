@@ -20,8 +20,8 @@ public class StockButton : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
-		//Screen.SetResolution( 320, 480, true );
+		//Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
+		Screen.SetResolution( 200, 360, true );
 		buttonComponent.onClick.AddListener (HandleClick);
 	}
 

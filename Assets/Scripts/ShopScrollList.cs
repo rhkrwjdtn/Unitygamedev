@@ -36,6 +36,7 @@ public class ShopScrollList : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
+		Screen.SetResolution( 200, 360, true );
 		RefreshDisplay ();
 	}
 
