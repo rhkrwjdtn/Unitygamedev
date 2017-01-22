@@ -11,8 +11,8 @@ public class StockButton : MonoBehaviour {
 	public Text countText;
 	public Text averageText;
 
-	private int minprice=700;
-	private int maxprice=70000;
+	private ulong minprice=700;
+	private ulong maxprice=70000;
 	private Item item;
 	private ShopScrollList scrollList;
 
@@ -33,16 +33,16 @@ public class StockButton : MonoBehaviour {
 
 		if (item.price < minprice) {
 			float stockRate = (float)Random.Range (0, 30) / 100;
-			item.price = (int)(item.price + item.price * stockRate);
+			item.price = (ulong)(item.price + item.price * stockRate);
 
 		} else if (item.price >= minprice) {
 
 			float stockRate = (float)Random.Range (-28, 30) / 100;
-			item.price = (int)(item.price + item.price * stockRate);
+			item.price = (ulong)(item.price + item.price * stockRate);
 
 		} else if (item.price > maxprice) {
 			float stockRate = (float)Random.Range (-30, 0) / 100;
-			item.price = (int)(item.price + item.price * stockRate);
+			item.price = (ulong)(item.price + item.price * stockRate);
 		}
 
 		nameLabel.text = item.stockName;

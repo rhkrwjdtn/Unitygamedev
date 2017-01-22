@@ -8,8 +8,8 @@ public class HouseButtonEvent : MonoBehaviour {
 	//Image bgimg;
 	public Sprite bg;
 	//각 배경에 해당하는 가격
-	int[] BG_Price = new int[6] { 3000, 13000, 30000, 230000, 1500000, 9000000 };
-	public int money=0;
+	ulong[] BG_Price = new ulong[6] { 3000, 13000, 30000, 230000, 1500000, 9000000 };
+	public ulong money=0;
 
 	/*
 	1. 집을 살 만큼의 돈 유무

@@ -7,12 +7,12 @@ public class ButtonEnable : MonoBehaviour {
     public UnityEngine.UI.Button btn;
     public UnityEngine.UI.Button secondbtn;
     public UnityEngine.UI.Button thirdbtn;
-    public int money=0;
+    public ulong money=0;
     public int randomnum = 0;
-    public int JugallumLevel=0;
+    public ulong JugallumLevel=0;
     public int touchcnt = 0;
-    public int firstprice = 10000;
-    public int firstplus = 0;
+    public ulong firstprice = 10000;
+    public ulong firstplus = 0;
     public GameObject Jugallum = null;
     public GameObject waren = null;
     public GameObject box = null;
@@ -38,7 +38,7 @@ public class ButtonEnable : MonoBehaviour {
         }
 
         JugallumLevel = 0;
-        PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
+        //PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
         //btn_text.text = "test";
 
         ColorBlock cd = btn.colors;
@@ -61,7 +61,7 @@ public class ButtonEnable : MonoBehaviour {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         money = moneyu.money;
 
-        firstprice = PlayerPrefs.GetInt("FirstPrice", 0);
+	//	firstprice = PlayerPrefs.GetInt("FirstPrice", 0);
 
         ColorBlock cd = btn.colors;
         ColorBlock dd = btn.colors;
@@ -115,15 +115,15 @@ public class ButtonEnable : MonoBehaviour {
     public void btnClick()
     {
         Moneyupdate moneyu= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        JugallumLevel = PlayerPrefs.GetInt("FirstJugallumLevel", 0);
+      //  JugallumLevel = PlayerPrefs.GetInt("FirstJugallumLevel", 0);
         firstplus = firstplus + JugallumLevel;
         firstprice = 10000 + 200 * (firstplus);
         Jugallum.active = true;
         JugallumLevel++;
-        PlayerPrefs.SetInt("FirstPrice", firstprice);
-        PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
+     //   PlayerPrefs.SetInt("FirstPrice", firstprice);
+      //  PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
         moneyu.money = moneyu.money - firstprice;
-		moneyu.secondwon += 2;
+		moneyu.moneyspeed += 2;
         btn_text.fontSize = 10;
         btn_text.text= "레벨:"+JugallumLevel+"\n"+"비용:"+firstprice;
         
