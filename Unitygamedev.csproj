@@ -81,7 +81,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MySimpleObjectPool.cs" />
     <Compile Include="Assets\Scripts\CharacterLevel\CharacterInfo.cs" />
     <Compile Include="Assets\Scripts\Employment\BoxManager.cs" />
     <Compile Include="Assets\Scripts\Employment\ButtonEnable.cs" />
@@ -93,10 +92,11 @@
     <Compile Include="Assets\Scripts\MyStockButton.cs" />
     <Compile Include="Assets\Scripts\Probability.cs" />
     <Compile Include="Assets\Scripts\SaveManager.cs" />
+    <Compile Include="Assets\Scripts\ScreenManager.cs" />
     <Compile Include="Assets\Scripts\ShopScrollList.cs" />
     <Compile Include="Assets\Scripts\SimpleObjectPool.cs" />
     <Compile Include="Assets\Scripts\StockButton.cs" />
-    <Compile Include="Assets\Test.cs" />
+    <Compile Include="Assets\StartManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
