@@ -34,7 +34,7 @@ public class CharacterInfo : MonoBehaviour {
 	void Update () {
 
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        ClickMoney = moneyu.touchwon;
+		ClickMoney = moneyu.touchspeed;
         	
 	}
     public void btnClick()

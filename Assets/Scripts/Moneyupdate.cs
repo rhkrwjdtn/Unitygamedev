@@ -8,11 +8,11 @@ public class Moneyupdate : MonoBehaviour {
 	public Text moneytext;
 	public int money = 0;
 
-	public int touchwon = 3000;
-	public int touchman;
-	public int touchuck;
-	public int touchjo;
-	public int touchkuyng;
+	public int secondwon = 3000;
+	public int secondman;
+	public int seconduck;
+	public int secondjo;
+	public int secondkuyng;
 
 	public int won;
 	public int man;
@@ -20,7 +20,7 @@ public class Moneyupdate : MonoBehaviour {
 	public int jo;
 	public int kuyng;
 
-	public int moneyspeed = 500;
+	public int touchspeed = 3000;
 
 	public AudioSource coinAudio;
 	public AudioClip coinSound;
@@ -35,7 +35,11 @@ public class Moneyupdate : MonoBehaviour {
 
 	IEnumerator CountTime(float delayTime) {
 
-		won += moneyspeed;
+		won += secondwon;
+		man += secondman;
+		uck += seconduck;
+		jo += secondjo;
+		kuyng += secondkuyng;
 
 
 
@@ -103,12 +107,8 @@ public class Moneyupdate : MonoBehaviour {
 
 
 	
-				won += touchwon;
-				man += touchman;
-				uck += touchuck;
-				jo += touchjo;
-				kuyng += touchkuyng;
-
+		won += touchspeed;
+				
 							
 
 		}
