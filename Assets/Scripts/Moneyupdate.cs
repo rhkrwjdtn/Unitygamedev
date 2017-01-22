@@ -7,11 +7,25 @@ public class Moneyupdate : MonoBehaviour {
 
 	public Text moneytext;
 	public int money = 0;
-	public int moneytouchspeed = 3000;
+
+	public int touchwon = 3000;
+	public int touchman;
+	public int touchuck;
+	public int touchjo;
+	public int touchkuyng;
+
+	public int won;
+	public int man;
+	public int uck;
+	public int jo;
+	public int kuyng;
+
 	public int moneyspeed = 500;
 
 	public AudioSource coinAudio;
 	public AudioClip coinSound;
+
+	RaycastHit hit;
 
 	void Start() {
 		coinAudio = GetComponent<AudioSource> ();
@@ -21,24 +35,81 @@ public class Moneyupdate : MonoBehaviour {
 
 	IEnumerator CountTime(float delayTime) {
 
-		money += moneyspeed;
-		moneytext.text = "Money : " + System.Convert.ToString (money) + "원";
+		won += moneyspeed;
+
+
 
 		yield return new WaitForSeconds(delayTime);
 		StartCoroutine("CountTime", 1);
 	}
 
-	void Update () {
+	void Update(){
+		if (won > 10000) {
 
-		if (Input.GetMouseButtonDown (0)) {
+			man += won / 10000;
+			won = won % 10000;
 
-			coinAudio.clip = coinSound;
-			coinAudio.Play ();                  //coinsound play
+		} 
+
+		if (man > 10000) {
+
+			uck += man / 10000;
+			man = man % 10000;
+		}
+
+		if (uck > 10000) {
+
+			jo += uck / 10000;
+			uck = uck % 10000;
+		}
+
+		if (jo > 10000) {
+
+			kuyng += jo / 10000;
+			jo = jo % 10000;
+
+		}
+
+		if (won >0  && man == 0 &&  uck ==0 && jo == 0 && kuyng == 0) {
+			moneytext.text = "Money : " + System.Convert.ToString (won) + "원";
+
+		} else if (won >= 0  && man > 0 &&  uck ==0 && jo == 0 && kuyng == 0) {
+			
+			moneytext.text = "Money : " + System.Convert.ToString (man) + "만" + System.Convert.ToString (won) + "원";
+
+		} else if (won >= 0 && man >= 0 &&  uck > 0 && jo == 0 && kuyng == 0) {
+
+			moneytext.text = "Money : " + System.Convert.ToString (uck) + "억"+ System.Convert.ToString (man) + "만" + System.Convert.ToString (won) + "원";
+
+		} else if (won >= 0 && man >= 0 &&  uck >=0 && jo > 0 && kuyng == 0) {
+
+			moneytext.text = "Money : " + System.Convert.ToString (jo) + "조"+System.Convert.ToString (uck) + "억"+ System.Convert.ToString (man) + "만";
+
+
+		} else if (won >= 0 && man >= 0 &&  uck>=0 && jo >= 0 && kuyng > 0) {
+
+			moneytext.text = "Money : " + System.Convert.ToString (kuyng) + "경" + System.Convert.ToString (jo) + "조"+System.Convert.ToString (uck) + "억";
+
+
+		}
+
+	}
+
+
+	public void OnClickBackground () {
+
+				coinAudio.clip = coinSound;
+				coinAudio.Play ();                  //coinsound play
 
 
 	
-				money += moneytouchspeed;
-				moneytext.text = "Money : " + System.Convert.ToString (money) + "원";
+				won += touchwon;
+				man += touchman;
+				uck += touchuck;
+				jo += touchjo;
+				kuyng += touchkuyng;
+
+							
 
 		}
 	}
@@ -46,4 +117,4 @@ public class Moneyupdate : MonoBehaviour {
 
 
 
-}
+
