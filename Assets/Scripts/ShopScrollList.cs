@@ -26,6 +26,8 @@ public class ShopScrollList : MonoBehaviour {
 	public Item thisitem;
 	public Moneyupdate moneyManager;
 
+	public int totalprice;
+
 	public InputField buyField;
 	public InputField sellField;
 
@@ -124,6 +126,8 @@ public class ShopScrollList : MonoBehaviour {
 
 		Debug.Log ("현재돈은"+moneyManager.money);
 		if (thisitem.price != 0 && num != 0) {
+
+
 
 			if (moneyManager.money >= (num * thisitem.price)) {
 
