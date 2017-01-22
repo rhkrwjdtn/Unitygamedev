@@ -22,7 +22,7 @@ public class StockButton : MonoBehaviour {
 	{
 		//Screen.SetResolution(Screen.width, (Screen.width / 10) * 16 ,true);
 		//Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
-		Screen.SetResolution( 300, 480, true );
+		//Screen.SetResolution( 300, 480, true );
 		buttonComponent.onClick.AddListener (HandleClick);
 	}
 
