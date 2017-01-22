@@ -9,10 +9,10 @@ public class ButtonEnable : MonoBehaviour {
     public UnityEngine.UI.Button thirdbtn;
     public ulong money=0;
     public int randomnum = 0;
-    public ulong JugallumLevel=0;
+    public float JugallumLevel=0;
     public int touchcnt = 0;
     public ulong firstprice = 10000;
-    public ulong firstplus = 0;
+    public float firstplus = 0;
     public GameObject Jugallum = null;
     public GameObject waren = null;
     public GameObject dog = null;
@@ -121,19 +121,15 @@ public class ButtonEnable : MonoBehaviour {
     public void btnClick()
     {
         Moneyupdate moneyu= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-      //  JugallumLevel = PlayerPrefs.GetInt("FirstJugallumLevel", 0);
+        JugallumLevel = PlayerPrefs.GetInt("FirstJugallumLevel", 0);
         firstplus = firstplus + JugallumLevel;
-        firstprice = 10000 + 200 * (firstplus);
+        //firstprice = 10000 + 200 * (firstplus);
+        //스트링으로 바꿔서?
         Jugallum.active = true;
         JugallumLevel++;
-<<<<<<< HEAD
         dog.active = true;
-        PlayerPrefs.SetInt("FirstPrice", firstprice);
-        PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
-=======
      //   PlayerPrefs.SetInt("FirstPrice", firstprice);
       //  PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
->>>>>>> 0a0aaddffef9946fec0ebc8a47df1cc38c65f12b
         moneyu.money = moneyu.money - firstprice;
 		moneyu.moneyspeed += 2;
         btn_text.fontSize = 10;
