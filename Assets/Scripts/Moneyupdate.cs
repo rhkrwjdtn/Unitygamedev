@@ -10,8 +10,11 @@ public class Moneyupdate : MonoBehaviour {
 	public int moneytouchspeed = 3000;
 	public int moneyspeed = 500;
 
+	public AudioSource coinAudio;
+	public AudioClip coinSound;
 
 	void Start() {
+		coinAudio = GetComponent<AudioSource> ();
 
 		StartCoroutine ("CountTime", 1);
 	}
@@ -29,6 +32,11 @@ public class Moneyupdate : MonoBehaviour {
 
 		if (Input.GetMouseButtonDown (0)) {
 
+			coinAudio.clip = coinSound;
+			coinAudio.Play ();                  //coinsound play
+
+
+	
 				money += moneytouchspeed;
 				moneytext.text = "Money : " + System.Convert.ToString (money) + "원";
 
