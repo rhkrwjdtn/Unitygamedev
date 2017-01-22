@@ -10,7 +10,7 @@ public class SimpleObjectPool : MonoBehaviour {
 
 	void Start(){
 		
-		Screen.SetResolution( 300, 480, true );
+		//Screen.SetResolution( 300, 480, true );
 		//Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
 		//Screen.SetResolution(Screen.width, (Screen.width / 10) * 16 ,true);
 	}
