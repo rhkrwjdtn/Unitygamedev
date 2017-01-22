@@ -9,9 +9,9 @@ public class Item
 {
 	public string stockName;
 	//public Sprite icon;
-	public int price = 0;
-	public int count = 0;
-	public int Average = 0;
+	public ulong price = 0;
+	public ulong count = 0;
+	public ulong Average = 0;
 }
 
 public class ShopScrollList : MonoBehaviour {
@@ -26,7 +26,7 @@ public class ShopScrollList : MonoBehaviour {
 	public Item thisitem;
 	public Moneyupdate moneyManager;
 
-	public int totalprice;
+
 
 	public InputField buyField;
 	public InputField sellField;
@@ -122,16 +122,15 @@ public class ShopScrollList : MonoBehaviour {
 	}
 
 	public void Buybuttonclick(){
-		int num = System.Convert.ToInt32 (buyField.text);
+		ulong num = System.Convert.ToUInt64 (buyField.text);
 
 		Debug.Log ("현재돈은"+moneyManager.money);
-		if (thisitem.price != 0 && num != 0) {
-
+		if (thisitem.price != 0 && num > 0 && num < 10000 ) {
 
 
 			if (moneyManager.money >= (num * thisitem.price)) {
 
-				thisitem.Average = (int)((thisitem.Average * thisitem.count) + (num * thisitem.price)) / (num + thisitem.count);
+				thisitem.Average = (ulong)((thisitem.Average * thisitem.count) + (num * thisitem.price)) / (num + thisitem.count);
 
 				thisitem.count += num;
 				moneyManager.money -= num * thisitem.price;     //sub stock price
@@ -158,7 +157,7 @@ public class ShopScrollList : MonoBehaviour {
 	}
 
 	public void Sellbuttonclick(){
-		int num = System.Convert.ToInt32 (sellField.text);
+		ulong num = (ulong)System.Convert.ToInt64 (sellField.text);
 
 
 		if (thisitem.count - num < 0) {
