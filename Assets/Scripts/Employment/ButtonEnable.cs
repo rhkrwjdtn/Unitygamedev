@@ -123,7 +123,7 @@ public class ButtonEnable : MonoBehaviour {
         PlayerPrefs.SetInt("FirstPrice", firstprice);
         PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
         moneyu.money = moneyu.money - firstprice;
-        moneyu.moneyspeed += 2;
+		moneyu.secondwon += 2;
         btn_text.fontSize = 10;
         btn_text.text= "레벨:"+JugallumLevel+"\n"+"비용:"+firstprice;
         
