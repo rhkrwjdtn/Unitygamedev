@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9997447, g: 0.9997447, b: 0.9997447, a: 1}
+  m_IndirectSpecularColor: {r: 0.9997449, g: 0.9997449, b: 0.9997449, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4907,7 +4907,7 @@ GameObject:
   - component: {fileID: 424462268}
   - component: {fileID: 424462267}
   m_Layer: 5
-  m_Name: DungchiCustomView
+  m_Name: GodhCustomView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5358,7 +5358,7 @@ GameObject:
   - component: {fileID: 459079132}
   - component: {fileID: 459079131}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: Skate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7774,7 +7774,7 @@ GameObject:
   - component: {fileID: 528883193}
   - component: {fileID: 528883192}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Godh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8688,7 +8688,7 @@ GameObject:
   - component: {fileID: 716991198}
   - component: {fileID: 716991197}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Yapsap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9317,7 +9317,7 @@ GameObject:
   - component: {fileID: 777238601}
   - component: {fileID: 777238600}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Dungchi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10449,7 +10449,7 @@ GameObject:
   - component: {fileID: 902628283}
   - component: {fileID: 902628282}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Myulchi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10964,7 +10964,7 @@ GameObject:
   - component: {fileID: 1004911101}
   - component: {fileID: 1004911100}
   m_Layer: 0
-  m_Name: Image (3)
+  m_Name: Myungsasu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13073,6 +13073,13 @@ MonoBehaviour:
   firstplus: 0
   Jugallum: {fileID: 1071218195}
   waren: {fileID: 1075479909}
+  dog: {fileID: 1620517777}
+  myulchi: {fileID: 902628280}
+  yapsap: {fileID: 716991195}
+  dungchi: {fileID: 777238598}
+  myungsasu: {fileID: 1004911098}
+  skate: {fileID: 459079129}
+  godh: {fileID: 528883190}
   box: {fileID: 2008107561}
   goldbox: {fileID: 1845770075}
   btn_text: {fileID: 1844165621}

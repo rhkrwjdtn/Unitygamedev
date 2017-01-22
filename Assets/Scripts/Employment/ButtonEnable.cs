@@ -15,6 +15,13 @@ public class ButtonEnable : MonoBehaviour {
     public int firstplus = 0;
     public GameObject Jugallum = null;
     public GameObject waren = null;
+    public GameObject dog = null;
+    public GameObject myulchi = null;
+    public GameObject yapsap = null;
+    public GameObject dungchi = null;
+    public GameObject myungsasu = null;
+    public GameObject skate = null;
+    public GameObject godh = null;
     public GameObject box = null;
     public GameObject goldbox = null;
     public Text btn_text=null;
@@ -23,7 +30,6 @@ public class ButtonEnable : MonoBehaviour {
     public bool goldbox_exist = false;
     public float timespan;
     public float checkTime;
-
 
 	// Use this for initialization
 	void Start () {
@@ -120,6 +126,7 @@ public class ButtonEnable : MonoBehaviour {
         firstprice = 10000 + 200 * (firstplus);
         Jugallum.active = true;
         JugallumLevel++;
+        dog.active = true;
         PlayerPrefs.SetInt("FirstPrice", firstprice);
         PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
         moneyu.money = moneyu.money - firstprice;
