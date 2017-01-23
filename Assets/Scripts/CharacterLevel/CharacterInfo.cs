@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CharacterInfo : MonoBehaviour {
 
     public UnityEngine.UI.Button btn;
-    public int ClickMoney = 0;
+	public ulong ClickMoney = 0;
     public int JugallumLev = 0;
     public Text LevelupbtnText = null;
     public Text NowClickWonTx = null;
@@ -34,7 +34,7 @@ public class CharacterInfo : MonoBehaviour {
 	void Update () {
 
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        ClickMoney = moneyu.moneytouchspeed;
+		ClickMoney = moneyu.touchspeed;
         	
 	}
     public void btnClick()

@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6209D9D3-0CE1-32ED-B6A0-0D2907D240DE}</ProjectGuid>
+    <ProjectGuid>{C7B4AD2F-376E-64E3-FA1A-2547A47F618B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -60,8 +60,8 @@
      <Compile Include="Assets\Scripts\ScreenManager.cs" />
      <Compile Include="Assets\Scripts\ShopScrollList.cs" />
      <Compile Include="Assets\Scripts\SimpleObjectPool.cs" />
+     <Compile Include="Assets\Scripts\StartManager.cs" />
      <Compile Include="Assets\Scripts\StockButton.cs" />
-     <Compile Include="Assets\StartManager.cs" />
  <Reference Include="UnityEngine.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
  </Reference>

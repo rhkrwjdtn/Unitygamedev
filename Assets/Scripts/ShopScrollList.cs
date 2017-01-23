@@ -9,9 +9,9 @@ public class Item
 {
 	public string stockName;
 	//public Sprite icon;
-	public int price = 0;
-	public int count = 0;
-	public int Average = 0;
+	public ulong price = 0;
+	public ulong count = 0;
+	public ulong Average = 0;
 }
 
 public class ShopScrollList : MonoBehaviour {
@@ -25,6 +25,8 @@ public class ShopScrollList : MonoBehaviour {
 	public SimpleObjectPool buttonObjectPool;
 	public Item thisitem;
 	public Moneyupdate moneyManager;
+
+
 
 	public InputField buyField;
 	public InputField sellField;
@@ -120,41 +122,45 @@ public class ShopScrollList : MonoBehaviour {
 	}
 
 	public void Buybuttonclick(){
-		int num = System.Convert.ToInt32 (buyField.text);
+		ulong num = System.Convert.ToUInt64 (buyField.text);
 
 		Debug.Log ("현재돈은"+moneyManager.money);
-		if (thisitem.price != 0 && num != 0) {
+		if (thisitem.count < 100000000) {
+			
+			if (thisitem.price != 0 && num > 0 && num < 100000000 && (thisitem.count+num) < 100000000) {
 
-			if (moneyManager.money >= (num * thisitem.price)) {
 
-				thisitem.Average = (int)((thisitem.Average * thisitem.count) + (num * thisitem.price)) / (num + thisitem.count);
+				if (moneyManager.money >= (num * thisitem.price)) {
 
-				thisitem.count += num;
-				moneyManager.money -= num * thisitem.price;     //sub stock price
+					thisitem.Average = (ulong)((thisitem.Average * thisitem.count) + (num * thisitem.price)) / (num + thisitem.count);
 
-				if (otherShop.itemList.Contains (thisitem)) {         //if exist other shop
-					otherShop.MyRemoveButtons ();
-					otherShop.MyAddButtons ();
+					thisitem.count += num;
+					moneyManager.money -= num * thisitem.price;     //sub stock price
+
+					if (otherShop.itemList.Contains (thisitem)) {         //if exist other shop
+						otherShop.MyRemoveButtons ();
+						otherShop.MyAddButtons ();
+
+					} else {
+						thisitem.Average = thisitem.price;
+
+						AddItem (thisitem, otherShop);
+						otherShop.MyRemoveButtons ();
+						otherShop.MyAddButtons ();
+
+					}
 
 				} else {
-					thisitem.Average = thisitem.price;
 
-					AddItem (thisitem, otherShop);
-					otherShop.MyRemoveButtons ();
-					otherShop.MyAddButtons ();
-
+					// lack money
 				}
 
-			} else {
-
-				// lack money
 			}
-
 		}
 	}
 
 	public void Sellbuttonclick(){
-		int num = System.Convert.ToInt32 (sellField.text);
+		ulong num = (ulong)System.Convert.ToInt64 (sellField.text);
 
 
 		if (thisitem.count - num < 0) {
