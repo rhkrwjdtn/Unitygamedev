@@ -125,34 +125,37 @@ public class ShopScrollList : MonoBehaviour {
 		ulong num = System.Convert.ToUInt64 (buyField.text);
 
 		Debug.Log ("현재돈은"+moneyManager.money);
-		if (thisitem.price != 0 && num > 0 && num < 10000 ) {
+		if (thisitem.count < 100000000) {
+			
+			if (thisitem.price != 0 && num > 0 && num < 100000000 && (thisitem.count+num) < 100000000) {
 
 
-			if (moneyManager.money >= (num * thisitem.price)) {
+				if (moneyManager.money >= (num * thisitem.price)) {
 
-				thisitem.Average = (ulong)((thisitem.Average * thisitem.count) + (num * thisitem.price)) / (num + thisitem.count);
+					thisitem.Average = (ulong)((thisitem.Average * thisitem.count) + (num * thisitem.price)) / (num + thisitem.count);
 
-				thisitem.count += num;
-				moneyManager.money -= num * thisitem.price;     //sub stock price
+					thisitem.count += num;
+					moneyManager.money -= num * thisitem.price;     //sub stock price
 
-				if (otherShop.itemList.Contains (thisitem)) {         //if exist other shop
-					otherShop.MyRemoveButtons ();
-					otherShop.MyAddButtons ();
+					if (otherShop.itemList.Contains (thisitem)) {         //if exist other shop
+						otherShop.MyRemoveButtons ();
+						otherShop.MyAddButtons ();
+
+					} else {
+						thisitem.Average = thisitem.price;
+
+						AddItem (thisitem, otherShop);
+						otherShop.MyRemoveButtons ();
+						otherShop.MyAddButtons ();
+
+					}
 
 				} else {
-					thisitem.Average = thisitem.price;
 
-					AddItem (thisitem, otherShop);
-					otherShop.MyRemoveButtons ();
-					otherShop.MyAddButtons ();
-
+					// lack money
 				}
 
-			} else {
-
-				// lack money
 			}
-
 		}
 	}
 
