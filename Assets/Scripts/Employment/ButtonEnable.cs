@@ -8,11 +8,12 @@ public class ButtonEnable : MonoBehaviour {
     public UnityEngine.UI.Button secondbtn;
     public UnityEngine.UI.Button thirdbtn;
     public ulong money=0;
-    public int randomnum = 0;
-    public float JugallumLevel=0;
-    public int touchcnt = 0;
     public ulong firstprice = 10000;
-    public float firstplus = 0;
+    public int randomnum = 0;
+    public int JugallumLevel=0;
+    public int touchcnt = 0;
+    public int firstplus = 0;
+    public int dogpc = 0;
     public GameObject Jugallum = null;
     public GameObject waren = null;
     public GameObject dog = null;
@@ -30,6 +31,7 @@ public class ButtonEnable : MonoBehaviour {
     public bool goldbox_exist = false;
     public float timespan;
     public float checkTime;
+    public string dogprice;
 
 	// Use this for initialization
 	void Start () {
@@ -44,7 +46,7 @@ public class ButtonEnable : MonoBehaviour {
         }
 
         JugallumLevel = 0;
-        //PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
+        PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
         //btn_text.text = "test";
 
         ColorBlock cd = btn.colors;
@@ -59,6 +61,7 @@ public class ButtonEnable : MonoBehaviour {
 
         timespan = 0.0f;
         checkTime = 5.0f;
+        
     }
 	
 	// Update is called once per frame
@@ -67,7 +70,9 @@ public class ButtonEnable : MonoBehaviour {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         money = moneyu.money;
 
-	//	firstprice = PlayerPrefs.GetInt("FirstPrice", 0);
+		dogpc = PlayerPrefs.GetInt("FirstPrice", 0);
+        dogprice = dogpc.ToString();
+        firstprice = ulong.Parse(dogprice);
 
         ColorBlock cd = btn.colors;
         ColorBlock dd = btn.colors;
@@ -123,17 +128,20 @@ public class ButtonEnable : MonoBehaviour {
         Moneyupdate moneyu= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         JugallumLevel = PlayerPrefs.GetInt("FirstJugallumLevel", 0);
         firstplus = firstplus + JugallumLevel;
-        //firstprice = 10000 + 200 * (firstplus);
+        dogpc = 10000 + 200 * (firstplus);
+        dogprice = dogpc.ToString();
+        firstprice = ulong.Parse(dogprice);
+
         //스트링으로 바꿔서?
         Jugallum.active = true;
         JugallumLevel++;
         dog.active = true;
-     //   PlayerPrefs.SetInt("FirstPrice", firstprice);
-      //  PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
+        PlayerPrefs.SetInt("FirstPrice", dogpc);
+        PlayerPrefs.SetInt("FirstJugallumLevel", JugallumLevel);
         moneyu.money = moneyu.money - firstprice;
 		moneyu.moneyspeed += 2;
         btn_text.fontSize = 10;
-        btn_text.text= "레벨:"+JugallumLevel+"\n"+"비용:"+firstprice;
+        btn_text.text= "레벨:"+JugallumLevel+"\n"+"비용:"+dogprice;
         
     }   
 

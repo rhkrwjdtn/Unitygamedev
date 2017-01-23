@@ -6590,12 +6590,12 @@ Prefab:
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -0.19998169
+      value: 2.4312
       objectReference: {fileID: 0}
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.375
+      value: 0.34999
       objectReference: {fileID: 0}
     - target: {fileID: 224588685959115504, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
@@ -6675,7 +6675,7 @@ Prefab:
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: -1.2999992
+      value: -6.5625
       objectReference: {fileID: 0}
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
@@ -6685,12 +6685,12 @@ Prefab:
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 0.75
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_AnchorMin.x
-      value: 0.72220975
+      value: 0.67300004
       objectReference: {fileID: 0}
     - target: {fileID: 224137650817548330, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
@@ -13066,11 +13066,12 @@ MonoBehaviour:
   secondbtn: {fileID: 175448905}
   thirdbtn: {fileID: 0}
   money: 0
+  firstprice: 0
   randomnum: 0
   JugallumLevel: 0
   touchcnt: 0
-  firstprice: 0
   firstplus: 0
+  dogpc: 0
   Jugallum: {fileID: 1071218195}
   waren: {fileID: 1075479909}
   dog: {fileID: 1620517777}
@@ -13088,6 +13089,7 @@ MonoBehaviour:
   goldbox_exist: 0
   timespan: 0
   checkTime: 0
+  dogprice: 
 --- !u!1 &1240433503
 GameObject:
   m_ObjectHideFlags: 0
@@ -18960,17 +18962,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneytext: {fileID: 1996832057}
   money: 0
-  secondwon: 3000
-  secondman: 0
-  seconduck: 0
-  secondjo: 0
-  secondkuyng: 0
   won: 0
   man: 0
   uck: 0
   jo: 0
   kuyng: 0
   touchspeed: 3000
+  moneyspeed: 30000
   coinAudio: {fileID: 0}
   coinSound: {fileID: 8300000, guid: 964511480ca3f9e4cbdccb844802a4ea, type: 3}
 --- !u!224 &1929893891
