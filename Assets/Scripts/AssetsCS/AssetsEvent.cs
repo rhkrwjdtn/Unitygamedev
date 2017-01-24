@@ -10,7 +10,6 @@ public class AssetsEvent : MonoBehaviour {
 	public GameObject[] Asset_houseObj = new GameObject[SIZE];
 	public GameObject[] Asset_imgObj = new GameObject[SIZE];
 	public GameObject[] Asset_btnObj = new GameObject[SIZE];
-	public bool[] Asset_BG_BuyList = new bool[SIZE];
 
 	//AssetsManager에서 이 두 cs를 묶어줘야함.
 	public Moneyupdate MU;
@@ -29,8 +28,7 @@ public class AssetsEvent : MonoBehaviour {
 			Asset_houseObj[i] = null;
 			Asset_imgObj[i] = null;
 			Asset_btnObj[i] = null;
-			Asset_BG_BuyList [i] = myBGList.BG_BuyList [i];
-		}
+				}
 	}
 	//이 부분을 tabbutton0에 묶어줌
 	public void Asset_HouseInitiate(){
@@ -38,6 +36,7 @@ public class AssetsEvent : MonoBehaviour {
 			for (int i = 0; i < SIZE; i++) {
 				//House,iconimg,btn오브젝트
 				Asset_houseObj [i] = GameObject.Find ("House"+i).gameObject;
+				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().fontSize = 10;
 				Asset_imgObj [i] = Asset_houseObj [i].transform.FindChild ("Image").gameObject;
 				Asset_btnObj [i] = Asset_houseObj [i].transform.FindChild ("Button").gameObject;
 				Asset_btnObj [i].transform.GetChild(0).GetComponent<Text> ().text = "SELL";
@@ -54,7 +53,7 @@ public class AssetsEvent : MonoBehaviour {
 		for (int i = 0; i < SIZE; i++) {
 			//이미 구매한 경우
 			if (myBGList.BG_BuyList [i] == false) {
-				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "구매가:"+myBGList.BG_Price[i]+"원\n임시...:"+myBGList.BG_Price[i]*2;
+				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "구매가:"+myBGList.BG_Price[i]+"원\n임시...:"+myBGList.BG_Price[i]*2+"원";
 				//밝게
 				Asset_houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				//컬러아이콘
@@ -87,7 +86,8 @@ public class AssetsEvent : MonoBehaviour {
 	}
 	public void Asset_HouseMoneyEvent(int sel_BG){
 		//MoneyManager에서 House의 가격에 따라 MoneyUpdate
-		MU.money += myBGList.BG_Price[sel_BG]*2;
+		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
+		MU.money += myBGList.BG_Price[sel_BG];
 	}
 	//구매한 경우 false로 표시 해줌
 	public void Asset_changeBGBuyEnable(int sel_BG){
