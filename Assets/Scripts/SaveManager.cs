@@ -137,7 +137,8 @@ public class SaveManager : MonoBehaviour {
 				loadlen = listdata.len;
 
 
-				Debug.Log ("@@@@@@@@@@@@@@@@@" + loadlen + "개이다");
+
+
 
 			}
 
@@ -147,7 +148,7 @@ public class SaveManager : MonoBehaviour {
 		}
 		////////////////////////////////////////////////////////////////////////////////////////
 
-		for (int i = 0; i < loadlen; i++) {
+		for (int i = 0; i < loadlen ; i++) {
 
 			BinaryFormatter bf3 = new BinaryFormatter ();
 			if (File.Exists (Application.persistentDataPath + "/stockInfo" + i + ".dat")) {
@@ -165,6 +166,7 @@ public class SaveManager : MonoBehaviour {
 					saveitem.count = listdata.count;
 
 					myStockList.AddItem (saveitem, myStockList);
+
 					myStockList.MyRemoveButtons ();
 					myStockList.MyAddButtons ();
 
@@ -178,7 +180,6 @@ public class SaveManager : MonoBehaviour {
 			}
 		}
 	
-
 
 	}
 
