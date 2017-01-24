@@ -13,6 +13,8 @@ public class SaveManager : MonoBehaviour {
 	public ShopScrollList myStockList;       //connect MyStockList
 	public HouseButtonEvent myBGList; //connect myBGList
 
+	public GameObject EndPanel;
+
 	public int loadlen;
 	/// <summary>
 	/// //////////////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +54,20 @@ public class SaveManager : MonoBehaviour {
 	}
 
 
+		void Update () {
+			if(Input.GetKeyDown(KeyCode.Escape))
+			{
+			if (!EndPanel.activeSelf) {
+				EndPanel.SetActive (true);
+			} else {
+				EndPanel.SetActive (false);
+			}
+			}
+		}
 
+	public void EndGame(){
+		Application.Quit();
+	}
 
 	public void SaveData(){           //저장버튼누르면 
 
