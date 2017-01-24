@@ -12,6 +12,8 @@ public class HouseButtonEvent : MonoBehaviour {
 	public GameObject[] houseObj = new GameObject[SIZE];
 	public GameObject[] imgObj = new GameObject[SIZE];
 	public GameObject[] btnObj = new GameObject[SIZE];
+	public GameObject housepopup;
+
 	//각 배경에 해당하는 가격
 	ulong[] BG_Price = new ulong[SIZE] { 13000, 53000, 230000, 1330000, 7500000,
 		29000000, 100000000 };
@@ -36,31 +38,32 @@ public class HouseButtonEvent : MonoBehaviour {
 	*/
 	// Use this for initialization
 	void Awake(){
+		//house = null;
 		for (int i = 0; i < SIZE; i++) {
 			//House오브젝트
 			houseObj[i] = null;
 			imgObj[i] = null;
+			btnObj[i] = null;
 		}
 
 	}
 	void Start () {
-	//	for (int i = 0; i < 7; i++) {
-	//		btnObj[i] = GameObject.Find ("HouseButton (" + i + ")").gameObject;
-			//btnObj[i].SetActive (false);	
-	//	}
-
-		for (int i = 0; i < SIZE; i++) {
-			//House,iconimg,btn오브젝트
-			houseObj[i] = GameObject.Find ("House ("+i+")").gameObject;
-			imgObj[i] = houseObj[i].transform.FindChild("Image").gameObject;
-			btnObj[i] = houseObj[i].transform.FindChild("HouseButton ("+i+")").gameObject;
+		if (housepopup.activeSelf == true) {
+			for (int i = 0; i < SIZE; i++) {
+				//House,iconimg,btn오브젝트
+				houseObj [i] = GameObject.Find ("House (" + i + ")").gameObject;
+				imgObj [i] = houseObj [i].transform.FindChild ("Image").gameObject;
+				btnObj [i] = houseObj [i].transform.FindChild ("HouseButton (" + i + ")").gameObject;
+			}
 		}
 	}
 
 	void Update () {
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		money = MU.money;
-		HouseCheck (money);
+		//if(GameObject.Find ("HousePopup").activeSelf == true)
+		if(housepopup.activeSelf==true)
+			HouseCheck (money);
 	}
 	public void HouseCheck(ulong money){
 		for (int i = 0; i < SIZE; i++) {
