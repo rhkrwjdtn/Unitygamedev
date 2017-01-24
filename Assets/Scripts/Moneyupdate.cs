@@ -8,6 +8,7 @@ public class Moneyupdate : MonoBehaviour {
 	public Text moneytext;
 	public ulong money = 0;
 
+	public bool effectsound = true;
 
 	public ulong won;
 	public ulong man;
@@ -27,6 +28,7 @@ public class Moneyupdate : MonoBehaviour {
 
 		StartCoroutine ("CountTime", 1);
 	}
+		
 
 	IEnumerator CountTime(float delayTime) {
 
@@ -81,10 +83,12 @@ public class Moneyupdate : MonoBehaviour {
 
 	public void OnClickBackground () {
 
-				coinAudio.clip = coinSound;
-				coinAudio.Play ();                  //coinsound play
+		if (effectsound) {
+			coinAudio.clip = coinSound;
+			coinAudio.Play ();                  //coinsound play
 
-	
+		}
+
 		money += touchspeed;
 
 		ulong moneytransform = money;
@@ -101,6 +105,14 @@ public class Moneyupdate : MonoBehaviour {
 		} 
 
 		}
+
+	public void EffectSoundChange(){
+		if (effectsound == true) {
+			effectsound = false;
+		} else {
+			effectsound = true;
+		}
+	}
 	}
 
 
