@@ -8,9 +8,10 @@ using System.IO;
 
 
 public class SaveManager : MonoBehaviour {
-
+	const int BG_SIZE = 7;
 	public Moneyupdate myMoney;    //connect Moneyupdate
 	public ShopScrollList myStockList;       //connect MyStockList
+	public HouseButtonEvent myBGList; //connect myBGList
 
 	public int loadlen;
 	/// <summary>
@@ -25,8 +26,8 @@ public class SaveManager : MonoBehaviour {
 	{
 
 		public ulong money;
-
-
+		public bool[] BG_BuyList = new bool[BG_SIZE] {true, true, true, true, true, 
+			true, true}; 
 	}
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -63,7 +64,9 @@ public class SaveManager : MonoBehaviour {
 		//A --> B에 할당
 		data.money = myMoney.money;
 
-
+		for(int k = 0; k < BG_SIZE; k++)//BG_LIST
+			data.BG_BuyList[k] = myBGList.BG_BuyList[k];
+		
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
 		file.Close();
@@ -101,70 +104,78 @@ public class SaveManager : MonoBehaviour {
 	public void LoadData(){                   //시작시 실행
 
 		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Open(Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
+		if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
+			FileStream file = File.Open (Application.persistentDataPath + "/playerInfo.dat", FileMode.Open);
 
-		if (file != null && file.Length > 0) {
-			//파일 역직렬화하여 B에 담기
-			PlayerData data = (PlayerData)bf.Deserialize (file);
+			if (file != null && file.Length > 0) {
+				//파일 역직렬화하여 B에 담기
+				PlayerData data = (PlayerData)bf.Deserialize (file);
 
-			//B --> A에 할당
-			myMoney.money = data.money;
+				//B --> A에 할당
 
+				myMoney.money = data.money;
+				for(int k = 0; k < BG_SIZE; k++)//BG_LIST
+					myBGList.BG_BuyList[k] = data.BG_BuyList [k];
 
-			Debug.Log (money);
+				Debug.Log (money);
 
-		}
+			}
 
-		file.Close ();
-
-
+			file.Close ();
+		} else
+			SaveData ();	
 		//////////////////////////////////////////stock
 		/// 
 		BinaryFormatter bf2 = new BinaryFormatter ();
-		FileStream file2 = File.Open(Application.persistentDataPath + "/stockInfo0.dat", FileMode.Open);
+		if (File.Exists (Application.persistentDataPath + "/stockInfo0.dat")) {
+			FileStream file2 = File.Open (Application.persistentDataPath + "/stockInfo0.dat", FileMode.Open);
 
-		if (file2 != null && file2.Length > 0) {
-			//파일 역직렬화하여 B에 담기
-			StockData listdata= (StockData)bf2.Deserialize (file2);
+			if (file2 != null && file2.Length > 0) {
+				//파일 역직렬화하여 B에 담기
+				StockData listdata = (StockData)bf2.Deserialize (file2);
 
-			loadlen = listdata.len;
+				loadlen = listdata.len;
 
 
-			Debug.Log ("@@@@@@@@@@@@@@@@@"+loadlen+"개이다");
+				Debug.Log ("@@@@@@@@@@@@@@@@@" + loadlen + "개이다");
 
+			}
+
+			file2.Close ();
+		} else {
+			SaveData ();
 		}
-
-		file2.Close ();
 		////////////////////////////////////////////////////////////////////////////////////////
 
 		for (int i = 0; i < loadlen; i++) {
 
 			BinaryFormatter bf3 = new BinaryFormatter ();
-			FileStream file3 = File.Open(Application.persistentDataPath + "/stockInfo"+i+".dat", FileMode.Open);
+			if (File.Exists (Application.persistentDataPath + "/stockInfo" + i + ".dat")) {
+				FileStream file3 = File.Open (Application.persistentDataPath + "/stockInfo" + i + ".dat", FileMode.Open);
 
-			if (file3 != null && file3.Length > 0) {
-				//파일 역직렬화하여 B에 담기
-				StockData listdata= (StockData)bf3.Deserialize (file3);
+				if (file3 != null && file3.Length > 0) {
+					//파일 역직렬화하여 B에 담기
+					StockData listdata = (StockData)bf3.Deserialize (file3);
 
-				Item saveitem = new Item();
+					Item saveitem = new Item ();
 
-				saveitem.stockName = listdata.stockName;
-				saveitem.price = listdata.price;
-				saveitem.Average = listdata.Average;
-				saveitem.count = listdata.count;
+					saveitem.stockName = listdata.stockName;
+					saveitem.price = listdata.price;
+					saveitem.Average = listdata.Average;
+					saveitem.count = listdata.count;
 
-				myStockList.AddItem (saveitem, myStockList);
-				myStockList.MyRemoveButtons ();
-				myStockList.MyAddButtons ();
+					myStockList.AddItem (saveitem, myStockList);
+					myStockList.MyRemoveButtons ();
+					myStockList.MyAddButtons ();
 
-				Debug.Log ("@@@@@@@@@@@@@@@@@"+listdata.stockName);
+					Debug.Log ("@@@@@@@@@@@@@@@@@" + listdata.stockName);
 
+				}
+
+				file3.Close ();
+			} else {
+				SaveData ();
 			}
-
-			file3.Close ();
-
-
-
 		}
 	
 

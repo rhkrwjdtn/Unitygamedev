@@ -5454,7 +5454,7 @@ Prefab:
     - target: {fileID: 224198377907422774, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.6999998
+      value: -0.69999695
       objectReference: {fileID: 0}
     - target: {fileID: 224198377907422774, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
@@ -5484,7 +5484,7 @@ Prefab:
     - target: {fileID: 224633051562189038, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.025006
+      value: 0.025009155
       objectReference: {fileID: 0}
     - target: {fileID: 114342648322422594, guid: a5990c46484fd1d4192359bd76aa540e,
         type: 2}
@@ -9823,6 +9823,17 @@ MonoBehaviour:
       - m_Target: {fileID: 2080424350}
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1585983344}
+        m_MethodName: houseInitiate
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14716,6 +14727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMoney: {fileID: 1929893890}
   myStockList: {fileID: 1242519733}
+  myBGList: {fileID: 1585983344}
   loadlen: 0
 --- !u!4 &1458599541
 Transform:
@@ -16032,7 +16044,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   housepopup: {fileID: 2080424350}
-  BG_BuyEnable: 01010101010101
+  BG_Price: c83200000000000008cf0000000000007082030000000000504b140000000000e0707200000000004081ba010000000000e1f50500000000
+  BG_BuyList: 01010101010101
   money: 0
 --- !u!1 &1604152116
 GameObject:
