@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HouseButtonEvent : MonoBehaviour {
 	//total size
-	const int SIZE=7;
+	public const int SIZE=7;
 	//Image bgimg;
 	public Sprite bg;
 	//house, icon img, btn obj
@@ -15,10 +15,10 @@ public class HouseButtonEvent : MonoBehaviour {
 	public GameObject housepopup;
 
 	//각 배경에 해당하는 가격
-	ulong[] BG_Price = new ulong[SIZE] { 13000, 53000, 230000, 1330000, 7500000,
+	public ulong[] BG_Price = new ulong[SIZE] { 13000, 53000, 230000, 1330000, 7500000,
 		29000000, 100000000 };
 	//배경 구매 완료한 경우 false
-	public bool[] BG_BuyEnable = new bool[SIZE] {true, true, true, true, true, 
+	public bool[] BG_BuyList = new bool[SIZE] {true, true, true, true, true, 
 		true, true}; 
 	public ulong money=0;
 	/*
@@ -45,7 +45,6 @@ public class HouseButtonEvent : MonoBehaviour {
 			imgObj[i] = null;
 			btnObj[i] = null;
 		}
-
 	}
 
 	void Update () {
@@ -71,7 +70,7 @@ public class HouseButtonEvent : MonoBehaviour {
 			//돈 있을 때,
 			if (money > BG_Price [i]) {
 				//이미 구매한 경우
-				if (BG_BuyEnable [i] == false) {
+				if (BG_BuyList [i] == false) {
 					//text-->구매완료 
 					houseObj[i].transform.GetChild(1).GetComponent<Text>().text = "구매 완료";
 					//어둡게
@@ -100,7 +99,7 @@ public class HouseButtonEvent : MonoBehaviour {
 				//흑백아이콘
 				imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/sel_bg_icon_" + i) as Sprite;
 				//살 돈 없고, 이미 구매한 경우
-				if (BG_BuyEnable[i]==false) {
+				if (BG_BuyList[i]==false) {
 					//text-->구매완료 
 					houseObj[i].transform.GetChild(1).GetComponent<Text>().text = "구매 완료";
 					//어둡게
@@ -142,7 +141,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	}
 	//구매한 경우 false로 표시 해줌
 	public void changeBGBuyEnable(int sel_BG){
-		BG_BuyEnable [sel_BG] = false;
+		BG_BuyList [sel_BG] = !BG_BuyList [sel_BG];
 	}
 	//나중에 판매할 경우 이 함수 사용
 	public void btnEnable(int i){

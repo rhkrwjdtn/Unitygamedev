@@ -8,9 +8,10 @@ using System.IO;
 
 
 public class SaveManager : MonoBehaviour {
-
+	const int BG_SIZE = 7;
 	public Moneyupdate myMoney;    //connect Moneyupdate
 	public ShopScrollList myStockList;       //connect MyStockList
+	public HouseButtonEvent myBGList; //connect myBGList
 
 	public int loadlen;
 	/// <summary>
@@ -25,8 +26,8 @@ public class SaveManager : MonoBehaviour {
 	{
 
 		public ulong money;
-
-
+		public bool[] BG_BuyList = new bool[BG_SIZE] {true, true, true, true, true, 
+			true, true}; 
 	}
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -63,7 +64,9 @@ public class SaveManager : MonoBehaviour {
 		//A --> B에 할당
 		data.money = myMoney.money;
 
-
+		for(int k = 0; k < BG_SIZE; k++)//BG_LIST
+			data.BG_BuyList[k] = myBGList.BG_BuyList[k];
+		
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
 		file.Close();
@@ -109,8 +112,10 @@ public class SaveManager : MonoBehaviour {
 				PlayerData data = (PlayerData)bf.Deserialize (file);
 
 				//B --> A에 할당
-				myMoney.money = data.money;
 
+				myMoney.money = data.money;
+				for(int k = 0; k < BG_SIZE; k++)//BG_LIST
+					myBGList.BG_BuyList[k] = data.BG_BuyList [k];
 
 				Debug.Log (money);
 
