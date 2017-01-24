@@ -20,6 +20,7 @@ public class ButtonEnable : MonoBehaviour {
     public ulong sixthprice = 5000000;
     public ulong seventhprice = 10000000;
 
+    public ulong dogmoneyspeed = 2;
     public ulong myulchmoneyspeed = 10;
     public ulong yapsapmoneyspeed = 20;
     public ulong dungchimoneyspeed = 50;
@@ -63,6 +64,25 @@ public class ButtonEnable : MonoBehaviour {
     public GameObject godh = null;
     public GameObject box = null;
     public GameObject goldbox = null;
+    public GameObject imag = null;
+    public GameObject myulchclose = null;
+    public GameObject yapsapclose = null;
+    public GameObject dungchclose = null;
+    public GameObject myungsasuclose = null;
+    public GameObject skateclose = null;
+    public GameObject godhclose = null;
+
+    public Image dogbackground;
+    public Image myulchbackground;
+    public Image yapsapbackground;
+    public Image dungchbackground;
+    public Image myungsasubackground;
+    public Image skatebackground;
+    public Image godhbackground;
+
+    public Color close;
+    public Color open;
+
     public Text btn_text=null;
     public Text myulchbtn_text = null;
     public Text yapsapbtn_text = null;
@@ -70,6 +90,14 @@ public class ButtonEnable : MonoBehaviour {
     public Text myungsasubtn_text = null;
     public Text skatebtn_text = null;
     public Text godhbtn_text = null;
+
+    public Text dog_text = null;
+    public Text myulch_text = null;
+    public Text yapsap_text = null;
+    public Text dungchi_text = null;
+    public Text myungsasu_text = null;
+    public Text skate_text = null;
+    public Text godh_text = null;
 
     public bool waren_exist =false;
     public bool box_exist = false;
@@ -126,15 +154,16 @@ public class ButtonEnable : MonoBehaviour {
         PlayerPrefs.SetInt("GodhLevel", godhLevel);
         //btn_text.text = "test";
 
-        ColorBlock cd = btn.colors;
-        ColorBlock dd = btn.colors;
-        cd.normalColor = Color.blue;
-        dd.normalColor = Color.white;
+        PlayerPrefs.SetInt("FirstPrice", 10000);
+        PlayerPrefs.SetInt("SecondPrice", 50000);
+        PlayerPrefs.SetInt("ThirdPrice", 100000);
+        PlayerPrefs.SetInt("ForthPrice", 500000);
+        PlayerPrefs.SetInt("FifthPrice", 1000000);
+        PlayerPrefs.SetInt("SixthPrice", 5000000);
+        PlayerPrefs.SetInt("SeventhPrice", 10000000);
 
-        btn.enabled = false;
+        btn.enabled = true;
         secondbtn.enabled = false;
-        btn.colors = cd;
-        secondbtn.colors = cd;
 
         timespan = 0.0f;
         checkTime = 5.0f;
@@ -179,74 +208,77 @@ public class ButtonEnable : MonoBehaviour {
         if (money>firstprice)
         {
             btn.enabled = true;
-            btn.colors = dd;
+            dogbackground.color = open;
+
         }	
         if(money<firstprice)
         {
             btn.enabled = false;
-            btn.colors = cd;
+            dogbackground.color = close;
         }
 
         if(money>secondprice)
         {
             secondbtn.enabled = true;
-            secondbtn.colors = dd;
+            myulchbackground.color = open;
+
         }
         else if(money<secondprice)
         {
             secondbtn.enabled = false;
-            secondbtn.colors = cd;
+            myulchbackground.color = close;
         }
 
         if(money>thirdprice)
         {
             yapsapbtn.enabled = true;
-            yapsapbtn.colors = dd;
+            yapsapbackground.color = open;
         }
         else if(money<thirdprice)
         {
             yapsapbtn.enabled = false;
-            yapsapbtn.colors = cd;
+            yapsapbackground.color = close;
         }
         if(money>forthprice)
         {
             Dungchibtn.enabled = true;
-            Dungchibtn.colors = dd;
+            dungchbackground.color = open;
         }
         else if(money<forthprice)
         {
             Dungchibtn.enabled = false;
-            Dungchibtn.colors = cd;
+            dungchbackground.color = close;
         }
         if(money>fifthprice)
         {
             myungsasubtn.enabled = true;
-            myungsasubtn.colors = dd;
+            myungsasubackground.color = open;
         }
         else if(money<fifthprice)
         {
             myungsasubtn.enabled = false;
-            myungsasubtn.colors = cd;
+            myungsasubackground.color = close;
         }
         if(money>sixthprice)
         {
             skatebtn.enabled = true;
-            skatebtn.colors = dd;
+            skatebackground.color = open;
         }
         else if(money<sixthprice)
         {
             skatebtn.enabled = false;
-            skatebtn.colors = cd;
+            skatebackground.color = close;
         }
         if(money>seventhprice)
         {
             godhbtn.enabled = true;
-            godhbtn.colors = dd;
+            godhbackground.color = open;
         }
         else if(money<seventhprice)
         {
+
             godhbtn.enabled = false;
-            godhbtn.colors = cd;
+            godhbackground.color = close;
         }
         if(waren_exist==true)
         {
@@ -271,21 +303,41 @@ public class ButtonEnable : MonoBehaviour {
     }
     public void btnClick()
     {
+
         Moneyupdate moneyu= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         dogLevel = PlayerPrefs.GetInt("DogLevel", 0);
         firstplus = firstplus + dogLevel;
-        dogpc = 10000 + 200 * (firstplus);
+        dogpc = 10000 + 200 * (firstplus+1);
         dogprice = dogpc.ToString();
         firstprice = ulong.Parse(dogprice);
+        if(moneyu.money>=firstprice)
+        {
+            dogLevel++;
+            PlayerPrefs.SetInt("FirstPrice", dogpc);
+            PlayerPrefs.SetInt("DogLevel", dogLevel);
+
+            moneyu.money = moneyu.money - firstprice;
+            dogmoneyspeed += 2;
+            moneyu.moneyspeed += dogmoneyspeed;
+
+            btn_text.fontSize = 10;
+            btn_text.text = "비용:" + dogprice + "\n" + "초당:" + dogmoneyspeed+"원";
+            dog_text.text = "몽실이 LV" + dogLevel;
+
+        }
+        else if(moneyu.money<firstprice)
+        {
+            firstplus -= dogLevel;
+        }
         //스트링으로 바꿔서?
-        dogLevel++;
         dog.active = true;
-        PlayerPrefs.SetInt("FirstPrice", dogpc);
-        PlayerPrefs.SetInt("DogLevel", dogLevel);
-        moneyu.money = moneyu.money - firstprice;
-		moneyu.moneyspeed += 2;
-        btn_text.fontSize = 10;
-        btn_text.text= "레벨:"+dogLevel+"\n"+"비용:"+dogprice;
+
+        if(dogLevel>=10)
+        {
+            myulchclose.active = false;
+
+        }
+
     }   
 
     public void secondbtnClick()
@@ -296,15 +348,29 @@ public class ButtonEnable : MonoBehaviour {
         myulchpc = (10000 + 200 * (myulchplus))*5;
         myulchprice = myulchpc.ToString();
         secondprice = ulong.Parse(myulchprice);
-        myulchiLevel++;
+        if (moneyu.money >= secondprice)
+        {
+            myulchiLevel++;
+            PlayerPrefs.SetInt("SecondPrice", myulchpc);
+            PlayerPrefs.SetInt("MyulchLevel", myulchiLevel);
+            myulchmoneyspeed += 10;
+            moneyu.money = moneyu.money - secondprice;
+            moneyu.moneyspeed = moneyu.moneyspeed + myulchmoneyspeed;
+            myulchbtn_text.fontSize = 10;
+            myulchbtn_text.text = "비용:" + myulchprice + "\n" + "초당:" + myulchmoneyspeed+"원";
+            myulch_text.text = "멸치 LV" + myulchiLevel;
+
+        }
+        else if (moneyu.money < secondprice)
+        {
+            myulchplus -= myulchiLevel;
+        }
+
         myulchi.active = true;
-        PlayerPrefs.SetInt("SecondPrice", myulchpc);
-        PlayerPrefs.SetInt("MyulchLevel", myulchiLevel);
-        myulchmoneyspeed += 10;
-        moneyu.money = moneyu.money - secondprice;
-        moneyu.moneyspeed = moneyu.moneyspeed + myulchmoneyspeed;
-        myulchbtn_text.fontSize = 10;
-        myulchbtn_text.text = "레벨:" + myulchiLevel + "\n" + "비용:" + myulchprice;
+        if(myulchiLevel>=10)
+        {
+            yapsapclose.active = false;
+        }
     }
 
     public void YapsapbtnClick()
@@ -315,15 +381,28 @@ public class ButtonEnable : MonoBehaviour {
         yapsappc = (10000 + 200 * (yapsapplus)) * 10;
         yapsapprice = yapsappc.ToString();
         thirdprice = ulong.Parse(yapsapprice);
-        yapsapLevel++;
+        if (moneyu.money >= thirdprice)
+        {
+            yapsapLevel++;
+            PlayerPrefs.SetInt("ThirdPrice", yapsappc);
+            PlayerPrefs.SetInt("YapsapLevel", yapsapLevel);
+            yapsapmoneyspeed += 20;
+            moneyu.money = moneyu.money - thirdprice;
+            moneyu.moneyspeed = moneyu.moneyspeed + yapsapmoneyspeed;
+            yapsapbtn_text.fontSize = 10;
+            yapsapbtn_text.text = "비용:" + yapsapprice + "\n" + "초당:" + yapsapmoneyspeed+"원";
+            yapsap_text.text = "얍삽이 LV" + yapsapLevel;
+
+        }
+        else if (moneyu.money < thirdprice)
+        {
+            yapsapplus -= yapsapLevel;
+        }
         yapsap.active = true;
-        PlayerPrefs.SetInt("ThirdPrice", yapsappc);
-        PlayerPrefs.SetInt("YapsapLevel", yapsapLevel);
-        yapsapmoneyspeed += 20;
-        moneyu.money = moneyu.money - thirdprice;
-        moneyu.moneyspeed = moneyu.moneyspeed + yapsapmoneyspeed;
-        yapsapbtn_text.fontSize = 10;
-        yapsapbtn_text.text = "레벨:" + yapsapLevel + "\n" + "비용:" + yapsapprice;
+        if(yapsapLevel>=10)
+        {
+            dungchclose.active = false;
+        }
     }
     public void dungchibtnClick()
     {
@@ -333,15 +412,27 @@ public class ButtonEnable : MonoBehaviour {
         dungchipc = (10000 + 200 * (dungchiplus)) * 50;
         dungchiprice = dungchipc.ToString();
         forthprice = ulong.Parse(dungchiprice);
-        dungchiLevel++;
+        if (moneyu.money >= forthprice)
+        {
+            dungchiLevel++;
+            PlayerPrefs.SetInt("ForthPrice", dungchipc);
+            PlayerPrefs.SetInt("DungchiLevel", dungchiLevel);
+            dungchimoneyspeed += 50;
+            moneyu.money = moneyu.money - forthprice;
+            moneyu.moneyspeed = moneyu.moneyspeed + dungchimoneyspeed;
+            dungchibtn_text.fontSize = 10;
+            dungchibtn_text.text = "비용:" + dungchiprice + "\n" + "초당:" + dungchimoneyspeed+"원";
+            dungchi_text.text = "덩치 LV" + dungchiLevel;
+        }
+        else if (moneyu.money < forthprice)
+        {
+          dungchiplus -= dungchiLevel;
+        }
         dungchi.active = true;
-        PlayerPrefs.SetInt("ForthPrice", dungchipc);
-        PlayerPrefs.SetInt("DungchiLevel", dungchiLevel);
-        dungchimoneyspeed += 50;
-        moneyu.money = moneyu.money - forthprice;
-        moneyu.moneyspeed = moneyu.moneyspeed + dungchimoneyspeed;
-        dungchibtn_text.fontSize = 10;
-        dungchibtn_text.text = "레벨:" + dungchiLevel + "\n" + "비용:" + dungchiprice;
+        if(dungchiLevel>=10)
+        {
+            myungsasuclose.active = false;
+        }
     }
     public void myungsasubtnClick()
     {
@@ -351,15 +442,27 @@ public class ButtonEnable : MonoBehaviour {
         myungsasupc = (10000 + 200 * (myungsasuplus)) * 100;
         myungsasuprice = myungsasupc.ToString();
         fifthprice = ulong.Parse(myungsasuprice);
-        myungsasuLevel++;
+        if (moneyu.money >= fifthprice)
+        {
+            myungsasuLevel++;
+            PlayerPrefs.SetInt("FifthPrice", myungsasupc);
+            PlayerPrefs.SetInt("MyungsasuLevel", myungsasuLevel);
+            myungsasumoneyspeed += 100;
+            moneyu.money = moneyu.money - fifthprice;
+            moneyu.moneyspeed = moneyu.moneyspeed + myungsasumoneyspeed;
+            myungsasubtn_text.fontSize = 10;
+            myungsasubtn_text.text = "비용:" + myungsasuprice + "\n" + "초당:" + myungsasumoneyspeed+"원";
+            myungsasu_text.text = "명사수 LV" + myungsasuLevel;
+        }
+        else if (moneyu.money < fifthprice)
+        {
+            myungsasuplus -= myungsasuLevel;
+        }
         myungsasu.active = true;
-        PlayerPrefs.SetInt("FifthPrice", myungsasupc);
-        PlayerPrefs.SetInt("MyungsasuLevel", myungsasuLevel);
-        myungsasumoneyspeed += 100;
-        moneyu.money = moneyu.money - fifthprice;
-        moneyu.moneyspeed = moneyu.moneyspeed + myungsasumoneyspeed;
-        myungsasubtn_text.fontSize = 10;
-        myungsasubtn_text.text = "레벨:" + myungsasuLevel + "\n" + "비용:" + myungsasuprice;
+        if(myungsasuLevel>=10)
+        {
+            skateclose.active = false;
+        }
     }
     public void skatebtnClick()
     {
@@ -369,15 +472,28 @@ public class ButtonEnable : MonoBehaviour {
         skatepc = (10000 + 200 * (skateplus)) * 500;
         skateprice = skatepc.ToString();
         sixthprice = ulong.Parse(skateprice);
-        skateLevel++;
+        if (moneyu.money >= sixthprice)
+        {
+            skateLevel++;
+            PlayerPrefs.SetInt("SixthPrice", skatepc);
+            PlayerPrefs.SetInt("SkateLevel", skateLevel);
+            skatemoneyspeed += 500;
+            moneyu.money = moneyu.money - sixthprice;
+            moneyu.moneyspeed = moneyu.moneyspeed + skatemoneyspeed;
+            skatebtn_text.fontSize = 10;
+            skatebtn_text.text = "비용:" + skateprice + "\n" + "초당:" + skatemoneyspeed+"원";
+            skate_text.text = "스케이트녀 LV" + skateLevel;
+
+        }
+        else if (moneyu.money < sixthprice)
+        {
+            skateplus -= skateLevel;
+        }
         skate.active = true;
-        PlayerPrefs.SetInt("SixthPrice", skatepc);
-        PlayerPrefs.SetInt("SkateLevel", skateLevel);
-        skatemoneyspeed += 500;
-        moneyu.money = moneyu.money - sixthprice;
-        moneyu.moneyspeed = moneyu.moneyspeed + skatemoneyspeed;
-        skatebtn_text.fontSize = 10;
-        skatebtn_text.text = "레벨:" + skateLevel + "\n" + "비용:" + skateprice;
+        if(skateLevel>=10)
+        {
+            godhclose.active = false;
+        }
     }
     public void godhbtnClick()
     {
@@ -387,15 +503,23 @@ public class ButtonEnable : MonoBehaviour {
         godhpc = (10000 * 200 * (godhplus)) * 1000;
         godhprice = godhpc.ToString();
         seventhprice = ulong.Parse(godhprice);
-        godhLevel++;
+        if (moneyu.money >= seventhprice)
+        {
+            godhLevel++;
+            PlayerPrefs.SetInt("SeventhPrice", godhpc);
+            PlayerPrefs.SetInt("GodhLevel", godhLevel);
+            godhmoneyspeed += 1000;
+            moneyu.money = moneyu.money - seventhprice;
+            moneyu.moneyspeed = moneyu.moneyspeed + godhmoneyspeed;
+            godhbtn_text.fontSize = 10;
+            godhbtn_text.text = "비용:" + godhprice + "\n" + "초당:" + godhmoneyspeed+"원";
+            godh_text.text = "갓형욱 LV" + godhLevel;
+        }
+        else if (moneyu.money < seventhprice)
+        {
+            godhplus -= godhLevel;
+        }
         godh.active = true;
-        PlayerPrefs.SetInt("SeventhPrice", godhpc);
-        PlayerPrefs.SetInt("GodhLevel", godhLevel);
-        godhmoneyspeed += 1000;
-        moneyu.money = moneyu.money - seventhprice;
-        moneyu.moneyspeed = moneyu.moneyspeed + godhmoneyspeed;
-        godhbtn_text.fontSize = 10;
-        godhbtn_text.text = "레벨:" + godhLevel + "\n" + "비용:" + godhprice;
 
     }
 

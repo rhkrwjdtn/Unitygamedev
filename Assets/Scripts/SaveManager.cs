@@ -13,6 +13,8 @@ public class SaveManager : MonoBehaviour {
 	public ShopScrollList myStockList;       //connect MyStockList
 	public HouseButtonEvent myBGList; //connect myBGList
 
+	public GameObject EndPanel;
+
 	public int loadlen;
 	/// <summary>
 	/// //////////////////////////////////////////////////////////////////////////////////////////
@@ -52,7 +54,20 @@ public class SaveManager : MonoBehaviour {
 	}
 
 
+		void Update () {
+			if(Input.GetKeyDown(KeyCode.Escape))
+			{
+			if (!EndPanel.activeSelf) {
+				EndPanel.SetActive (true);
+			} else {
+				EndPanel.SetActive (false);
+			}
+			}
+		}
 
+	public void EndGame(){
+		Application.Quit();
+	}
 
 	public void SaveData(){           //저장버튼누르면 
 
@@ -137,7 +152,8 @@ public class SaveManager : MonoBehaviour {
 				loadlen = listdata.len;
 
 
-				Debug.Log ("@@@@@@@@@@@@@@@@@" + loadlen + "개이다");
+
+
 
 			}
 
@@ -147,7 +163,7 @@ public class SaveManager : MonoBehaviour {
 		}
 		////////////////////////////////////////////////////////////////////////////////////////
 
-		for (int i = 0; i < loadlen; i++) {
+		for (int i = 0; i < loadlen ; i++) {
 
 			BinaryFormatter bf3 = new BinaryFormatter ();
 			if (File.Exists (Application.persistentDataPath + "/stockInfo" + i + ".dat")) {
@@ -165,6 +181,7 @@ public class SaveManager : MonoBehaviour {
 					saveitem.count = listdata.count;
 
 					myStockList.AddItem (saveitem, myStockList);
+
 					myStockList.MyRemoveButtons ();
 					myStockList.MyAddButtons ();
 
@@ -178,7 +195,6 @@ public class SaveManager : MonoBehaviour {
 			}
 		}
 	
-
 
 	}
 

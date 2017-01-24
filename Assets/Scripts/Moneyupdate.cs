@@ -56,24 +56,24 @@ public class Moneyupdate : MonoBehaviour {
 
 
 		if (won >0  && man == 0 &&  uck ==0 && jo == 0 && kuyng == 0) {
-			moneytext.text = "Money : " + System.Convert.ToString (won) + "원";
+			moneytext.text =  System.Convert.ToString (won) + "원";
 
 		} else if (won >= 0  && man > 0 &&  uck ==0 && jo == 0 && kuyng == 0) {
 			
-			moneytext.text = "Money : " + System.Convert.ToString (man) + "만" + System.Convert.ToString (won) + "원";
+			moneytext.text =  System.Convert.ToString (man) + "만" + System.Convert.ToString (won) + "원";
 
 		} else if (won >= 0 && man >= 0 &&  uck > 0 && jo == 0 && kuyng == 0) {
 
-			moneytext.text = "Money : " + System.Convert.ToString (uck) + "억"+ System.Convert.ToString (man) + "만" + System.Convert.ToString (won) + "원";
+			moneytext.text =  System.Convert.ToString (uck) + "억"+ System.Convert.ToString (man) + "만" + System.Convert.ToString (won) + "원";
 
 		} else if (won >= 0 && man >= 0 &&  uck >=0 && jo > 0 && kuyng == 0) {
 
-			moneytext.text = "Money : " + System.Convert.ToString (jo) + "조"+System.Convert.ToString (uck) + "억"+ System.Convert.ToString (man) + "만";
+			moneytext.text =  System.Convert.ToString (jo) + "조"+System.Convert.ToString (uck) + "억"+ System.Convert.ToString (man) + "만";
 
 
 		} else if (won >= 0 && man >= 0 &&  uck>=0 && jo >= 0 && kuyng > 0) {
 
-			moneytext.text = "Money : " + System.Convert.ToString (kuyng) + "경" + System.Convert.ToString (jo) + "조"+System.Convert.ToString (uck) + "억";
+			moneytext.text =  System.Convert.ToString (kuyng) + "경" + System.Convert.ToString (jo) + "조"+System.Convert.ToString (uck) + "억";
 
 
 		}
