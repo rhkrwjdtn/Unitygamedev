@@ -8,7 +8,6 @@ using System.Collections.Generic;
 public class Item
 {
 	public string stockName;
-	//public Sprite icon;
 	public ulong price = 0;
 	public ulong count = 0;
 	public ulong Average = 0;
@@ -75,7 +74,7 @@ public class ShopScrollList : MonoBehaviour {
 	}
 
 
-	private void MyRemoveButtons()
+	public void MyRemoveButtons()
 	{
 		while (contentPanel.childCount > 0) 
 		{
@@ -84,7 +83,7 @@ public class ShopScrollList : MonoBehaviour {
 		}
 	}
 
-	private void MyAddButtons()
+	public void MyAddButtons()
 	{
 		for (int i = 0; i < itemList.Count; i++) 
 		{
@@ -205,7 +204,7 @@ public class ShopScrollList : MonoBehaviour {
 
 	}*/
 
-	void AddItem(Item itemToAdd, ShopScrollList shopList)
+	public void AddItem(Item itemToAdd, ShopScrollList shopList)
 	{
 		Debug.Log (thisitem.stockName+"추가하기");
 		shopList.itemList.Add (itemToAdd);
