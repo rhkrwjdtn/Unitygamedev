@@ -12,6 +12,7 @@ public class AssetsEvent : MonoBehaviour {
 	public GameObject[] Asset_btnObj = new GameObject[SIZE];
 	public bool[] Asset_BG_BuyList = new bool[SIZE];
 
+	//AssetsManager에서 이 두 cs를 묶어줘야함.
 	public Moneyupdate MU;
 	public HouseButtonEvent myBGList; //connect myBGList
 	/*
@@ -22,6 +23,7 @@ public class AssetsEvent : MonoBehaviour {
 					>> 현재 배경을 기본 배경(0원)으로 변경, 현재 판매가 만큼 +money, 해당 집을 미구매한 집으로 변경
 			ㄴ. 미구매한 것 : 아이콘 흑백, SELL 글씨 색상 흐리게, SELL 버튼 비활성화
 	*/
+
 	void Awake(){
 		for (int i = 0; i < SIZE; i++) {
 			Asset_houseObj[i] = null;
@@ -30,7 +32,7 @@ public class AssetsEvent : MonoBehaviour {
 			Asset_BG_BuyList [i] = myBGList.BG_BuyList [i];
 		}
 	}
-
+	//이 부분을 tabbutton0에 묶어줌
 	public void Asset_HouseInitiate(){
 		if (Asset_housepopup.activeSelf == true) {
 			for (int i = 0; i < SIZE; i++) {
@@ -52,7 +54,7 @@ public class AssetsEvent : MonoBehaviour {
 		for (int i = 0; i < SIZE; i++) {
 			//이미 구매한 경우
 			if (myBGList.BG_BuyList [i] == false) {
-				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "구매가:"+myBGList.BG_Price[i]+"원\n임시...:"+myBGList.BG_Price;
+				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "구매가:"+myBGList.BG_Price[i]+"원\n임시...:"+myBGList.BG_Price[i]*2;
 				//밝게
 				Asset_houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				//컬러아이콘
@@ -65,8 +67,8 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "미구매";
 				//어둡게
 				Asset_houseObj [i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
-				//컬러
-				Asset_imgObj [i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/bg_icon_" + i) as Sprite;
+				//흑백
+				Asset_imgObj [i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/sel_bg_icon_" + i) as Sprite;
 				//버튼 비활성화
 				Asset_btnObj [i].SetActive (false);
 
@@ -77,22 +79,15 @@ public class AssetsEvent : MonoBehaviour {
 
 	//Button onClick event
 	public void Asset_setBG (int btn){
-		//if (money > BG_Price [btn]) {
 		Asset_HouseMoneyEvent (btn);
-		Asset_HouseChangeBG ();
 		Asset_changeBGBuyEnable (btn);
-		//배경 오브젝트의 스프라이트를 변경
-		GameObject.Find ("Background").GetComponent<Image> ().sprite = bg;
+		//기본배경으로 초기화
+		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg_default") as Sprite;
 		//}
 	}
 	public void Asset_HouseMoneyEvent(int sel_BG){
 		//MoneyManager에서 House의 가격에 따라 MoneyUpdate
-		//Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-		MU.money += myBGList.BG_Price[sel_BG];
-	}
-	public void Asset_HouseChangeBG(){
-		//리소스에서 배경파일 로드
-		bg = Resources.Load<Sprite> ("bg_img/bg_default") as Sprite;
+		MU.money += myBGList.BG_Price[sel_BG]*2;
 	}
 	//구매한 경우 false로 표시 해줌
 	public void Asset_changeBGBuyEnable(int sel_BG){
