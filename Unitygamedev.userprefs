@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AssetsCS\AssetsEvent.cs">
     <Files>
-      <File FileName="Assets\Scripts\SaveManager.cs" Line="84" Column="2" />
-      <File FileName="Assets\Scripts\House\HouseButtonEvent.cs" Line="21" Column="9" />
-      <File FileName="Assets\Scripts\AssetsCS\AssetsEvent.cs" Line="41" Column="70" />
-      <File FileName="Assets\Scripts\Moneyupdate.cs" Line="13" Column="19" />
+      <File FileName="Assets\Scripts\SaveManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\House\HouseButtonEvent.cs" Line="126" Column="45" />
+      <File FileName="Assets\Scripts\AssetsCS\AssetsEvent.cs" Line="90" Column="1" />
+      <File FileName="Assets\Scripts\Moneyupdate.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
