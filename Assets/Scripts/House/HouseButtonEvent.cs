@@ -25,7 +25,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	1. 집을 살 만큼의 돈 유무
 		a.유 : BUY 버튼 활성화, 아이콘 컬러,  해당 항목(행) 배경색상 밝음  ok
 			-- BUY 버튼 onClick,  
-				>> BUY 글씨 색상 흐리게 변경,  
+				>> BUY 글씨 색상 흐리게 변경, 아이콘 컬러!,  
 				>> 아이템(인벤토리)의 집 탭에 구매한 집으로 변경,
 		b.무 : 아이콘 흑백, BUY 글씨 색상 흐리게, BUY 버튼 비활성화
 
@@ -47,7 +47,15 @@ public class HouseButtonEvent : MonoBehaviour {
 		}
 
 	}
-	void Start () {
+
+	void Update () {
+		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
+		money = MU.money;
+		//if(GameObject.Find ("HousePopup").activeSelf == true)
+		if(housepopup.activeSelf==true)
+			HouseCheck (money);
+	}
+	public void houseInitiate () {
 		if (housepopup.activeSelf == true) {
 			for (int i = 0; i < SIZE; i++) {
 				//House,iconimg,btn오브젝트
@@ -58,13 +66,6 @@ public class HouseButtonEvent : MonoBehaviour {
 		}
 	}
 
-	void Update () {
-		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-		money = MU.money;
-		//if(GameObject.Find ("HousePopup").activeSelf == true)
-		if(housepopup.activeSelf==true)
-			HouseCheck (money);
-	}
 	public void HouseCheck(ulong money){
 		for (int i = 0; i < SIZE; i++) {
 			//돈 있을 때,
@@ -72,11 +73,11 @@ public class HouseButtonEvent : MonoBehaviour {
 				//이미 구매한 경우
 				if (BG_BuyEnable [i] == false) {
 					//text-->구매완료 
-					//houseObj[i].transform.FindChild
+					houseObj[i].transform.GetChild(1).GetComponent<Text>().text = "구매 완료";
 					//어둡게
 					houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
-					//흑백아이콘
-					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/sel_bg_icon_" + i) as Sprite;
+					//컬러
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/bg_icon_" + i) as Sprite;
 					//버튼 비활성화
 					btnObj[i].SetActive(false);
 				}
@@ -100,6 +101,12 @@ public class HouseButtonEvent : MonoBehaviour {
 				imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/sel_bg_icon_" + i) as Sprite;
 				//살 돈 없고, 이미 구매한 경우
 				if (BG_BuyEnable[i]==false) {
+					//text-->구매완료 
+					houseObj[i].transform.GetChild(1).GetComponent<Text>().text = "구매 완료";
+					//어둡게
+					houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
+					//컬러
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/bg_icon_" + i) as Sprite;
 					//버튼 비활성화
 					btnObj[i].SetActive(false);
 				} 
