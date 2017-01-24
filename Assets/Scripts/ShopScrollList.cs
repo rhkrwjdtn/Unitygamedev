@@ -40,7 +40,8 @@ public class ShopScrollList : MonoBehaviour {
 		//Screen.SetResolution(Screen.width, (Screen.width / 10) * 16 ,true); 
 		//Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
 		//Screen.SetResolution( 300, 480, true );
-		RefreshDisplay ();
+		//RefreshDisplay ();
+
 	}
 
 	public void RefreshDisplay()
@@ -48,7 +49,9 @@ public class ShopScrollList : MonoBehaviour {
 		
 		RemoveButtons ();       
 		AddButtons ();
+
 	}
+
 
 	private void RemoveButtons()
 	{
@@ -76,6 +79,7 @@ public class ShopScrollList : MonoBehaviour {
 
 	public void MyRemoveButtons()
 	{
+		Debug.Log ("리무부버튼!@@@@@@@@@@@@@@@@@@@@@@@");
 		while (contentPanel.childCount > 0) 
 		{
 			GameObject toRemove = transform.GetChild(0).gameObject;
@@ -85,6 +89,7 @@ public class ShopScrollList : MonoBehaviour {
 
 	public void MyAddButtons()
 	{
+		Debug.Log ("애드버튼!@@@@@@@@@@@@@@@@@@@@@@@"+itemList.Count);
 		for (int i = 0; i < itemList.Count; i++) 
 		{
 			Item item = itemList[i];
