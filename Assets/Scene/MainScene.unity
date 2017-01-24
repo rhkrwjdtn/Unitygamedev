@@ -3096,7 +3096,7 @@ Prefab:
     - target: {fileID: 224335925340402574, guid: ba88c273675081c48a253e58d98f6f97,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.5999999
+      value: 0.5999985
       objectReference: {fileID: 0}
     - target: {fileID: 224335925340402574, guid: ba88c273675081c48a253e58d98f6f97,
         type: 2}
@@ -13842,6 +13842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myMoney: {fileID: 1929893890}
   myStockList: {fileID: 1242519733}
+  loadlen: 0
 --- !u!4 &1458599541
 Transform:
   m_ObjectHideFlags: 0
@@ -16743,7 +16744,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1458599540}
-        m_MethodName: OnClickSaveManager
+        m_MethodName: SaveData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
