@@ -129,7 +129,7 @@ public class ShopScrollList : MonoBehaviour {
 		ulong num = System.Convert.ToUInt64 (buyField.text);
 
 		Debug.Log ("현재돈은"+moneyManager.money);
-		if (thisitem.count < 100000000) {
+		if (thisitem.count < 100000000&& thisitem.count>= 0) {
 
 			if (thisitem.price != 0 && num > 0 && num < 100000000 && (thisitem.count+num) < 100000000) {
 
@@ -164,13 +164,15 @@ public class ShopScrollList : MonoBehaviour {
 	}
 
 	public void Sellbuttonclick(){
-		ulong num = (ulong)System.Convert.ToInt64 (sellField.text);
+		ulong num = (ulong)System.Convert.ToUInt64 (sellField.text);
 
 
-		if (thisitem.count - num < 0) {
+		if (thisitem.count < num ) {
+			Debug.Log ("여기가 실ㅇ되야!@@@@@@@@@@");
 			//popup error message
-		} else if (thisitem.count - num > 0) {
 
+		} else if (thisitem.count > num ) {
+			Debug.Log ("여기가 실행되면안되야!@@@@@@@@@@"+thisitem.count);
 			moneyManager.money += num * thisitem.price;       //add stock price
 
 			thisitem.count -= num;
