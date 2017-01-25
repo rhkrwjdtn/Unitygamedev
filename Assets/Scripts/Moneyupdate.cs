@@ -92,7 +92,7 @@ public class Moneyupdate : MonoBehaviour {
 		money += touchspeed;
 
 		ulong moneytransform = money;
-		if (moneytransform > 10000) {
+
 			kuyng = moneytransform / 10000000000000000;
 			moneytransform = moneytransform % 10000000000000000;
 			jo = moneytransform / 1000000000000;
@@ -102,7 +102,7 @@ public class Moneyupdate : MonoBehaviour {
 			man = moneytransform / 10000;
 			won = moneytransform % 10000;
 
-		} 
+
 
 	}
 

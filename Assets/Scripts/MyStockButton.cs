@@ -28,7 +28,7 @@ public class MyStockButton : MonoBehaviour {
 	{
 		item = currentItem;
 		nameLabel.text = item.stockName;
-		priceText.text = item.price.ToString ();
+		//priceText.text = item.price.ToString ();
 		countText.text = item.count.ToString ();
 		averageText.text = item.Average.ToString ();
 		scrollList = currentScrollList;
