@@ -129,7 +129,6 @@ public class SaveManager : MonoBehaviour {
 
 
 		
-			Debug.Log ("이거저장한다" +myStockList.itemList [i].stockName);
 
 			//B 직렬화하여 파일에 담기
 			bf2.Serialize (file2, data2);
