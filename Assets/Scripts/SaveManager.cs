@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-
 public class SaveManager : MonoBehaviour {
 	const int BG_SIZE = 7;
 	const int STOCK_SIZE = 9;
@@ -139,18 +138,25 @@ public class SaveManager : MonoBehaviour {
 				PlayerData data = (PlayerData)bf.Deserialize (file);
 
 				//B --> A에 할당
+				try{
+					myMoney.money = data.money;
+					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
+						myBGList.BG_BuyList[k] = data.BG_BuyList [k];
 
-				myMoney.money = data.money;
-				for(int k = 0; k < BG_SIZE; k++)//BG_LIST
-					myBGList.BG_BuyList[k] = data.BG_BuyList [k];
-
-				for(int i=0; i<StockList.itemList.Count;i++){
-					StockList.itemList [i].price = data.stockprice [i];
-					StockList.itemList [i].count = data.stockcount [i];
-					StockList.itemList [i].Average = data.stockaverage [i];
+					for(int i=0; i<StockList.itemList.Count;i++){
+						StockList.itemList [i].price = data.stockprice [i];
+						StockList.itemList [i].count = data.stockcount [i];
+						StockList.itemList [i].Average = data.stockaverage [i];
+					}
+					Debug.Log (money);
 				}
-				Debug.Log (money);
-
+				catch(NullReferenceException NE){
+					Debug.Log ("저장된 값이 없는 항목이 있으므로 초기화 합니다.\n"+NE);
+					if (File.Exists (Application.persistentDataPath + "/playerInfo.dat")) {
+						file.Close ();
+						SaveData ();
+					}
+				}
 			}
 
 			file.Close ();
