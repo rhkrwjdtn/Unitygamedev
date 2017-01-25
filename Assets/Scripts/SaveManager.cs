@@ -9,10 +9,12 @@ using System.IO;
 
 public class SaveManager : MonoBehaviour {
 	const int BG_SIZE = 7;
+	const int STOCK_SIZE = 9;
+
 	public Moneyupdate myMoney;    //connect Moneyupdate
 	public ShopScrollList myStockList;       //connect MyStockList
 	public HouseButtonEvent myBGList; //connect myBGList
-
+	public ShopScrollList StockList; //connect StockList
 	public GameObject EndPanel;
 
 	public int loadlen;
@@ -30,6 +32,8 @@ public class SaveManager : MonoBehaviour {
 		public ulong money;
 		public bool[] BG_BuyList = new bool[BG_SIZE] {true, true, true, true, true, 
 			true, true}; 
+		public ulong[] stockprice = new ulong[STOCK_SIZE];
+
 	}
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -72,16 +76,24 @@ public class SaveManager : MonoBehaviour {
 	public void SaveData(){           //저장버튼누르면 
 
 		BinaryFormatter bf = new BinaryFormatter ();
-		FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
+		FileStream file = File.Create (Application.persistentDataPath + "/playerInfo.dat");
 
-		PlayerData data = new PlayerData();
+		PlayerData data = new PlayerData ();
 
 		//A --> B에 할당
 		data.money = myMoney.money;
 
-		for(int k = 0; k < BG_SIZE; k++)//BG_LIST
-			data.BG_BuyList[k] = myBGList.BG_BuyList[k];
-		
+		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
+			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
+
+	
+		for (int i = 0; i < StockList.itemList.Count; i++){
+			Debug.Log ("stock 현재가 @@@@@@"+StockList.itemList [i].price);
+			data.stockprice [i] = StockList.itemList [i].price;
+
+	}
+
+
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
 		file.Close();
@@ -132,6 +144,9 @@ public class SaveManager : MonoBehaviour {
 				for(int k = 0; k < BG_SIZE; k++)//BG_LIST
 					myBGList.BG_BuyList[k] = data.BG_BuyList [k];
 
+				for(int i=0; i<StockList.itemList.Count;i++){
+					StockList.itemList [i].price = data.stockprice [i];
+				}
 				Debug.Log (money);
 
 			}

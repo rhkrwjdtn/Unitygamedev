@@ -1457,7 +1457,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 11
+    m_FontSize: 12
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -1533,15 +1533,15 @@ MonoBehaviour:
     price: 12000
     count: 0
     Average: 0
-  - stockName: "\uD30C\uC778\uB4A4\uC564\uC528"
+  - stockName: "\uD30C\uC778\uB4A4\uC564\uC528\uBD80\uB7F4"
     price: 45000
     count: 0
     Average: 0
-  - stockName: "\uD55C\uAD6D\uBBF8\uAD6D\uC57D\uD488"
+  - stockName: "\uD55C\uBBF8\uC591\uD47C"
     price: 50000
     count: 0
     Average: 0
-  - stockName: "\uD0DC\uC591\uAC74\uC124\uC6B0"
+  - stockName: "\uC774\uD654\uACF5\uB8E1"
     price: 55000
     count: 0
     Average: 0
@@ -2572,8 +2572,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.6454734}
   m_AnchorMax: {x: 1, y: 0.74700004}
-  m_AnchoredPosition: {x: 0, y: -0.22499847}
-  m_SizeDelta: {x: 0, y: -0.45001}
+  m_AnchoredPosition: {x: 0, y: 0.5999985}
+  m_SizeDelta: {x: 0, y: -2.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224355469332020152
 RectTransform:

@@ -15272,6 +15272,7 @@ MonoBehaviour:
   myMoney: {fileID: 1929893890}
   myStockList: {fileID: 1242519733}
   myBGList: {fileID: 1585983344}
+  StockList: {fileID: 160836294}
   EndPanel: {fileID: 1525387811}
   loadlen: 0
 --- !u!4 &1458599541
