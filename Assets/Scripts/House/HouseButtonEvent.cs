@@ -8,6 +8,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	public const int SIZE=7;
 	//Image bgimg;
 	public Sprite bg;
+	public int selected_BG;
 	//house, icon img, btn obj
 	public GameObject[] houseObj = new GameObject[SIZE];
 	public GameObject[] imgObj = new GameObject[SIZE];
@@ -20,7 +21,10 @@ public class HouseButtonEvent : MonoBehaviour {
 	//배경 구매 완료한 경우 false
 	public bool[] BG_BuyList = new bool[SIZE] {true, true, true, true, true, 
 		true, true}; 
+
 	public ulong money=0;
+
+	bool signal=true;
 	/*
 	1. 집을 살 만큼의 돈 유무
 		a.유 : BUY 버튼 활성화, 아이콘 컬러,  해당 항목(행) 배경색상 밝음  ok
@@ -45,8 +49,15 @@ public class HouseButtonEvent : MonoBehaviour {
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		money = MU.money;
 		//if(GameObject.Find ("HousePopup").activeSelf == true)
-		if(housepopup.activeSelf==true)
+		if (housepopup.activeSelf == true)
 			HouseCheck (money);
+		else {
+			if (signal) {		
+				//추후에 렉걸리면 방법을 바꿔야할듯...
+				GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg_"+selected_BG) as Sprite;
+				signal = false; //한번만 실행하게끔...
+			}
+		}
 	}
 	public void houseInitiate () {//houseButton onClick에 연결
 		if (housepopup.activeSelf == true) {
@@ -132,6 +143,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	public void HouseChangeBG(int sel_BG){
 		//리소스에서 배경파일 로드
 		bg = Resources.Load<Sprite> ("bg_img/bg_"+sel_BG) as Sprite;
+		selected_BG = sel_BG;
 		Debug.Log ("btn "+sel_BG+"_onClick");
 	}
 	//구매한 경우 false로 표시 해줌

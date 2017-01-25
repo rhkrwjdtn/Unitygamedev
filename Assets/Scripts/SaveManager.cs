@@ -8,11 +8,13 @@ using System.IO;
 
 public class SaveManager : MonoBehaviour {
 	const int BG_SIZE = 7;
+	const int FLAG_SIZE = 13;
 	const int STOCK_SIZE = 9;
 
 	public Moneyupdate myMoney;    //connect Moneyupdate
 	public ShopScrollList myStockList;       //connect MyStockList
-	public HouseButtonEvent myBGList; //connect myBGList
+	public HouseButtonEvent myBGList; //connect HouseManager
+	public CountryButtonEvent myFlagList; //connect CountryManager
 	public ShopScrollList StockList; //connect StockList
 	public GameObject EndPanel;
 
@@ -29,8 +31,9 @@ public class SaveManager : MonoBehaviour {
 	{
 
 		public ulong money;
-		public bool[] BG_BuyList = new bool[BG_SIZE] {true, true, true, true, true, 
-			true, true}; 
+		public int selected_BG;
+		public bool[] BG_BuyList = new bool[BG_SIZE];
+		public bool[] FLAG_BuyList = new bool[FLAG_SIZE];
 		public ulong[] stockprice = new ulong[STOCK_SIZE];
 		public ulong[] stockcount = new ulong[STOCK_SIZE];
 		public ulong[] stockaverage = new ulong[STOCK_SIZE];
@@ -95,9 +98,14 @@ public class SaveManager : MonoBehaviour {
 		//A --> B에 할당
 		data.money = myMoney.money;
 
+		data.selected_BG = myBGList.selected_BG;
+			
 		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
 			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
 
+		for (int k = 0; k < FLAG_SIZE; k++)//FLAG_LIST
+			data.FLAG_BuyList [k] = myFlagList.BuyList [k];
+		
 	
 		for (int i = 0; i < StockList.itemList.Count; i++){
 			Debug.Log ("stock 현재가 @@@@@@"+StockList.itemList [i].price);
@@ -152,8 +160,14 @@ public class SaveManager : MonoBehaviour {
 				//B --> A에 할당
 				try{
 					myMoney.money = data.money;
+
+					myBGList.selected_BG = data.selected_BG;
+
 					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
 						myBGList.BG_BuyList[k] = data.BG_BuyList [k];
+					
+					for(int k = 0; k < FLAG_SIZE; k++)//FLAG_LIST
+						myFlagList.BuyList[k] = data.FLAG_BuyList [k];
 
 					for(int i=0; i<StockList.itemList.Count;i++){
 						StockList.itemList [i].price = data.stockprice [i];

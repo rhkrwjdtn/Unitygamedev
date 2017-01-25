@@ -17,7 +17,10 @@ public class CountryButtonEvent : MonoBehaviour {
 	public bool[] BuyList = new bool[SIZE] {true, true, true, true, true, 
 		true, true, true, true, true, 
 		true, true, true}; //구매 여부
+
 	public ulong money=0;
+
+	bool signal = true;
 
 	void Awake(){//초기화
 		for (int i = 0; i < SIZE; i++) {
@@ -47,8 +50,20 @@ public class CountryButtonEvent : MonoBehaviour {
 	void Update () {
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		money = MU.money;
-		if(countryPopup.activeSelf==true)
+		if (countryPopup.activeSelf == true) {
 			countryCheck (money);
+		}
+		else {
+			if (signal) {		
+				//saveManager로 저장한 List 띄우는건데...;
+				//추후에 렉걸리면 방법을 바꿔야할듯...
+				for (int i = 0; i < SIZE; i++) {
+					if (BuyList [i] == false)
+						countryAdd (i);
+				}
+				signal = false; //한번만 실행하게끔...
+			}
+		}
 	}
 
 	public void countryCheck(ulong money){
