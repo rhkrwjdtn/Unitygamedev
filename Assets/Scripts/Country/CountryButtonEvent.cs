@@ -11,6 +11,8 @@ public class CountryButtonEvent : MonoBehaviour {
 	public GameObject[] btnObj = new GameObject[SIZE];
 	public GameObject countryPopup;
 
+	public GameObject flagObj;
+
 	public ulong[] Price = new ulong[SIZE]; //가격
 	public bool[] BuyList = new bool[SIZE] {true, true, true, true, true, 
 		true, true, true, true, true, 
@@ -106,10 +108,14 @@ public class CountryButtonEvent : MonoBehaviour {
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		MU.money -= Price[sel];
 	}
-	public void countryAdd(int sel){
-		//리소스에서 파일 로드
-		//Sprite LoadedFlag = Resources.Load<Sprite> ("Flag/flag ("+sel+")") as Sprite;
-		//-->로드하기 보다, 미리 flag이미지들을 배치해두고, setActive(true)만 해주기
+	public void countryAdd(int sel){ //국기 활성화
+		GameObject flagObj = GameObject.Find("FlagFolder").transform.GetChild(sel).gameObject;
+		flagObj.SetActive (true);
+	}
+
+	public void countryDel(int sel){ //국기 비활성화
+		GameObject flagObj = GameObject.Find("FlagFolder").transform.GetChild(sel).gameObject;
+		flagObj.SetActive (false);
 	}
 	public void changeBuyEnable(int sel){//구매한 경우 false로 표시 해줌
 		BuyList [sel] = !BuyList [sel];
