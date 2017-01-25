@@ -28,7 +28,7 @@ public class Moneyupdate : MonoBehaviour {
 
 		StartCoroutine ("CountTime", 1);
 	}
-		
+
 
 	IEnumerator CountTime(float delayTime) {
 
@@ -59,7 +59,7 @@ public class Moneyupdate : MonoBehaviour {
 			moneytext.text =  System.Convert.ToString (won) + "원";
 
 		} else if (won >= 0  && man > 0 &&  uck ==0 && jo == 0 && kuyng == 0) {
-			
+
 			moneytext.text =  System.Convert.ToString (man) + "만" + System.Convert.ToString (won) + "원";
 
 		} else if (won >= 0 && man >= 0 &&  uck > 0 && jo == 0 && kuyng == 0) {
@@ -104,7 +104,7 @@ public class Moneyupdate : MonoBehaviour {
 
 		} 
 
-		}
+	}
 
 	public void EffectSoundChange(){
 		if (effectsound == true) {
@@ -113,7 +113,7 @@ public class Moneyupdate : MonoBehaviour {
 			effectsound = true;
 		}
 	}
-	}
+}
 
 
 

@@ -46,7 +46,7 @@ public class ShopScrollList : MonoBehaviour {
 
 	public void RefreshDisplay()
 	{
-		
+
 		RemoveButtons ();       
 		AddButtons ();
 
@@ -130,7 +130,7 @@ public class ShopScrollList : MonoBehaviour {
 
 		Debug.Log ("현재돈은"+moneyManager.money);
 		if (thisitem.count < 100000000) {
-			
+
 			if (thisitem.price != 0 && num > 0 && num < 100000000 && (thisitem.count+num) < 100000000) {
 
 
