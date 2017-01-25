@@ -1520,7 +1520,7 @@ MonoBehaviour:
     count: 0
     Average: 0
     stockNum: 1
-  - stockName: "\uBCBD\uC0B0\uAC78\uC124"
+  - stockName: "\uBCBD\uC0B0\uAC74\uC5B4\uBB3C"
     price: 8000
     count: 0
     Average: 0
@@ -1545,7 +1545,7 @@ MonoBehaviour:
     count: 0
     Average: 0
     stockNum: 6
-  - stockName: "\uD55C\uBBF8\uC591\uD47C"
+  - stockName: "\uD560\uBBF8\uC57D\uD488"
     price: 50000
     count: 0
     Average: 0
