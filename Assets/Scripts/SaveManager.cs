@@ -33,6 +33,9 @@ public class SaveManager : MonoBehaviour {
 		public bool[] BG_BuyList = new bool[BG_SIZE] {true, true, true, true, true, 
 			true, true}; 
 		public ulong[] stockprice = new ulong[STOCK_SIZE];
+		public ulong[] stockcount = new ulong[STOCK_SIZE];
+		public ulong[] stockaverage = new ulong[STOCK_SIZE];
+
 
 	}
 
@@ -40,10 +43,7 @@ public class SaveManager : MonoBehaviour {
 	public class StockData
 	{
 		public int len;
-		public string stockName;
-		public ulong price = 0;
-		public ulong count = 0;
-		public ulong Average = 0;
+		public int stockNum;
 
 	}
 
@@ -90,6 +90,8 @@ public class SaveManager : MonoBehaviour {
 		for (int i = 0; i < StockList.itemList.Count; i++){
 			Debug.Log ("stock 현재가 @@@@@@"+StockList.itemList [i].price);
 			data.stockprice [i] = StockList.itemList [i].price;
+			data.stockcount [i] = StockList.itemList [i].count;
+			data.stockaverage [i] = StockList.itemList [i].Average;
 
 	}
 
@@ -111,10 +113,8 @@ public class SaveManager : MonoBehaviour {
 			//A --> B에 할당
 
 			data2.len = myStockList.itemList.Count;
-			data2.stockName = myStockList.itemList [i].stockName;
-			data2.price = myStockList.itemList [i].price;
-			data2.Average = myStockList.itemList [i].Average;
-			data2.count = myStockList.itemList [i].count;
+			data2.stockNum = myStockList.itemList [i].stockNum;
+
 
 		
 			Debug.Log ("이거저장한다" +myStockList.itemList [i].stockName);
@@ -146,6 +146,8 @@ public class SaveManager : MonoBehaviour {
 
 				for(int i=0; i<StockList.itemList.Count;i++){
 					StockList.itemList [i].price = data.stockprice [i];
+					StockList.itemList [i].count = data.stockcount [i];
+					StockList.itemList [i].Average = data.stockaverage [i];
 				}
 				Debug.Log (money);
 
@@ -188,19 +190,17 @@ public class SaveManager : MonoBehaviour {
 					//파일 역직렬화하여 B에 담기
 					StockData listdata = (StockData)bf3.Deserialize (file3);
 
-					Item saveitem = new Item ();
+					StockData saveitem = new StockData ();
 
-					saveitem.stockName = listdata.stockName;
-					saveitem.price = listdata.price;
-					saveitem.Average = listdata.Average;
-					saveitem.count = listdata.count;
+					saveitem.stockNum = listdata.stockNum;
 
-					myStockList.AddItem (saveitem, myStockList);
+
+					myStockList.AddItem (StockList.itemList[saveitem.stockNum], myStockList);
 
 					myStockList.MyRemoveButtons ();
 					myStockList.MyAddButtons ();
 
-					Debug.Log ("@@@@@@@@@@@@@@@@@" + listdata.stockName);
+
 
 				}
 
