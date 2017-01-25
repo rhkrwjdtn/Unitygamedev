@@ -78,23 +78,11 @@ public class AssetsEvent : MonoBehaviour {
 
 	//Button onClick event
 	public void Asset_setBG (int btn){
-		Asset_HouseMoneyEvent (btn);
-		Asset_changeBGBuyEnable (btn);
+		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
+		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
+		MU.money += HE.BG_Price[btn]*2;
+		HE.BG_BuyList [btn] = !HE.BG_BuyList [btn];
 		//기본배경으로 초기화
 		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg_default") as Sprite;
-		//}
-	}
-	public void Asset_HouseMoneyEvent(int sel_BG){
-		//MoneyManager에서 House의 가격에 따라 MoneyUpdate
-		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-		MU.money += myBGList.BG_Price[sel_BG];
-	}
-	//구매한 경우 false로 표시 해줌
-	public void Asset_changeBGBuyEnable(int sel_BG){
-		myBGList.BG_BuyList [sel_BG] = !myBGList.BG_BuyList [sel_BG];
-	}
-	//나중에 판매할 경우 이 함수 사용
-	public void Asset_btnEnable(int i){
-		Asset_btnObj[i].SetActive(true);
 	}
 }	

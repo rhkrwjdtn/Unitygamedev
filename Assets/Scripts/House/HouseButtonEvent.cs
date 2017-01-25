@@ -76,8 +76,8 @@ public class HouseButtonEvent : MonoBehaviour {
 				}
 				//돈도 있고, 안샀다면,
 				else {
+					houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = BG_Price[i]+"원";
 					//밝게
-					//GameObject.Find ("House (" + i + ")").GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 					houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 					//컬러아이콘
 					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/bg_icon_" + i) as Sprite;
@@ -88,6 +88,7 @@ public class HouseButtonEvent : MonoBehaviour {
 			}
 			//살 돈 없을 때,
 			else {
+				houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = BG_Price[i]+"원";
 				//어둡게
 				houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				//흑백아이콘
