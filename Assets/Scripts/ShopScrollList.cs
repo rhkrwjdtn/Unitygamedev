@@ -11,6 +11,7 @@ public class Item
 	public ulong price = 0;
 	public ulong count = 0;
 	public ulong Average = 0;
+	public int stockNum;
 }
 
 public class ShopScrollList : MonoBehaviour {

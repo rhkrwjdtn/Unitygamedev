@@ -1165,6 +1165,7 @@ MonoBehaviour:
     price: 0
     count: 0
     Average: 0
+    stockNum: 0
   moneyManager: {fileID: 0}
   buyField: {fileID: 114168364983460060}
   sellField: {fileID: 114134017666235614}
@@ -1513,38 +1514,47 @@ MonoBehaviour:
     price: 20000
     count: 0
     Average: 0
+    stockNum: 0
   - stockName: "\uB0B4\uB3C8\uC2A4\uD2F8"
     price: 4000
     count: 0
     Average: 0
+    stockNum: 1
   - stockName: "\uBCBD\uC0B0\uAC78\uC124"
     price: 8000
     count: 0
     Average: 0
+    stockNum: 2
   - stockName: "\uCF69\uB370\uC988\uCF64\uBC14\uC778"
     price: 70000
     count: 0
     Average: 0
+    stockNum: 3
   - stockName: "\uD0DC\uC591\uC911\uC2EC"
     price: 25000
     count: 0
     Average: 0
+    stockNum: 4
   - stockName: "\uB8E8\uBD64"
     price: 12000
     count: 0
     Average: 0
+    stockNum: 5
   - stockName: "\uD30C\uC778\uB4A4\uC564\uC528\uBD80\uB7F4"
     price: 45000
     count: 0
     Average: 0
+    stockNum: 6
   - stockName: "\uD55C\uBBF8\uC591\uD47C"
     price: 50000
     count: 0
     Average: 0
+    stockNum: 7
   - stockName: "\uC774\uD654\uACF5\uB8E1"
     price: 55000
     count: 0
     Average: 0
+    stockNum: 8
   contentPanel: {fileID: 224696645785547230}
   otherShop: {fileID: 114334641365327438}
   NameDisplay: {fileID: 114899164511559442}
@@ -1555,6 +1565,7 @@ MonoBehaviour:
     price: 0
     count: 0
     Average: 0
+    stockNum: 0
   moneyManager: {fileID: 0}
   buyField: {fileID: 114168364983460060}
   sellField: {fileID: 114134017666235614}
