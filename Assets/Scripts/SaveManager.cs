@@ -72,6 +72,19 @@ public class SaveManager : MonoBehaviour {
 		Application.Quit();
 	}
 
+	void OnApplicationQuit()
+	{
+		SaveData ();
+	}
+
+	void OnApplicationPause(bool pauseStatus)    //강제종료시
+	{
+		if(pauseStatus)
+		{
+			SaveData ();
+		}
+	}
+
 	public void SaveData(){           //저장버튼누르면 
 
 		BinaryFormatter bf = new BinaryFormatter ();
@@ -116,7 +129,6 @@ public class SaveManager : MonoBehaviour {
 
 
 		
-			Debug.Log ("이거저장한다" +myStockList.itemList [i].stockName);
 
 			//B 직렬화하여 파일에 담기
 			bf2.Serialize (file2, data2);
