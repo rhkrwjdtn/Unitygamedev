@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 34365791}
   - component: {fileID: 34365793}
   - component: {fileID: 34365792}
+  - component: {fileID: 34365794}
   m_Layer: 5
   m_Name: SmallPizzs
   m_TagString: Untagged
@@ -312,6 +313,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 34365790}
+--- !u!114 &34365794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 34365790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 34365792}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2132020746}
+        m_MethodName: smallClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &41448711
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,7 +3394,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &241947796
 Prefab:
@@ -5832,7 +5885,7 @@ Prefab:
     - target: {fileID: 224196093911615424, guid: 72b6d473e48bfdf4e920a74f5af1cfc9,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224196093911615424, guid: 72b6d473e48bfdf4e920a74f5af1cfc9,
         type: 2}
@@ -11247,7 +11300,7 @@ Prefab:
     - target: {fileID: 224741359042906060, guid: 6c9c949508c8fe247b15c4ddb15590ff,
         type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 224741359042906060, guid: 6c9c949508c8fe247b15c4ddb15590ff,
         type: 2}
@@ -11318,6 +11371,7 @@ GameObject:
   - component: {fileID: 969712195}
   - component: {fileID: 969712197}
   - component: {fileID: 969712196}
+  - component: {fileID: 969712198}
   m_Layer: 5
   m_Name: Redbull
   m_TagString: Untagged
@@ -11376,6 +11430,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 969712194}
+--- !u!114 &969712198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 969712194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 969712196}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2132020746}
+        m_MethodName: redbullClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &974857819
 GameObject:
   m_ObjectHideFlags: 0
@@ -13945,7 +14051,7 @@ Prefab:
     - target: {fileID: 224818747532744662, guid: 20975a5ea85a7c147a9db449419e8f73,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224818747532744662, guid: 20975a5ea85a7c147a9db449419e8f73,
         type: 2}
@@ -14200,6 +14306,7 @@ GameObject:
   - component: {fileID: 1231575910}
   - component: {fileID: 1231575912}
   - component: {fileID: 1231575911}
+  - component: {fileID: 1231575913}
   m_Layer: 5
   m_Name: Burn
   m_TagString: Untagged
@@ -14258,6 +14365,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1231575909}
+--- !u!114 &1231575913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1231575909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1231575911}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2132020746}
+        m_MethodName: burnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1232014751
 GameObject:
   m_ObjectHideFlags: 0
@@ -14724,7 +14883,7 @@ Prefab:
     - target: {fileID: 224162125460643626, guid: 496e7ef15c02faa40805e663554dcded,
         type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 224162125460643626, guid: 496e7ef15c02faa40805e663554dcded,
         type: 2}
@@ -14827,7 +14986,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1329600243
 GameObject:
@@ -15173,6 +15332,166 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1356086151}
+--- !u!1001 &1357047861
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224104534581821700, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: redbull
+      value: 
+      objectReference: {fileID: 969712196}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: smallpizza
+      value: 
+      objectReference: {fileID: 34365792}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: burn
+      value: 
+      objectReference: {fileID: 1231575911}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: Largepizza
+      value: 
+      objectReference: {fileID: 1884009925}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: redbullbtn
+      value: 
+      objectReference: {fileID: 969712198}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: smallpizzabtn
+      value: 
+      objectReference: {fileID: 34365794}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: burnbtn
+      value: 
+      objectReference: {fileID: 1231575913}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: largepizzabtn
+      value: 
+      objectReference: {fileID: 1884009927}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: redbullcnt_text
+      value: 
+      objectReference: {fileID: 1535918791}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: smallpizzacnt_text
+      value: 
+      objectReference: {fileID: 1602400227}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: burncnt_text
+      value: 
+      objectReference: {fileID: 1434088258}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: largepizzacnt_text
+      value: 
+      objectReference: {fileID: 1175670796}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 9681c1659aef9b94da9ee1119dc07a82, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1359609345
 GameObject:
   m_ObjectHideFlags: 0
@@ -16448,7 +16767,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1458934553
 GameObject:
@@ -16857,7 +17176,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4693563253862826, guid: d2976695c70ee8e45a9b2724067e652a, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 114092172542210174, guid: d2976695c70ee8e45a9b2724067e652a,
         type: 2}
@@ -18058,7 +18377,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4146461649454938, guid: 5cde37a6087450f47ae20e44b54a9ed0, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1565353532112250, guid: 5cde37a6087450f47ae20e44b54a9ed0, type: 2}
       propertyPath: m_IsActive
@@ -21470,6 +21789,7 @@ GameObject:
   - component: {fileID: 1884009924}
   - component: {fileID: 1884009926}
   - component: {fileID: 1884009925}
+  - component: {fileID: 1884009927}
   m_Layer: 5
   m_Name: LargePizza
   m_TagString: Untagged
@@ -21528,6 +21848,58 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1884009923}
+--- !u!114 &1884009927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1884009923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1884009925}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2132020746}
+        m_MethodName: LargepizzaClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1895658160
 GameObject:
   m_ObjectHideFlags: 0
@@ -23426,6 +23798,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2132020746 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+    type: 2}
+  m_PrefabInternal: {fileID: 1357047861}
+  m_Script: {fileID: 11500000, guid: e3650b42349d7dd4d91b621afea76fca, type: 3}
 --- !u!1 &2143077330
 GameObject:
   m_ObjectHideFlags: 0
