@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Employment\Employment.cs" />
      <Compile Include="Assets\Scripts\GirlFriend\GirlFriendBtn1.cs" />
      <Compile Include="Assets\Scripts\House\HouseButtonEvent.cs" />
+     <Compile Include="Assets\Scripts\IconManager\IconManager.cs" />
      <Compile Include="Assets\Scripts\MainManager.cs" />
      <Compile Include="Assets\Scripts\Moneyupdate.cs" />
      <Compile Include="Assets\Scripts\MyStockButton.cs" />
