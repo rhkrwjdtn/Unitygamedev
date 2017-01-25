@@ -75,8 +75,6 @@ MonoBehaviour:
   msmoneyspeed: 0
   cktouchmoney: 0
   popup: {fileID: 0}
-  rebirthbtn: {fileID: 0}
-  potcnt_text: {fileID: 0}
 --- !u!222 &222122130497693114
 CanvasRenderer:
   m_ObjectHideFlags: 1
