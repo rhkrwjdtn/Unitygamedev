@@ -138,8 +138,4 @@ public class HouseButtonEvent : MonoBehaviour {
 	public void changeBGBuyEnable(int sel_BG){
 		BG_BuyList [sel_BG] = !BG_BuyList [sel_BG];
 	}
-	//나중에 판매할 경우 이 함수 사용
-	public void btnEnable(int i){
-		btnObj[i].SetActive(true);
-	}
 }	

@@ -48,7 +48,6 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AssetsCS\AssetsEvent.cs" />
      <Compile Include="Assets\Scripts\CharacterLevel\CharacterInfo.cs" />
-     <Compile Include="Assets\Scripts\Country\CountryBtnEvent.cs" />
      <Compile Include="Assets\Scripts\Country\CountryButtonEvent.cs" />
      <Compile Include="Assets\Scripts\Employment\BoxManager.cs" />
      <Compile Include="Assets\Scripts\Employment\ButtonEnable.cs" />
