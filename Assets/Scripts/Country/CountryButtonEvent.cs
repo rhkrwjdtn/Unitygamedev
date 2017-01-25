@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class countryButtonEvent : MonoBehaviour {
+public class CountryButtonEvent : MonoBehaviour {
 	public const int SIZE=13;
 	//country, icon img, btn obj
 	public GameObject[] countryObj = new GameObject[SIZE];
@@ -11,42 +11,40 @@ public class countryButtonEvent : MonoBehaviour {
 	public GameObject[] btnObj = new GameObject[SIZE];
 	public GameObject countryPopup;
 
-    public ulong[] Price = new ulong[SIZE]; //가격
-	public bool[] BuyList = new bool[SIZE] 
-		{true, true, true, true, true, 
+	public ulong[] Price = new ulong[SIZE]; //가격
+	public bool[] BuyList = new bool[SIZE] {true, true, true, true, true, 
 		true, true, true, true, true, 
 		true, true, true}; //구매 여부
 	public ulong money=0;
-	
-    void Awake(){//초기화
+
+	void Awake(){//초기화
 		for (int i = 0; i < SIZE; i++) {
-            countryObj[i] = null;
+			countryObj[i] = null;
 			imgObj[i] = null;
 			btnObj[i] = null;
 		}
 	}
 
+	public void countryInitiate()//기본 셋팅, countryButton onClick에 연결
+	{	
+		if (countryPopup.activeSelf == true)
+		{
+			for (int i = 0; i < SIZE; i++) 
+			{
+				//country,iconimg,btn오브젝트
+				countryObj[i] = GameObject.Find("Country (" + i + ")").gameObject;
+				//countryObj [i].transform.position = new Vector3(99.5f,-18.0f-(36.0f*i)); //위치변환 포기..ㅠ 
+				imgObj[i] = countryObj[i].transform.FindChild("Image").gameObject;
+				btnObj[i] = countryObj[i].transform.FindChild("Button").gameObject;
 
-    public void countryInitiate()//기본 셋팅, countryButton onClick에 연결
-    {	
-        if (countryPopup.activeSelf == true)
-        {
-            for (int i = 0; i < SIZE; i++) 
-            {
-                //country,iconimg,btn오브젝트
-                countryObj[i] = GameObject.Find("country (" + i + ")").gameObject;
-                imgObj[i] = countryObj[i].transform.FindChild("Image").gameObject;
-                btnObj[i] = countryObj[i].transform.FindChild("countryButton (" + i + ")").gameObject;
-            
 				//가격, 구매 여부
 				Price[i] = (ulong) (1000000000000*5*(i+1));//5조~ 75조
 			}
-        }
-    }
+		}
+	}
 	void Update () {
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		money = MU.money;
-		//if(GameObject.Find ("countryPopup").activeSelf == true)
 		if(countryPopup.activeSelf==true)
 			countryCheck (money);
 	}
@@ -97,11 +95,11 @@ public class countryButtonEvent : MonoBehaviour {
 
 	//Button onClick event
 	public void setBG (int btn){
-			countryMoneyEvent (btn);
-			countryAdd (btn);
-			changeBuyEnable (btn);
-			//배경 오브젝트의 스프라이트를 변경
-			//GameObject.Find ("Background").GetComponent<Image> ().sprite = bg;
+		countryMoneyEvent (btn);
+		countryAdd (btn);
+		changeBuyEnable (btn);
+		//배경 오브젝트의 스프라이트를 변경
+		//GameObject.Find ("Background").GetComponent<Image> ().sprite = bg;
 	}
 	public void countryMoneyEvent(int sel){
 		//MoneyManager에서 country의 가격에 따라 MoneyUpdate
@@ -116,4 +114,5 @@ public class countryButtonEvent : MonoBehaviour {
 	public void changeBuyEnable(int sel){//구매한 경우 false로 표시 해줌
 		BuyList [sel] = !BuyList [sel];
 	}
-}	
+}
+

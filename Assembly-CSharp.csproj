@@ -48,7 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AssetsCS\AssetsEvent.cs" />
      <Compile Include="Assets\Scripts\CharacterLevel\CharacterInfo.cs" />
-     <Compile Include="Assets\Scripts\Country\CountryBtnEvent.cs" />
+     <Compile Include="Assets\Scripts\Country\CountryButtonEvent.cs" />
      <Compile Include="Assets\Scripts\Employment\BoxManager.cs" />
      <Compile Include="Assets\Scripts\Employment\ButtonEnable.cs" />
      <Compile Include="Assets\Scripts\Employment\Employment.cs" />
@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Moneyupdate.cs" />
      <Compile Include="Assets\Scripts\MyStockButton.cs" />
      <Compile Include="Assets\Scripts\Probability.cs" />
+     <Compile Include="Assets\Scripts\Rebirth\RebirthManager.cs" />
      <Compile Include="Assets\Scripts\SaveManager.cs" />
      <Compile Include="Assets\Scripts\ScreenManager.cs" />
      <Compile Include="Assets\Scripts\ShopScrollList.cs" />
