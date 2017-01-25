@@ -48,7 +48,7 @@ public class HouseButtonEvent : MonoBehaviour {
 		if(housepopup.activeSelf==true)
 			HouseCheck (money);
 	}
-	public void houseInitiate () {
+	public void houseInitiate () {//houseButton onClick에 연결
 		if (housepopup.activeSelf == true) {
 			for (int i = 0; i < SIZE; i++) {
 				//House,iconimg,btn오브젝트
@@ -88,11 +88,6 @@ public class HouseButtonEvent : MonoBehaviour {
 			}
 			//살 돈 없을 때,
 			else {
-				houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = BG_Price[i]+"원";
-				//어둡게
-				houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
-				//흑백아이콘
-				imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/sel_bg_icon_" + i) as Sprite;
 				//살 돈 없고, 이미 구매한 경우
 				if (BG_BuyList[i]==false) {
 					//text-->구매완료 
@@ -106,6 +101,11 @@ public class HouseButtonEvent : MonoBehaviour {
 				} 
 				//아직 구매 안한 경우
 				else {
+					houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = BG_Price[i]+"원";
+					//어둡게
+					houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
+					//흑백아이콘
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/sel_bg_icon_" + i) as Sprite;
 					//버튼 비활성화
 					btnObj[i].SetActive(false);
 				}	
