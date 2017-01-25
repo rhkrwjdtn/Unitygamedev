@@ -9,16 +9,21 @@ public class IconManager : MonoBehaviour {
     public Image smallpizza;
     public Image burn;
     public Image Largepizza;
+
     public float startTime;
     public float checkTime;
+
     public int redbullcnt = 0;
     public int smallpizzacnt = 0;
     public int burncnt = 0;
     public int largepizzacnt = 0;
+    public int rebirthpotion = 0;
+
     public bool redbullClicked = false;
     public bool smallpizzaClicked = false;
     public bool burnClicked = false;
     public bool largepizzaClicked = false;
+
     public Button redbullbtn;
     public Button smallpizzabtn;
     public Button burnbtn;
@@ -28,6 +33,7 @@ public class IconManager : MonoBehaviour {
     public Text smallpizzacnt_text = null;
     public Text burncnt_text = null;
     public Text largepizzacnt_text = null;
+    public Text rebirthcnt_text = null;
 
     public Color close;
     public Color open;
@@ -42,10 +48,12 @@ public class IconManager : MonoBehaviour {
         smallpizzacnt = 3;
         burncnt = 1;
         largepizzacnt = 1;
+        rebirthpotion = 1;
         redbullcnt_text.text = redbullcnt + "개";
         smallpizzacnt_text.text = smallpizzacnt + "개";
         burncnt_text.text = burncnt + "개";
         largepizzacnt_text.text = largepizzacnt + "개";
+        rebirthcnt_text.text = rebirthpotion + "개";
 	}
 	
 	// Update is called once per frame
@@ -137,9 +145,9 @@ public class IconManager : MonoBehaviour {
         }
 
 
+        rebirthcnt_text.text = rebirthpotion + "개";
 
-
-	}
+    }
     public void redbullClick()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
