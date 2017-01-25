@@ -72,6 +72,19 @@ public class SaveManager : MonoBehaviour {
 		Application.Quit();
 	}
 
+	void OnApplicationQuit()
+	{
+		SaveData ();
+	}
+
+	void OnApplicationPause(bool pauseStatus)    //강제종료시
+	{
+		if(pauseStatus)
+		{
+			SaveData ();
+		}
+	}
+
 	public void SaveData(){           //저장버튼누르면 
 
 		BinaryFormatter bf = new BinaryFormatter ();
