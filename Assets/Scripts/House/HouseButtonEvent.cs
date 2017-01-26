@@ -15,6 +15,8 @@ public class HouseButtonEvent : MonoBehaviour {
 	public GameObject[] btnObj = new GameObject[SIZE];
 	public GameObject housepopup;
 
+	public TransMoney myTransMoney;
+
 	//각 배경에 해당하는 가격
 	public ulong[] BG_Price = new ulong[SIZE] { 13000, 53000, 230000, 1330000, 7500000,
 		29000000, 100000000 };
@@ -71,6 +73,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	}
 
 	public void HouseCheck(ulong money){
+
 		for (int i = 0; i < SIZE; i++) {
 			//돈 있을 때,
 			if (money > BG_Price [i]) {
@@ -87,7 +90,7 @@ public class HouseButtonEvent : MonoBehaviour {
 				}
 				//돈도 있고, 안샀다면,
 				else {
-					houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = BG_Price[i]+"원";
+					houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = myTransMoney.strTransMoney(BG_Price[i]);
 					//밝게
 					houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 					//컬러아이콘
@@ -112,7 +115,7 @@ public class HouseButtonEvent : MonoBehaviour {
 				} 
 				//아직 구매 안한 경우
 				else {
-					houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = BG_Price[i]+"원";
+					houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = myTransMoney.strTransMoney(BG_Price[i]);
 					//어둡게
 					houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 					//흑백아이콘
