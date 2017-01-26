@@ -127,7 +127,7 @@ public class SaveManager : MonoBehaviour {
 		//A --> B에 할당
 		data.money = myMoney.money;
 
-		data.selected_BG = myBGList.selected_BG;
+		data.selected_BG = myBGList.Selected_BG;
 			
 		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
 			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
@@ -207,7 +207,7 @@ public class SaveManager : MonoBehaviour {
 				try{
 					myMoney.money = data.money;
 
-					myBGList.selected_BG = data.selected_BG;
+					myBGList.Selected_BG = data.selected_BG;
 
 					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
 						myBGList.BG_BuyList[k] = data.BG_BuyList [k];

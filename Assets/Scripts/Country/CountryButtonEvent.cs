@@ -103,7 +103,7 @@ public class CountryButtonEvent : MonoBehaviour {
 					//가격표기, 어둡게, 흑백아이콘, 버튼비활성화
 					countryObj [i].transform.GetChild (1).GetComponent<Text> ().text = (i+1)*5+"조 원";
 					countryObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
-					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
 					btnObj[i].SetActive(false);
 				}	
 			}

@@ -8,7 +8,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	public const int SIZE=7;
 	//Image bgimg;
 	public Sprite bg;
-	public int selected_BG;
+	public int Selected_BG;
 	//house, icon img, btn obj
 	public GameObject[] houseObj = new GameObject[SIZE];
 	public GameObject[] imgObj = new GameObject[SIZE];
@@ -54,7 +54,7 @@ public class HouseButtonEvent : MonoBehaviour {
 		else {
 			if (signal) {		
 				//추후에 렉걸리면 방법을 바꿔야할듯...
-				GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg_"+selected_BG) as Sprite;
+				GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+Selected_BG) as Sprite;//("bg_img/bg_"+selected_BG) as Sprite;
 				signal = false; //한번만 실행하게끔...
 			}
 		}
@@ -81,7 +81,7 @@ public class HouseButtonEvent : MonoBehaviour {
 					//어둡게
 					houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 					//컬러
-					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/bg_icon_" + i) as Sprite;
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//("bg_icon/bg_icon_" + i) as Sprite;
 					//버튼 비활성화
 					btnObj[i].SetActive(false);
 				}
@@ -91,7 +91,7 @@ public class HouseButtonEvent : MonoBehaviour {
 					//밝게
 					houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 					//컬러아이콘
-					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/bg_icon_" + i) as Sprite;
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//("bg_icon/bg_icon_" + i) as Sprite;
 					//버튼 활성화
 					btnObj[i].SetActive(true);
 
@@ -106,7 +106,7 @@ public class HouseButtonEvent : MonoBehaviour {
 					//어둡게
 					houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 					//컬러
-					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/bg_icon_" + i) as Sprite;
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//("bg_icon/bg_icon_" + i) as Sprite;
 					//버튼 비활성화
 					btnObj[i].SetActive(false);
 				} 
@@ -116,7 +116,7 @@ public class HouseButtonEvent : MonoBehaviour {
 					//어둡게
 					houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 					//흑백아이콘
-					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/sel_bg_icon_" + i) as Sprite;
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/gray_bg"+i) as Sprite;//("bg_icon/sel_bg_icon_" + i) as Sprite;
 					//버튼 비활성화
 					btnObj[i].SetActive(false);
 				}	
@@ -142,9 +142,9 @@ public class HouseButtonEvent : MonoBehaviour {
 	}
 	public void HouseChangeBG(int sel_BG){
 		//리소스에서 배경파일 로드
-		bg = Resources.Load<Sprite> ("bg_img/bg_"+sel_BG) as Sprite;
-		selected_BG = sel_BG;
+		bg = Resources.Load<Sprite> ("bg_img/bg"+sel_BG) as Sprite;
 		Debug.Log ("btn "+sel_BG+"_onClick");
+		Selected_BG = sel_BG; //저장을 위해...
 	}
 	//구매한 경우 false로 표시 해줌
 	public void changeBGBuyEnable(int sel_BG){
