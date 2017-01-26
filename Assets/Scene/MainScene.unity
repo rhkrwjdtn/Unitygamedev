@@ -10895,7 +10895,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1647637271504632, guid: a5990c46484fd1d4192359bd76aa540e, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1970110020269344, guid: a5990c46484fd1d4192359bd76aa540e, type: 2}
       propertyPath: m_IsActive
@@ -27661,6 +27661,23 @@ MonoBehaviour:
   myungsasumoneyspeed: 100
   skatemoneyspeed: 500
   godhmoneyspeed: 1000
+  waren: {fileID: 1075479909}
+  dog: {fileID: 1620517777}
+  myulchi: {fileID: 902628280}
+  yapsap: {fileID: 716991195}
+  dungchi: {fileID: 777238598}
+  myungsasu: {fileID: 1004911098}
+  skate: {fileID: 459079129}
+  godh: {fileID: 528883190}
+  box: {fileID: 2008107561}
+  goldbox: {fileID: 1845770075}
+  imag: {fileID: 379828947}
+  myulchclose: {fileID: 1473284124}
+  yapsapclose: {fileID: 1576674070}
+  dungchclose: {fileID: 892001262}
+  myungsasuclose: {fileID: 13973661}
+  skateclose: {fileID: 300667176}
+  godhclose: {fileID: 1356086151}
   randomnum: 0
   dogLevel: 0
   myulchiLevel: 0
@@ -27684,23 +27701,6 @@ MonoBehaviour:
   myungsasupc: 0
   skatepc: 0
   godhpc: 0
-  waren: {fileID: 1075479909}
-  dog: {fileID: 1620517777}
-  myulchi: {fileID: 902628280}
-  yapsap: {fileID: 716991195}
-  dungchi: {fileID: 777238598}
-  myungsasu: {fileID: 1004911098}
-  skate: {fileID: 459079129}
-  godh: {fileID: 528883190}
-  box: {fileID: 2008107561}
-  goldbox: {fileID: 1845770075}
-  imag: {fileID: 379828947}
-  myulchclose: {fileID: 1473284124}
-  yapsapclose: {fileID: 1576674070}
-  dungchclose: {fileID: 892001262}
-  myungsasuclose: {fileID: 13973661}
-  skateclose: {fileID: 300667176}
-  godhclose: {fileID: 1356086151}
   dogbackground: {fileID: 379828949}
   myulchbackground: {fileID: 1963571139}
   yapsapbackground: {fileID: 1535077044}
@@ -31582,6 +31582,10 @@ Prefab:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1235265669}
+    - target: {fileID: 1040603712246316, guid: c8f3ef6c240b76e4e85da5b35c98dddc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8f3ef6c240b76e4e85da5b35c98dddc, type: 2}
   m_IsPrefabParent: 0
@@ -32028,6 +32032,14 @@ MonoBehaviour:
   myFlagList: {fileID: 1332941407}
   StockList: {fileID: 160836294}
   EndPanel: {fileID: 1525387811}
+  dog: {fileID: 1620517777}
+  myulchi: {fileID: 902628280}
+  yapsap: {fileID: 716991195}
+  dungchi: {fileID: 777238598}
+  myungsasu: {fileID: 1004911098}
+  skate: {fileID: 459079129}
+  godh: {fileID: 528883190}
+  employment: {fileID: 1235265669}
   loadlen: 0
 --- !u!4 &1458599541
 Transform:

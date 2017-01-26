@@ -10,6 +10,7 @@ public class SaveManager : MonoBehaviour {
 	const int BG_SIZE = 7;
 	const int FLAG_SIZE = 13;
 	const int STOCK_SIZE = 9;
+	const int CHAR_SIZE = 7;
 
 	public Moneyupdate myMoney;    //connect Moneyupdate
 	public ShopScrollList myStockList;       //connect MyStockList
@@ -17,6 +18,17 @@ public class SaveManager : MonoBehaviour {
 	public CountryButtonEvent myFlagList; //connect CountryManager
 	public ShopScrollList StockList; //connect StockList
 	public GameObject EndPanel;
+
+
+	public GameObject dog = null;
+	public GameObject myulchi = null;
+	public GameObject yapsap = null;
+	public GameObject dungchi = null;
+	public GameObject myungsasu = null;
+	public GameObject skate = null;
+	public GameObject godh = null;
+
+	public ButtonEnable employment;
 
 	public int loadlen;
 	/// <summary>
@@ -34,11 +46,26 @@ public class SaveManager : MonoBehaviour {
 		public int selected_BG;
 		public bool[] BG_BuyList = new bool[BG_SIZE];
 		public bool[] FLAG_BuyList = new bool[FLAG_SIZE];
+
 		public ulong[] stockprice = new ulong[STOCK_SIZE];
 		public ulong[] stockcount = new ulong[STOCK_SIZE];
 		public ulong[] stockaverage = new ulong[STOCK_SIZE];
 
+		public bool dogis = new bool();
+		public bool myulchiis = new bool();
+		public bool yapsapis = new bool();
+		public bool dungchiis = new bool();
+		public bool myungsasuis = new bool();
+		public bool skateis = new bool();
+		public bool godhis = new bool();
 
+		public int doglevel = new int ();
+		public int myulchilevel = new int ();
+		public int yapsapLevel = new int ();
+		public int dungchilevel = new int ();
+		public int myungsasulevel = new int ();
+		public int skatelevel = new int ();
+		public int godhlevel = new int ();
 	}
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -55,7 +82,7 @@ public class SaveManager : MonoBehaviour {
 
 
 
-	void Start () {
+	void Awake () {
 		LoadData();       //시작시 실행, 가장늦게되게끔 셋팅하기
 	}
 
@@ -107,13 +134,30 @@ public class SaveManager : MonoBehaviour {
 			data.FLAG_BuyList [k] = myFlagList.BuyList [k];
 		
 	
-		for (int i = 0; i < StockList.itemList.Count; i++){
+		for (int i = 0; i < StockList.itemList.Count; i++){                          //stock save
 			Debug.Log ("stock 현재가 @@@@@@"+StockList.itemList [i].price);
 			data.stockprice [i] = StockList.itemList [i].price;
 			data.stockcount [i] = StockList.itemList [i].count;
 			data.stockaverage [i] = StockList.itemList [i].Average;
 
 	}
+
+		data.dogis = dog.activeSelf;
+		data.myulchiis = myulchi.activeSelf;
+		data.yapsapis = yapsap.activeSelf;
+		data.dungchiis = dungchi.activeSelf;
+		data.myungsasuis = myungsasu.activeSelf;
+		data.skateis = skate.activeSelf;
+		data.godhis = godh.activeSelf;
+
+		data.doglevel = employment.dogLevel;
+		data.myulchilevel = employment.myulchiLevel;
+		data.yapsapLevel = employment.yapsapLevel;
+		data.dungchilevel = employment.dungchiLevel;
+		data.myungsasulevel = employment.myungsasuLevel;
+		data.skatelevel = employment.skateLevel;
+		data.godhlevel = employment.godhLevel;
+
 
 
 		//B 직렬화하여 파일에 담기
@@ -175,6 +219,27 @@ public class SaveManager : MonoBehaviour {
 						StockList.itemList [i].Average = data.stockaverage [i];
 					}
 					Debug.Log (money);
+
+					dog.SetActive(data.dogis);
+					myulchi.SetActive( data.myulchiis);
+					yapsap.SetActive(data.yapsapis);
+					dungchi.SetActive(data.dungchiis);
+					myungsasu.SetActive(data.myungsasuis);
+					skate.SetActive(data.skateis);
+					godh.SetActive(data.godhis);
+
+
+					employment.dogLevel = data.doglevel;
+					employment.myulchiLevel = data.myulchilevel ;
+					employment.yapsapLevel = data.yapsapLevel ;
+					employment.dungchiLevel = data.dungchilevel ;
+					employment.myungsasuLevel =data.myungsasulevel;
+					employment.skateLevel = data.skatelevel;
+					employment.godhLevel = data.godhlevel;
+
+		
+
+
 				}
 				catch(NullReferenceException NE){
 					Debug.Log ("저장된 값이 없는 항목이 있으므로 초기화 합니다.\n"+NE);
