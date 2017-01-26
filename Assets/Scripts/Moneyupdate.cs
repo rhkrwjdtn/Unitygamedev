@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class Moneyupdate : MonoBehaviour {
 
 	public Text moneytext;
+	public Text secondtext;
+	public Text touchtext;
+
 	public ulong money = 0;
 
 	public bool effectsound = true;
@@ -54,6 +57,8 @@ public class Moneyupdate : MonoBehaviour {
 
 	void Update(){
 
+		touchtext.text = System.Convert.ToUInt64 (touchspeed) + "원/클릭";
+		secondtext.text = System.Convert.ToUInt64 (moneyspeed) + "원/초";
 
 		if (won >0  && man == 0 &&  uck ==0 && jo == 0 && kuyng == 0) {
 			moneytext.text =  System.Convert.ToString (won) + "원";

@@ -28,6 +28,25 @@ public class ButtonEnable : MonoBehaviour {
     public ulong skatemoneyspeed = 500;
     public ulong godhmoneyspeed = 1000;
 
+
+	public GameObject waren = null;
+	public GameObject dog = null;
+	public GameObject myulchi = null;
+	public GameObject yapsap = null;
+	public GameObject dungchi = null;
+	public GameObject myungsasu = null;
+	public GameObject skate = null;
+	public GameObject godh = null;
+	public GameObject box = null;
+	public GameObject goldbox = null;
+	public GameObject imag = null;
+	public GameObject myulchclose = null;
+	public GameObject yapsapclose = null;
+	public GameObject dungchclose = null;
+	public GameObject myungsasuclose = null;
+	public GameObject skateclose = null;
+	public GameObject godhclose = null;
+
     public int randomnum = 0;
     public int dogLevel=0;
     public int myulchiLevel = 0;
@@ -54,23 +73,7 @@ public class ButtonEnable : MonoBehaviour {
     public int skatepc = 0;
     public int godhpc = 0;
 
-    public GameObject waren = null;
-    public GameObject dog = null;
-    public GameObject myulchi = null;
-    public GameObject yapsap = null;
-    public GameObject dungchi = null;
-    public GameObject myungsasu = null;
-    public GameObject skate = null;
-    public GameObject godh = null;
-    public GameObject box = null;
-    public GameObject goldbox = null;
-    public GameObject imag = null;
-    public GameObject myulchclose = null;
-    public GameObject yapsapclose = null;
-    public GameObject dungchclose = null;
-    public GameObject myungsasuclose = null;
-    public GameObject skateclose = null;
-    public GameObject godhclose = null;
+  
 
     public Image dogbackground;
     public Image myulchbackground;
@@ -312,6 +315,7 @@ public class ButtonEnable : MonoBehaviour {
         firstprice = ulong.Parse(dogprice);
         if(moneyu.money>=firstprice)
         {
+			
             dogLevel++;
             PlayerPrefs.SetInt("FirstPrice", dogpc);
             PlayerPrefs.SetInt("DogLevel", dogLevel);
