@@ -1,13 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\House\HouseButtonEvent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AssetsCS\AssetsEvent.cs">
     <Files>
-      <File FileName="Assets\Scripts\SaveManager.cs" Line="97" Column="3" />
-      <File FileName="Assets\Scripts\House\HouseButtonEvent.cs" Line="75" Column="13" />
-      <File FileName="Assets\Scripts\AssetsCS\AssetsEvent.cs" Line="148" Column="3" />
-      <File FileName="Assets\Scripts\Country\CountryButtonEvent.cs" Line="55" Column="4" />
-      <File FileName="Assets\Scripts\House\BackgroundSave.cs" Line="13" Column="2" />
-      <File FileName="Assets\Scripts\ShopScrollList.cs" Line="216" Column="3" />
+      <File FileName="Assets\Scripts\SaveManager.cs" Line="123" Column="39" />
+      <File FileName="Assets\Scripts\House\HouseButtonEvent.cs" Line="121" Column="33" />
+      <File FileName="Assets\Scripts\AssetsCS\AssetsEvent.cs" Line="115" Column="79" />
+      <File FileName="Assets\Scripts\Country\CountryButtonEvent.cs" Line="106" Column="83" />
+      <File FileName="Assets\Scripts\ShopScrollList.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
