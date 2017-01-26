@@ -84,6 +84,8 @@ public class SaveManager : MonoBehaviour {
 
 	void Awake () {
 		LoadData();       //시작시 실행, 가장늦게되게끔 셋팅하기
+
+
 	}
 
 

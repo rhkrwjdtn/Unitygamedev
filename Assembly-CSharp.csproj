@@ -67,8 +67,16 @@
      <Compile Include="Assets\Scripts\Spoon\spoonmanager.cs" />
      <Compile Include="Assets\Scripts\StartManager.cs" />
      <Compile Include="Assets\Scripts\StockButton.cs" />
+<<<<<<< HEAD
      <Compile Include="Assets\Scripts\TransMoney.cs" />
+=======
+<<<<<<< HEAD
+     <Compile Include="Assets\Scripts\startstock.cs" />
+     <None Include="Assets\Resources\Flag\refererence.txt" />
+=======
+>>>>>>> 21ba1a1840e384767dd35739aad2e7e7d53ccb8c
      <None Include="Assets\Resources\Flag\original\refererence.txt" />
+>>>>>>> 6a90f73f5cdb6e0f7173517510890b95545ecd5d
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
