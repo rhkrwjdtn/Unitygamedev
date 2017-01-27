@@ -184,7 +184,7 @@ public class AssetsEvent : MonoBehaviour {
 	}
 
 	//connect Button onClick event
-	public void Asset_setBG (int btn){
+	public void Asset_HouseOnClick (int btn){
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
 		MU.money += HE.BG_Price[btn]*2;
