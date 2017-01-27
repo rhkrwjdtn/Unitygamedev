@@ -57,6 +57,7 @@ public class EmploymentManager : MonoBehaviour
                     TwoNextLevelPrice[i] = NextLevelPrice[i];
                     gobsem[i] = 1;
                     speedplus[i] = 2;
+                    moneyspeed[i] = 2;
                 }
                 if (i % 2 == 1)
                 {
@@ -65,9 +66,11 @@ public class EmploymentManager : MonoBehaviour
                     TwoNextLevelPrice[i] = NextLevelPrice[i];
                     gobsem[i] = gobsem[i - 1] * 5;
                     speedplus[i] = speedplus[i - 1] * 5;
+                    moneyspeed[i] = speedplus[i];
                     if (i == 3)
                     {
                         speedplus[i] = 20;
+                        moneyspeed[i] = 20;
                     }
                 }
                 if (i % 2 == 0 && i != 0)
@@ -77,9 +80,11 @@ public class EmploymentManager : MonoBehaviour
                     TwoNextLevelPrice[i] = NextLevelPrice[i];
                     gobsem[i] = gobsem[i - 1] * 2;
                     speedplus[i] = speedplus[i - 1] * 2;
+                    moneyspeed[i] = speedplus[i];
                     if (i == 4)
                     {
                         speedplus[i] = 50;
+                        moneyspeed[i] = 50;
                     }
                 }
 
@@ -89,7 +94,12 @@ public class EmploymentManager : MonoBehaviour
             btn_text[i].text = "비용:" + TwoNextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
             name_text[i].text = "" + EmployerLevel[i];
             btnClick[i] = false;
+            if(EmployerLevel[i]>=10)
+            {
+                ClosePopup[i].active = false;
+            }
         }
+        
 
     }
 
@@ -137,16 +147,17 @@ public class EmploymentManager : MonoBehaviour
                     btn_text[i].fontSize = 8;
                     btn_text[i].text = "비용:" + TwoNextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
                     name_text[i].text = "" + EmployerLevel[i];
+                    Employer[i].active = true;
                 }
                 
                 else if (moneyu.money < NextLevelPrice[i])
                 {
                     plusmoney[i] = plusmoney[i]- EmployerLevel[i];
-                    NextLevelPrice[i] = 10000 + 200 * (plusmoney[i]) * gobsem[i];
-
+                    NextLevelPrice[i] = (10000 + 200 * (plusmoney[i])) * gobsem[i];
+                    TwoNextLevelPrice[i] = (10000 + (200 * (plusmoney[i] + (EmployerLevel[i] + 1)))) * gobsem[i];
                 }
                 
-                Employer[i].active = true;
+
                 if (EmployerLevel[i] >= 10 && i != 6)
                 {
                     ClosePopup[i].active = false;
@@ -164,29 +175,35 @@ public class EmploymentManager : MonoBehaviour
     public void myulchibtnClick()
     {
         btnClick[1] = true;
+        BtnClickedEvent();
     }
 
     public void yapsapbtnClick()
     {
         btnClick[2] = true;
+        BtnClickedEvent();
     }
 
     public void dungchibtnClick()
     {
         btnClick[3] = true;
+        BtnClickedEvent();
     }
 
     public void myungsasubtnClick()
     {
         btnClick[4] = true;
+        BtnClickedEvent();
     }
 
     public void skatebtnClick()
     {
         btnClick[5] = true;
+        BtnClickedEvent();
     }
     public void godhbtnClick()
     {
         btnClick[6] = true;
+        BtnClickedEvent();
     }
 }

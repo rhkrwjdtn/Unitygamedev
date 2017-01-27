@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224818747532744662}
   - component: {fileID: 222023586103516314}
+  - component: {fileID: 114765799395604040}
   m_Layer: 5
   m_Name: EmployManager
   m_TagString: Untagged
@@ -27,6 +28,78 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114765799395604040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1709769119342516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a449e61cc28781d4bb19bfd39c19ca3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  price: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  moneyspeed: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  speedplus: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Employer:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  ClosePopup:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  EmployerLevel: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  plusmoney: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  Twoplusmoney: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  NextLevelPrice: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  TwoNextLevelPrice: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  StartLevelPrice: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  gobsem: 010000000000000005000000000000000a0000000000000032000000000000006400000000000000f401000000000000e803000000000000
+  BackgroundColor:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  close: {r: 0.69803923, g: 0.68235296, b: 0.68235296, a: 1}
+  open: {r: 1, g: 1, b: 1, a: 1}
+  firstLevelprice: 10000
+  btn_text:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  name_text:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  btnClick: 00000000000000
 --- !u!222 &222023586103516314
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -48,6 +121,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 119.99999, y: 191.37749}
+  m_AnchoredPosition: {x: 338, y: 295.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
