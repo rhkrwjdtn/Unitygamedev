@@ -6987,9 +6987,24 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 224366966515428422, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.30000305
+      objectReference: {fileID: 0}
+    - target: {fileID: 224536181630970520, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba88c273675081c48a253e58d98f6f97, type: 2}
   m_IsPrefabParent: 0
+--- !u!224 &297461103 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224536181630970520, guid: ba88c273675081c48a253e58d98f6f97,
+    type: 2}
+  m_PrefabInternal: {fileID: 297461102}
 --- !u!1 &297681844
 GameObject:
   m_ObjectHideFlags: 0
@@ -9795,7 +9810,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uC740\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uC911"
 --- !u!222 &395696287
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23538,7 +23553,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD604\uAE081\uC870\uC774\uC0C1\n\uB09C\uC774\uB3C4 : \uC911\uD558"
 --- !u!222 &869096228
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23992,7 +24007,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD604\uAE08 1\uC5B5\uC774\uC0C1\n\uB09C\uC774\uB3C4 : \uD558"
 --- !u!222 &890830523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30087,7 +30102,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uAE08\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uC0C1"
 --- !u!222 &1102489247
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33639,7 +33654,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD68C\uC0AC \uD55C\uAC1C \uB300\uC8FC\uC8FC\uB418\uAE30(1\uC5B5\uC8FC)\n\uB09C\uC774\uB3C4
+    : \uC0C1"
 --- !u!222 &1228003476
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34280,7 +34296,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD604\uAE08 100\uC5B5\uC774\uC0C1\n\uB09C\uC774\uB3C4 : \uD558"
 --- !u!222 &1237690014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -35547,7 +35563,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uB179\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uC911\uD558"
 --- !u!222 &1278391578
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37854,7 +37870,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD604\uAE08 100\uD574\uC774\uC0C1\n\uB09C\uC774\uB3C4 : \uCD5C\uC0C1"
 --- !u!222 &1359206275
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40770,7 +40786,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD604\uAE08 1\uD574\uC774\uC0C1\n\uB09C\uC774\uB3C4 : \uC0C1"
 --- !u!222 &1467809180
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40844,7 +40860,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD604\uAE08 1\uACBD\uC774\uC0C1\n\uB09C\uC774\uB3C4 : \uC911\uC0C1"
 --- !u!222 &1470439472
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41389,7 +41405,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD50C\uB77C\uC2A4\uD2F1\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4
+    : \uD558"
 --- !u!222 &1489820569
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -51052,7 +51069,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD604\uAE08 100\uACBD\uC774\uC0C1\n\uB09C\uC774\uB3C4 : \uC0C1"
 --- !u!222 &1842725386
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54060,6 +54077,176 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cbba69b8fa014a947bfc8d3b86c35e77, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &1944560250
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 297461103}
+    m_Modifications:
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 100.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224112215300155482, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224214818475042154, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224214818475042154, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224214818475042154, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224214818475042154, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.6576667
+      objectReference: {fileID: 0}
+    - target: {fileID: 224616068520799322, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224616068520799322, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224616068520799322, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224616068520799322, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.6576667
+      objectReference: {fileID: 0}
+    - target: {fileID: 224616068520799322, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224616068520799322, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.0000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592631200857418, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592631200857418, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592631200857418, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114592631200857418, guid: b481ef16f44d19949a4734bd95a3767e,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: b481ef16f44d19949a4734bd95a3767e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1949770223
 GameObject:
   m_ObjectHideFlags: 0
@@ -54205,7 +54392,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uD604\uAE08100\uC870\uC774\uC0C1\n\uB09C\uC774\uB3C4 : \uC911\uC0C1"
 --- !u!222 &1956743103
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -57127,7 +57314,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4 : \uD558"
+  m_Text: "\uB2E4\uC774\uC544\uBAAC\uB4DC\uC218\uC800 \uB2EC\uC131\uD558\uAE30\n\uB09C\uC774\uB3C4
+    : \uC0C1"
 --- !u!222 &2080582129
 CanvasRenderer:
   m_ObjectHideFlags: 0
