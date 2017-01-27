@@ -164,7 +164,7 @@ public class AssetsEvent : MonoBehaviour {
 			//주식 보유한 경우
 			if (myStockList.stockassetpercent [i] > 0.0f) {
 				//구매가, 밝게, 컬러아이콘, 버튼활성화 
-				Asset_StockObj[i].transform.GetChild(1).GetComponent<Text>().text =  "현재 주가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ myStockList.stockassetpercent[i].ToString("N2");
+				Asset_StockObj[i].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]*100).ToString("N2")+"%";
 				Asset_StockObj [i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
 				Asset_StockBtnObj[i].SetActive(true);
@@ -173,7 +173,7 @@ public class AssetsEvent : MonoBehaviour {
 			//보유하지 않은 경우
 			else {
 				//미구매 , 어둡게, 흑백아이콘, 버튼비활성화
-				Asset_StockObj [i].transform.GetChild (1).GetComponent<Text> ().text = "주식 미보유";
+				Asset_StockObj [i].transform.GetChild (1).GetComponent<Text> ().text = "미보유";
 				Asset_StockObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
 				Asset_StockBtnObj[i].SetActive(false);
