@@ -11,6 +11,8 @@ public class CountryButtonEvent : MonoBehaviour {
 	public GameObject[] btnObj = new GameObject[SIZE];
 	public GameObject countryPopup;
 
+	public TransMoney myTransMoney;
+
 	public GameObject flagObj;
 
 	public ulong[] Price = new ulong[SIZE]; //가격
@@ -81,7 +83,7 @@ public class CountryButtonEvent : MonoBehaviour {
 				//돈도 있고, 안샀다면,
 				else {
 					//가격표기, 밝게, 컬러아이콘, 버튼활성화
-					countryObj [i].transform.GetChild (1).GetComponent<Text> ().text = (i+1)*5+"조 원";
+					countryObj [i].transform.GetChild (1).GetComponent<Text> ().text = myTransMoney.strTransMoney(Price[i]);
 					countryObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
 					btnObj[i].SetActive(true);
@@ -101,7 +103,7 @@ public class CountryButtonEvent : MonoBehaviour {
 				//아직 구매 안한 경우
 				else {
 					//가격표기, 어둡게, 흑백아이콘, 버튼비활성화
-					countryObj [i].transform.GetChild (1).GetComponent<Text> ().text = (i+1)*5+"조 원";
+					countryObj [i].transform.GetChild (1).GetComponent<Text> ().text = myTransMoney.strTransMoney(Price[i]);
 					countryObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
 					btnObj[i].SetActive(false);
