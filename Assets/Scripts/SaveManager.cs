@@ -293,12 +293,12 @@ public class SaveManager : MonoBehaviour {
 
 					saveitem.stockNum = listdata.stockNum;
 
-					if (StockList.itemList [saveitem.stockNum].count > 0) {
-						myStockList.AddItem (StockList.itemList [saveitem.stockNum], myStockList);
 
-						myStockList.MyRemoveButtons ();
-						myStockList.MyAddButtons ();
-					}
+					myStockList.AddItem (StockList.itemList[saveitem.stockNum], myStockList);
+
+					myStockList.MyRemoveButtons ();
+					myStockList.MyAddButtons ();
+
 
 
 				}
