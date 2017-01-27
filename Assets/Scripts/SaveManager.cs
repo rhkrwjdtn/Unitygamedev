@@ -64,6 +64,9 @@ public class SaveManager : MonoBehaviour {
         public ulong[] sTwoNextLevelPrice = new ulong[CHAR_SIZE];
         public ulong[] splusmoney = new ulong[CHAR_SIZE];
         public ulong[] smoneyspeed = new ulong[CHAR_SIZE];
+        public ulong[] speedplus = new ulong[CHAR_SIZE];
+        public ulong[] gobsem = new ulong[CHAR_SIZE];
+
          
 		//public int doglevel = new int ();
 		//public int myulchilevel = new int ();
@@ -165,6 +168,8 @@ public class SaveManager : MonoBehaviour {
             data.splusmoney[i] = Realemployment.plusmoney[i];
             data.smoneyspeed[i] = Realemployment.moneyspeed[i];
             data.sTwoNextLevelPrice[i] = Realemployment.TwoNextLevelPrice[i];
+            data.gobsem[i] = Realemployment.gobsem[i];
+            data.speedplus[i] = Realemployment.speedplus[i];
 
         }
 
@@ -253,6 +258,8 @@ public class SaveManager : MonoBehaviour {
                         Realemployment.moneyspeed[i] = data.smoneyspeed[i];
                         Realemployment.plusmoney[i] = data.splusmoney[i];
                         Realemployment.EmployerLevel[i] = data.sEmployerLevel[i];
+                        Realemployment.speedplus[i] = data.speedplus[i];
+                        Realemployment.gobsem[i] = data.gobsem[i];
                     }
 					//employment.dogLevel = data.doglevel;
 					//employment.myulchiLevel = data.myulchilevel ;
