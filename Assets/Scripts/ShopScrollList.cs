@@ -39,24 +39,10 @@ public class ShopScrollList : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		
-		//Debug.Log ("회사의 개수는@@@@@@@@@@@@@@@@@@@@@@"+itemList.Count);
-		//Screen.SetResolution(Screen.width, (Screen.width / 10) * 16 ,true); 
-		//Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
-		//Screen.SetResolution( 300, 480, true );
-		//RefreshDisplay ();
-		/*for(int i=0; i<itemList.Count; i++){
-			if (otherShop.itemList.Contains (itemList[i])){
+		stockassetprice = new ulong[STOCK_SIZE];
+		stockassetpercent = new float[STOCK_SIZE];
 
-				stockassetprice [i] = itemList [i].price * itemList[i].count;
-				stockassetpercent[i] = (float)((itemList [i].count / 100000000)*100f);
 
-				Debug.Log ("i번째 회사의 내 총자산가격은"+stockassetprice [i]+"i번째 회사의 내 %은"+stockassetpercent[i]);
-			}else {
-				stockassetprice [i] = 0;
-				stockassetpercent [i] = 0f;
-			}
-		}*/
 	}
 
 	public void RefreshDisplay()
@@ -66,12 +52,16 @@ public class ShopScrollList : MonoBehaviour {
 		AddButtons ();
 
 
+		StackAsset ();
+
+
+	}
+
+	public void StackAsset(){
 		for(int i=0; i<itemList.Count; i++){
-			stockassetprice = new ulong[STOCK_SIZE];
-			stockassetpercent = new float[STOCK_SIZE];
 
 			if (otherShop.itemList.Contains (itemList[i])){
-				
+
 				stockassetprice [i] = itemList [i].price * itemList[i].count;
 				stockassetpercent[i] = ((float)itemList [i].count / 1000000);
 
@@ -81,7 +71,6 @@ public class ShopScrollList : MonoBehaviour {
 				stockassetpercent [i] = 0f;
 			}
 		}
-	
 	}
 
 

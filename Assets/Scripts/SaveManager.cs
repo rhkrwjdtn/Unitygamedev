@@ -29,6 +29,7 @@ public class SaveManager : MonoBehaviour {
 	public GameObject godh = null;
 
 	public ButtonEnable employment;
+    public EmploymentManager Realemployment;
 
 	public int loadlen;
 	/// <summary>
@@ -59,13 +60,22 @@ public class SaveManager : MonoBehaviour {
 		public bool skateis = new bool();
 		public bool godhis = new bool();
 
-		public int doglevel = new int ();
-		public int myulchilevel = new int ();
-		public int yapsapLevel = new int ();
-		public int dungchilevel = new int ();
-		public int myungsasulevel = new int ();
-		public int skatelevel = new int ();
-		public int godhlevel = new int ();
+        public ulong[] sEmployerLevel = new ulong[CHAR_SIZE];
+        public ulong[] sTwoNextLevelPrice = new ulong[CHAR_SIZE];
+        public ulong[] splusmoney = new ulong[CHAR_SIZE];
+        public ulong[] smoneyspeed = new ulong[CHAR_SIZE];
+        public ulong[] speedplus = new ulong[CHAR_SIZE];
+        public ulong[] gobsem = new ulong[CHAR_SIZE];
+
+         
+		//public int doglevel = new int ();
+		//public int myulchilevel = new int ();
+		//public int yapsapLevel = new int ();
+		//public int dungchilevel = new int ();
+		//public int myungsasulevel = new int ();
+		//public int skatelevel = new int ();
+		//public int godhlevel = new int ();
+
 	}
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -152,13 +162,24 @@ public class SaveManager : MonoBehaviour {
 		data.skateis = skate.activeSelf;
 		data.godhis = godh.activeSelf;
 
-		data.doglevel = employment.dogLevel;
-		data.myulchilevel = employment.myulchiLevel;
-		data.yapsapLevel = employment.yapsapLevel;
-		data.dungchilevel = employment.dungchiLevel;
-		data.myungsasulevel = employment.myungsasuLevel;
-		data.skatelevel = employment.skateLevel;
-		data.godhlevel = employment.godhLevel;
+        for(int i=0; i<CHAR_SIZE;i++)
+        {
+            data.sEmployerLevel[i] = Realemployment.EmployerLevel[i];
+            data.splusmoney[i] = Realemployment.plusmoney[i];
+            data.smoneyspeed[i] = Realemployment.moneyspeed[i];
+            data.sTwoNextLevelPrice[i] = Realemployment.TwoNextLevelPrice[i];
+            data.gobsem[i] = Realemployment.gobsem[i];
+            data.speedplus[i] = Realemployment.speedplus[i];
+
+        }
+
+		//data.doglevel = employment.dogLevel;
+		//data.myulchilevel = employment.myulchiLevel;
+		//data.yapsapLevel = employment.yapsapLevel;
+		//data.dungchilevel = employment.dungchiLevel;
+		//data.myungsasulevel = employment.myungsasuLevel;
+		//data.skatelevel = employment.skateLevel;
+		//data.godhlevel = employment.godhLevel;
 
 
 
@@ -231,13 +252,22 @@ public class SaveManager : MonoBehaviour {
 					godh.SetActive(data.godhis);
 
 
-					employment.dogLevel = data.doglevel;
-					employment.myulchiLevel = data.myulchilevel ;
-					employment.yapsapLevel = data.yapsapLevel ;
-					employment.dungchiLevel = data.dungchilevel ;
-					employment.myungsasuLevel =data.myungsasulevel;
-					employment.skateLevel = data.skatelevel;
-					employment.godhLevel = data.godhlevel;
+                    for(int i=0;i<CHAR_SIZE;i++)
+                    {
+                        Realemployment.TwoNextLevelPrice[i] = data.sTwoNextLevelPrice[i];
+                        Realemployment.moneyspeed[i] = data.smoneyspeed[i];
+                        Realemployment.plusmoney[i] = data.splusmoney[i];
+                        Realemployment.EmployerLevel[i] = data.sEmployerLevel[i];
+                        Realemployment.speedplus[i] = data.speedplus[i];
+                        Realemployment.gobsem[i] = data.gobsem[i];
+                    }
+					//employment.dogLevel = data.doglevel;
+					//employment.myulchiLevel = data.myulchilevel ;
+					//employment.yapsapLevel = data.yapsapLevel ;
+					//employment.dungchiLevel = data.dungchilevel ;
+					//employment.myungsasuLevel =data.myungsasulevel;
+					//employment.skateLevel = data.skatelevel;
+					//employment.godhLevel = data.godhlevel;
 
 		
 
@@ -293,12 +323,12 @@ public class SaveManager : MonoBehaviour {
 
 					saveitem.stockNum = listdata.stockNum;
 
+					if (StockList.itemList [saveitem.stockNum].count > 0) {
+						myStockList.AddItem (StockList.itemList [saveitem.stockNum], myStockList);
 
-					myStockList.AddItem (StockList.itemList[saveitem.stockNum], myStockList);
-
-					myStockList.MyRemoveButtons ();
-					myStockList.MyAddButtons ();
-
+						myStockList.MyRemoveButtons ();
+						myStockList.MyAddButtons ();
+					}
 
 
 				}

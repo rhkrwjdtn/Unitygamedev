@@ -16,7 +16,7 @@ public class BoxManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+/*
         ButtonEnable be = GameObject.Find("EmployManager").GetComponent<ButtonEnable>();
         waren_ex = be.waren_exist;
         timespa = be.timespan;
@@ -29,5 +29,6 @@ public class BoxManager : MonoBehaviour {
                 timespa = 0;
             }
         }
+        */
 	}
 }
