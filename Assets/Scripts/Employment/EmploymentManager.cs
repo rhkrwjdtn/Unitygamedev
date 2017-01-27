@@ -54,6 +54,7 @@ public class EmploymentManager : MonoBehaviour
                 {
                     StartLevelPrice[0] = 10000;
                     NextLevelPrice[i] = StartLevelPrice[i];
+                    TwoNextLevelPrice[i] = NextLevelPrice[i];
                     gobsem[i] = 1;
                     speedplus[i] = 2;
                 }
@@ -61,6 +62,7 @@ public class EmploymentManager : MonoBehaviour
                 {
                     StartLevelPrice[i] = StartLevelPrice[i - 1] * 5;
                     NextLevelPrice[i] = StartLevelPrice[i];
+                    TwoNextLevelPrice[i] = NextLevelPrice[i];
                     gobsem[i] = gobsem[i - 1] * 5;
                     speedplus[i] = speedplus[i - 1] * 5;
                     if (i == 3)
@@ -72,6 +74,7 @@ public class EmploymentManager : MonoBehaviour
                 {
                     StartLevelPrice[i] = StartLevelPrice[i - 1] * 2;
                     NextLevelPrice[i] = StartLevelPrice[i];
+                    TwoNextLevelPrice[i] = NextLevelPrice[i];
                     gobsem[i] = gobsem[i - 1] * 2;
                     speedplus[i] = speedplus[i - 1] * 2;
                     if (i == 4)
@@ -82,8 +85,8 @@ public class EmploymentManager : MonoBehaviour
 
 
             }
-            btn_text[i].fontSize = 9;
-            btn_text[i].text = "비용:" + NextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
+            btn_text[i].fontSize = 8;
+            btn_text[i].text = "비용:" + TwoNextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
             name_text[i].text = "" + EmployerLevel[i];
             btnClick[i] = false;
         }
@@ -131,7 +134,7 @@ public class EmploymentManager : MonoBehaviour
                     moneyspeed[i] += speedplus[i];
                     moneyu.moneyspeed += moneyspeed[i];
 
-                    btn_text[i].fontSize = 9;
+                    btn_text[i].fontSize = 8;
                     btn_text[i].text = "비용:" + TwoNextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
                     name_text[i].text = "" + EmployerLevel[i];
                 }
