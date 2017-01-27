@@ -84,6 +84,8 @@ public class SaveManager : MonoBehaviour {
 
 	void Awake () {
 		LoadData();       //시작시 실행, 가장늦게되게끔 셋팅하기
+
+
 	}
 
 
@@ -125,7 +127,7 @@ public class SaveManager : MonoBehaviour {
 		//A --> B에 할당
 		data.money = myMoney.money;
 
-		data.selected_BG = myBGList.selected_BG;
+		data.selected_BG = myBGList.Selected_BG;
 			
 		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
 			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
@@ -205,7 +207,7 @@ public class SaveManager : MonoBehaviour {
 				try{
 					myMoney.money = data.money;
 
-					myBGList.selected_BG = data.selected_BG;
+					myBGList.Selected_BG = data.selected_BG;
 
 					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
 						myBGList.BG_BuyList[k] = data.BG_BuyList [k];
@@ -291,12 +293,12 @@ public class SaveManager : MonoBehaviour {
 
 					saveitem.stockNum = listdata.stockNum;
 
+					if (StockList.itemList [saveitem.stockNum].count > 0) {
+						myStockList.AddItem (StockList.itemList [saveitem.stockNum], myStockList);
 
-					myStockList.AddItem (StockList.itemList[saveitem.stockNum], myStockList);
-
-					myStockList.MyRemoveButtons ();
-					myStockList.MyAddButtons ();
-
+						myStockList.MyRemoveButtons ();
+						myStockList.MyAddButtons ();
+					}
 
 
 				}

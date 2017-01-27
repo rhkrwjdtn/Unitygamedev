@@ -15,7 +15,7 @@ public class Item
 }
 
 public class ShopScrollList : MonoBehaviour {
-
+	const int STOCK_SIZE = 9;
 
 	public List<Item> itemList;
 	public Transform contentPanel;
@@ -26,7 +26,8 @@ public class ShopScrollList : MonoBehaviour {
 	public Item thisitem;
 	public Moneyupdate moneyManager;
 
-
+	public ulong[] stockassetprice;
+	public float[] stockassetpercent;
 
 	public InputField buyField;
 	public InputField sellField;
@@ -38,10 +39,9 @@ public class ShopScrollList : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		//Screen.SetResolution(Screen.width, (Screen.width / 10) * 16 ,true); 
-		//Screen.SetResolution(Screen.width, (Screen.width / 2) * 3 ,true); 
-		//Screen.SetResolution( 300, 480, true );
-		//RefreshDisplay ();
+		stockassetprice = new ulong[STOCK_SIZE];
+		stockassetpercent = new float[STOCK_SIZE];
+
 
 	}
 
@@ -51,6 +51,26 @@ public class ShopScrollList : MonoBehaviour {
 		RemoveButtons ();       
 		AddButtons ();
 
+
+		StackAsset ();
+
+
+	}
+
+	public void StackAsset(){
+		for(int i=0; i<itemList.Count; i++){
+
+			if (otherShop.itemList.Contains (itemList[i])){
+
+				stockassetprice [i] = itemList [i].price * itemList[i].count;
+				stockassetpercent[i] = ((float)itemList [i].count / 1000000);
+
+				Debug.Log (i+"번째 회사의 내 총자산가격은"+stockassetprice [i]+i+"번째 회사의 내 %은"+stockassetpercent[i].ToString("N2"));
+			}else {
+				stockassetprice [i] = 0;
+				stockassetpercent [i] = 0f;
+			}
+		}
 	}
 
 
@@ -132,7 +152,7 @@ public class ShopScrollList : MonoBehaviour {
 		Debug.Log ("현재돈은"+moneyManager.money);
 		if (thisitem.count < 100000000&& thisitem.count>= 0) {
 
-			if (thisitem.price != 0 && num > 0 && num < 100000000 && (thisitem.count+num) < 100000000) {
+			if (thisitem.price != 0 && num > 0 && num <= 100000000 && (thisitem.count+num) <= 100000000) {
 
 
 				if (moneyManager.money >= (num * thisitem.price)) {

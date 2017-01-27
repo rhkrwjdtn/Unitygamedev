@@ -24,6 +24,8 @@ public class AssetsEvent : MonoBehaviour {
 	public Moneyupdate MU;
 	public HouseButtonEvent myBGList; //connect HouseManager
 	public CountryButtonEvent myFlagList; //connect CountryManager
+	public ShopScrollList myStockList; //connect StockList/viewport/content
+	public TransMoney myTransMoney; //connect MoneyManager
 	/*
 	2. 아이템(인벤토리)
 		a. 집, 땅, 국가 3가지를 탭 형식으로 구성
@@ -83,11 +85,11 @@ public class AssetsEvent : MonoBehaviour {
 		for (int i = 0; i < houseSIZE; i++) {
 			//이미 구매한 경우
 			if (myBGList.BG_BuyList [i] == false) {
-				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "구매가:"+myBGList.BG_Price[i]+"원\n임시...:"+myBGList.BG_Price[i]*2+"원";
+				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "구매가:"+ myTransMoney.strTransMoney(myBGList.BG_Price[i])+"\n(임시):"+myTransMoney.strTransMoney(myBGList.BG_Price[i]*2);
 				//밝게
 				Asset_houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				//컬러아이콘
-				Asset_houseImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/bg_icon_" + i) as Sprite;
+				Asset_houseImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//("bg_icon/bg_icon_" + i) as Sprite;
 				//버튼 활성화
 				Asset_houseBtnObj[i].SetActive(true);
 
@@ -97,7 +99,7 @@ public class AssetsEvent : MonoBehaviour {
 				//어둡게
 				Asset_houseObj [i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				//흑백
-				Asset_houseImgObj [i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_icon/sel_bg_icon_" + i) as Sprite;
+				Asset_houseImgObj [i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/gray_bg"+i) as Sprite;//bg_icon/sel_bg_icon_" + i) as Sprite;
 				//버튼 비활성화
 				Asset_houseBtnObj [i].SetActive (false);
 
@@ -110,7 +112,7 @@ public class AssetsEvent : MonoBehaviour {
 			//이미 구매한 경우
 			if (myFlagList.BuyList [i] == false) {
 				//구매가, 밝게, 컬러아이콘, 버튼활성화 
-				Asset_countryObj[i].transform.GetChild(1).GetComponent<Text>().text =  "구매가:"+(i+1)*5+"조 원\n(임시)가:"+myFlagList.Price[i]*2+"원";
+				Asset_countryObj[i].transform.GetChild(1).GetComponent<Text>().text =  "구매가:"+ myTransMoney.strTransMoney(myFlagList.Price[i])+"\n(임시):"+ myTransMoney.strTransMoney(myFlagList.Price[i]*2);
 				Asset_countryObj [i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
 				Asset_countryBtnObj[i].SetActive(true);
@@ -118,10 +120,10 @@ public class AssetsEvent : MonoBehaviour {
 			}
 			//돈도 있고, 안샀다면,
 			else {
-				//미구매 , 어둡게, 컬러아이콘, 버튼비활성화
+				//미구매 , 어둡게, 흑백아이콘, 버튼비활성화
 				Asset_countryObj [i].transform.GetChild (1).GetComponent<Text> ().text = "미구매";
 				Asset_countryObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
-				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
+				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
 				Asset_countryBtnObj[i].SetActive(false);
 
 
@@ -136,7 +138,8 @@ public class AssetsEvent : MonoBehaviour {
 		MU.money += HE.BG_Price[btn]*2;
 		HE.changeBGBuyEnable (btn);
 		//기본배경으로 초기화
-		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg_default") as Sprite;
+		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg99") as Sprite;
+		HE.Selected_BG = (int)99;
 	}
 	//connect Button onClick event
 	public void Asset_CountryOnClick (int btn){

@@ -53,7 +53,6 @@
      <Compile Include="Assets\Scripts\Employment\ButtonEnable.cs" />
      <Compile Include="Assets\Scripts\Employment\Employment.cs" />
      <Compile Include="Assets\Scripts\GirlFriend\GirlFriendBtn1.cs" />
-     <Compile Include="Assets\Scripts\House\BackgroundSave.cs" />
      <Compile Include="Assets\Scripts\House\HouseButtonEvent.cs" />
      <Compile Include="Assets\Scripts\IconManager\IconManager.cs" />
      <Compile Include="Assets\Scripts\MainManager.cs" />
@@ -68,10 +67,9 @@
      <Compile Include="Assets\Scripts\Spoon\spoonmanager.cs" />
      <Compile Include="Assets\Scripts\StartManager.cs" />
      <Compile Include="Assets\Scripts\StockButton.cs" />
-     <None Include="Assets\Resources\Flag\refererence.txt" />
- <Reference Include="UnityEngine.Advertisements">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
- </Reference>
+     <Compile Include="Assets\Scripts\TransMoney.cs" />
+     <Compile Include="Assets\Scripts\startstock.cs" />
+     <None Include="Assets\Resources\Flag\original\refererence.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -86,9 +84,6 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
