@@ -153,7 +153,7 @@ public class SaveManager : MonoBehaviour {
 			data.stockcount [i] = StockList.itemList [i].count;
 			data.stockaverage [i] = StockList.itemList [i].Average;
 
-	}
+		}
 
 		data.dogis = dog.activeSelf;
 		data.myulchiis = myulchi.activeSelf;

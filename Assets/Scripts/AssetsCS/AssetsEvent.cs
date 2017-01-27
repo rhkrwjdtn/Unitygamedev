@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class AssetsEvent : MonoBehaviour {
 
-
 	//houseAssets
 	public const int houseSIZE=7;
 	public Sprite bg;
@@ -98,6 +97,8 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_StockBtnObj [i] = Asset_StockObj [i].transform.FindChild ("Button").gameObject;
 				Asset_StockBtnObj [i].transform.GetChild(0).GetComponent<Text> ().text = "SELL";
 			}
+			//자산은 여기서 listUpdate함, 왜냐면, 집이랑 국가는 
+				Asset_StockCheck ();/////1
 		}
 	}
 
@@ -106,8 +107,8 @@ public class AssetsEvent : MonoBehaviour {
 			Asset_HouseCheck ();
 		if(Asset_countryPopup.activeSelf==true)
 			Asset_CountryCheck ();
-		if(Asset_StockPopup.activeSelf==true)
-			Asset_StockCheck ();
+	//	if(Asset_StockPopup.activeSelf==true)
+	//		Asset_StockCheck ();
 	}
 
 	public void Asset_HouseCheck(){
@@ -159,15 +160,21 @@ public class AssetsEvent : MonoBehaviour {
 			}
 		}
 	}
-	public void Asset_StockCheck(){ //
+	public void Asset_StockCheck(){
+		int ItemN = 0;
+		int nonItemN = 0;
 		for (int i = 0; i < StockSIZE; i++) {
 			//주식 보유한 경우
 			if (myStockList.stockassetpercent [i] > 0.0f) {
 				//구매가, 밝게, 컬러아이콘, 버튼활성화 
-				Asset_StockObj[i].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]*100).ToString("N2")+"%";
+				Asset_StockObj[i].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]).ToString("N2")+"%";
 				Asset_StockObj [i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
 				Asset_StockBtnObj[i].SetActive(true);
+
+
+				Asset_StockObj [i].transform.position = new Vector3((float)110, (float)(92.0f-(float)ItemN*40.0f));
+				ItemN++;
 
 			}
 			//보유하지 않은 경우
@@ -178,7 +185,9 @@ public class AssetsEvent : MonoBehaviour {
 				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
 				Asset_StockBtnObj[i].SetActive(false);
 
-
+				//맨 밑에서 부터..
+				Asset_StockObj [i].transform.position = new Vector3((float)110, (float)(92.0f-(float)countrySIZE*40.0f)+(float)(nonItemN)*40.0f);
+				nonItemN++;
 			}
 		}
 	}

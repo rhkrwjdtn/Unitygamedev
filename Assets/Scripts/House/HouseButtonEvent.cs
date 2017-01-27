@@ -8,7 +8,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	public const int SIZE=7;
 	//Image bgimg;
 	public Sprite bg;
-	public int Selected_BG;
+	public int Selected_BG=99;
 	//house, icon img, btn obj
 	public GameObject[] houseObj = new GameObject[SIZE];
 	public GameObject[] imgObj = new GameObject[SIZE];
