@@ -39,7 +39,7 @@ public class StockButton : MonoBehaviour {
 
 		} else if (item.price >= minprice) {
 
-			float stockRate = (float)Random.Range (-29, 30) / 100;
+			float stockRate = (float)Random.Range (-28, 30) / 100;
 			item.price = (ulong)(item.price + item.price * stockRate);
 
 		} 
