@@ -14,8 +14,10 @@ public class CountryButtonEvent : MonoBehaviour {
 	public TransMoney myTransMoney;
 
 	public GameObject flagObj;
-
-	public ulong[] Price = new ulong[SIZE]; //가격
+	static ulong tempP = 5000000000000;
+	public ulong[] Price = new ulong[SIZE] {tempP, tempP*2, tempP*3, tempP*5, tempP*6,
+		tempP*10, tempP*15, tempP*20, tempP*30, tempP*50, 
+		tempP*80, tempP*100, tempP*200}; //가격
 	public bool[] BuyList = new bool[SIZE] {true, true, true, true, true, 
 		true, true, true, true, true, 
 		true, true, true}; //구매 여부

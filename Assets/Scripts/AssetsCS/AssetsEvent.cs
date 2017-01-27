@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class AssetsEvent : MonoBehaviour {
 
+
 	//houseAssets
 	public const int houseSIZE=7;
 	public Sprite bg;
@@ -12,6 +13,7 @@ public class AssetsEvent : MonoBehaviour {
 	public GameObject[] Asset_houseObj = new GameObject[houseSIZE];
 	public GameObject[] Asset_houseImgObj = new GameObject[houseSIZE];
 	public GameObject[] Asset_houseBtnObj = new GameObject[houseSIZE];
+
 	//countryAssets
 	public const int countrySIZE=13;
 	public GameObject Asset_countryPopup;//connect tab1
@@ -19,8 +21,15 @@ public class AssetsEvent : MonoBehaviour {
 	public GameObject[] Asset_countryImgObj = new GameObject[countrySIZE];
 	public GameObject[] Asset_countryBtnObj = new GameObject[countrySIZE];
 
+	//StockAssets
+	public const int StockSIZE=9;
+	public GameObject Asset_StockPopup;//connect tab1
+	public GameObject[] Asset_StockObj = new GameObject[StockSIZE];
+	public GameObject[] Asset_StockImgObj = new GameObject[StockSIZE];
+	public GameObject[] Asset_StockBtnObj = new GameObject[StockSIZE];
 
-	//AssetsManager에서 이 두 cs를 묶어줘야함.
+
+	//AssetsManager에서 묶어줘야함.
 	public Moneyupdate MU;
 	public HouseButtonEvent myBGList; //connect HouseManager
 	public CountryButtonEvent myFlagList; //connect CountryManager
@@ -45,6 +54,11 @@ public class AssetsEvent : MonoBehaviour {
 			Asset_countryObj[i] = null;
 			Asset_countryImgObj[i] = null;
 			Asset_countryBtnObj[i] = null;
+		}
+		for (int i = 0; i < StockSIZE; i++) {
+			Asset_StockObj[i] = null;
+			Asset_StockImgObj[i] = null;
+			Asset_StockBtnObj[i] = null;
 		}
 	}
 	//connect tabbutton0
@@ -73,12 +87,27 @@ public class AssetsEvent : MonoBehaviour {
 			}
 		}
 	}
+	//connect tabbutton1
+	public void Asset_StockInitiate(){
+		if (Asset_StockPopup.activeSelf == true) {
+			for (int i = 0; i < StockSIZE; i++) {
+				//Stock,iconimg,btn오브젝트
+				Asset_StockObj [i] = GameObject.Find ("Company ("+i+")").gameObject;
+				Asset_StockObj [i].transform.GetChild (1).GetComponent<Text> ().fontSize = 10;
+				Asset_StockImgObj [i] = Asset_StockObj [i].transform.FindChild ("Image").gameObject;
+				Asset_StockBtnObj [i] = Asset_StockObj [i].transform.FindChild ("Button").gameObject;
+				Asset_StockBtnObj [i].transform.GetChild(0).GetComponent<Text> ().text = "SELL";
+			}
+		}
+	}
 
 	void Update () {
 		if(Asset_housePopup.activeSelf==true)
 			Asset_HouseCheck ();
 		if(Asset_countryPopup.activeSelf==true)
 			Asset_CountryCheck ();
+		if(Asset_StockPopup.activeSelf==true)
+			Asset_StockCheck ();
 	}
 
 	public void Asset_HouseCheck(){
@@ -130,6 +159,29 @@ public class AssetsEvent : MonoBehaviour {
 			}
 		}
 	}
+	public void Asset_StockCheck(){ //
+		for (int i = 0; i < StockSIZE; i++) {
+			//주식 보유한 경우
+			if (myStockList.stockassetpercent [i] > 0.0f) {
+				//구매가, 밝게, 컬러아이콘, 버튼활성화 
+				Asset_StockObj[i].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]*100).ToString("N2")+"%";
+				Asset_StockObj [i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
+				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
+				Asset_StockBtnObj[i].SetActive(true);
+
+			}
+			//보유하지 않은 경우
+			else {
+				//미구매 , 어둡게, 흑백아이콘, 버튼비활성화
+				Asset_StockObj [i].transform.GetChild (1).GetComponent<Text> ().text = "미보유";
+				Asset_StockObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
+				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
+				Asset_StockBtnObj[i].SetActive(false);
+
+
+			}
+		}
+	}
 
 	//connect Button onClick event
 	public void Asset_setBG (int btn){
@@ -141,6 +193,7 @@ public class AssetsEvent : MonoBehaviour {
 		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg99") as Sprite;
 		HE.Selected_BG = (int)99;
 	}
+
 	//connect Button onClick event
 	public void Asset_CountryOnClick (int btn){
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
@@ -148,5 +201,15 @@ public class AssetsEvent : MonoBehaviour {
 		MU.money += CE.Price[btn]*2;
 		CE.countryDel (btn);
 		CE.changeBuyEnable (btn);
+	}
+
+	//connect Button onClick event
+	public void Asset_StockOnClick (int btn){
+		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
+		//ShopScrollList SE= GameObject.Find("CountryManager").GetComponent<ShopScrollList>();
+		MU.money += myStockList.stockassetprice[btn];
+
+		//CE.countryDel (btn);
+		//CE.changeBuyEnable (btn);
 	}
 }	
