@@ -52,7 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bg: {fileID: 0}
-  Asset_housePopup: {fileID: 0}
+  Asset_housePopup: {fileID: 1028112271385260, guid: 14e2d21a7c3deab46ac2483d3757c400,
+    type: 2}
   Asset_houseObj:
   - {fileID: 0}
   - {fileID: 0}
@@ -77,7 +78,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Asset_countryPopup: {fileID: 0}
+  Asset_countryPopup: {fileID: 1954361381026640, guid: 14e2d21a7c3deab46ac2483d3757c400,
+    type: 2}
   Asset_countryObj:
   - {fileID: 0}
   - {fileID: 0}
@@ -120,7 +122,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Asset_StockPopup: {fileID: 0}
+  Asset_StockPopup: {fileID: 1314072290198052, guid: 14e2d21a7c3deab46ac2483d3757c400,
+    type: 2}
   Asset_StockObj:
   - {fileID: 0}
   - {fileID: 0}
