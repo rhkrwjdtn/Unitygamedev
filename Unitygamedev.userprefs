@@ -1,14 +1,15 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Country\CountryButtonEvent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AssetsCS\AssetsEvent.cs">
     <Files>
-      <File FileName="Assets\Scripts\SaveManager.cs" Line="26" Column="30" />
-      <File FileName="Assets\Scripts\House\HouseButtonEvent.cs" Line="93" Column="98" />
-      <File FileName="Assets\Scripts\AssetsCS\AssetsEvent.cs" Line="137" Column="89" />
-      <File FileName="Assets\Scripts\Country\CountryButtonEvent.cs" Line="106" Column="110" />
-      <File FileName="Assets\Scripts\ShopScrollList.cs" Line="11" Column="25" />
+      <File FileName="Assets\Scripts\SaveManager.cs" Line="48" Column="52" />
+      <File FileName="Assets\Scripts\House\HouseButtonEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AssetsCS\AssetsEvent.cs" Line="163" Column="40" />
+      <File FileName="Assets\Scripts\Country\CountryButtonEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShopScrollList.cs" Line="80" Column="20" />
       <File FileName="Assets\Scripts\TransMoney.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Moneyupdate.cs" Line="63" Column="1" />
+      <File FileName="Assets\Scripts\Moneyupdate.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Employment\ButtonEnable.cs" Line="338" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
