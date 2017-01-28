@@ -21,7 +21,7 @@ public class CharacterInfo : MonoBehaviour {
             btn = gameObject.GetComponent<UnityEngine.UI.Button>();
 
         }
-        PlayerPrefs.SetInt("JugallumLevel", JugallumLev);
+       // PlayerPrefs.SetInt("JugallumLevel", JugallumLev);
         LevelupbtnText.text = "레벨:" + JugallumLev;
         NowClickWonTx.text = "0원 -> 0원";
         EmployBonusTx.text = "0%";
