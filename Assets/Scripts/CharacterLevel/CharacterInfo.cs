@@ -11,12 +11,17 @@ public class CharacterInfo : MonoBehaviour {
 
     public ulong NextLevelPrice = 0;
     public ulong TwoNextLevelPrice = 0;
-    public ulong TouchMoney = 0;
+    public ulong TouchMoney = 5;
+    public ulong TouchMoneyGobhagiBonusPersent = 1;
 
     public ulong BonusgobTouchmoney = 0;
 
     public float bntcm = 0;
-
+    public float GFBonus = 1;
+    public float totalClickmoney = 0;
+    public int sosoodelete = 0;
+    public int noretry = 0;
+    
     public Text LevelText = null;
     public Text LevelupbtnText = null;
     public Text NowClickWonTx = null;
@@ -26,26 +31,22 @@ public class CharacterInfo : MonoBehaviour {
 
     public bool[] GFTruetoFalse = new bool[6];
 
+    public int[] GFbg = new int[6] { 30, 50, 100, 300, 500, 800 };
     public float[] GFgob = new float[6] { 1.3f, 1.5f, 2.0f, 3.0f, 5.0f, 8.0f };
+    public float[] GFnonugi = new float[6] {10/13f, 10/15f, 1/2f, 1/3f, 1/5f, 1/8f };
 
     public string GFTransform = null;
-
+    public string ToTalTransform = null;
 	// Use this for initialization
+
 	void Start () {
 	if(btn==null)
         {
             btn = gameObject.GetComponent<UnityEngine.UI.Button>();
 
         }
-       // PlayerPrefs.SetInt("JugallumLevel", JugallumLev);
-        LevelupbtnText.text = "레벨:" + JugallumLev;
 
-        NowClickWonTx.text = "0원 -> 0원";
-        EmployBonusTx.text = "0%";
-        StockBonusTx.text = "0%";
-        GFBonusTx.text = "0%";
-
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -54,19 +55,35 @@ public class CharacterInfo : MonoBehaviour {
         GrilFriendManager gf = GameObject.Find("GirlFriendManager").GetComponent<GrilFriendManager>();
         for (int i = 0; i < 6; i++)
         {
-            if(gf.GFExist[i] == true)
+            if(gf.GFExist[i] == true&&noretry==0)
             {
+
                 bntcm = (float)moneyu.touchspeed * GFgob[i];
-                GFTransform = bntcm.ToString();
+                GFBonus = GFgob[i];
+                sosoodelete =(int) bntcm;
+                GFTransform = sosoodelete.ToString();
                 moneyu.touchspeed = ulong.Parse(GFTransform);
                 GFTruetoFalse[i] = true;
+                noretry++;
+                GFBonusTx.text =""+GFbg[i]+"%";
             }
             else if(gf.GFExist[i]==false && GFTruetoFalse[i]==true)
             {
-
+                bntcm = (float)moneyu.touchspeed * GFnonugi[i];
+                Debug.Log(GFnonugi[0]);
+                GFBonus = 1;
+                sosoodelete = (int)bntcm;
+                GFTransform = sosoodelete.ToString();
+                moneyu.touchspeed = ulong.Parse(GFTransform);
+                GFTruetoFalse[i] = false;
+                noretry--;
+                GFBonusTx.text = "0%";
             }
         }
-	}
+        NowClickWonTx.text = TouchMoney + "원 ->" + moneyu.touchspeed + "원";
+
+
+    }
     public void btnClick()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
@@ -79,7 +96,10 @@ public class CharacterInfo : MonoBehaviour {
         {
             moneyu.money=moneyu.money - NextLevelPrice;
             JugallumLev++;
-
+            totalClickmoney = (float)TouchMoney * GFBonus;//기업 인수 보너스 알바 보너스 추가 하기
+            sosoodelete = (int)totalClickmoney;
+            ToTalTransform = sosoodelete.ToString();
+            moneyu.touchspeed = ulong.Parse(ToTalTransform);
             LevelText.text = "둥신 LV" + JugallumLev;
             LevelupbtnText.fontSize = 8;
             LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + "100" + "/클릭";
