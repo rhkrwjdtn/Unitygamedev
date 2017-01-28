@@ -12,6 +12,7 @@ public class SaveManager : MonoBehaviour {
 	const int STOCK_SIZE = 9;
 	const int CHAR_SIZE = 7;
 
+
 	public Moneyupdate myMoney;    //connect Moneyupdate
 	public ShopScrollList myStockList;       //connect MyStockList
 	public HouseButtonEvent myBGList; //connect HouseManager
@@ -30,6 +31,7 @@ public class SaveManager : MonoBehaviour {
 
 	public ButtonEnable employment;
     public EmploymentManager Realemployment;
+    public IconManager icon;
 
 	public int loadlen;
 	/// <summary>
@@ -68,16 +70,12 @@ public class SaveManager : MonoBehaviour {
         public ulong[] gobsem = new ulong[CHAR_SIZE];
         public ulong[] sstrartlevelprice = new ulong[CHAR_SIZE];
 
-         
-		//public int doglevel = new int ();
-		//public int myulchilevel = new int ();
-		//public int yapsapLevel = new int ();
-		//public int dungchilevel = new int ();
-		//public int myungsasulevel = new int ();
-		//public int skatelevel = new int ();
-		//public int godhlevel = new int ();
-
-	}
+        public int redbullcnt;
+        public int smallpizzacnt;
+        public int burncnt;
+        public int largepizzacnt;
+        public int rebirthpotion;
+    }
 
 	[Serializable] //B 직렬화가능한 클래스
 	public class StockData
@@ -174,14 +172,11 @@ public class SaveManager : MonoBehaviour {
             data.sstrartlevelprice[i] = Realemployment.StartLevelPrice[i];
         }
 
-		//data.doglevel = employment.dogLevel;
-		//data.myulchilevel = employment.myulchiLevel;
-		//data.yapsapLevel = employment.yapsapLevel;
-		//data.dungchilevel = employment.dungchiLevel;
-		//data.myungsasulevel = employment.myungsasuLevel;
-		//data.skatelevel = employment.skateLevel;
-		//data.godhlevel = employment.godhLevel;
-
+        data.redbullcnt = icon.redbullcnt;
+        data.smallpizzacnt = icon.smallpizzacnt;
+        data.burncnt = icon.burncnt;
+        data.largepizzacnt = icon.largepizzacnt;
+        data.rebirthpotion = icon.rebirthpotion;
 
 
 		//B 직렬화하여 파일에 담기
@@ -267,16 +262,12 @@ public class SaveManager : MonoBehaviour {
                         Realemployment.gobsem[i] = data.gobsem[i];
                         Realemployment.StartLevelPrice[i] = data.sstrartlevelprice[i];
                     }
-					//employment.dogLevel = data.doglevel;
-					//employment.myulchiLevel = data.myulchilevel ;
-					//employment.yapsapLevel = data.yapsapLevel ;
-					//employment.dungchiLevel = data.dungchilevel ;
-					//employment.myungsasuLevel =data.myungsasulevel;
-					//employment.skateLevel = data.skatelevel;
-					//employment.godhLevel = data.godhlevel;
-
+                    icon.redbullcnt = data.redbullcnt;
+                    icon.smallpizzacnt = data.smallpizzacnt;
+                    icon.burncnt = data.burncnt;
+                    icon.largepizzacnt = data.largepizzacnt;
+                    icon.rebirthpotion = data.rebirthpotion;
 		
-
 
 				}
 				catch(NullReferenceException NE){

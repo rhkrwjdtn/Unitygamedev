@@ -13,11 +13,11 @@ public class IconManager : MonoBehaviour {
     public float startTime;
     public float checkTime;
 
-    public int redbullcnt = 0;
-    public int smallpizzacnt = 0;
-    public int burncnt = 0;
-    public int largepizzacnt = 0;
-    public int rebirthpotion = 0;
+    public int redbullcnt = 3;
+    public int smallpizzacnt = 3;
+    public int burncnt = 1;
+    public int largepizzacnt = 1;
+    public int rebirthpotion = 1;
 
     public bool redbullClicked = false;
     public bool smallpizzaClicked = false;
@@ -44,11 +44,6 @@ public class IconManager : MonoBehaviour {
 	void Start () {
         startTime = 0.0f;
         checkTime = 10.0f;
-        redbullcnt = 3;
-        smallpizzacnt = 3;
-        burncnt = 1;
-        largepizzacnt = 1;
-        rebirthpotion = 1;
         redbullcnt_text.text = redbullcnt + "개";
         smallpizzacnt_text.text = smallpizzacnt + "개";
         burncnt_text.text = burncnt + "개";
@@ -60,7 +55,14 @@ public class IconManager : MonoBehaviour {
 	void Update () {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 
-        if(redbullClicked==true)
+
+        redbullcnt_text.text = redbullcnt + "개";
+        smallpizzacnt_text.text = smallpizzacnt + "개";
+        burncnt_text.text = burncnt + "개";
+        largepizzacnt_text.text = largepizzacnt + "개";
+        rebirthcnt_text.text = rebirthpotion + "개";
+
+        if (redbullClicked==true)
         {
             startTime += Time.deltaTime;
             if(startTime>checkTime)

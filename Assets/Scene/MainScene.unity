@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9997447, g: 0.9997447, b: 0.9997447, a: 1}
+  m_IndirectSpecularColor: {r: 0.9997449, g: 0.9997449, b: 0.9997449, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -17654,6 +17654,31 @@ Prefab:
       propertyPath: rebirthcnt_text
       value: 
       objectReference: {fileID: 1808525616}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: redbullcnt
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: smallpizzacnt
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: burncnt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: largepizzacnt
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114178106296832668, guid: 9681c1659aef9b94da9ee1119dc07a82,
+        type: 2}
+      propertyPath: rebirthpotion
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9681c1659aef9b94da9ee1119dc07a82, type: 2}
   m_IsPrefabParent: 0
@@ -30906,6 +30931,7 @@ MonoBehaviour:
   godh: {fileID: 528883190}
   employment: {fileID: 0}
   Realemployment: {fileID: 1235265669}
+  icon: {fileID: 1642078308}
   loadlen: 0
 --- !u!4 &1458599541
 Transform:
