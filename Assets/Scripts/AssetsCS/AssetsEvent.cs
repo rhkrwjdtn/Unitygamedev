@@ -68,6 +68,8 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_houseObj [i] = GameObject.Find ("House"+i).gameObject;
 				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().fontSize = 10;
 				Asset_houseImgObj [i] = Asset_houseObj [i].transform.FindChild ("Image").gameObject;
+				//Asset_StockObj [i].transform.position = new Vector3((float)110, (float)(92.0f-(float)ItemN*40.0f));
+				//Asset_houseImgObj [i].transform.position.y = 
 				Asset_houseBtnObj [i] = Asset_houseObj [i].transform.FindChild ("Button").gameObject;
 				Asset_houseBtnObj [i].transform.GetChild(0).GetComponent<Text> ().text = "SELL";
 			}
@@ -98,7 +100,7 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_StockBtnObj [i].transform.GetChild(0).GetComponent<Text> ().text = "SELL";
 			}
 			//자산은 여기서 listUpdate함, 왜냐면, 집이랑 국가는 
-				Asset_StockCheck ();/////1
+			Asset_StockCheck ();/////1
 		}
 	}
 
@@ -166,8 +168,9 @@ public class AssetsEvent : MonoBehaviour {
 		for (int i = 0; i < StockSIZE; i++) {
 			//주식 보유한 경우
 			if (myStockList.stockassetpercent [i] > 0.0f) {
+				Debug.Log("보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[ItemN])+"\n지분율:"+ (myStockList.stockassetpercent[ItemN]).ToString("N2")+"%");
 				//구매가, 밝게, 컬러아이콘, 버튼활성화 
-				Asset_StockObj[ItemN].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[ItemN])+"\n지분율:"+ (myStockList.stockassetpercent[ItemN]).ToString("N2")+"%";
+				Asset_StockObj[ItemN].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]).ToString("N2")+"%";
 				Asset_StockObj [ItemN].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
 				Asset_StockBtnObj[ItemN].SetActive(false);
