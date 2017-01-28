@@ -227,6 +227,13 @@ public class AssetsEvent : MonoBehaviour {
 		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg99") as Sprite;
 		HE.Selected_BG = (int)99;
 	}
+	//connect Button onClick event
+	public void Asset_changeHouse (int btn){
+		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
+		//기본배경으로 초기화
+		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg99") as Sprite;
+		HE.Selected_BG = (int)btn;
+	}
 
 	//connect Button onClick event
 	public void Asset_CountryOnClick (int btn){
