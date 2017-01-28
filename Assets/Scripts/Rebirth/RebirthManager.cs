@@ -15,6 +15,8 @@ public class RebirthManager : MonoBehaviour {
     public GameObject popup = null;
     public Button rebirthbtn = null;
     public Text potcnt_text = null;
+    public GameObject[] Alramspoon = new GameObject[7];
+    public GameObject AlramPopup = null;
     // Use this for initialization
     void Start () {
 		
@@ -45,33 +47,43 @@ public class RebirthManager : MonoBehaviour {
             if (totalrandum <= 4000)
             {
                 gmfrrebirth();
+                Alramspoon[0].active = true;
             }
             else if (totalrandum <= 6500 && totalrandum > 4000)
             {
                 plasticrebirth();
+                Alramspoon[1].active = true;
             }
             else if (totalrandum <= 8000 && totalrandum > 6500)
             {
                 nokrebirth();
+                Alramspoon[2].active = true;
             }
             else if (totalrandum <= 9000 && totalrandum > 8000)
             {
                 dongrebirth();
+                Alramspoon[3].active = true;
             }
             else if (totalrandum <= 9500 && totalrandum > 9000)
             {
                 silverrebirth();
+                Alramspoon[4].active = true;
             }
             else if (totalrandum <= 9800 && totalrandum > 9500)
             {
                 goldrebirth();
+                Alramspoon[5].active = true;
             }
             else if (totalrandum <= 10000 && totalrandum > 9800)
             {
                 diarebirth();
+                Alramspoon[6].active = true;
             }
             popup.active = false;
             potioncnt.rebirthpotion -= 1;
+            AlramPopup.active = true;
+
+
         }
 
     }

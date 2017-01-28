@@ -94,7 +94,7 @@ public class EmploymentManager : MonoBehaviour
             btn_text[i].text = "비용:" + TwoNextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
             name_text[i].text = "" + EmployerLevel[i];
             btnClick[i] = false;
-            if(EmployerLevel[i]>=10)
+            if(EmployerLevel[i]>=10 && i!=6)
             {
                 ClosePopup[i].active = false;
             }
