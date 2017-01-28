@@ -134,7 +134,7 @@ public class HouseButtonEvent : MonoBehaviour {
 			HouseChangeBG (btn);
 			changeBGBuyEnable (btn);
 			//배경 오브젝트의 스프라이트를 변경
-			GameObject.Find ("Background").GetComponent<Image> ().sprite = bg;
+			
 		//}
 	}
 	public void HouseMoneyEvent(int sel_BG){
@@ -145,7 +145,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	}
 	public void HouseChangeBG(int sel_BG){
 		//리소스에서 배경파일 로드
-		bg = Resources.Load<Sprite> ("bg_img/bg"+sel_BG) as Sprite;
+		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+sel_BG) as Sprite;
 		Debug.Log ("btn "+sel_BG+"_onClick");
 		Selected_BG = sel_BG; //저장을 위해...
 	}
