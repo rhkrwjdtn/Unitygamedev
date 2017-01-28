@@ -49,6 +49,39 @@ public class GrilFriendManager : MonoBehaviour {
             ClosePopup[4].active = false;
         }
 
+        for (int i = 0; i < 6; i++)
+        {
+            if (GFExist[i] == true)
+            {
+
+                for (int j = 0; j < 6; j++)
+                {
+                    if (i != j)
+                    {
+                        btn[j].enabled = false;
+                        Backgroundcl[j].color = close;
+
+                    }
+                }
+                ison[i] = true;
+                GirlFriend[i].active = true;
+                btn_text[i].text = "헤어지기";
+            }
+            else if (ison[i] == true)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    if (i != j)
+                    {
+                        btn[j].enabled = true;
+                        Backgroundcl[j].color = open;
+                    }
+                }
+                ison[i] = false;
+                GirlFriend[i].active = false;
+            }
+        }
+
     }
     public void GFBtnClicked()
     {
@@ -66,7 +99,7 @@ public class GrilFriendManager : MonoBehaviour {
                         {
                             btn[j].enabled = false;
                             Backgroundcl[j].color = close;
-
+                            
                          }
                     }
                 ison[i] = true;

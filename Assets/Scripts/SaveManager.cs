@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour {
 	const int FLAG_SIZE = 13;
 	const int STOCK_SIZE = 9;
 	const int CHAR_SIZE = 7;
+    const int GIRL_SIZE = 6;
 
 
 	public Moneyupdate myMoney;    //connect Moneyupdate
@@ -31,6 +32,7 @@ public class SaveManager : MonoBehaviour {
 
 	public ButtonEnable employment;
     public EmploymentManager Realemployment;
+    public GrilFriendManager girlf;
     public IconManager icon;
 
 	public int loadlen;
@@ -75,6 +77,8 @@ public class SaveManager : MonoBehaviour {
         public int burncnt;
         public int largepizzacnt;
         public int rebirthpotion;
+
+        public bool[] GFExist = new bool[6];
     }
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -178,6 +182,11 @@ public class SaveManager : MonoBehaviour {
         data.largepizzacnt = icon.largepizzacnt;
         data.rebirthpotion = icon.rebirthpotion;
 
+        for(int i=0;i<GIRL_SIZE;i++)
+        {
+            data.GFExist[i] = girlf.GFExist[i];
+        }
+
 
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
@@ -268,7 +277,10 @@ public class SaveManager : MonoBehaviour {
                     icon.largepizzacnt = data.largepizzacnt;
                     icon.rebirthpotion = data.rebirthpotion;
 		
-
+                    for(int i=0;i<GIRL_SIZE;i++)
+                    {
+                        girlf.GFExist[i] = data.GFExist[i];
+                    }
 				}
 				catch(NullReferenceException NE){
 					Debug.Log ("저장된 값이 없는 항목이 있으므로 초기화 합니다.\n"+NE);
