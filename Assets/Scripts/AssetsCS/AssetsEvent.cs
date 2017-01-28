@@ -124,7 +124,8 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_houseImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//("bg_icon/bg_icon_" + i) as Sprite;
 				//버튼 활성화
 				Asset_houseBtnObj[i].SetActive(true);
-
+				//배경 바꾸기 O
+				Asset_houseImgObj[i].GetComponent<Button>().enabled = true;
 			}
 			else {
 				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "미구매";
@@ -134,7 +135,8 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_houseImgObj [i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/gray_bg"+i) as Sprite;//bg_icon/sel_bg_icon_" + i) as Sprite;
 				//버튼 비활성화
 				Asset_houseBtnObj [i].SetActive (false);
-
+				//배경 바꾸기 X
+				Asset_houseImgObj[i].GetComponent<Button>().enabled = false;
 			}
 
 		}
