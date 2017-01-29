@@ -11,7 +11,7 @@ public class StockButton : MonoBehaviour {
 	public Text countText;
 	public Text averageText;
 
-	private ulong minprice=500;
+	private ulong minprice=1200;
 	private ulong maxprice=700000;
 	private Item item;
 	private ShopScrollList scrollList;
@@ -33,19 +33,29 @@ public class StockButton : MonoBehaviour {
 		 if (item.price > maxprice) {
 			float stockRate = (float)Random.Range (-30, 0) / 100;
 			item.price = (ulong)(item.price + item.price * stockRate);
+			priceText.text = "<color=#0000ff>" + item.price.ToString () + "</color>";    //blue
+
 		}else if (item.price < minprice) {
 			float stockRate = (float)Random.Range (0, 30) / 100;
 			item.price = (ulong)(item.price + item.price * stockRate);
+			priceText.text = "<color=#ff0000>" + item.price.ToString () + "</color>";    //red
 
 		} else if (item.price >= minprice) {
 
 			float stockRate = (float)Random.Range (-28, 30) / 100;
 			item.price = (ulong)(item.price + item.price * stockRate);
+			if (stockRate > 0) {
+				priceText.text = "<color=#ff0000>" + item.price.ToString () + "</color>";    //red
+			} else if (stockRate == 0) {
+				priceText.text = item.price.ToString ();
+			} else if (stockRate < 0) {
+				priceText.text = "<color=#0000ff>" + item.price.ToString () + "</color>";    //blue
+			}
 
 		} 
 
 		nameLabel.text = item.stockName;
-		priceText.text = item.price.ToString ();
+
 		//countText.text = item.count.ToString ();
 		//averageText.text = item.Average.ToString ();
 		scrollList = currentScrollList;

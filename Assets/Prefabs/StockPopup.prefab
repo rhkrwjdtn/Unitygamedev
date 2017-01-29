@@ -759,7 +759,7 @@ MonoBehaviour:
     m_Top: -20
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: -50
+  m_Spacing: -60
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -1199,7 +1199,7 @@ MonoBehaviour:
     m_Top: -20
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: -50
+  m_Spacing: -60
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -1478,7 +1478,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "\uBCF4\uC720\uC885\uBAA9\n\uC885\uBAA9\uBA85         \uD3C9\uADE0\uB9E4\uC785\uAC00
     \      \uBCF4\uC720\uC218\uB7C9"
@@ -2229,7 +2229,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: "\uC774\uC804"
 --- !u!114 &114995374784777524
 MonoBehaviour:
   m_ObjectHideFlags: 1
