@@ -27494,7 +27494,7 @@ MonoBehaviour:
   myStockList: {fileID: 1242519733}
   myBGList: {fileID: 1585983344}
   myFlagList: {fileID: 1332941407}
-  myGoalList: {fileID: 0}
+  myGoalList: {fileID: 2046030459}
   StockList: {fileID: 160836294}
   EndPanel: {fileID: 1525387811}
   dog: {fileID: 1620517777}
