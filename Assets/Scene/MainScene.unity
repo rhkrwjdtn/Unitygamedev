@@ -1805,7 +1805,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -18134,7 +18134,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -23068,7 +23068,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -27494,6 +27494,7 @@ MonoBehaviour:
   myStockList: {fileID: 1242519733}
   myBGList: {fileID: 1585983344}
   myFlagList: {fileID: 1332941407}
+  myGoalList: {fileID: 0}
   StockList: {fileID: 160836294}
   EndPanel: {fileID: 1525387811}
   dog: {fileID: 1620517777}
@@ -36449,14 +36450,14 @@ MonoBehaviour:
   MU: {fileID: 1929893890}
   goal_Popup: {fileID: 1706488672}
   goal_SpoonObj: {fileID: 0}
-  Spoon_Lv: 0
+  goal_Spoon_Lv: 0
+  MoneyTmp: 
   Spoon_Text:
   - "\uB179"
   - "\uB3D9"
   - "\uC740"
   - "\uAE08"
   - "\uB2E4\uC774\uC544"
-  MoneyTmp: 
 --- !u!224 &2046030460
 RectTransform:
   m_ObjectHideFlags: 0
