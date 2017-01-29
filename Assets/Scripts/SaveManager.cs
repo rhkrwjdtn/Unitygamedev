@@ -10,7 +10,7 @@ public class SaveManager : MonoBehaviour {
 	const int BG_SIZE = 7;
 	const int FLAG_SIZE = 13;
 	const int STOCK_SIZE = 9;
-	const int CHAR_SIZE = 7;
+	const int CHAR_SIZE = 11;
     const int GIRL_SIZE = 6;
 
 

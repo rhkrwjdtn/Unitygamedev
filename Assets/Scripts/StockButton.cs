@@ -11,7 +11,7 @@ public class StockButton : MonoBehaviour {
 	public Text countText;
 	public Text averageText;
 
-	private ulong minprice=1200;
+	private ulong minprice=700;
 	private ulong maxprice=700000;
 	private Item item;
 	private ShopScrollList scrollList;
@@ -30,29 +30,128 @@ public class StockButton : MonoBehaviour {
 	{
 
 		item = currentItem;
-		 if (item.price > maxprice) {
-			float stockRate = (float)Random.Range (-30, 0) / 100;
-			item.price = (ulong)(item.price + item.price * stockRate);
-			priceText.text = "<color=#0000ff>" + item.price.ToString () + "</color>";    //blue
+		if (item.stockNum == 0) {
+			if (item.price > maxprice) {
+				float stockRate = (float)Random.Range (-30, 0) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
 
-		}else if (item.price < minprice) {
-			float stockRate = (float)Random.Range (0, 30) / 100;
-			item.price = (ulong)(item.price + item.price * stockRate);
-			priceText.text = "<color=#ff0000>" + item.price.ToString () + "</color>";    //red
+			} else if (item.price < minprice) {
+				float stockRate = (float)Random.Range (0, 30) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
 
-		} else if (item.price >= minprice) {
+			} else if (item.price >= minprice) {
 
-			float stockRate = (float)Random.Range (-28, 30) / 100;
-			item.price = (ulong)(item.price + item.price * stockRate);
-			if (stockRate > 0) {
-				priceText.text = "<color=#ff0000>" + item.price.ToString () + "</color>";    //red
-			} else if (stockRate == 0) {
-				priceText.text = item.price.ToString ();
-			} else if (stockRate < 0) {
-				priceText.text = "<color=#0000ff>" + item.price.ToString () + "</color>";    //blue
-			}
+				float stockRate = (float)Random.Range (-13, 15) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				if (stockRate > 0) {
+					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+				} else if (stockRate == 0) {
+					priceText.text = item.price.ToString () + "  - ";
+				} else if (stockRate < 0) {
+					priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+				}
 
-		} 
+			} 
+		} else if (item.stockNum == 1 || item.stockNum == 2) {
+			if (item.price > maxprice) {
+				float stockRate = (float)Random.Range (-15, 0) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+
+			} else if (item.price < minprice) {
+				float stockRate = (float)Random.Range (0, 15) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+
+			} else if (item.price >= minprice) {
+
+				float stockRate = (float)Random.Range (-28, 30) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				if (stockRate > 0) {
+					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+				} else if (stockRate == 0) {
+					priceText.text = item.price.ToString () + "  - ";
+				} else if (stockRate < 0) {
+					priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+				}
+
+			} 
+		} else if (item.stockNum == 3) {
+			if (item.price > maxprice) {
+				float stockRate = (float)Random.Range (-30, 0) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+
+			} else if (item.price < minprice) {
+				float stockRate = (float)Random.Range (0, 30) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+
+			} else if (item.price >= minprice) {
+
+				float stockRate = (float)Random.Range (-28, 30) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				if (stockRate > 0) {
+					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+				} else if (stockRate == 0) {
+					priceText.text = item.price.ToString () + "  - ";
+				} else if (stockRate < 0) {
+					priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+				}
+
+			} 
+		} else if (item.stockNum == 4 || item.stockNum == 5 || item.stockNum == 6) {
+			if (item.price > maxprice) {
+				float stockRate = (float)Random.Range (-30, 0) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+
+			} else if (item.price < minprice) {
+				float stockRate = (float)Random.Range (0, 20) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+
+			} else if (item.price >= minprice) {
+
+				float stockRate = (float)Random.Range (-18, 20) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				if (stockRate > 0) {
+					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+				} else if (stockRate == 0) {
+					priceText.text = item.price.ToString () + "  - ";
+				} else if (stockRate < 0) {
+					priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+				}
+
+			} 
+		} else if (item.stockNum == 7 || item.stockNum == 8 ) {
+			if (item.price > maxprice) {
+				float stockRate = (float)Random.Range (-30, 0) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+
+			} else if (item.price < minprice) {
+				float stockRate = (float)Random.Range (0, 30) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+
+			} else if (item.price >= minprice) {
+
+				float stockRate = (float)Random.Range (-7, 9) / 100;
+				item.price = (ulong)(item.price + item.price * stockRate);
+				if (stockRate > 0) {
+					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
+				} else if (stockRate == 0) {
+					priceText.text = item.price.ToString () + "  - ";
+				} else if (stockRate < 0) {
+					priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
+				}
+
+			} 
+		}
+
 
 		nameLabel.text = item.stockName;
 
