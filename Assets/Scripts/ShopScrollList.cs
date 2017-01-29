@@ -54,6 +54,9 @@ public class ShopScrollList : MonoBehaviour {
 
 		StackAsset ();
 
+		NameDisplay.text = "종목명 : " ;
+		PriceDisplay.text = "현재가 : ";
+
 
 	}
 
