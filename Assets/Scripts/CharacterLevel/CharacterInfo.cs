@@ -7,14 +7,13 @@ public class CharacterInfo : MonoBehaviour {
 
     public UnityEngine.UI.Button btn;
 	public ulong ClickMoney = 0;
-    public ulong JugallumLev = 1;
+    public ulong JugallumLev = 0;
 
     public ulong NextLevelPrice = 0;
     public ulong TwoNextLevelPrice = 0;
     public ulong TouchMoney = 5;
-    public ulong TouchMoneyGobhagiBonusPersent = 1;
-
-    public ulong BonusgobTouchmoney = 0;
+   // public ulong TouchMoneyGobhagiBonusPersent = 1;
+   // public ulong BonusgobTouchmoney = 0;
 
     public float bntcm = 0;
     public float GFBonus = 1;
@@ -45,6 +44,7 @@ public class CharacterInfo : MonoBehaviour {
             btn = gameObject.GetComponent<UnityEngine.UI.Button>();
 
         }
+        TwoNextLevelPrice = ((JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1)) * 6;
 
     }
 	
@@ -83,6 +83,10 @@ public class CharacterInfo : MonoBehaviour {
         NowClickWonTx.text = TouchMoney + "원 ->" + moneyu.touchspeed + "원";
 
 
+        LevelText.text = "둥신 LV" + JugallumLev;
+        LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + "100" + "/클릭";
+
+
     }
     public void btnClick()
     {
@@ -104,6 +108,7 @@ public class CharacterInfo : MonoBehaviour {
             LevelupbtnText.fontSize = 8;
             LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + "100" + "/클릭";
             NowClickWonTx.text = TouchMoney+"원 ->"+moneyu.touchspeed+"원";
+
         }
         else if(moneyu.money<NextLevelPrice)
         {

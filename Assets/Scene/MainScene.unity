@@ -4052,7 +4052,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1499313410006334, guid: 9b36269804945d84b8939abbc0f5691d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224029265620879936, guid: 9b36269804945d84b8939abbc0f5691d,
         type: 2}
@@ -4078,6 +4078,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114484858788923938, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114484858788923938, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b36269804945d84b8939abbc0f5691d, type: 2}
@@ -18400,12 +18410,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   btn: {fileID: 1466800226}
   ClickMoney: 0
-  JugallumLev: 1
+  JugallumLev: 0
   NextLevelPrice: 0
   TwoNextLevelPrice: 0
   TouchMoney: 0
-  TouchMoneyGobhagiBonusPersent: 1
-  BonusgobTouchmoney: 0
   bntcm: 0
   GFBonus: 1
   totalClickmoney: 0
@@ -30933,6 +30941,7 @@ MonoBehaviour:
   Realemployment: {fileID: 1235265669}
   girlf: {fileID: 179009577}
   icon: {fileID: 1642078308}
+  character: {fileID: 995890627}
   loadlen: 0
 --- !u!4 &1458599541
 Transform:

@@ -34,6 +34,7 @@ public class SaveManager : MonoBehaviour {
     public EmploymentManager Realemployment;
     public GrilFriendManager girlf;
     public IconManager icon;
+    public CharacterInfo character;
 
 	public int loadlen;
 	/// <summary>
@@ -48,6 +49,9 @@ public class SaveManager : MonoBehaviour {
 	{
 
 		public ulong money;
+        public ulong moneyspeed;
+        public ulong moneyTouch;
+
 		public int selected_BG;
 		public bool[] BG_BuyList = new bool[BG_SIZE];
 		public bool[] FLAG_BuyList = new bool[FLAG_SIZE];
@@ -79,6 +83,10 @@ public class SaveManager : MonoBehaviour {
         public int rebirthpotion;
 
         public bool[] GFExist = new bool[6];
+
+        public ulong JugallumLev;
+        public ulong TouchMoney;
+
     }
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -139,7 +147,8 @@ public class SaveManager : MonoBehaviour {
 
 		//A --> B에 할당
 		data.money = myMoney.money;
-
+        data.moneyspeed = myMoney.moneyspeed;
+        data.moneyTouch = myMoney.touchspeed;
 		data.selected_BG = myBGList.Selected_BG;
 			
 		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
@@ -182,11 +191,14 @@ public class SaveManager : MonoBehaviour {
         data.largepizzacnt = icon.largepizzacnt;
         data.rebirthpotion = icon.rebirthpotion;
 
+        
         for(int i=0;i<GIRL_SIZE;i++)
         {
             data.GFExist[i] = girlf.GFExist[i];
         }
 
+        data.JugallumLev = character.JugallumLev;
+        data.TouchMoney = character.TouchMoney;
 
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
@@ -232,7 +244,8 @@ public class SaveManager : MonoBehaviour {
 				//B --> A에 할당
 				try{
 					myMoney.money = data.money;
-
+                    myMoney.moneyspeed = data.moneyspeed;
+                    myMoney.touchspeed = data.moneyTouch;
 					myBGList.Selected_BG = data.selected_BG;
 
 					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
@@ -256,7 +269,7 @@ public class SaveManager : MonoBehaviour {
 					skate.SetActive(data.skateis);
 					godh.SetActive(data.godhis);
 
-
+                    myMoney.touchspeed = data.moneyTouch;
 
                     data.gobsem[0] = 1;
                     data.gobsem[1] = 5;
@@ -281,6 +294,10 @@ public class SaveManager : MonoBehaviour {
                     {
                         girlf.GFExist[i] = data.GFExist[i];
                     }
+
+                    character.JugallumLev = data.JugallumLev;
+                    character.TouchMoney = data.TouchMoney;
+
 				}
 				catch(NullReferenceException NE){
 					Debug.Log ("저장된 값이 없는 항목이 있으므로 초기화 합니다.\n"+NE);
