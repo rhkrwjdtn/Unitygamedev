@@ -5,42 +5,40 @@ using UnityEngine.UI;
 
 public class EmploymentManager : MonoBehaviour
 {
-    public Button[] btn = new Button[7];
+    public Button[] btn = new Button[11];
 
-    public ulong[] price = new ulong[7];
+    public ulong[] price = new ulong[11];
 
-    public ulong[] moneyspeed = new ulong[7];
-    public ulong[] speedplus = new ulong[7];
-    public GameObject[] Employer = new GameObject[7];
+    public ulong[] moneyspeed = new ulong[11];
+    public ulong[] speedplus = new ulong[11];
+    public GameObject[] Employer = new GameObject[11];
 
-    public GameObject[] ClosePopup = new GameObject[6];
-    public ulong[] EmployerLevel = new ulong[7];
-    public ulong[] plusmoney = new ulong[7];
-    public ulong[] Twoplusmoney = new ulong[7];
-    public ulong[] NextLevelPrice = new ulong[7];
-    public ulong[] TwoNextLevelPrice = new ulong[7];
+    public GameObject[] ClosePopup = new GameObject[10];
+    public ulong[] EmployerLevel = new ulong[11];
+    public ulong[] plusmoney = new ulong[11];
+    public ulong[] Twoplusmoney = new ulong[11];
+    public ulong[] NextLevelPrice = new ulong[11];
+    public ulong[] TwoNextLevelPrice = new ulong[11];
 
-    public ulong[] StartLevelPrice = new ulong[7];
+    public ulong[] StartLevelPrice = new ulong[11];
 
-    public ulong[] gobsem = new ulong[7];
-    public Image[] BackgroundColor = new Image[7];
+    public ulong[] gobsem = new ulong[11];
+    public Image[] BackgroundColor = new Image[11];
 
 
     public Color close;
     public Color open;
     public ulong firstLevelprice = 10000;
-    public Text[] btn_text = new Text[7];
-    public Text[] name_text = new Text[7];
+    public Text[] btn_text = new Text[11];
+    public Text[] name_text = new Text[11];
 
-    public bool[] btnClick = new bool[7];
-
-    //public string[] priceintTolong = new string[7];
+    public bool[] btnClick = new bool[11];
 
     // Use this for initialization
     void Start()
     {
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 11; i++)
         {
 
             if (btn[i] == null)
@@ -94,7 +92,7 @@ public class EmploymentManager : MonoBehaviour
             btn_text[i].text = "비용:" + TwoNextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
             name_text[i].text = "" + EmployerLevel[i];
             btnClick[i] = false;
-            if(EmployerLevel[i]>=10 && i!=6)
+            if(EmployerLevel[i]>=10 && i!=10)
             {
                 ClosePopup[i].active = false;
             }
@@ -108,7 +106,7 @@ public class EmploymentManager : MonoBehaviour
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 11; i++)
         {
             if (moneyu.money > TwoNextLevelPrice[i])
             {
@@ -127,7 +125,7 @@ public class EmploymentManager : MonoBehaviour
     public void BtnClickedEvent()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < 11; i++)
         {
 
             if (btnClick[i] == true)
@@ -158,7 +156,7 @@ public class EmploymentManager : MonoBehaviour
                 }
                 
 
-                if (EmployerLevel[i] >= 10 && i != 6)
+                if (EmployerLevel[i] >= 10 && i != 10)
                 {
                     ClosePopup[i].active = false;
                 }
@@ -204,6 +202,26 @@ public class EmploymentManager : MonoBehaviour
     public void godhbtnClick()
     {
         btnClick[6] = true;
+        BtnClickedEvent();
+    }
+    public void ramyunClick()
+    {
+        btnClick[7] = true;
+        BtnClickedEvent();
+    }
+    public void hohyungClick()
+    {
+        btnClick[8] = true;
+        BtnClickedEvent();
+    }
+    public void daejangClick()
+    {
+        btnClick[9] = true;
+        BtnClickedEvent();
+    }
+    public void chunsooruClick()
+    {
+        btnClick[10] = true;
         BtnClickedEvent();
     }
 }
