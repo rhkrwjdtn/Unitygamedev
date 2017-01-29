@@ -13,6 +13,7 @@ public class spoonmanager : MonoBehaviour {
     public Sprite goldspoon;
     public Sprite diaspoon;
     public GameObject popup;
+
 	// Use this for initialization
 	void Start () {
 
@@ -24,19 +25,19 @@ public class spoonmanager : MonoBehaviour {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 
         if (moneyu.moneyspeed < 10000)
-        { spoonimage.GetComponent<Image>().sprite = gmfrspoon; }
+		{ spoonimage.GetComponent<Image>().sprite = gmfrspoon;}
         if (moneyu.moneyspeed < 50000 && moneyu.moneyspeed > 10000)
-        { spoonimage.GetComponent<Image>().sprite = plasticspoon; }
+		{ spoonimage.GetComponent<Image>().sprite = plasticspoon;}
         if(moneyu.moneyspeed<100000 &&moneyu.moneyspeed>50000)
-        { spoonimage.GetComponent<Image>().sprite = nokspoon;}
+		{ spoonimage.GetComponent<Image>().sprite = nokspoon;}
         if(moneyu.moneyspeed<500000 && moneyu.moneyspeed>100000)
-        { spoonimage.GetComponent<Image>().sprite = dongspoon; }
+		{ spoonimage.GetComponent<Image>().sprite = dongspoon;}
         if(moneyu.moneyspeed<1000000&&moneyu.moneyspeed>500000)
-        { spoonimage.GetComponent<Image>().sprite = silverspoon; }
+		{ spoonimage.GetComponent<Image>().sprite = silverspoon;}
         if(moneyu.moneyspeed<5000000&&moneyu.moneyspeed>1000000)
-        { spoonimage.GetComponent<Image>().sprite = goldspoon; }
+		{ spoonimage.GetComponent<Image>().sprite = goldspoon;}
         if(moneyu.moneyspeed<10000000&&moneyu.moneyspeed>5000000)
-        { spoonimage.GetComponent<Image>().sprite = diaspoon; }
+		{ spoonimage.GetComponent<Image>().sprite = diaspoon;}
 
     }
     public void spoonClick()

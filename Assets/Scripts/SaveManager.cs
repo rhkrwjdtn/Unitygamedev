@@ -18,6 +18,7 @@ public class SaveManager : MonoBehaviour {
 	public ShopScrollList myStockList;       //connect MyStockList
 	public HouseButtonEvent myBGList; //connect HouseManager
 	public CountryButtonEvent myFlagList; //connect CountryManager
+	public GoalManager myGoalList; //connect GoalManager
 	public ShopScrollList StockList; //connect StockList
 	public GameObject EndPanel;
 
@@ -55,6 +56,7 @@ public class SaveManager : MonoBehaviour {
 		public int selected_BG;
 		public bool[] BG_BuyList = new bool[BG_SIZE];
 		public bool[] FLAG_BuyList = new bool[FLAG_SIZE];
+		public int Goal_Spoon_LV;
 
 		public ulong[] stockprice = new ulong[STOCK_SIZE];
 		public ulong[] stockcount = new ulong[STOCK_SIZE];
@@ -150,14 +152,16 @@ public class SaveManager : MonoBehaviour {
         data.moneyspeed = myMoney.moneyspeed;
         data.moneyTouch = myMoney.touchspeed;
 		data.selected_BG = myBGList.Selected_BG;
-			
+
+		data.Goal_Spoon_LV = myGoalList.goal_Spoon_Lv;
+
 		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
 			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
 
 		for (int k = 0; k < FLAG_SIZE; k++)//FLAG_LIST
 			data.FLAG_BuyList [k] = myFlagList.BuyList [k];
-		
-	
+
+
 		for (int i = 0; i < StockList.itemList.Count; i++){                          //stock save
 			Debug.Log ("stock 현재가 @@@@@@"+StockList.itemList [i].price);
 			data.stockprice [i] = StockList.itemList [i].price;
@@ -247,6 +251,8 @@ public class SaveManager : MonoBehaviour {
                     myMoney.moneyspeed = data.moneyspeed;
                     myMoney.touchspeed = data.moneyTouch;
 					myBGList.Selected_BG = data.selected_BG;
+
+					myGoalList.goal_Spoon_Lv = data.Goal_Spoon_LV;
 
 					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
 						myBGList.BG_BuyList[k] = data.BG_BuyList [k];
