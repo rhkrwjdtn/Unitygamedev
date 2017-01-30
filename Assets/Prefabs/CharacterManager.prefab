@@ -154,6 +154,37 @@ MonoBehaviour:
   - 0.15384616
   - 0.14285715
   - 0.125
+  HouseImg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  NationImg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Gfimg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  open: {r: 1, g: 1, b: 1, a: 1}
+  close: {r: 0.29411763, g: 0.291955, b: 0.291955, a: 1}
   GFTransform: 
   HouseTransform: 
   NationTransform: 

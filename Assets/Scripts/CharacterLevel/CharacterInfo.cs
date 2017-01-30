@@ -51,6 +51,12 @@ public class CharacterInfo : MonoBehaviour {
     public float[] Housenonugi = new float[7] { 10 / 11f, 10 / 13f, 10 / 15f, 10 / 18f, 1 / 2f, 10 / 25f, 1 / 3f };
     public float[] Nationnonugi = new float[13] { 1 / 2f, 10 / 23f, 10 / 25f, 1 / 3f, 10 / 35f, 1 / 4f, 10 / 45f, 1 / 5f, 10 / 55f, 1 / 6f, 10 / 65f, 1 / 7f, 1 / 8f };
 
+    public Image[] HouseImg = new Image[7];
+    public Image[] NationImg = new Image[13];
+    public Image[] Gfimg = new Image[6];
+
+    public Color open;
+    public Color close;
 
     public string GFTransform = null;
     public string HouseTransform = null;
@@ -59,12 +65,37 @@ public class CharacterInfo : MonoBehaviour {
 	// Use this for initialization
 
 	void Start () {
-	if(btn==null)
+        GrilFriendManager gf = GameObject.Find("GirlFriendManager").GetComponent<GrilFriendManager>();
+        HouseButtonEvent house = GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
+        CountryButtonEvent Country = GameObject.Find("CountryManager").GetComponent<CountryButtonEvent>();
+
+        if (btn==null)
         {
             btn = gameObject.GetComponent<UnityEngine.UI.Button>();
 
         }
         TwoNextLevelPrice = ((JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1)) * 6;
+        for(int i=0;i<6;i++)
+        {
+            if(gf.GFExist[i]==false)
+            {
+                Gfimg[i].color = close;
+            }
+        }
+        for(int i=0;i<7;i++)
+        {
+            if(house.BG_BuyList[i]==true)
+            {
+                HouseImg[i].color = close;
+            }
+        }
+        for(int i=0;i<13;i++)
+        {
+            if(Country.BuyList[i]==true)
+            {
+                NationImg[i].color = close;
+            }
+        }
 
     }
 	
@@ -75,6 +106,8 @@ public class CharacterInfo : MonoBehaviour {
         GrilFriendManager gf = GameObject.Find("GirlFriendManager").GetComponent<GrilFriendManager>();
         HouseButtonEvent house = GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
         CountryButtonEvent Country = GameObject.Find("CountryManager").GetComponent<CountryButtonEvent>();
+        
+
 
         //여자친구 생기면 클릭당 돈의 % 상승
         //ㄴㅁㅇㅋㅌㅊ
@@ -98,6 +131,8 @@ public class CharacterInfo : MonoBehaviour {
                 GFTruetoFalse[i] = true;
                 noretry++;
                 GFBonusTx.text =""+GFbg[i]+"%";
+                Gfimg[i].color = open;
+
             }
             else if(gf.GFExist[i]==false && GFTruetoFalse[i]==true)
             {
@@ -110,6 +145,7 @@ public class CharacterInfo : MonoBehaviour {
                 GFTruetoFalse[i] = false;
                 noretry--;
                 GFBonusTx.text = "0%";
+                Gfimg[i].color = close;
             }
         }
         //집 사면 클릭돈 % 상승 
@@ -133,6 +169,7 @@ public class CharacterInfo : MonoBehaviour {
                 HouseTruetoFalse[i] = true;
                 noretryhouse[i]++;
                 HouseBonusTx.text = "" + TotalHousePersent+"%";
+                HouseImg[i].color=open;
             }
             else if(house.BG_BuyList[i]==true && HouseTruetoFalse[i]==true)
             {
@@ -149,6 +186,7 @@ public class CharacterInfo : MonoBehaviour {
                 HouseTruetoFalse[i] = false;
                 noretryhouse[i]--;
                 HouseBonusTx.text = "" + TotalHousePersent + "%";
+                HouseImg[i].color = close;
             }
         }
 
@@ -170,6 +208,7 @@ public class CharacterInfo : MonoBehaviour {
                 NationTruetoFalse[i] = true;
                 noretryNation[i]++;
                 NationBonusTx.text = "" + TotalNationPersent + "%";
+                NationImg[i].color = open;
             }
             else if(Country.BuyList[i]==true && NationTruetoFalse[i]==true)
             {
@@ -186,6 +225,7 @@ public class CharacterInfo : MonoBehaviour {
                 NationTruetoFalse[i] = false;
                 noretryNation[i]--;
                 NationBonusTx.text = "" + TotalNationPersent + "%";
+                NationImg[i].color = close;
             }
             {
 
