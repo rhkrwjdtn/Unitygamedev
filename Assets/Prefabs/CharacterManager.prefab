@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 224946813761877772}
   - component: {fileID: 222165675057991516}
   - component: {fileID: 114677381975114104}
+  - component: {fileID: 114859711298352440}
   m_Layer: 5
   m_Name: CharacterManager
   m_TagString: Untagged
@@ -55,6 +56,139 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114859711298352440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1511306773439440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8fa101c34a2494a9b896cd9064831e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btn: {fileID: 0}
+  ClickMoney: 0
+  JugallumLev: 0
+  NextLevelPrice: 0
+  TwoNextLevelPrice: 0
+  TouchMoney: 0
+  bntcm: 0
+  GFBonus: 1
+  HouseBonus: 1
+  NationBonus: 1
+  totalClickmoney: 0
+  sosoodelete: 0
+  noretry: 0
+  noretryhouse: 00000000000000000000000000000000000000000000000000000000
+  noretryNation: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  TotalHousePersent: 0
+  TotalNationPersent: 0
+  LevelText: {fileID: 0}
+  LevelupbtnText: {fileID: 0}
+  NowClickWonTx: {fileID: 0}
+  NationBonusTx: {fileID: 0}
+  GFBonusTx: {fileID: 0}
+  HouseBonusTx: {fileID: 0}
+  GFTruetoFalse: 000000000000
+  HouseTruetoFalse: 00000000000000
+  NationTruetoFalse: 00000000000000000000000000
+  GFbg: 1e00000032000000640000002c010000f401000020030000
+  Hsbg: 0a0000001e000000320000005000000064000000960000002c010000
+  Nsbg: 640000008200000096000000c8000000fa0000002c0100005e01000090010000c2010000f4010000260200005802000020030000
+  GFgob:
+  - 1.3
+  - 1.5
+  - 2
+  - 3
+  - 5
+  - 8
+  Housegob:
+  - 1.1
+  - 1.3
+  - 1.5
+  - 1.8
+  - 2
+  - 2.5
+  - 3
+  Nationgob:
+  - 2
+  - 2.3
+  - 2.5
+  - 3
+  - 3.5
+  - 4
+  - 4.5
+  - 15
+  - 5.5
+  - 6
+  - 6.5
+  - 7
+  - 8
+  GFnonugi:
+  - 0.7692308
+  - 0.6666667
+  - 0.5
+  - 0.33333334
+  - 0.2
+  - 0.125
+  Housenonugi:
+  - 0.90909094
+  - 0.7692308
+  - 0.6666667
+  - 0.5555556
+  - 0.5
+  - 0.4
+  - 0.33333334
+  Nationnonugi:
+  - 0.5
+  - 0.4347826
+  - 0.4
+  - 0.33333334
+  - 0.2857143
+  - 0.25
+  - 0.22222222
+  - 0.2
+  - 0.18181819
+  - 0.16666667
+  - 0.15384616
+  - 0.14285715
+  - 0.125
+  HouseImg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  NationImg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Gfimg:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  open: {r: 1, g: 1, b: 1, a: 1}
+  close: {r: 0.29411763, g: 0.291955, b: 0.291955, a: 1}
+  GFTransform: 
+  HouseTransform: 
+  NationTransform: 
+  ToTalTransform: 
 --- !u!222 &222165675057991516
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -76,6 +210,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: 149.82936}
+  m_AnchoredPosition: {x: 429.8, y: 144.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

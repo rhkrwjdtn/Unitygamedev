@@ -6,9 +6,13 @@ using UnityEngine.UI;
 public class IconManager : MonoBehaviour {
 
     public Image redbull;
+    public Image redbullskillfilter;
     public Image smallpizza;
+    public Image smallpizzaskillfilter;
     public Image burn;
+    public Image burnskillfilter;
     public Image Largepizza;
+    public Image Largepizzaskillfilter;
 
     public float startTime;
     public float checkTime;
@@ -49,6 +53,7 @@ public class IconManager : MonoBehaviour {
         burncnt_text.text = burncnt + "개";
         largepizzacnt_text.text = largepizzacnt + "개";
         rebirthcnt_text.text = rebirthpotion + "개";
+        redbullskillfilter.fillAmount = 0;
 	}
 	
 	// Update is called once per frame
@@ -160,6 +165,9 @@ public class IconManager : MonoBehaviour {
             moneyu.touchspeed = moneyu.touchspeed * 10;
             redbullcnt -= 1;
             redbullcnt_text.text = redbullcnt + "개";
+            redbullskillfilter.fillAmount = 1;
+            StartCoroutine("redbullcooltime");
+
         }
     }
     public void smallClick()
@@ -172,6 +180,8 @@ public class IconManager : MonoBehaviour {
             moneyu.moneyspeed = moneyu.moneyspeed * 10;
             smallpizzacnt -= 1;
             smallpizzacnt_text.text = smallpizzacnt + "개";
+            smallpizzaskillfilter.fillAmount = 1;
+            StartCoroutine("smallpizzacooltime");
         }
     }
     public void burnClick()
@@ -184,6 +194,8 @@ public class IconManager : MonoBehaviour {
             moneyu.touchspeed = moneyu.touchspeed * 100;
             burncnt -= 1;
             burncnt_text.text = burncnt + "개";
+            burnskillfilter.fillAmount = 1;
+            StartCoroutine("burncooltime");
         }
     }
     public void LargepizzaClick()
@@ -196,6 +208,50 @@ public class IconManager : MonoBehaviour {
             moneyu.moneyspeed = moneyu.moneyspeed * 100;
             largepizzacnt -= 1;
             largepizzacnt_text.text = largepizzacnt + "개";
+            Largepizzaskillfilter.fillAmount = 1;
+            StartCoroutine("largepizzacooltime");
         }
     }
+
+    IEnumerator redbullcooltime()
+    {
+        while(redbullskillfilter.fillAmount>0)
+        {
+            redbullskillfilter.fillAmount -= 1 * Time.smoothDeltaTime / checkTime;
+
+            yield return null;
+        }
+        yield break;
+    }
+    IEnumerator smallpizzacooltime()
+    {
+        while (smallpizzaskillfilter.fillAmount > 0)
+        {
+            smallpizzaskillfilter.fillAmount -= 1 * Time.smoothDeltaTime / checkTime;
+
+            yield return null;
+        }
+        yield break;
+    }
+    IEnumerator burncooltime()
+    {
+        while (burnskillfilter.fillAmount > 0)
+        {
+            burnskillfilter.fillAmount -= 1 * Time.smoothDeltaTime / checkTime;
+
+            yield return null;
+        }
+        yield break;
+    }
+    IEnumerator largepizzacooltime()
+    {
+        while (Largepizzaskillfilter.fillAmount > 0)
+        {
+            Largepizzaskillfilter.fillAmount -= 1 * Time.smoothDeltaTime / checkTime;
+
+            yield return null;
+        }
+        yield break;
+    }
+
 }
