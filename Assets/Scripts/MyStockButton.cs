@@ -27,10 +27,20 @@ public class MyStockButton : MonoBehaviour {
 	public void Setup(Item currentItem, ShopScrollList currentScrollList)
 	{
 		item = currentItem;
-		nameLabel.text = item.stockName;
 		//priceText.text = item.price.ToString ();
-		countText.text = item.count.ToString ();
-		averageText.text = item.Average.ToString ();
+		if (item.Average < item.price) {
+			nameLabel.text = "<color=#ff0000>" +item.stockName + "</color>";
+			countText.text = "<color=#ff0000>" +item.count.ToString ()+ "</color>";
+			averageText.text = "<color=#ff0000>" +item.Average.ToString ()+ "</color>";
+		} else if (item.Average == item.price) {
+			nameLabel.text = item.stockName;
+			countText.text = item.count.ToString ();
+			averageText.text = item.Average.ToString ();
+		} else if (item.Average > item.price) {
+			nameLabel.text = "<color=#0000ff>"+item.stockName + "</color>";
+			countText.text = "<color=#0000ff>" +item.count.ToString ()+ "</color>";
+			averageText.text = "<color=#0000ff>"+item.Average.ToString ()+ "</color>";
+		}
 		scrollList = currentScrollList;
 
 	}
