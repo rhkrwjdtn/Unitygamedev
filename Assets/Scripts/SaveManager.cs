@@ -32,6 +32,10 @@ public class SaveManager : MonoBehaviour {
 	public GameObject myungsasu = null;
 	public GameObject skate = null;
 	public GameObject godh = null;
+    public GameObject ramyun = null;
+    public GameObject ho = null;
+    public GameObject daejang = null;
+    public GameObject chunsooru = null;
 
 	public ButtonEnable employment;
     public EmploymentManager Realemployment;
@@ -72,6 +76,10 @@ public class SaveManager : MonoBehaviour {
 		public bool myungsasuis = new bool();
 		public bool skateis = new bool();
 		public bool godhis = new bool();
+        public bool ramyun = new bool();
+        public bool ho = new bool();
+        public bool daejang = new bool();
+        public bool chunsooru = new bool();
 
         public ulong[] sEmployerLevel = new ulong[CHAR_SIZE];
         public ulong[] sTwoNextLevelPrice = new ulong[CHAR_SIZE];
@@ -171,6 +179,7 @@ public class SaveManager : MonoBehaviour {
         data.moneyTouch = myMoney.touchspeed;
 		data.selected_BG = myBGList.Selected_BG;
 		data.Goal_Rebirth_cnt = myRebirth.RebirthCount;
+        
 
 		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
 			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
@@ -197,6 +206,10 @@ public class SaveManager : MonoBehaviour {
 		data.myungsasuis = myungsasu.activeSelf;
 		data.skateis = skate.activeSelf;
 		data.godhis = godh.activeSelf;
+        data.ramyun = ramyun.activeSelf;
+        data.ho = ramyun.activeSelf;
+        data.daejang = daejang.activeSelf;
+        data.chunsooru = chunsooru.activeSelf;
 
         for(int i=0; i<CHAR_SIZE;i++)
         {
@@ -308,6 +321,10 @@ public class SaveManager : MonoBehaviour {
 					myungsasu.SetActive(data.myungsasuis);
 					skate.SetActive(data.skateis);
 					godh.SetActive(data.godhis);
+                    ramyun.SetActive(data.ramyun);
+                    ho.SetActive(data.ho);
+                    daejang.SetActive(data.daejang);
+                    chunsooru.SetActive(data.chunsooru);
 
                     myMoney.touchspeed = data.moneyTouch;
 

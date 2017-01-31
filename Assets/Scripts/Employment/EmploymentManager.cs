@@ -33,7 +33,7 @@ public class EmploymentManager : MonoBehaviour
     public Text[] name_text = new Text[11];
 
     public bool[] btnClick = new bool[11];
-
+    public bool chunsooruExist=false;
     // Use this for initialization
     void Start()
     {
@@ -120,6 +120,7 @@ public class EmploymentManager : MonoBehaviour
             }
         }
         //BtnClickedEvent();
+
 
     }
     public void BtnClickedEvent()
@@ -223,6 +224,7 @@ public class EmploymentManager : MonoBehaviour
     {
         btnClick[10] = true;
         BtnClickedEvent();
+        chunsooruExist = true;
     }
 
 }

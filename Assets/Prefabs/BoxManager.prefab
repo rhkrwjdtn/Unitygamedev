@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 224196093911615424}
   - component: {fileID: 222048552804123898}
+  - component: {fileID: 114665867590257010}
   m_Layer: 5
   m_Name: BoxManager
   m_TagString: Untagged
@@ -27,6 +28,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114665867590257010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1271277987342714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d5a172427f0e64084fe22e6644c7a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timespa: 0
+  checkTi: 0
+  delaytime: 0
+  delaychecktime: 0
+  touchcnt: 0
+  box: {fileID: 0}
 --- !u!222 &222048552804123898
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -48,6 +66,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 144, y: 300}
+  m_AnchoredPosition: {x: 363.1, y: 295.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
