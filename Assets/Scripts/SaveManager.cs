@@ -9,6 +9,7 @@ using System.IO;
 public class SaveManager : MonoBehaviour {
 	const int BG_SIZE = 7;
 	const int FLAG_SIZE = 13;
+	const int Goal_SIZE = 8;
 	const int STOCK_SIZE = 9;
 	const int CHAR_SIZE = 11;
     const int GIRL_SIZE = 6;
@@ -56,7 +57,7 @@ public class SaveManager : MonoBehaviour {
 		public int selected_BG;
 		public bool[] BG_BuyList = new bool[BG_SIZE];
 		public bool[] FLAG_BuyList = new bool[FLAG_SIZE];
-		public int Goal_Spoon_LV;
+		public int[] Goal_LV = new int[Goal_SIZE];
 
 		public ulong[] stockprice = new ulong[STOCK_SIZE];
 		public ulong[] stockcount = new ulong[STOCK_SIZE];
@@ -152,15 +153,16 @@ public class SaveManager : MonoBehaviour {
         data.moneyspeed = myMoney.moneyspeed;
         data.moneyTouch = myMoney.touchspeed;
 		data.selected_BG = myBGList.Selected_BG;
-
-		data.Goal_Spoon_LV = myGoalList.goal_Spoon_Lv;
-
+	
 		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
 			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
 
 		for (int k = 0; k < FLAG_SIZE; k++)//FLAG_LIST
 			data.FLAG_BuyList [k] = myFlagList.BuyList [k];
 
+		for (int k = 0; k < Goal_SIZE; k++)//Goal_LV_LIST
+			data.Goal_LV [k] = myGoalList.Goal_LV[k];
+		
 
 		for (int i = 0; i < StockList.itemList.Count; i++){                          //stock save
 			Debug.Log ("stock 현재가 @@@@@@"+StockList.itemList [i].price);
@@ -252,7 +254,6 @@ public class SaveManager : MonoBehaviour {
                     myMoney.touchspeed = data.moneyTouch;
 					myBGList.Selected_BG = data.selected_BG;
 
-					myGoalList.goal_Spoon_Lv = data.Goal_Spoon_LV;
 
 					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
 						myBGList.BG_BuyList[k] = data.BG_BuyList [k];
@@ -260,6 +261,9 @@ public class SaveManager : MonoBehaviour {
 					for(int k = 0; k < FLAG_SIZE; k++)//FLAG_LIST
 						myFlagList.BuyList[k] = data.FLAG_BuyList [k];
 
+					for (int k = 0; k < Goal_SIZE; k++)//Goal_LV_LIST
+						myGoalList.Goal_LV[k] = data.Goal_LV [k];
+					
 					for(int i=0; i<StockList.itemList.Count;i++){
 						StockList.itemList [i].price = data.stockprice [i];
 						StockList.itemList [i].count = data.stockcount [i];

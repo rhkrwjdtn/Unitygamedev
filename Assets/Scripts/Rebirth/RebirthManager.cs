@@ -17,7 +17,9 @@ public class RebirthManager : MonoBehaviour {
     public Text potcnt_text = null;
     public GameObject[] Alramspoon = new GameObject[7];
     public GameObject AlramPopup = null;
-    // Use this for initialization
+  
+	public int RebirthCount=0;  //업적에 쓰임
+	// Use this for initialization
     void Start () {
 		
 	}
@@ -40,7 +42,7 @@ public class RebirthManager : MonoBehaviour {
     public void rebirthbtnClick()
     {
         IconManager potioncnt = GameObject.Find("IconManager").GetComponent<IconManager>();
-
+		RebirthCount++;
         if (potioncnt.rebirthpotion != 0)
         {
             totalrandum = Random.Range(0, 10000);
