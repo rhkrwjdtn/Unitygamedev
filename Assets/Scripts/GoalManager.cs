@@ -62,9 +62,6 @@ public class GoalManager : MonoBehaviour {
 	public void Start(){
 		MoneyTmp = new ulong[LevelSize] {100000, 500000, 1000000, 5000000, 10000000}; //10만 :녹수저
 		Spoon_Text = new string[LevelSize] {"녹","동","은","금","다이아"};
-		for (int i = 0; i < 11; i++)
-			EmployeesLvTmp += (int)myEmp.EmployerLevel [i];
-		Debug.Log ("알바총레벨 :"+EmployeesLvTmp);
 		for (int i = 0; i < SIZE; i++)
 			GoalObj[i] = null;
 	}
@@ -90,56 +87,56 @@ public class GoalManager : MonoBehaviour {
 				break;
 			case 1:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "클릭당 골드 "+ myTransMoney.strTransMoney((ulong)((10^Goal_LV[i])*10000)) +" 달성";	
-					if (MU.touchspeed >= (ulong)((10^Goal_LV[i])*10000)) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "클릭당 골드 "+ myTransMoney.strTransMoney((ulong)((int)Mathf.Pow(10f,(float)Goal_LV[i])*10000)) +" 달성";	
+					if (MU.touchspeed >= (ulong)((int)Mathf.Pow(10f,(float)Goal_LV[i])*10000)) {
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 					}	
 				}
 				break;
 			case 2:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "(미완)총 자산 "+ myTransMoney.strTransMoney((ulong)(100^Goal_LV[i])*1000000) +" 달성";
-					if (MU.money >= (ulong)(100^Goal_LV[i])*1000000) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "보유 골드 "+ myTransMoney.strTransMoney((ulong)((int)Mathf.Pow(100f,(float)Goal_LV[i])*1000000)) +" 달성";
+					if (MU.money >= (ulong)((int)Mathf.Pow(100f,(float)Goal_LV[i])*1000000) ) 
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
-					}
+					
 				}
 				break;
 			case 3:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "보유 에너지드링크 "+ ((2^Goal_LV[i])*5) +"개 달성";	
-					if (myItem.redbullcnt >= ((2^Goal_LV[i])*5)) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "보유 에너지드링크 "+ ((int)Mathf.Pow(2f,(float)Goal_LV[i])*5) +"개 달성";	
+					if (myItem.redbullcnt >= ((int)Mathf.Pow(2f,(float)Goal_LV[i])*5)) {
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 					}
 				}
 				break;
 			case 4:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "보유 한조 각 "+ ((2^Goal_LV[i])*5) +"개 달성";	
-					if (myItem.smallpizzacnt >= ((2^Goal_LV[i])*5)) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "보유 한조 각 "+ ((int)Mathf.Pow(2f,(float)Goal_LV[i])*5) +"개 달성";	
+					if (myItem.smallpizzacnt >= ((int)Mathf.Pow(2f,(float)Goal_LV[i])*5)) {
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 					}
 				}
 				break;
 			case 5:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "둥신 "+ ((2^Goal_LV[i])*50) +"LV 달성";	
-					if ((int)myqudtls.JugallumLev >= ((2^Goal_LV[i])*50)) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "둥신 "+ ((int)Mathf.Pow(2f,(float)Goal_LV[i])*50) +"LV 달성";	
+					if ((int)myqudtls.JugallumLev >= ((int)Mathf.Pow(2f,(float)Goal_LV[i])*50)) {
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 					}
 				}
 				break;
 			case 6:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "알바생 총 "+ ((2^Goal_LV[i])*100) +"LV 달성";	
-					if (EmployeesLvTmp >= ((2^Goal_LV[i])*100)) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "알바생 총 "+ ((int)Mathf.Pow(2f,(float)Goal_LV[i])*100) +"LV 달성";	
+					if (EmployeesLvTmp >= ((int)Mathf.Pow(2f,(float)Goal_LV[i])*100)) {
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 					}
 				}
 				break;
 			case 7:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "(미완)누적 환생 " + ((2^Goal_LV[i])*10) + "회 달성";	
-					if (myRebirth.RebirthCount >= ((2^Goal_LV[i])*10)) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "누적 환생 " + ((int)Mathf.Pow(2f,(float)Goal_LV[i])*10) + "회 달성";	
+					if (myRebirth.RebirthCount >= ((int)Mathf.Pow(2f,(float)Goal_LV[i])*10)) {
 						GoalObj[i].transform.FindChild ("Button").GetComponent<Button> ().interactable = true;
 					}
 				}
@@ -154,7 +151,11 @@ public class GoalManager : MonoBehaviour {
 	//Start Spoon_Popup
 	public void goal_Initiate () {
 		if (goal_Popup.activeSelf == true) {
-			
+
+			for (int i = 0; i < 11; i++) 
+				EmployeesLvTmp += (int)myEmp.EmployerLevel [i];
+			Debug.Log ("알바총레벨 :" + EmployeesLvTmp);
+
 			for (int i = 0; i < SIZE; i++) {
 				Goal_Update (i);
 			}

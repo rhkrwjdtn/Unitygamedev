@@ -20,6 +20,7 @@ public class SaveManager : MonoBehaviour {
 	public HouseButtonEvent myBGList; //connect HouseManager
 	public CountryButtonEvent myFlagList; //connect CountryManager
 	public GoalManager myGoalList; //connect GoalManager
+	public RebirthManager myRebirth; //connect GoalManager
 	public ShopScrollList StockList; //connect StockList
 	public GameObject EndPanel;
 
@@ -58,6 +59,7 @@ public class SaveManager : MonoBehaviour {
 		public bool[] BG_BuyList = new bool[BG_SIZE];
 		public bool[] FLAG_BuyList = new bool[FLAG_SIZE];
 		public int[] Goal_LV = new int[Goal_SIZE];
+		public int Goal_Rebirth_cnt;
 
 		public ulong[] stockprice = new ulong[STOCK_SIZE];
 		public ulong[] stockcount = new ulong[STOCK_SIZE];
@@ -153,7 +155,8 @@ public class SaveManager : MonoBehaviour {
         data.moneyspeed = myMoney.moneyspeed;
         data.moneyTouch = myMoney.touchspeed;
 		data.selected_BG = myBGList.Selected_BG;
-	
+		data.Goal_Rebirth_cnt = myRebirth.RebirthCount;
+
 		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
 			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
 
@@ -253,7 +256,7 @@ public class SaveManager : MonoBehaviour {
                     myMoney.moneyspeed = data.moneyspeed;
                     myMoney.touchspeed = data.moneyTouch;
 					myBGList.Selected_BG = data.selected_BG;
-
+					myRebirth.RebirthCount = data.Goal_Rebirth_cnt;
 
 					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
 						myBGList.BG_BuyList[k] = data.BG_BuyList [k];
