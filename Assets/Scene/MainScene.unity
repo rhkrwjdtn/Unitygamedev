@@ -2734,7 +2734,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9435,7 +9435,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14639,6 +14639,11 @@ Prefab:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114973092432965276, guid: 60ca9453b7c5c194dad466e054033513,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60ca9453b7c5c194dad466e054033513, type: 2}
   m_IsPrefabParent: 0
@@ -15620,8 +15625,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.94200003}
   m_AnchorMax: {x: 0.356, y: 1}
-  m_AnchoredPosition: {x: 0.1000061, y: -0.6000061}
-  m_SizeDelta: {x: -0.19999695, y: 1.4000015}
+  m_AnchoredPosition: {x: 5.000004, y: -0.6000061}
+  m_SizeDelta: {x: -9.999992, y: 1.4000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840175445
 MonoBehaviour:
@@ -35048,6 +35053,7 @@ MonoBehaviour:
   myBGList: {fileID: 1585983344}
   myFlagList: {fileID: 1332941407}
   myGoalList: {fileID: 2046030459}
+  myRebirth: {fileID: 2055363779}
   StockList: {fileID: 160836294}
   EndPanel: {fileID: 1525387811}
   dog: {fileID: 1620517777}
@@ -43568,6 +43574,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GoalOnClick
       objectReference: {fileID: 0}
+    - target: {fileID: 224557667262977974, guid: 5fab5d6d84e6cd04998c3c23547f7060,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 279.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 224642110415762352, guid: 5fab5d6d84e6cd04998c3c23547f7060,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 3.9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5fab5d6d84e6cd04998c3c23547f7060, type: 2}
   m_IsPrefabParent: 0
@@ -45388,8 +45404,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.94200003}
-  m_AnchoredPosition: {x: 0.028678894, y: -0.5900998}
-  m_SizeDelta: {x: -0.3, y: -1.1801996}
+  m_AnchoredPosition: {x: 2.5, y: -0.5900998}
+  m_SizeDelta: {x: -15, y: -1.1801996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2050281786
 MonoBehaviour:
