@@ -224,4 +224,5 @@ public class EmploymentManager : MonoBehaviour
         btnClick[10] = true;
         BtnClickedEvent();
     }
+
 }

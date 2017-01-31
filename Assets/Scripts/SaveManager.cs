@@ -103,6 +103,10 @@ public class SaveManager : MonoBehaviour {
         public float GFBonus;
         public float HouseBonus;
         public float NationBonus;
+
+        public int TotalHousePersent;
+        public int TotalNationPersent;
+        public int TotalgfPersent;
     }
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -228,6 +232,9 @@ public class SaveManager : MonoBehaviour {
         data.GFBonus = character.GFBonus;
         data.HouseBonus = character.HouseBonus;
         data.NationBonus = character.NationBonus;
+        data.TotalgfPersent = character.TotalgfPersent;
+        data.TotalHousePersent = character.TotalHousePersent;
+        data.TotalNationPersent = character.TotalNationPersent;
 
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
@@ -339,6 +346,10 @@ public class SaveManager : MonoBehaviour {
                     character.GFBonus = data.GFBonus;
                     character.HouseBonus = data.HouseBonus;
                     character.NationBonus = data.NationBonus;
+                    character.TotalgfPersent = data.TotalgfPersent;
+                    character.TotalHousePersent = data.TotalHousePersent;
+                    character.TotalNationPersent = data.TotalNationPersent;
+
 
 				}
 				catch(NullReferenceException NE){

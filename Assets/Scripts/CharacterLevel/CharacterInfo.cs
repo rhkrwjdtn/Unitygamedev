@@ -27,6 +27,7 @@ public class CharacterInfo : MonoBehaviour {
     public int[] noretryNation = new int[13];
     public int TotalHousePersent = 0;
     public int TotalNationPersent = 0;
+    public int TotalgfPersent = 0;
 
     public Text LevelText = null;
     public Text LevelupbtnText = null;
@@ -109,6 +110,11 @@ public class CharacterInfo : MonoBehaviour {
         {
             NationBonus = 1;
         }
+
+        GFBonusTx.text = "" + TotalgfPersent + "%";
+        HouseBonusTx.text = "" + TotalHousePersent + "%";
+        NationBonusTx.text = "" + TotalNationPersent + "%";
+
     }
 	
 	// Update is called once per frame
@@ -143,6 +149,7 @@ public class CharacterInfo : MonoBehaviour {
                 GFTruetoFalse[i] = true;
                 noretry++;
                 GFBonusTx.text =""+GFbg[i]+"%";
+                TotalgfPersent = GFbg[i];
                 Gfimg[i].color = open;
 
             }
@@ -175,6 +182,7 @@ public class CharacterInfo : MonoBehaviour {
                     HouseBonus = Housegob[i];
                 }
                 TotalHousePersent = TotalHousePersent + Hsbg[i];
+
                 sosoodelete = (int)bntcm;
                 HouseTransform = sosoodelete.ToString();
                 moneyu.touchspeed = ulong.Parse(HouseTransform);
@@ -205,14 +213,18 @@ public class CharacterInfo : MonoBehaviour {
         //국가를 삿을때 상승
         for(int i=0;i<13;i++)
         {
-            if(Country.BuyList[i]==false && noretryhouse[i]==0)
+            if(Country.BuyList[i]==false && noretryNation[i]==0)
             {
                 bntcm = (float)moneyu.touchspeed * Nationgob[i];
-                if(NationBonus==1)
+                if(NationBonus!=1)
+                {
+                    NationBonus = NationBonus + Nationgob[i];
+                }
+                if (NationBonus==1)
                 {
                     NationBonus = Nationgob[i];
                 }
-                NationBonus = NationBonus + Nationgob[i];
+                
                 TotalNationPersent = TotalNationPersent + Nsbg[i];
                 sosoodelete = (int)bntcm;
                 NationTransform = sosoodelete.ToString();
@@ -225,7 +237,7 @@ public class CharacterInfo : MonoBehaviour {
             else if(Country.BuyList[i]==true && NationTruetoFalse[i]==true)
             {
                 bntcm = (float)moneyu.touchspeed * Nationnonugi[i];
-                NationBonus = NationBonus - Nationnonugi[i];
+                NationBonus = NationBonus - Nationgob[i];
                 if(NationBonus==0)
                 {
                     NationBonus++;
