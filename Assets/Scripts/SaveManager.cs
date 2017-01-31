@@ -92,6 +92,17 @@ public class SaveManager : MonoBehaviour {
         public ulong JugallumLev;
         public ulong TouchMoney;
 
+        public int noretry;
+        public int[] noretryhouse = new int[7];
+        public int[] noretryNation = new int[13];
+
+        public bool[] GFTruetoFalse = new bool[6];
+        public bool[] HouseTruetoFalse = new bool[7];
+        public bool[] NationTruetoFalse = new bool[13];
+
+        public float GFBonus;
+        public float HouseBonus;
+        public float NationBonus;
     }
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -208,6 +219,15 @@ public class SaveManager : MonoBehaviour {
 
         data.JugallumLev = character.JugallumLev;
         data.TouchMoney = character.TouchMoney;
+        data.noretry = character.noretry;
+        data.noretryhouse = character.noretryhouse;
+        data.noretryNation = character.noretryNation;
+        data.GFTruetoFalse = character.GFTruetoFalse;
+        data.HouseTruetoFalse = character.HouseTruetoFalse;
+        data.NationTruetoFalse = character.NationTruetoFalse;
+        data.GFBonus = character.GFBonus;
+        data.HouseBonus = character.HouseBonus;
+        data.NationBonus = character.NationBonus;
 
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
@@ -310,6 +330,15 @@ public class SaveManager : MonoBehaviour {
 
                     character.JugallumLev = data.JugallumLev;
                     character.TouchMoney = data.TouchMoney;
+                    character.noretry = data.noretry;
+                    character.noretryhouse = data.noretryhouse;
+                    character.noretryNation = data.noretryNation;
+                    character.GFTruetoFalse = data.GFTruetoFalse;
+                    character.HouseTruetoFalse = data.HouseTruetoFalse;
+                    character.NationTruetoFalse = data.NationTruetoFalse;
+                    character.GFBonus = data.GFBonus;
+                    character.HouseBonus = data.HouseBonus;
+                    character.NationBonus = data.NationBonus;
 
 				}
 				catch(NullReferenceException NE){

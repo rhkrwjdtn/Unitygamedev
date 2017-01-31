@@ -97,6 +97,18 @@ public class CharacterInfo : MonoBehaviour {
             }
         }
 
+        if(GFBonus==0)
+        {
+            GFBonus = 1;
+        }
+        if(HouseBonus==0)
+        {
+            HouseBonus = 1;
+        }
+        if(NationBonus==0)
+        {
+            NationBonus = 1;
+        }
     }
 	
 	// Update is called once per frame
