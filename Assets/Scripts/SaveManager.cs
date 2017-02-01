@@ -43,6 +43,8 @@ public class SaveManager : MonoBehaviour {
     public IconManager icon;
     public CharacterInfo character;
 
+    
+
 	public int loadlen;
 	/// <summary>
 	/// //////////////////////////////////////////////////////////////////////////////////////////
@@ -80,6 +82,7 @@ public class SaveManager : MonoBehaviour {
         public bool ho = new bool();
         public bool daejang = new bool();
         public bool chunsooru = new bool();
+        public bool chunsooruExist;
 
         public ulong[] sEmployerLevel = new ulong[CHAR_SIZE];
         public ulong[] sTwoNextLevelPrice = new ulong[CHAR_SIZE];
@@ -210,6 +213,7 @@ public class SaveManager : MonoBehaviour {
         data.ho = ramyun.activeSelf;
         data.daejang = daejang.activeSelf;
         data.chunsooru = chunsooru.activeSelf;
+        data.chunsooruExist = Realemployment.chunsooruExist;
 
         for(int i=0; i<CHAR_SIZE;i++)
         {
@@ -248,6 +252,8 @@ public class SaveManager : MonoBehaviour {
         data.TotalgfPersent = character.TotalgfPersent;
         data.TotalHousePersent = character.TotalHousePersent;
         data.TotalNationPersent = character.TotalNationPersent;
+
+
 
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
@@ -325,7 +331,7 @@ public class SaveManager : MonoBehaviour {
                     ho.SetActive(data.ho);
                     daejang.SetActive(data.daejang);
                     chunsooru.SetActive(data.chunsooru);
-
+                    Realemployment.chunsooruExist = data.chunsooruExist;
                     myMoney.touchspeed = data.moneyTouch;
 
                     data.gobsem[0] = 1;

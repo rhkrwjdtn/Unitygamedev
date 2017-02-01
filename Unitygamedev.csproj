@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Advertise\BoxAd.cs" />
     <Compile Include="Assets\Scripts\AssetsCS\AssetsEvent.cs" />
     <Compile Include="Assets\Scripts\CharacterLevel\CharacterInfo.cs" />
     <Compile Include="Assets\Scripts\Country\CountryButtonEvent.cs" />

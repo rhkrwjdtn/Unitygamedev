@@ -11,12 +11,13 @@ public class BoxManager : MonoBehaviour {
     public float delaychecktime;
     public int touchcnt=0;
 
+    public GameObject boxClickPopup = null;
     public GameObject box=null;
 
 	// Use this for initialization
 	void Start () {
         timespa = 0.0f;
-        checkTi = 6.0f;
+        checkTi = 30.0f;
         delaytime = 0.0f;
         delaychecktime = 10.0f;
 
@@ -31,18 +32,23 @@ public class BoxManager : MonoBehaviour {
             if(timespa>checkTi)
             {
                 eventbox();
-                timespa = 0;
+               
 
                 delaytime += Time.deltaTime;
                 if(delaytime>delaychecktime)
                 {
                     box.active = false;
+                    timespa = 0;
+                    delaytime = 0;
                 }
             }
             if(touchcnt>5)
             {
                 box.active = false;
                 touchcnt = 0;
+                boxClickPopup.active = true;
+
+
             }
         }
 
@@ -51,7 +57,7 @@ public class BoxManager : MonoBehaviour {
     public void eventbox()
     {
         box.active = true;
-
+        
            
     }
     public void Touchbox()
