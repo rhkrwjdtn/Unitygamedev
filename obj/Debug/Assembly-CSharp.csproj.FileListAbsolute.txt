@@ -201,3 +201,5 @@ E:\Univgame\Temp\bin\Debug\UnityEngine.HoloLens.xml
 E:\Univgame\Temp\bin\Debug\UnityEngine.VR.xml
 E:\Univgame\obj\Debug\Assembly-CSharp.dll
 E:\Univgame\obj\Debug\Assembly-CSharp.pdb
+E:\univgame\Temp\bin\Debug\UnityEngine.Advertisements.dll
+E:\univgame\Temp\bin\Debug\UnityEngine.Advertisements.xml

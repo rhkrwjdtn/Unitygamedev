@@ -42,6 +42,7 @@ public class SaveManager : MonoBehaviour {
     public GrilFriendManager girlf;
     public IconManager icon;
     public CharacterInfo character;
+	public SoundManager soundmanager;
 
     
 
@@ -118,6 +119,9 @@ public class SaveManager : MonoBehaviour {
         public int TotalHousePersent;
         public int TotalNationPersent;
         public int TotalgfPersent;
+
+		public bool backgroundsound;
+		public bool effectsound;
     }
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -253,7 +257,8 @@ public class SaveManager : MonoBehaviour {
         data.TotalHousePersent = character.TotalHousePersent;
         data.TotalNationPersent = character.TotalNationPersent;
 
-
+		data.backgroundsound = soundmanager.backgroundsound;
+		data.effectsound = soundmanager.effectsound;
 
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
@@ -372,6 +377,9 @@ public class SaveManager : MonoBehaviour {
                     character.TotalgfPersent = data.TotalgfPersent;
                     character.TotalHousePersent = data.TotalHousePersent;
                     character.TotalNationPersent = data.TotalNationPersent;
+
+					soundmanager.backgroundsound = data.backgroundsound;
+					soundmanager.effectsound = data.effectsound;
 
 
 				}

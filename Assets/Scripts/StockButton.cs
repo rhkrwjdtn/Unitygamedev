@@ -11,8 +11,8 @@ public class StockButton : MonoBehaviour {
 	public Text countText;
 	public Text averageText;
 
-	private ulong minprice=700;
-	private ulong maxprice=700000;
+	private ulong minprice=2200;
+	private ulong maxprice=7000000;
 	private Item item;
 	private ShopScrollList scrollList;
 
@@ -43,7 +43,7 @@ public class StockButton : MonoBehaviour {
 
 			} else if (item.price >= minprice) {
 
-				float stockRate = (float)Random.Range (-13, 15) / 100;
+				float stockRate = (float)Random.Range (-13, 16) / 100;
 				item.price = (ulong)(item.price + item.price * stockRate);
 				if (stockRate > 0) {
 					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
@@ -61,7 +61,7 @@ public class StockButton : MonoBehaviour {
 				priceText.text = "<color=#0000ff>" + item.price.ToString () + " ▼ " + "</color>";    //blue
 
 			} else if (item.price < minprice) {
-				float stockRate = (float)Random.Range (0, 15) / 100;
+				float stockRate = (float)Random.Range (0, 14) / 100;
 				item.price = (ulong)(item.price + item.price * stockRate);
 				priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
 
@@ -91,7 +91,7 @@ public class StockButton : MonoBehaviour {
 
 			} else if (item.price >= minprice) {
 
-				float stockRate = (float)Random.Range (-28, 30) / 100;
+				float stockRate = (float)Random.Range (-27, 30) / 100;
 				item.price = (ulong)(item.price + item.price * stockRate);
 				if (stockRate > 0) {
 					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
@@ -115,7 +115,7 @@ public class StockButton : MonoBehaviour {
 
 			} else if (item.price >= minprice) {
 
-				float stockRate = (float)Random.Range (-18, 20) / 100;
+				float stockRate = (float)Random.Range (-17, 20) / 100;
 				item.price = (ulong)(item.price + item.price * stockRate);
 				if (stockRate > 0) {
 					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
@@ -139,7 +139,7 @@ public class StockButton : MonoBehaviour {
 
 			} else if (item.price >= minprice) {
 
-				float stockRate = (float)Random.Range (-7, 9) / 100;
+				float stockRate = (float)Random.Range (-6, 9) / 100;
 				item.price = (ulong)(item.price + item.price * stockRate);
 				if (stockRate > 0) {
 					priceText.text = "<color=#ff0000>" + item.price.ToString () + " ▲ " + "</color>";    //red
