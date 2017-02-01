@@ -203,3 +203,5 @@ E:\Univgame\obj\Debug\Assembly-CSharp.dll
 E:\Univgame\obj\Debug\Assembly-CSharp.pdb
 E:\univgame\Temp\bin\Debug\UnityEngine.Advertisements.dll
 E:\univgame\Temp\bin\Debug\UnityEngine.Advertisements.xml
+C:\Users\duri4\Documents\Unitygamedev\Temp\bin\Debug\UnityEngine.Advertisements.dll
+C:\Users\duri4\Documents\Unitygamedev\Temp\bin\Debug\UnityEngine.Advertisements.xml

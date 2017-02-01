@@ -151,7 +151,7 @@ public class GoalManager : MonoBehaviour {
 	//Start Spoon_Popup
 	public void goal_Initiate () {
 		if (goal_Popup.activeSelf == true) {
-
+			EmployeesLvTmp = 0;
 			for (int i = 0; i < 11; i++) 
 				EmployeesLvTmp += (int)myEmp.EmployerLevel [i];
 			Debug.Log ("알바총레벨 :" + EmployeesLvTmp);
