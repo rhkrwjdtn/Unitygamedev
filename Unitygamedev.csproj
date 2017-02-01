@@ -70,6 +70,9 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
@@ -106,6 +109,7 @@
     <Compile Include="Assets\Scripts\StockButton.cs" />
     <Compile Include="Assets\Scripts\TransMoney.cs" />
     <Compile Include="Assets\Scripts\startstock.cs" />
+    <Compile Include="Assets\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Flag\original\refererence.txt" />
