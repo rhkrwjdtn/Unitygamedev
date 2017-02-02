@@ -153,7 +153,7 @@ public class CharacterInfo : MonoBehaviour {
                 Gfimg[i].color = open;
 
             }
-            else// if(gf.GFExist[i]==false && GFTruetoFalse[i]==true)
+            else if(gf.GFExist[i]==false && GFTruetoFalse[i]==true)
             {
                 bntcm = (float)moneyu.touchspeed * GFnonugi[i];
                 Debug.Log(GFnonugi[0]);
