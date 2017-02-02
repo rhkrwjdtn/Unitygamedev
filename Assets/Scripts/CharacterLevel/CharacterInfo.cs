@@ -61,10 +61,12 @@ public class CharacterInfo : MonoBehaviour {
     public Image[] HouseImg = new Image[7];
     public Image[] NationImg = new Image[13];
     public Image[] Gfimg = new Image[6];
-
+    public Image BackGraoud=null;
 
     public Color open;
     public Color close;
+
+    public Color closeLevel;
 
     public string GFTransform = null;
     public string HouseTransform = null;
@@ -124,6 +126,7 @@ public class CharacterInfo : MonoBehaviour {
         GFBonusTx.text = "" + TotalgfPersent + "%";
         HouseBonusTx.text = "" + TotalHousePersent + "%";
         NationBonusTx.text = "" + TotalNationPersent + "%";
+
 
     }
 	
@@ -266,6 +269,16 @@ public class CharacterInfo : MonoBehaviour {
             }
         }
 
+        if(moneyu.money<TwoNextLevelPrice)
+        {
+            BackGraoud.color = closeLevel;
+            btn.enabled = false;
+        }
+        else if(moneyu.money>TwoNextLevelPrice)
+        {
+            BackGraoud.color = open;
+            btn.enabled = true;
+        }
 
         NowClickWonTx.text = TouchMoney + "원 ->" + moneyu.touchspeed + "원";
 
