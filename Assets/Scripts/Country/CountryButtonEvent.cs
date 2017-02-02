@@ -14,10 +14,9 @@ public class CountryButtonEvent : MonoBehaviour {
 	public TransMoney myTransMoney;
 
 	public GameObject flagObj;
-	static ulong tempP = 5000000000000;
-	public ulong[] Price = new ulong[SIZE] {tempP, tempP*2, tempP*3, tempP*5, tempP*6,
-		tempP*10, tempP*15, tempP*20, tempP*30, tempP*50, 
-		tempP*80, tempP*100, tempP*200}; //가격
+	static ulong tempJO = 1000000000000; //1조
+	static ulong temp1000JO= 1000000000000000; //1000조
+	public ulong[] Price = new ulong[SIZE]; //가격
 	public bool[] BuyList = new bool[SIZE] {true, true, true, true, true, 
 		true, true, true, true, true, 
 		true, true, true}; //구매 여부
@@ -31,6 +30,11 @@ public class CountryButtonEvent : MonoBehaviour {
 			countryObj[i] = null;
 			imgObj[i] = null;
 			btnObj[i] = null;
+
+			if (i > 0)
+				Price [i] = (temp1000JO << i);// (1000000000000*5*(i+1));//5조~ 75조
+			else
+				Price [0] = tempJO*1818; //1818조
 		}
 	}
 
@@ -46,8 +50,6 @@ public class CountryButtonEvent : MonoBehaviour {
 				imgObj[i] = countryObj[i].transform.FindChild("Image").gameObject;
 				btnObj[i] = countryObj[i].transform.FindChild("Button").gameObject;
 
-				//가격, 구매 여부
-				Price[i] = (ulong) (1000000000000*5*(i+1));//5조~ 75조
 			}
 		}
 	}
