@@ -18,7 +18,7 @@ public class HouseButtonEvent : MonoBehaviour {
 	public TransMoney myTransMoney;
 
 	//각 배경에 해당하는 가격
-	public ulong[] BG_Price = new ulong[SIZE] { 150000000, 250000000, 450000000, 100000000, 2300000000,
+	public ulong[] BG_Price = new ulong[SIZE] { 150000000, 250000000, 450000000, 1000000000, 2300000000,
 		5200000000, 10600000000 };
 	//배경 구매 완료한 경우 false
 	public bool[] BG_BuyList = new bool[SIZE] {true, true, true, true, true, 

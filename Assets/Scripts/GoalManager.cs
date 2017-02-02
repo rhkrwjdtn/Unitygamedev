@@ -87,16 +87,16 @@ public class GoalManager : MonoBehaviour {
 				break;
 			case 1:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "클릭당 골드 "+ myTransMoney.strTransMoney((ulong)((int)Mathf.Pow(10f,(float)Goal_LV[i])*10000)) +" 달성";	
-					if (MU.touchspeed >= (ulong)((int)Mathf.Pow(10f,(float)Goal_LV[i])*10000)) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "클릭당 골드 "+ myTransMoney.strTransMoney((ulong)((int)Mathf.Pow(10f,(float)Goal_LV[i])*100000)) +" 달성";	
+					if (MU.touchspeed >= (ulong)((int)Mathf.Pow(10f,(float)Goal_LV[i])*100000)) {
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 					}	
 				}
 				break;
 			case 2:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "보유 골드 "+ myTransMoney.strTransMoney((ulong)((int)Mathf.Pow(100f,(float)Goal_LV[i])*1000000)) +" 달성";
-					if (MU.money >= (ulong)((int)Mathf.Pow(100f,(float)Goal_LV[i])*1000000) ) 
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "보유 골드 "+ myTransMoney.strTransMoney((ulong)((int)Mathf.Pow(100f,(float)Goal_LV[i])*100000000)) +" 달성";
+					if (MU.money >= (ulong)((int)Mathf.Pow(100f,(float)Goal_LV[i])*100000000) ) 
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 					
 				}
@@ -119,8 +119,8 @@ public class GoalManager : MonoBehaviour {
 				break;
 			case 5:
 				{
-					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "둥신 "+ ((int)Mathf.Pow(2f,(float)Goal_LV[i])*50) +"LV 달성";	
-					if ((int)myqudtls.JugallumLev >= ((int)Mathf.Pow(2f,(float)Goal_LV[i])*50)) {
+					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "둥신 "+ ((int)Mathf.Pow(2f,(float)Goal_LV[i])*100) +"LV 달성";	
+					if ((int)myqudtls.JugallumLev >= ((int)Mathf.Pow(2f,(float)Goal_LV[i])*100)) {
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 					}
 				}

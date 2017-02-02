@@ -14,7 +14,6 @@ public class CountryButtonEvent : MonoBehaviour {
 	public TransMoney myTransMoney;
 
 	public GameObject flagObj;
-	static ulong tempJO = 1000000000000; //1조
 	static ulong temp1000JO= 1000000000000000; //1000조
 	public ulong[] Price = new ulong[SIZE]; //가격
 	public bool[] BuyList = new bool[SIZE] {true, true, true, true, true, 
@@ -34,7 +33,7 @@ public class CountryButtonEvent : MonoBehaviour {
 			if (i > 0)
 				Price [i] = (temp1000JO << i);// (1000000000000*5*(i+1));//5조~ 75조
 			else
-				Price [0] = tempJO*1818; //1818조
+				Price [0] = 1818181818180000;
 		}
 	}
 

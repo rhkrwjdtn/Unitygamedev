@@ -12,6 +12,7 @@ public class AssetsEvent : MonoBehaviour {
 	public GameObject[] Asset_houseObj = new GameObject[houseSIZE];
 	public GameObject[] Asset_houseImgObj = new GameObject[houseSIZE];
 	public GameObject[] Asset_houseBtnObj = new GameObject[houseSIZE];
+	public ulong[] Asset_houseNowPrice = new ulong[houseSIZE];
 
 	//countryAssets
 	public const int countrySIZE=13;
@@ -19,6 +20,7 @@ public class AssetsEvent : MonoBehaviour {
 	public GameObject[] Asset_countryObj = new GameObject[countrySIZE];
 	public GameObject[] Asset_countryImgObj = new GameObject[countrySIZE];
 	public GameObject[] Asset_countryBtnObj = new GameObject[countrySIZE];
+	public ulong[] Asset_countryNowPrice = new ulong[countrySIZE];
 
 	//StockAssets
 	public const int StockSIZE=9;
@@ -26,6 +28,7 @@ public class AssetsEvent : MonoBehaviour {
 	public GameObject[] Asset_StockObj = new GameObject[StockSIZE];
 	public GameObject[] Asset_StockImgObj = new GameObject[StockSIZE];
 	public GameObject[] Asset_StockBtnObj = new GameObject[StockSIZE];
+	public ulong[] Asset_StockNowPrice = new ulong[StockSIZE];
 
 
 	//AssetsManager에서 묶어줘야함.
@@ -44,21 +47,6 @@ public class AssetsEvent : MonoBehaviour {
 	*/
 
 	void Awake(){
-		for (int i = 0; i < houseSIZE; i++) {
-			Asset_houseObj[i] = null;
-			Asset_houseImgObj[i] = null;
-			Asset_houseBtnObj[i] = null;
-		}
-		for (int i = 0; i < countrySIZE; i++) {
-			Asset_countryObj[i] = null;
-			Asset_countryImgObj[i] = null;
-			Asset_countryBtnObj[i] = null;
-		}
-		for (int i = 0; i < StockSIZE; i++) {
-			Asset_StockObj[i] = null;
-			Asset_StockImgObj[i] = null;
-			Asset_StockBtnObj[i] = null;
-		}
 	}
 	//connect tabbutton0
 	public void Asset_HouseInitiate(){
@@ -104,20 +92,93 @@ public class AssetsEvent : MonoBehaviour {
 		}
 	}
 
+
+	void Start() {
+
+		for (int i = 0; i < houseSIZE; i++) {
+			Asset_houseObj[i] = null;
+			Asset_houseImgObj[i] = null;
+			Asset_houseBtnObj[i] = null;
+			Asset_houseNowPrice [i] = myBGList.BG_Price[i];
+		}
+		for (int i = 0; i < countrySIZE; i++) {
+			Asset_countryObj[i] = null;
+			Asset_countryImgObj[i] = null;
+			Asset_countryBtnObj[i] = null;
+			Asset_countryNowPrice [i] = myFlagList.Price[i];
+
+		}
+		for (int i = 0; i < StockSIZE; i++) {
+			Asset_StockObj[i] = null;
+			Asset_StockImgObj[i] = null;
+			Asset_StockBtnObj[i] = null;
+			Asset_StockNowPrice [i] = myStockList.stockassetprice[i];
+		}
+		//1초 주기
+		StartCoroutine ("CountTime", 1);
+	}
+
+
+	IEnumerator CountTime(float delayTime) {
+		//1초 마다 할 동작!
+		//값이 비쌀수록 적은 비율로 오름
+		ulong tempPrice;
+		for (int i = 0; i < houseSIZE; i++) {
+			if (i < houseSIZE / 2) {
+				tempPrice = Asset_houseNowPrice [i];
+				tempPrice /= 1000;
+				tempPrice *= 1005;
+				Asset_houseNowPrice [i] = tempPrice;
+			} else {
+				tempPrice = Asset_houseNowPrice [i];
+				tempPrice /= 1000;
+				tempPrice *= 1004;
+				Asset_houseNowPrice [i] = tempPrice;
+			}
+		}
+		/*
+		for (int i = 0; i < StockSIZE; i++) {
+			if (myStockList.stockassetpercent [i] > 100f) {
+				tempPrice = Asset_StockNowPrice [i];
+				tempPrice /= 1000;
+				tempPrice *= 1003;
+				Asset_StockNowPrice [i] = tempPrice;
+			}
+		}
+		*/
+		for (int i = 0; i < countrySIZE; i++) {
+			if (i < countrySIZE / 2) {
+				tempPrice = Asset_countryNowPrice [i];
+				tempPrice /= 1000;
+				tempPrice *= 1002;
+				Asset_countryNowPrice [i] = tempPrice;
+			} else {
+				tempPrice = Asset_countryNowPrice [i];
+				tempPrice /= 1000;
+				tempPrice *= 1001;
+				Asset_countryNowPrice [i] = tempPrice;				
+			}
+		}
+
+
+		yield return new WaitForSeconds(delayTime);
+		StartCoroutine("CountTime", 1);
+	}
+
 	void Update () {
 		if(Asset_housePopup.activeSelf==true)
 			Asset_HouseCheck ();
 		if(Asset_countryPopup.activeSelf==true)
 			Asset_CountryCheck ();
-	//	if(Asset_StockPopup.activeSelf==true)
-	//		Asset_StockCheck ();
+		//	if(Asset_StockPopup.activeSelf==true)
+		//		Asset_StockCheck ();
 	}
 
 	public void Asset_HouseCheck(){
 		for (int i = 0; i < houseSIZE; i++) {
 			//이미 구매한 경우
 			if (myBGList.BG_BuyList [i] == false) {
-				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "구매가:"+ myTransMoney.strTransMoney(myBGList.BG_Price[i])+"\n(임시):"+myTransMoney.strTransMoney(myBGList.BG_Price[i]*2);
+				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "구매가:"+ myTransMoney.strTransMoney(myBGList.BG_Price[i])+"\n판매가:"+myTransMoney.strTransMoney(Asset_houseNowPrice[i]);
 				//밝게
 				Asset_houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				//컬러아이콘
@@ -147,7 +208,7 @@ public class AssetsEvent : MonoBehaviour {
 			//이미 구매한 경우
 			if (myFlagList.BuyList [i] == false) {
 				//구매가, 밝게, 컬러아이콘, 버튼활성화 
-				Asset_countryObj[i].transform.GetChild(1).GetComponent<Text>().text =  "구매가:"+ myTransMoney.strTransMoney(myFlagList.Price[i])+"\n(임시):"+ myTransMoney.strTransMoney(myFlagList.Price[i]*2);
+				Asset_countryObj[i].transform.GetChild(1).GetComponent<Text>().text =  "구매가:"+ myTransMoney.strTransMoney(myFlagList.Price[i])+"\n판매가:"+ myTransMoney.strTransMoney(Asset_countryNowPrice[i]);
 				Asset_countryObj [i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
 				Asset_countryBtnObj[i].SetActive(true);
@@ -171,12 +232,12 @@ public class AssetsEvent : MonoBehaviour {
 		for (int i = 0; i < StockSIZE; i++) {
 			//주식 보유한 경우
 			if (myStockList.stockassetpercent [i] > 0.0f) {
-				Debug.Log("보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[ItemN])+"\n지분율:"+ (myStockList.stockassetpercent[ItemN]).ToString("N2")+"%");
+				Debug.Log("보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]).ToString("N2")+"%");
 				//구매가, 밝게, 컬러아이콘, 버튼활성화 
 				Asset_StockObj[ItemN].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]).ToString("N2")+"%";
-				Asset_StockObj [ItemN].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
-				Asset_StockImgObj[StockSIZE-nonItemN].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
-				Asset_StockImgObj[ItemN].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Stock_logo/"+ItemN) as Sprite;
+				Asset_StockObj [ItemN].GetComponent<Image> ().color = Color.white;
+				Asset_StockImgObj[ItemN].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Stock_logo/"+i) as Sprite;
+				Asset_StockImgObj [ItemN].GetComponent<Image> ().color = Color.white;
 				Asset_StockBtnObj[ItemN].SetActive(false);
 				ItemN++;
 				//Asset_StockObj [i].transform.position = new Vector3((float)110, (float)(92.0f-(float)ItemN*40.0f));
@@ -189,6 +250,7 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_StockObj [StockSIZE-nonItemN].transform.GetChild (1).GetComponent<Text> ().text = "미보유";
 				Asset_StockObj[StockSIZE-nonItemN].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Stock_logo/"+i) as Sprite;
+				Asset_StockImgObj[StockSIZE-nonItemN].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Stock_logo/"+i) as Sprite;
 				Asset_StockImgObj[StockSIZE-nonItemN].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				Asset_StockBtnObj[StockSIZE-nonItemN].SetActive(false);
 
