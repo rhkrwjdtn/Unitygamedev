@@ -24,19 +24,19 @@ public class spoonmanager : MonoBehaviour {
     void Update () {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 
-        if (moneyu.moneyspeed < 10000)
+        if (moneyu.moneyspeed <= 10000)
 		{ spoonimage.GetComponent<Image>().sprite = gmfrspoon;}
-        if (moneyu.moneyspeed < 50000 && moneyu.moneyspeed > 10000)
+        if (moneyu.moneyspeed <= 100000 && moneyu.moneyspeed > 10000)
 		{ spoonimage.GetComponent<Image>().sprite = plasticspoon;}
-        if(moneyu.moneyspeed<100000 &&moneyu.moneyspeed>50000)
+        if(moneyu.moneyspeed<= 1000000 &&moneyu.moneyspeed>100000)
 		{ spoonimage.GetComponent<Image>().sprite = nokspoon;}
-        if(moneyu.moneyspeed<500000 && moneyu.moneyspeed>100000)
+        if(moneyu.moneyspeed<=10000000 && moneyu.moneyspeed>1000000)
 		{ spoonimage.GetComponent<Image>().sprite = dongspoon;}
-        if(moneyu.moneyspeed<1000000&&moneyu.moneyspeed>500000)
+        if(moneyu.moneyspeed<=100000000&&moneyu.moneyspeed>10000000)
 		{ spoonimage.GetComponent<Image>().sprite = silverspoon;}
-        if(moneyu.moneyspeed<5000000&&moneyu.moneyspeed>1000000)
+        if(moneyu.moneyspeed<=1000000000&&moneyu.moneyspeed>100000000)
 		{ spoonimage.GetComponent<Image>().sprite = goldspoon;}
-        if(moneyu.moneyspeed<10000000&&moneyu.moneyspeed>5000000)
+        if(moneyu.moneyspeed<=10000000000&&moneyu.moneyspeed>1000000000)
 		{ spoonimage.GetComponent<Image>().sprite = diaspoon;}
 
     }

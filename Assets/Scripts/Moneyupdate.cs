@@ -19,8 +19,8 @@ public class Moneyupdate : MonoBehaviour {
 	public ulong jo;
 	public ulong kuyng;
 
-	public ulong touchspeed = 10000;
-	public ulong moneyspeed = 30000;
+	public ulong touchspeed ;
+	public ulong moneyspeed ;
 
 	public AudioSource coinAudio;
 	public AudioClip coinSound;
