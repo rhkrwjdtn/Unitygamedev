@@ -103,6 +103,13 @@ public class SaveManager : MonoBehaviour {
 
         public int JugallumLev;
         public ulong TouchMoney;
+        public ulong TwoNextLevelPrice;
+
+        public ulong TouchMoneyPlus;
+        public ulong BeforeLevelPrice;
+        public float BeforePrice;
+
+
 
         public int noretry;
         public int[] noretryhouse = new int[7];
@@ -257,6 +264,11 @@ public class SaveManager : MonoBehaviour {
         data.TotalHousePersent = character.TotalHousePersent;
         data.TotalNationPersent = character.TotalNationPersent;
 
+        data.TouchMoneyPlus = character.TouchMoneyPlus;
+        data.BeforePrice = character.BeforePrice;
+        data.BeforeLevelPrice = character.BeforeLevelPrice;
+        data.TwoNextLevelPrice = character.TwoNextLevelPrice;
+
 		data.backgroundsound = soundmanager.backgroundsound;
 		data.effectsound = soundmanager.effectsound;
 
@@ -377,6 +389,11 @@ public class SaveManager : MonoBehaviour {
                     character.TotalgfPersent = data.TotalgfPersent;
                     character.TotalHousePersent = data.TotalHousePersent;
                     character.TotalNationPersent = data.TotalNationPersent;
+
+                    character.BeforeLevelPrice = data.BeforeLevelPrice;
+                    character.BeforePrice = data.BeforePrice;
+                    character.TouchMoneyPlus = data.TouchMoneyPlus;
+                    character.TwoNextLevelPrice = data.TwoNextLevelPrice;
 
 					soundmanager.backgroundsound = data.backgroundsound;
 					soundmanager.effectsound = data.effectsound;
