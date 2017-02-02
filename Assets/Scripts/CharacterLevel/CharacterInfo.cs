@@ -86,8 +86,10 @@ public class CharacterInfo : MonoBehaviour {
             btn = gameObject.GetComponent<UnityEngine.UI.Button>();
 
         }
-        //2/3일 날 
-        //TwoNextLevelPrice = ((JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1)) * 6;
+        if(TwoNextLevelPrice==0)
+        {
+            TwoNextLevelPrice = 10;
+        }
         for(int i=0;i<6;i++)
         {
             if(gf.GFExist[i]==false)
@@ -334,7 +336,7 @@ public class CharacterInfo : MonoBehaviour {
             TouchMoney = TouchMoney - 1;
 
         }
-        //돈 없을때 버튼 클릭 안되게 해야댐 2/3일
+        //돈 없을때 버튼 클릭 안되게 해야댐 2/3일 ---완료
     }
 
 }
