@@ -175,6 +175,7 @@ public class AssetsEvent : MonoBehaviour {
 				//구매가, 밝게, 컬러아이콘, 버튼활성화 
 				Asset_StockObj[ItemN].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]).ToString("N2")+"%";
 				Asset_StockObj [ItemN].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
+				Asset_StockImgObj[StockSIZE-nonItemN].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				Asset_StockImgObj[ItemN].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Stock_logo/"+ItemN) as Sprite;
 				Asset_StockBtnObj[ItemN].SetActive(false);
 				ItemN++;
