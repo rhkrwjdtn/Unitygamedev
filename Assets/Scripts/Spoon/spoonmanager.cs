@@ -38,6 +38,10 @@ public class spoonmanager : MonoBehaviour {
 		{ spoonimage.GetComponent<Image>().sprite = goldspoon;}
         if(moneyu.moneyspeed<=10000000000&&moneyu.moneyspeed>1000000000)
 		{ spoonimage.GetComponent<Image>().sprite = diaspoon;}
+        if(moneyu.moneyspeed>10000000000)
+        {
+            spoonimage.GetComponent<Image>().sprite = diaspoon;
+        }
 
     }
     public void spoonClick()

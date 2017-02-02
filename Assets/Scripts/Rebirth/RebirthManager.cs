@@ -50,6 +50,7 @@ public class RebirthManager : MonoBehaviour {
             {
                 gmfrrebirth();
                 Alramspoon[0].active = true;
+
             }
             else if (totalrandum <= 6500 && totalrandum > 4000)
             {
@@ -93,19 +94,20 @@ public class RebirthManager : MonoBehaviour {
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         msrandomnum = Random.Range(0, 10000);
-        ckrandomnum = Random.Range(0, 1000);
+        ckrandomnum = Random.Range(0, 1000);//2월3일 이건 정해야댈듯?
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
         msmoneyspeed = ulong.Parse(msstring);
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
+        allrebirth(cktouchmoney);
 
     }
     public void plasticrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(10000, 50000);
+        msrandomnum = Random.Range(10001, 100000);
         ckrandomnum = Random.Range(1000, 5000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -113,12 +115,13 @@ public class RebirthManager : MonoBehaviour {
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
+        allrebirth(cktouchmoney);
 
     }
     public void nokrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(50000, 100000);
+        msrandomnum = Random.Range(100001, 1000000);
         ckrandomnum = Random.Range(5000, 10000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -126,11 +129,12 @@ public class RebirthManager : MonoBehaviour {
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
+        allrebirth(cktouchmoney);
     }
     public void dongrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(100000, 500000);
+        msrandomnum = Random.Range(1000001, 10000000);
         ckrandomnum = Random.Range(10000, 50000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -138,11 +142,12 @@ public class RebirthManager : MonoBehaviour {
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
+        allrebirth(cktouchmoney);
     }
     public void silverrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(500000, 1000000);
+        msrandomnum = Random.Range(10000001, 100000000);
         ckrandomnum = Random.Range(50000, 100000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -150,11 +155,12 @@ public class RebirthManager : MonoBehaviour {
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
+        allrebirth(cktouchmoney);
     }
     public void goldrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(1000000, 5000000);
+        msrandomnum = Random.Range(100000000, 1000000000);
         ckrandomnum = Random.Range(100000, 500000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -162,11 +168,13 @@ public class RebirthManager : MonoBehaviour {
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
+        allrebirth(cktouchmoney);
+
     }
     public void diarebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(5000000, 10000000);
+        msrandomnum = Random.Range(1000000001, 2000000000);
         ckrandomnum = Random.Range(500000, 1000000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -174,5 +182,59 @@ public class RebirthManager : MonoBehaviour {
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
+        allrebirth(cktouchmoney);
     }
+    public void allrebirth(ulong cktouchmoney)
+    {
+        CharacterInfo character = GameObject.Find("CharacterManager").GetComponent<CharacterInfo>();
+        EmploymentManager employ = GameObject.Find("EmployManager").GetComponent<EmploymentManager>();
+        GrilFriendManager girl = GameObject.Find("GirlFriendManager").GetComponent<GrilFriendManager>();
+
+        //여자친구 초기화
+
+        for (int i = 0; i < 6; i++)
+        {
+            girl.GirlFriend[i].active = false;
+            girl.GFExist[i] = false;
+            girl.ison[i] = false;
+            girl.Backgroundcl[i].color = girl.open;
+            girl.btn_text[i].text = "사귀기";
+            if (i != 5)
+            {
+                girl.ClosePopup[i].active = true;
+            }
+            character.GFTruetoFalse[i] = false;
+
+        }
+
+        //캐릭터 레벨 초기화
+        character.noretry = 0;
+        character.JugallumLev = 0;
+        character.BeforeLevelPrice = 0;
+        character.NextLevelPrice = 0;
+        character.TwoNextLevelPrice = 10;
+        character.TouchMoneyPlus = 0;
+        character.TouchMoney = cktouchmoney;
+
+        //고용하기 초기화
+        for(int i=0;i<11;i++)
+        {
+            employ.EmployerLevel[i] = 0;
+            employ.Employer[i].active = false;
+            employ.moneyspeed[i] = employ.speedplus[i];
+            employ.NextLevelPrice[i] = employ.StartLevelPrice[i];
+            employ.TwoNextLevelPrice[i] = employ.StartLevelPrice[i];
+            employ.plusmoney[i] = 0;
+            if(i!=10)
+            { employ.ClosePopup[i].active = true;
+            }
+            employ.btn_text[i].fontSize = 8;
+            employ.btn_text[i].text = "비용:" + employ.TwoNextLevelPrice[i] + "\n" + "초당:" + employ.moneyspeed[i] + "원";
+            employ.name_text[i].text = "" + employ.EmployerLevel[i];
+        }
+       
+       
+
+    }
+
 }
