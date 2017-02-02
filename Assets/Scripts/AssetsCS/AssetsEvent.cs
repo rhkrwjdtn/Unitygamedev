@@ -174,7 +174,7 @@ public class AssetsEvent : MonoBehaviour {
 				//구매가, 밝게, 컬러아이콘, 버튼활성화 
 				Asset_StockObj[ItemN].transform.GetChild(1).GetComponent<Text>().text =  "보유가:"+ myTransMoney.strTransMoney(myStockList.stockassetprice[i])+"\n지분율:"+ (myStockList.stockassetpercent[i]).ToString("N2")+"%";
 				Asset_StockObj [ItemN].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
-				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
+				Asset_StockImgObj[ItemN].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Stock_logo/"+ItemN) as Sprite;
 				Asset_StockBtnObj[ItemN].SetActive(false);
 				ItemN++;
 				//Asset_StockObj [i].transform.position = new Vector3((float)110, (float)(92.0f-(float)ItemN*40.0f));
@@ -186,7 +186,8 @@ public class AssetsEvent : MonoBehaviour {
 				nonItemN++;
 				Asset_StockObj [StockSIZE-nonItemN].transform.GetChild (1).GetComponent<Text> ().text = "미보유";
 				Asset_StockObj[StockSIZE-nonItemN].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
-				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
+				//Asset_StockImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Stock_logo/"+i) as Sprite;
+				Asset_StockImgObj[StockSIZE-nonItemN].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				Asset_StockBtnObj[StockSIZE-nonItemN].SetActive(false);
 
 				//맨 밑에서 부터..
