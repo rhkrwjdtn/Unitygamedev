@@ -129,6 +129,7 @@ public class AssetsEvent : MonoBehaviour {
 			}
 			else {
 				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "미구매";
+				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().alignment = TextAnchor.MiddleCenter;
 				//어둡게
 				Asset_houseObj [i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				//흑백
