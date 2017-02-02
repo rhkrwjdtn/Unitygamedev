@@ -7,11 +7,15 @@ public class CharacterInfo : MonoBehaviour {
 
     public UnityEngine.UI.Button btn;
 	public ulong ClickMoney = 0;
-    public ulong JugallumLev = 0;
+    public int JugallumLev = 0;
 
+    public ulong BeforeLevelPrice = 0;
     public ulong NextLevelPrice = 0;
     public ulong TwoNextLevelPrice = 0;
     public ulong TouchMoney = 5;
+    public ulong TouchMoneyPlus = 0;
+    public float BeforePrice = 1;
+    public float AfterPrice = 1;
    // public ulong TouchMoneyGobhagiBonusPersent = 1;
    // public ulong BonusgobTouchmoney = 0;
 
@@ -22,12 +26,14 @@ public class CharacterInfo : MonoBehaviour {
     public float totalClickmoney = 0;
 
     public int sosoodelete = 0;
+    public int Secondsosoodelete = 0;
     public int noretry = 0;
     public int[] noretryhouse = new int[7];
     public int[] noretryNation = new int[13];
     public int TotalHousePersent = 0;
     public int TotalNationPersent = 0;
     public int TotalgfPersent = 0;
+
 
     public Text LevelText = null;
     public Text LevelupbtnText = null;
@@ -56,6 +62,7 @@ public class CharacterInfo : MonoBehaviour {
     public Image[] NationImg = new Image[13];
     public Image[] Gfimg = new Image[6];
 
+
     public Color open;
     public Color close;
 
@@ -63,6 +70,8 @@ public class CharacterInfo : MonoBehaviour {
     public string HouseTransform = null;
     public string NationTransform = null;
     public string ToTalTransform = null;
+    public string BeforeString = null;
+    public string AfterString = null;
 	// Use this for initialization
 
 	void Start () {
@@ -75,7 +84,8 @@ public class CharacterInfo : MonoBehaviour {
             btn = gameObject.GetComponent<UnityEngine.UI.Button>();
 
         }
-        TwoNextLevelPrice = ((JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1)) * 6;
+        //2/3일 날 
+        //TwoNextLevelPrice = ((JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1)) * 6;
         for(int i=0;i<6;i++)
         {
             if(gf.GFExist[i]==false)
@@ -261,18 +271,36 @@ public class CharacterInfo : MonoBehaviour {
 
 
         LevelText.text = "둥신 LV" + JugallumLev;
-        LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + "100" + "/클릭";
+        LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + TouchMoneyPlus + "/클릭";
 
 
     }
     public void btnClick()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
+        TouchMoneyPlus += 1;
+        TouchMoney = TouchMoney + TouchMoneyPlus;
+        if(BeforeLevelPrice==0)
+        {
+            BeforePrice += 10;
+        }
+        
+        for (int i=0;i<JugallumLev;i++)
+        {
+            BeforePrice = BeforePrice * 1.04f;
+        }
+        AfterPrice = BeforePrice * 1.04f;
 
-        TouchMoney = TouchMoney + 100;
+        Secondsosoodelete = (int)BeforePrice;
+        BeforeString = Secondsosoodelete.ToString();
+        Secondsosoodelete = (int)AfterPrice;
+        AfterString = Secondsosoodelete.ToString();
 
-        NextLevelPrice = (JugallumLev * JugallumLev * JugallumLev * JugallumLev) * 6;
-        TwoNextLevelPrice = ((JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1) * (JugallumLev + 1)) * 6;
+        
+        NextLevelPrice = BeforeLevelPrice+ulong.Parse(BeforeString);
+        TwoNextLevelPrice = BeforeLevelPrice+ulong.Parse(AfterString);
+        BeforeLevelPrice = NextLevelPrice;
+
         if (moneyu.money > NextLevelPrice)
         {
             moneyu.money=moneyu.money - NextLevelPrice;
@@ -283,16 +311,17 @@ public class CharacterInfo : MonoBehaviour {
             moneyu.touchspeed = ulong.Parse(ToTalTransform);
             LevelText.text = "둥신 LV" + JugallumLev;
             LevelupbtnText.fontSize = 8;
-            LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + "100" + "/클릭";
+            LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + TouchMoneyPlus + "/클릭";
             NowClickWonTx.text = TouchMoney+"원 ->"+moneyu.touchspeed+"원";
-
+            BeforePrice = 1;
+            AfterPrice = 1;
         }
         else if(moneyu.money<NextLevelPrice)
         {
-            TouchMoney = TouchMoney - 100;
+            TouchMoney = TouchMoney - 1;
 
         }
-
+        //돈 없을때 버튼 클릭 안되게 해야댐 2/3일
     }
 
 }

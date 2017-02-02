@@ -101,7 +101,7 @@ public class SaveManager : MonoBehaviour {
 
         public bool[] GFExist = new bool[6];
 
-        public ulong JugallumLev;
+        public int JugallumLev;
         public ulong TouchMoney;
 
         public int noretry;
