@@ -30,21 +30,21 @@ public class GrilFriendManager : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        if(moneyu.moneyspeed>10000)
+        if(moneyu.moneyspeed>100000)
         { ClosePopup[0].active = false; }
-        if(moneyu.moneyspeed>50000)
+        if(moneyu.moneyspeed>1000000)
         {
             ClosePopup[1].active = false;
         }
-        if(moneyu.moneyspeed>100000)
+        if(moneyu.moneyspeed>10000000)
         {
             ClosePopup[2].active = false;
         }
-        if(moneyu.moneyspeed>500000)
+        if(moneyu.moneyspeed>100000000)
         {
             ClosePopup[3].active = false;
         }
-        if(moneyu.moneyspeed>5000000)
+        if(moneyu.moneyspeed>1000000000)
         {
             ClosePopup[4].active = false;
         }

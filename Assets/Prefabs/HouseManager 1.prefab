@@ -61,7 +61,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
   imgObj:
   - {fileID: 0}
   - {fileID: 0}
@@ -80,6 +79,6 @@ MonoBehaviour:
   - {fileID: 0}
   housepopup: {fileID: 0}
   myTransMoney: {fileID: 0}
-  BG_Price: c83200000000000008cf0000000000007082030000000000504b140000000000e0707200000000004081ba010000000000e1f50500000000
+  BG_Price: 80d1f0080000000080b2e60e000000008074d21a0000000000e1f50500000000003717890000000000b4f13501000000002acf7702000000
   BG_BuyList: 01010101010101
   money: 0
