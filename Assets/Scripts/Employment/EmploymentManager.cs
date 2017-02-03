@@ -120,11 +120,13 @@ public class EmploymentManager : MonoBehaviour
         {
             if (moneyu.money > TwoNextLevelPrice[i])
             {
+                btn[i].interactable = true;
                 //btn[i].enabled = true;
                 BackgroundColor[i].color = open;
             }
             else if (moneyu.money <= TwoNextLevelPrice[i])
             {
+                btn[i].interactable = false;
                 //btn[i].enabled = false;
                 BackgroundColor[i].color = close;
             }

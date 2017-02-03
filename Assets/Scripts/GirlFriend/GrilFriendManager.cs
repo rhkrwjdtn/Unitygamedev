@@ -58,7 +58,7 @@ public class GrilFriendManager : MonoBehaviour {
                 {
                     if (i != j)
                     {
-                        btn[j].enabled = false;
+                        btn[j].interactable = false;
                         Backgroundcl[j].color = close;
 
                     }
@@ -73,7 +73,7 @@ public class GrilFriendManager : MonoBehaviour {
                 {
                     if (i != j)
                     {
-                        btn[j].enabled = true;
+                        btn[j].interactable = true;
                         Backgroundcl[j].color = open;
                     }
                 }
@@ -97,7 +97,7 @@ public class GrilFriendManager : MonoBehaviour {
                     {
                         if (i != j)
                         {
-                            btn[j].enabled = false;
+                            btn[j].interactable = false;
                             Backgroundcl[j].color = close;
                             
                          }
@@ -111,7 +111,7 @@ public class GrilFriendManager : MonoBehaviour {
                 {
                     if(i!=j)
                     {
-                        btn[j].enabled = true;
+                        btn[j].interactable = true;
                         Backgroundcl[j].color = open;
                     }
                 }
