@@ -67,8 +67,13 @@ public class EmploymentManager : MonoBehaviour
                     moneyspeed[i] = speedplus[i];
                     if (i == 3)
                     {
-                        speedplus[i] = 20;
-                        moneyspeed[i] = 20;
+                        speedplus[i] = 30;
+                        moneyspeed[i] = 30;
+                    }
+                    if(i==9)
+                    {
+                        speedplus[i] = 1000000;
+                        moneyspeed[i] = 1000000;
                     }
                 }
                 if (i % 2 == 0 && i != 0)
@@ -81,8 +86,13 @@ public class EmploymentManager : MonoBehaviour
                     moneyspeed[i] = speedplus[i];
                     if (i == 4)
                     {
-                        speedplus[i] = 50;
-                        moneyspeed[i] = 50;
+                        speedplus[i] = 100;
+                        moneyspeed[i] = 100;
+                    }
+                    if(i==10)
+                    {
+                        speedplus[i] = 5000000;
+                        moneyspeed[i] = 5000000;
                     }
                 }
 

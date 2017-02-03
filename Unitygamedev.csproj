@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\StartManager.cs" />
     <Compile Include="Assets\Scripts\StockButton.cs" />
     <Compile Include="Assets\Scripts\TransMoney.cs" />
+    <Compile Include="Assets\Scripts\qudtls_Animator.cs" />
     <Compile Include="Assets\Scripts\startstock.cs" />
     <Compile Include="Assets\SoundManager.cs" />
   </ItemGroup>

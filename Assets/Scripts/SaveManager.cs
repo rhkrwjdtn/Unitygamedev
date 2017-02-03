@@ -23,7 +23,9 @@ public class SaveManager : MonoBehaviour {
 	public RebirthManager myRebirth; //connect GoalManager
 	public ShopScrollList StockList; //connect StockList
 	public GameObject EndPanel;
-
+    public GameObject[] PopupMenu = new GameObject[16];
+    public int popupcnt=0;
+    public bool AllPopupMenuDown=false;
 
 	public GameObject dog = null;
 	public GameObject myulchi = null;
@@ -155,11 +157,36 @@ public class SaveManager : MonoBehaviour {
 		void Update () {
 			if(Input.GetKeyDown(KeyCode.Escape))
 			{
-			if (!EndPanel.activeSelf) {
-				EndPanel.SetActive (true);
-			} else {
-				EndPanel.SetActive (false);
-			}
+			//if (!EndPanel.activeSelf) {
+			//	EndPanel.SetActive (true);
+			//} else {
+			//	EndPanel.SetActive (false);
+			//}
+            for(int i=0;i<16;i++)
+            {
+                if(PopupMenu[i].active==true)
+                {
+                    PopupMenu[i].active = false;
+                }
+                else if(PopupMenu[i].active==false)
+                {
+                    popupcnt++;
+                }
+                if(popupcnt==16)
+                {
+                    AllPopupMenuDown = true;
+                }
+            }
+            if(AllPopupMenuDown==true && EndPanel.active==false)
+            {
+                EndPanel.active = true;
+            }
+            else if(AllPopupMenuDown==true && EndPanel.active==true)
+            {
+                EndPanel.active = false;
+            }
+            popupcnt = 0;
+            AllPopupMenuDown = false;
 			}
 		}
 
