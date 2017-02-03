@@ -86,7 +86,7 @@ public class GoalManager : MonoBehaviour {
 					GoalObj[i].transform.FindChild ("Image").GetComponent<Image>().sprite = Resources.Load<Sprite> ("Goal_Img/spoon" + Goal_LV[i]) as Sprite;
 					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = Spoon_Text [Goal_LV[i]] + "수저 달성";
 					//goal에서의 Spoon_Lv은 0인데, 금수저인 경우, 여러번 보상을 받아야 한다. 
-					if (MU.moneyspeed >= (ulong)10000*((ulong)10 <<Goal_LV[i]) ) 
+					if (MU.moneyspeed >= (ulong)1000000*((ulong)10 <<Goal_LV[i]) ) 
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 				}
 				break;

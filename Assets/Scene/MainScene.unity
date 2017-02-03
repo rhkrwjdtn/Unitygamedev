@@ -26308,7 +26308,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uD759\uC218\uC800 : 1\uB9CC\uC6D0/\uCD08 \uC774\uC0C1"
+  m_Text: "\uD759\uC218\uC800 : \uC774\uAC8C \uBB34\uC2A8 \uC758\uBBF8\uAC00 \uC788\uB2C8?"
 --- !u!222 &1187300057
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29519,6 +29519,48 @@ Prefab:
       propertyPath: goldspoon
       value: 
       objectReference: {fileID: 21300000, guid: 26acc673796aff84b81f12093e63365a,
+        type: 3}
+    - target: {fileID: 114376980383989156, guid: 496e7ef15c02faa40805e663554dcded,
+        type: 2}
+      propertyPath: SpoonImg.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: e6b683240e732b04a9f524dc3f546ee3,
+        type: 3}
+    - target: {fileID: 114376980383989156, guid: 496e7ef15c02faa40805e663554dcded,
+        type: 2}
+      propertyPath: SpoonImg.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7086ba9f7e3c2a04fab241805aa282c0,
+        type: 3}
+    - target: {fileID: 114376980383989156, guid: 496e7ef15c02faa40805e663554dcded,
+        type: 2}
+      propertyPath: SpoonImg.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: aa72943bcd72b3d49ac3c96eef90c445,
+        type: 3}
+    - target: {fileID: 114376980383989156, guid: 496e7ef15c02faa40805e663554dcded,
+        type: 2}
+      propertyPath: SpoonImg.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 26acc673796aff84b81f12093e63365a,
+        type: 3}
+    - target: {fileID: 114376980383989156, guid: 496e7ef15c02faa40805e663554dcded,
+        type: 2}
+      propertyPath: SpoonImg.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 649eaef47d3145c488b469b6a52a1a33,
+        type: 3}
+    - target: {fileID: 114376980383989156, guid: 496e7ef15c02faa40805e663554dcded,
+        type: 2}
+      propertyPath: SpoonImg.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: a9ffa568efc79b64e91f98fd947a11c5,
+        type: 3}
+    - target: {fileID: 114376980383989156, guid: 496e7ef15c02faa40805e663554dcded,
+        type: 2}
+      propertyPath: SpoonImg.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 7e4d8b99983c7fd46a16f537c0cc3136,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 496e7ef15c02faa40805e663554dcded, type: 2}
@@ -50708,7 +50750,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2

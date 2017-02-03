@@ -4,45 +4,38 @@ using UnityEngine;
 using UnityEngine.UI;
 public class spoonmanager : MonoBehaviour {
 
-    public Image spoonimage;
-    public Sprite gmfrspoon;
-    public Sprite plasticspoon;
-    public Sprite nokspoon;
-    public Sprite dongspoon;
-    public Sprite silverspoon;
-    public Sprite goldspoon;
-    public Sprite diaspoon;
+	public Image spoonimage;
+	public Sprite[] SpoonImg = new Sprite[7];
     public GameObject popup;
 
-	// Use this for initialization
-	void Start () {
-
-
-    }
-
-    // Update is called once per frame
+	private ulong myPow(ulong Money, ulong ul, int n){
+		for(int i=0; i < n; i++){
+			Money *= ul;
+		}
+		return Money;
+	}
+	void Start(){
+	}
     void Update () {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-
-        if (moneyu.moneyspeed <= 10000)
-		{ spoonimage.GetComponent<Image>().sprite = gmfrspoon;}
-        if (moneyu.moneyspeed <= 100000 && moneyu.moneyspeed > 10000)
-		{ spoonimage.GetComponent<Image>().sprite = plasticspoon;}
-        if(moneyu.moneyspeed<= 1000000 &&moneyu.moneyspeed>100000)
-		{ spoonimage.GetComponent<Image>().sprite = nokspoon;}
-        if(moneyu.moneyspeed<=10000000 && moneyu.moneyspeed>1000000)
-		{ spoonimage.GetComponent<Image>().sprite = dongspoon;}
-        if(moneyu.moneyspeed<=100000000&&moneyu.moneyspeed>10000000)
-		{ spoonimage.GetComponent<Image>().sprite = silverspoon;}
-        if(moneyu.moneyspeed<=1000000000&&moneyu.moneyspeed>100000000)
-		{ spoonimage.GetComponent<Image>().sprite = goldspoon;}
-        if(moneyu.moneyspeed<=10000000000&&moneyu.moneyspeed>1000000000)
-		{ spoonimage.GetComponent<Image>().sprite = diaspoon;}
-        if(moneyu.moneyspeed>10000000000)
-        {
-            spoonimage.GetComponent<Image>().sprite = diaspoon;
-        }
-
+		//0~10만 : 0 흙
+		//10~100만 : 1 플
+		//100~1000만 : 2 녹
+		if (moneyu.moneyspeed <= myPow (100000, 10, 0)) 
+			spoonimage.GetComponent<Image> ().sprite = SpoonImg [0];
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 5))) //diamond
+			spoonimage.GetComponent<Image> ().sprite = SpoonImg [6];
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 4)))
+			spoonimage.GetComponent<Image> ().sprite = SpoonImg [5];
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 3)))
+			spoonimage.GetComponent<Image> ().sprite = SpoonImg [4];
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 2)))
+			spoonimage.GetComponent<Image> ().sprite = SpoonImg [3];
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 1)))
+			spoonimage.GetComponent<Image> ().sprite = SpoonImg [2];
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 0))) //plastic
+			spoonimage.GetComponent<Image> ().sprite = SpoonImg [1];
+		
     }
     public void spoonClick()
     {
