@@ -70,6 +70,9 @@
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
@@ -101,13 +104,13 @@
     <Compile Include="Assets\Scripts\ScreenManager.cs" />
     <Compile Include="Assets\Scripts\ShopScrollList.cs" />
     <Compile Include="Assets\Scripts\SimpleObjectPool.cs" />
+    <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Spoon\spoonmanager.cs" />
     <Compile Include="Assets\Scripts\StartManager.cs" />
     <Compile Include="Assets\Scripts\StockButton.cs" />
     <Compile Include="Assets\Scripts\TransMoney.cs" />
     <Compile Include="Assets\Scripts\qudtls_Animator.cs" />
     <Compile Include="Assets\Scripts\startstock.cs" />
-    <Compile Include="Assets\SoundManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Resources\Flag\original\refererence.txt" />
