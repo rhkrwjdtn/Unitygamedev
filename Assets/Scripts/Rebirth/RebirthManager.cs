@@ -31,11 +31,11 @@ public class RebirthManager : MonoBehaviour {
         potcnt_text.text = "환생물약:" + potioncnt.rebirthpotion + "개";
         if (potioncnt.rebirthpotion == 0)
         {
-            rebirthbtn.enabled = false;
+            rebirthbtn.interactable = false;
         }
         if(potioncnt.rebirthpotion!=0)
         {
-            rebirthbtn.enabled = true;
+            rebirthbtn.interactable = true;
         }
 
     }
