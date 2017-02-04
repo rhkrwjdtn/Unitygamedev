@@ -9,6 +9,7 @@ public class AfrterBoxad : MonoBehaviour {
     public Button OkButton;
     public bool[] BoxClicked = new bool[3];
     public bool[] Itemvariable = new bool[5];
+    public bool endPopup = false;
     public Image[] Boximg = new Image[3];
     public Sprite box=null;
     public Sprite[] ItemImage = new Sprite[5];
@@ -35,7 +36,25 @@ public class AfrterBoxad : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if(AfterAdPopup.active==false)
+        {
+            OkButton.interactable = false;
+            for (int i = 0; i < 3; i++)
+            {
+                BoxClicked[i] = false;
+                Boximg[i].GetComponent<Image>().sprite = box;
+                BoxButton[i].interactable = true;
+                BoxButton[i].enabled = true;
+
+            }
+
+            Texts[0].text = "박스 한개 를 선택하세요~";
+            Texts[1].text = "각 종 아이템이 들어있어요~";
+
+            endPopup = false;
+
+        }
+
 	}
     public void BoxClickEvent()
     {
@@ -147,8 +166,7 @@ public class AfrterBoxad : MonoBehaviour {
             }
 
         }
-
-
+        
            
     }
     public void FirstBoxClick()

@@ -9293,6 +9293,7 @@ MonoBehaviour:
   OkButton: {fileID: 913063143}
   BoxClicked: 000000
   Itemvariable: 0000000000
+  endPopup: 0
   Boximg:
   - {fileID: 47991413}
   - {fileID: 2091761931}
@@ -9310,7 +9311,7 @@ MonoBehaviour:
   Texts:
   - {fileID: 1105140109}
   - {fileID: 2144349158}
-  AfterAdPopup: {fileID: 0}
+  AfterAdPopup: {fileID: 997591267}
 --- !u!114 &452645243
 MonoBehaviour:
   m_ObjectHideFlags: 0
