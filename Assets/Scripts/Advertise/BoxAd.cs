@@ -5,6 +5,8 @@ using UnityEngine.Advertisements;
 
 public class BoxAd : MonoBehaviour {
 
+    public GameObject rewardPopup = null;
+    public GameObject beforePopup = null;
 	// Use this for initialization
 	void Start () {
 		
@@ -30,9 +32,8 @@ public class BoxAd : MonoBehaviour {
         {
             case ShowResult.Finished:
                 Debug.Log("The ad was successfully shown.");
-                //
-                // YOUR CODE TO REWARD THE GAMER
-                // Give coins etc.
+                rewardPopup.active = true;
+                beforePopup.active = false;
                 break;
             case ShowResult.Skipped:
                 Debug.Log("The ad was skipped before reaching the end.");
