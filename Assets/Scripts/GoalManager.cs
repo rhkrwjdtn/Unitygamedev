@@ -40,7 +40,7 @@ public class GoalManager : MonoBehaviour {
 	public int goal_Rebirth_Lv = 0;
 	*/
 	public GameObject[] GoalObj = new GameObject[SIZE];
-	public int[] Goal_LV = new int[SIZE] {0,0,0,0,0,0,0,0};
+	public int[] Goal_LV = new int[SIZE];
 
 	public ulong[] MoneyTmp;
 	public int EmployeesLvTmp;
@@ -76,6 +76,7 @@ public class GoalManager : MonoBehaviour {
 		GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = false;
 
 		if (Goal_LV[i] == LevelSize) {
+			GoalObj[i].transform.FindChild ("Image").GetComponent<Image>().sprite = Resources.Load<Sprite> ("Goal_Img/spoon" + 4) as Sprite;
 			GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = "완료";
 		} else {
 				
@@ -86,7 +87,7 @@ public class GoalManager : MonoBehaviour {
 					GoalObj[i].transform.FindChild ("Image").GetComponent<Image>().sprite = Resources.Load<Sprite> ("Goal_Img/spoon" + Goal_LV[i]) as Sprite;
 					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = Spoon_Text [Goal_LV[i]] + "수저 달성";
 					//goal에서의 Spoon_Lv은 0인데, 금수저인 경우, 여러번 보상을 받아야 한다. 
-					if (MU.moneyspeed >= (ulong)1000000*((ulong)10 <<Goal_LV[i]) ) 
+					if (MU.moneyspeed >= myPow((ulong)1000000, (ulong)10, Goal_LV[i]) ) 
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 				}
 				break;
