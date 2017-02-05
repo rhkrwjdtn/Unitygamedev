@@ -45,41 +45,41 @@ public class RebirthManager : MonoBehaviour {
 		RebirthCount++;
         if (potioncnt.rebirthpotion != 0)
         {
-            totalrandum = Random.Range(0, 10000);
-            if (totalrandum <= 4000)
+			totalrandum = Random.Range(0, 10000);
+            if (totalrandum <= 5000)
             {
                 gmfrrebirth();
                 Alramspoon[0].active = true;
 
             }
-            else if (totalrandum <= 6500 && totalrandum > 4000)
+            else if (totalrandum <= 7500 && totalrandum > 5000)
             {
                 plasticrebirth();
                 Alramspoon[1].active = true;
             }
-            else if (totalrandum <= 8000 && totalrandum > 6500)
+            else if (totalrandum <= 9000 && totalrandum > 7500)
             {
                 nokrebirth();
                 Alramspoon[2].active = true;
             }
-            else if (totalrandum <= 9000 && totalrandum > 8000)
+            else if (totalrandum <= 9500 && totalrandum > 9000)
             {
                 dongrebirth();
                 Alramspoon[3].active = true;
             }
-            else if (totalrandum <= 9500 && totalrandum > 9000)
+            else if (totalrandum <= 9800 && totalrandum > 9500)
             {
                 silverrebirth();
                 Alramspoon[4].active = true;
             }
-            else if (totalrandum <= 9800 && totalrandum > 9500)
+            else if (totalrandum <= 9950 && totalrandum > 9800)
             {
                 goldrebirth();
                 Alramspoon[5].active = true;
             }
-            else if (totalrandum <= 10000 && totalrandum > 9800)
+            else if (totalrandum <= 10000 && totalrandum > 9950)
             {
-                diarebirth();
+				diarebirth();
                 Alramspoon[6].active = true;
             }
             popup.active = false;
@@ -90,10 +90,12 @@ public class RebirthManager : MonoBehaviour {
         }
 
     }
+
+
     public void gmfrrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(0, 10000);
+        msrandomnum = Random.Range(0, 100000);
         ckrandomnum = Random.Range(0, 1000);//2월3일 이건 정해야댈듯?
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -107,7 +109,7 @@ public class RebirthManager : MonoBehaviour {
     public void plasticrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(10001, 100000);
+        msrandomnum = Random.Range(100001, 1000000);
         ckrandomnum = Random.Range(1000, 5000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -121,7 +123,7 @@ public class RebirthManager : MonoBehaviour {
     public void nokrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(100001, 1000000);
+        msrandomnum = Random.Range(1000001, 10000000);
         ckrandomnum = Random.Range(5000, 10000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -134,7 +136,7 @@ public class RebirthManager : MonoBehaviour {
     public void dongrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(1000001, 10000000);
+        msrandomnum = Random.Range(10000001, 100000000);
         ckrandomnum = Random.Range(10000, 50000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -147,7 +149,7 @@ public class RebirthManager : MonoBehaviour {
     public void silverrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(10000001, 100000000);
+        msrandomnum = Random.Range(100000001, 1000000000);
         ckrandomnum = Random.Range(50000, 100000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
@@ -160,11 +162,11 @@ public class RebirthManager : MonoBehaviour {
     public void goldrebirth()
     {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-        msrandomnum = Random.Range(100000000, 1000000000);
+        msrandomnum = Random.Range(100000001, 1000000000);
         ckrandomnum = Random.Range(100000, 500000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
-        msmoneyspeed = ulong.Parse(msstring);
+        msmoneyspeed = ulong.Parse(msstring)*10;
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
@@ -178,7 +180,7 @@ public class RebirthManager : MonoBehaviour {
         ckrandomnum = Random.Range(500000, 1000000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
-        msmoneyspeed = ulong.Parse(msstring);
+        msmoneyspeed = ulong.Parse(msstring)*10;
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
