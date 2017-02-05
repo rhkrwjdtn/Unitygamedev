@@ -96,4 +96,85 @@ public class ItemshopManager : MonoBehaviour {
         ShowRewardedAd();
 
     }
+    public void RedbullShowRewardedAd()
+    {
+        if (Advertisement.IsReady("rewardedVideo"))
+        {
+            var options = new ShowOptions { resultCallback = RedbullHandleShowResult };
+            Advertisement.Show("rewardedVideo", options);
+        }
+    }
+
+    private void RedbullHandleShowResult(ShowResult result)
+    {
+        IconManager item = GameObject.Find("IconManager").GetComponent<IconManager>();
+        switch (result)
+        {
+            case ShowResult.Finished:
+                Debug.Log("The ad was successfully shown.");
+                item.redbullcnt++;
+                break;
+            case ShowResult.Skipped:
+                Debug.Log("The ad was skipped before reaching the end.");
+                break;
+            case ShowResult.Failed:
+                Debug.LogError("The ad failed to be shown.");
+                break;
+        }
+    }
+
+    public void SmallpizzaShowRewardedAd()
+    {
+        if (Advertisement.IsReady("rewardedVideo"))
+        {
+            var options = new ShowOptions { resultCallback = SmallpizzaHandleShowResult };
+            Advertisement.Show("rewardedVideo", options);
+        }
+    }
+
+    private void SmallpizzaHandleShowResult(ShowResult result)
+    {
+        IconManager item = GameObject.Find("IconManager").GetComponent<IconManager>();
+        switch (result)
+        {
+            case ShowResult.Finished:
+                Debug.Log("The ad was successfully shown.");
+                item.smallpizzacnt++;
+                break;
+            case ShowResult.Skipped:
+                Debug.Log("The ad was skipped before reaching the end.");
+                break;
+            case ShowResult.Failed:
+                Debug.LogError("The ad failed to be shown.");
+                break;
+        }
+    }
+
+    public void RebirthShowRewardedAd()
+    {
+        if (Advertisement.IsReady("rewardedVideo"))
+        {
+            var options = new ShowOptions { resultCallback = RebirthHandleShowResult };
+            Advertisement.Show("rewardedVideo", options);
+        }
+    }
+
+    private void RebirthHandleShowResult(ShowResult result)
+    {
+        IconManager item = GameObject.Find("IconManager").GetComponent<IconManager>();
+        switch (result)
+        {
+            case ShowResult.Finished:
+                Debug.Log("The ad was successfully shown.");
+                item.rebirthpotion++;
+                break;
+            case ShowResult.Skipped:
+                Debug.Log("The ad was skipped before reaching the end.");
+                break;
+            case ShowResult.Failed:
+                Debug.LogError("The ad failed to be shown.");
+                break;
+        }
+    }
+
 }
