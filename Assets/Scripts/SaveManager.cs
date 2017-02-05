@@ -20,7 +20,8 @@ public class SaveManager : MonoBehaviour {
 	public HouseButtonEvent myBGList; //connect HouseManager
 	public CountryButtonEvent myFlagList; //connect CountryManager
 	public GoalManager myGoalList; //connect GoalManager
-	public RebirthManager myRebirth; //connect GoalManager
+	public RebirthManager myRebirth; //connect
+	public AssetsEvent myAssetList; //connect assetmanager
 	public ShopScrollList StockList; //connect StockList
 	public GameObject EndPanel;
     public GameObject[] PopupMenu = new GameObject[16];
@@ -69,6 +70,8 @@ public class SaveManager : MonoBehaviour {
 		public bool[] FLAG_BuyList = new bool[FLAG_SIZE];
 		public int[] Goal_LV = new int[Goal_SIZE];
 		public int Goal_Rebirth_cnt;
+		public ulong[] BG_NowPrice = new ulong[BG_SIZE];
+		public ulong[] FLAG_NowPrice = new ulong[FLAG_SIZE];
 
 		public ulong[] stockprice = new ulong[STOCK_SIZE];
 		public ulong[] stockcount = new ulong[STOCK_SIZE];
@@ -110,7 +113,6 @@ public class SaveManager : MonoBehaviour {
         public ulong TouchMoneyPlus;
         public ulong BeforeLevelPrice;
         public float BeforePrice;
-
 
 
         public int noretry;
@@ -222,12 +224,14 @@ public class SaveManager : MonoBehaviour {
 		data.Goal_Rebirth_cnt = myRebirth.RebirthCount;
         
 
-		for (int k = 0; k < BG_SIZE; k++)//BG_LIST
+		for (int k = 0; k < BG_SIZE; k++) {//BG_LIST
 			data.BG_BuyList [k] = myBGList.BG_BuyList [k];
-
-		for (int k = 0; k < FLAG_SIZE; k++)//FLAG_LIST
+			data.BG_NowPrice [k] = myAssetList.Asset_houseNowPrice [k];
+		}
+		for (int k = 0; k < FLAG_SIZE; k++) {//FLAG_LIST
 			data.FLAG_BuyList [k] = myFlagList.BuyList [k];
-
+			data.FLAG_NowPrice [k] = myAssetList.Asset_countryNowPrice [k];
+		}
 		for (int k = 0; k < Goal_SIZE; k++)//Goal_LV_LIST
 			data.Goal_LV [k] = myGoalList.Goal_LV[k];
 		
@@ -348,12 +352,14 @@ public class SaveManager : MonoBehaviour {
 					myBGList.Selected_BG = data.selected_BG;
 					myRebirth.RebirthCount = data.Goal_Rebirth_cnt;
 
-					for(int k = 0; k < BG_SIZE; k++)//BG_LIST
+					for(int k = 0; k < BG_SIZE; k++){//BG_LIST
 						myBGList.BG_BuyList[k] = data.BG_BuyList [k];
-					
-					for(int k = 0; k < FLAG_SIZE; k++)//FLAG_LIST
+						myAssetList.Asset_houseNowPrice[k]=data.BG_NowPrice[k];
+					}
+					for(int k = 0; k < FLAG_SIZE; k++){//FLAG_LIST
 						myFlagList.BuyList[k] = data.FLAG_BuyList [k];
-
+						myAssetList.Asset_countryNowPrice[k] = data.FLAG_NowPrice[k];
+					}
 					for (int k = 0; k < Goal_SIZE; k++)//Goal_LV_LIST
 						myGoalList.Goal_LV[k] = data.Goal_LV [k];
 					

@@ -17,7 +17,7 @@ public class qudtls_Animator : MonoBehaviour {
 		i = 0;
 		qudtls.GetComponent<Image> ().sprite = qudtlsAni[0];
 
-		StartCoroutine ("QudtlsAnimation", 0.7);
+		StartCoroutine ("QudtlsAnimation", 0.2);
 	}
 
 	IEnumerator QudtlsAnimation(float delayTime) {
@@ -33,7 +33,7 @@ public class qudtls_Animator : MonoBehaviour {
 		qudtls.GetComponent<Image> ().sprite = qudtlsAni [i];
 
 		yield return new WaitForSeconds(delayTime);
-		StartCoroutine("QudtlsAnimation", 0.7);
+		StartCoroutine("QudtlsAnimation", 0.2);
 	}
 
 

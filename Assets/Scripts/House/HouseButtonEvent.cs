@@ -129,13 +129,13 @@ public class HouseButtonEvent : MonoBehaviour {
 
 	//Button onClick event
 	public void setBG (int btn){
-		//if (money > BG_Price [btn]) {
-			HouseMoneyEvent (btn);
-			HouseChangeBG (btn);
-			changeBGBuyEnable (btn);
-			//배경 오브젝트의 스프라이트를 변경
-			
-		//}
+		HouseMoneyEvent (btn);
+		HouseChangeBG (btn);
+		changeBGBuyEnable (btn);
+		
+		//자산 housenowPrice 업데이트
+		AssetsEvent myAssetList= GameObject.Find("AssetsManager").GetComponent<AssetsEvent>();
+		myAssetList.Asset_houseNowPrice[btn] = BG_Price[btn];
 	}
 	public void HouseMoneyEvent(int sel_BG){
 		//MoneyManager에서 House의 가격에 따라 MoneyUpdate

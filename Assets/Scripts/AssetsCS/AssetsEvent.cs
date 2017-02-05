@@ -28,7 +28,7 @@ public class AssetsEvent : MonoBehaviour {
 	public GameObject[] Asset_StockObj = new GameObject[StockSIZE];
 	public GameObject[] Asset_StockImgObj = new GameObject[StockSIZE];
 	public GameObject[] Asset_StockBtnObj = new GameObject[StockSIZE];
-	public ulong[] Asset_StockNowPrice = new ulong[StockSIZE];
+	//public ulong[] Asset_StockNowPrice = new ulong[StockSIZE];
 
 
 	//AssetsManager에서 묶어줘야함.
@@ -46,8 +46,7 @@ public class AssetsEvent : MonoBehaviour {
 			ㄴ. 미구매한 것 : 아이콘 흑백, SELL 글씨 색상 흐리게, SELL 버튼 비활성화
 	*/
 
-	void Awake(){
-	}
+
 	//connect tabbutton0
 	public void Asset_HouseInitiate(){
 		if (Asset_housePopup.activeSelf == true) {
@@ -99,20 +98,17 @@ public class AssetsEvent : MonoBehaviour {
 			Asset_houseObj[i] = null;
 			Asset_houseImgObj[i] = null;
 			Asset_houseBtnObj[i] = null;
-			Asset_houseNowPrice [i] = myBGList.BG_Price[i];
 		}
 		for (int i = 0; i < countrySIZE; i++) {
 			Asset_countryObj[i] = null;
 			Asset_countryImgObj[i] = null;
 			Asset_countryBtnObj[i] = null;
-			Asset_countryNowPrice [i] = myFlagList.Price[i];
 
 		}
 		for (int i = 0; i < StockSIZE; i++) {
 			Asset_StockObj[i] = null;
 			Asset_StockImgObj[i] = null;
 			Asset_StockBtnObj[i] = null;
-			Asset_StockNowPrice [i] = myStockList.stockassetprice[i];
 		}
 		//1초 주기
 		StartCoroutine ("CountTime", 1);
@@ -124,16 +120,18 @@ public class AssetsEvent : MonoBehaviour {
 		//값이 비쌀수록 적은 비율로 오름
 		ulong tempPrice;
 		for (int i = 0; i < houseSIZE; i++) {
-			if (i < houseSIZE / 2) {
-				tempPrice = Asset_houseNowPrice [i];
-				tempPrice /= 1000;
-				tempPrice *= 1005;
-				Asset_houseNowPrice [i] = tempPrice;
-			} else {
-				tempPrice = Asset_houseNowPrice [i];
-				tempPrice /= 1000;
-				tempPrice *= 1004;
-				Asset_houseNowPrice [i] = tempPrice;
+			if(Asset_houseNowPrice[i] > 0){
+				if (i < houseSIZE / 2) {
+					tempPrice = Asset_houseNowPrice [i];
+					tempPrice /= 10000;
+					tempPrice *= 10005;
+					Asset_houseNowPrice [i] = tempPrice;
+				} else {
+					tempPrice = Asset_houseNowPrice [i];
+					tempPrice /= 10000;
+					tempPrice *= 10004;
+					Asset_houseNowPrice [i] = tempPrice;
+				}
 			}
 		}
 		/*
@@ -147,16 +145,18 @@ public class AssetsEvent : MonoBehaviour {
 		}
 		*/
 		for (int i = 0; i < countrySIZE; i++) {
-			if (i < countrySIZE / 2) {
-				tempPrice = Asset_countryNowPrice [i];
-				tempPrice /= 1000;
-				tempPrice *= 1002;
-				Asset_countryNowPrice [i] = tempPrice;
-			} else {
-				tempPrice = Asset_countryNowPrice [i];
-				tempPrice /= 1000;
-				tempPrice *= 1001;
-				Asset_countryNowPrice [i] = tempPrice;				
+			if (Asset_countryNowPrice [i] > 0) {
+				if (i < countrySIZE / 2) {
+					tempPrice = Asset_countryNowPrice [i];
+					tempPrice /= 10000;
+					tempPrice *= 10002;
+					Asset_countryNowPrice [i] = tempPrice;
+				} else {
+					tempPrice = Asset_countryNowPrice [i];
+					tempPrice /= 10000;
+					tempPrice *= 10001;
+					Asset_countryNowPrice [i] = tempPrice;				
+				}
 			}
 		}
 
@@ -293,16 +293,11 @@ public class AssetsEvent : MonoBehaviour {
 		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
 		MU.money += HE.BG_Price[btn]*2;
 		HE.changeBGBuyEnable (btn);
+
+		Asset_houseNowPrice [btn] = 0;
 		//기본배경으로 초기화
 		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg99") as Sprite;
 		HE.Selected_BG = (int)99;
-	}
-	//connect Button onClick event
-	public void Asset_changeHouse (int btn){
-		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
-		//기본배경으로 초기화
-		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg99") as Sprite;
-		HE.Selected_BG = (int)btn;
 	}
 
 	//connect Button onClick event
@@ -310,6 +305,9 @@ public class AssetsEvent : MonoBehaviour {
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		CountryButtonEvent CE= GameObject.Find("CountryManager").GetComponent<CountryButtonEvent>();
 		MU.money += CE.Price[btn]*2;
+
+		Asset_countryNowPrice [btn] = 0;
+
 		CE.countryDel (btn);
 		CE.changeBuyEnable (btn);
 	}
@@ -317,10 +315,6 @@ public class AssetsEvent : MonoBehaviour {
 	//connect Button onClick event
 	public void Asset_StockOnClick (int btn){
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
-		//ShopScrollList SE= GameObject.Find("CountryManager").GetComponent<ShopScrollList>();
 		MU.money += myStockList.stockassetprice[btn];
-
-		//CE.countryDel (btn);
-		//CE.changeBuyEnable (btn);
 	}
 }	
