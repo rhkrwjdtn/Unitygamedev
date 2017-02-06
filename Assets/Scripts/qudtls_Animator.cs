@@ -12,7 +12,9 @@ public class qudtls_Animator : MonoBehaviour {
 	public GameObject hohyung;
 	public GameObject yuSick;
 	public GameObject myungsasu;
-	public GameObject samdong2;
+	public GameObject dungchi;
+	public GameObject myulchi;
+	public GameObject yapsap;
 	public GameObject byunghun2;
 	public GameObject hani;
 
@@ -22,7 +24,9 @@ public class qudtls_Animator : MonoBehaviour {
 	public Sprite[] hohyungAni;
 	public Sprite[] yuSickAni;
 	public Sprite[] myungsasuAni;
-	public Sprite[] samdong2Ani;
+	public Sprite[] dungchiAni;
+	public Sprite[] myulchiAni;
+	public Sprite[] yapsapAni;
 	public Sprite[] byunghun2Ani;
 	public Sprite[] haniAni;
 
@@ -32,7 +36,9 @@ public class qudtls_Animator : MonoBehaviour {
 	private int hohyungcount;
 	private int yuSickcount;
 	private int myungsasucount;
-	private int samdong2count;
+	private int dungchicount;
+	private int myulchicount;
+	private int yapsapcount;
 	private int byunghun2count;
 	private int hanicount;
 
@@ -45,7 +51,9 @@ public class qudtls_Animator : MonoBehaviour {
 		hohyungcount = 0;
 		yuSickcount = 0;
 		myungsasucount = 0;
-		samdong2count = 0;
+		dungchicount = 0;
+		myulchicount = 0;
+		yapsapcount = 0;
 		byunghun2count = 0;
 		hanicount = 0;
 		qudtls.GetComponent<Image> ().sprite = qudtlsAni[qudcount];
@@ -54,7 +62,9 @@ public class qudtls_Animator : MonoBehaviour {
 		hohyung.GetComponent<Image> ().sprite = hohyungAni [hohyungcount];
 		yuSick.GetComponent<Image> ().sprite = yuSickAni[yuSickcount];
 		myungsasu.GetComponent<Image> ().sprite = myungsasuAni [myungsasucount];
-		samdong2.GetComponent<Image> ().sprite = samdong2Ani[samdong2count];
+		dungchi.GetComponent<Image> ().sprite = dungchiAni[dungchicount];
+		myulchi.GetComponent<Image> ().sprite = myulchiAni[myulchicount];
+		yapsap.GetComponent<Image> ().sprite = yapsapAni[yapsapcount];
 		byunghun2.GetComponent<Image> ().sprite = byunghun2Ani [byunghun2count];
 		hani.GetComponent<Image> ().sprite = haniAni[hanicount];
 	
@@ -108,10 +118,20 @@ public class qudtls_Animator : MonoBehaviour {
 		}
 
 
-		if (samdong2count == samdong2Ani.Length) {
-			samdong2count=0;
-		} else if (samdong2count < samdong2Ani.Length) {
-			samdong2count++;
+		if (yapsapcount == yapsapAni.Length) {
+			yapsapcount=0;
+		} else if (yapsapcount < yapsapAni.Length) {
+			yapsapcount++;
+		}
+		if (myulchicount == myulchiAni.Length) {
+			myulchicount=0;
+		} else if (myulchicount < myulchiAni.Length) {
+			myulchicount++;
+		}
+		if (dungchicount == dungchiAni.Length) {
+			dungchicount=0;
+		} else if (dungchicount < dungchiAni.Length) {
+			dungchicount++;
 		}
 
 		if (byunghun2count == byunghun2Ani.Length) {
@@ -133,7 +153,9 @@ public class qudtls_Animator : MonoBehaviour {
 		hohyung.GetComponent<Image> ().sprite = hohyungAni [hohyungcount];
 		yuSick.GetComponent<Image> ().sprite = yuSickAni[yuSickcount];
 		myungsasu.GetComponent<Image> ().sprite = myungsasuAni [myungsasucount];
-		samdong2.GetComponent<Image> ().sprite = samdong2Ani[samdong2count];
+		dungchi.GetComponent<Image> ().sprite = dungchiAni[dungchicount];
+		myulchi.GetComponent<Image> ().sprite = myulchiAni[myulchicount];
+		yapsap.GetComponent<Image> ().sprite = yapsapAni[yapsapcount];
 		byunghun2.GetComponent<Image> ().sprite = byunghun2Ani [byunghun2count];
 		hani.GetComponent<Image> ().sprite = haniAni[hanicount];
 

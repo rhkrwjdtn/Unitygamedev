@@ -7470,7 +7470,7 @@ GameObject:
   - component: {fileID: 320011658}
   - component: {fileID: 320011657}
   m_Layer: 0
-  m_Name: qudtls_AnimatorControl
+  m_Name: AnimatorControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7488,6 +7488,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   qudtls: {fileID: 1598112556}
+  dog: {fileID: 1620517777}
+  chunsuru: {fileID: 708894116}
+  hohyung: {fileID: 1758660591}
+  yuSick: {fileID: 1627554822}
+  myungsasu: {fileID: 1004911098}
+  dungchi: {fileID: 777238598}
+  myulchi: {fileID: 902628280}
+  yapsap: {fileID: 716991195}
+  byunghun2: {fileID: 573776942}
+  hani: {fileID: 459079129}
   qudtlsAni:
   - {fileID: 21300000, guid: 1e6e7a6e37283a047a86365ddd86b933, type: 3}
   - {fileID: 21300000, guid: 07b78b71cdb886e46a52a87ae893a2f7, type: 3}
@@ -7497,6 +7507,16 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3cf5c1062da1d7442951969ed63b91d6, type: 3}
   - {fileID: 21300000, guid: 8ebb614f364513a4db87b60ee6637ee3, type: 3}
   - {fileID: 21300000, guid: 1c291b9aa283bf0438290cac32055ebb, type: 3}
+  dogAni: []
+  chunsuruAni: []
+  hohyungAni: []
+  yuSickAni: []
+  myungsasuAni: []
+  dungchiAni: []
+  myulchiAni: []
+  yapsapAni: []
+  byunghun2Ani: []
+  haniAni: []
 --- !u!4 &320011658
 Transform:
   m_ObjectHideFlags: 0
@@ -45119,7 +45139,7 @@ Prefab:
     - target: {fileID: 224048177948666232, guid: 9b36269804945d84b8939abbc0f5691d,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.69999886
+      value: -0.6999979
       objectReference: {fileID: 0}
     - target: {fileID: 1499313410006334, guid: 9b36269804945d84b8939abbc0f5691d, type: 2}
       propertyPath: m_IsActive
