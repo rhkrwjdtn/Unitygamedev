@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Resources/Emp_Animation/How0.png.meta
 guid: ad4fd435a74b2394b922030237b19c98
 timeCreated: 1486394329
+=======
+guid: 0414ba0fbdd1a9c40a3e66a20913e9ee
+timeCreated: 1486392730
+>>>>>>> 9aa0cec3187ac69917643276b26dd08a827c1b9e:Assets/Resources/Emp_Animation/How0.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
