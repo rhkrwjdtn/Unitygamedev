@@ -1687,32 +1687,32 @@ MonoBehaviour:
     Average: 0
     stockNum: 2
   - stockName: "\uCF69\uB370\uC988\uCF64\uBC14\uC778"
-    price: 70000
+    price: 700000
     count: 0
     Average: 0
     stockNum: 3
   - stockName: "\uD0DC\uC591\uC911\uC2EC"
-    price: 25000
+    price: 74000
     count: 0
     Average: 0
     stockNum: 4
   - stockName: "\uC8FC\uBCF4"
-    price: 12000
+    price: 450000
     count: 0
     Average: 0
     stockNum: 5
   - stockName: "\uD30C\uC778\uB4A4\uC564\uC528\uBD80\uB7F4"
-    price: 45000
+    price: 180000
     count: 0
     Average: 0
     stockNum: 6
   - stockName: "\uD560\uBBF8\uC57D\uD488"
-    price: 50000
+    price: 2000000
     count: 0
     Average: 0
     stockNum: 7
   - stockName: "\uC774\uD654\uACF5\uB8E1"
-    price: 55000
+    price: 5500000
     count: 0
     Average: 0
     stockNum: 8
