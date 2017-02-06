@@ -45180,6 +45180,16 @@ Prefab:
       propertyPath: m_FontData.m_VerticalOverflow
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114410285046594024, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410285046594024, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b36269804945d84b8939abbc0f5691d, type: 2}
   m_IsPrefabParent: 0
