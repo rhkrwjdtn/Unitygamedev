@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9997449, g: 0.9997449, b: 0.9997449, a: 1}
+  m_IndirectSpecularColor: {r: 0.9997447, g: 0.9997447, b: 0.9997447, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -11461,7 +11461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.025, y: 0}
   m_AnchorMax: {x: 0.2, y: 0.26000002}
-  m_AnchoredPosition: {x: 0.39999998, y: -4.837}
+  m_AnchoredPosition: {x: 0.40000153, y: -4.836998}
   m_SizeDelta: {x: -1, y: 7.6000004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &573776944
@@ -11944,7 +11944,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  Asset_StockNowPrice: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   MU: {fileID: 1929893890}
   myBGList: {fileID: 1585983344}
   myFlagList: {fileID: 1332941407}
@@ -14216,7 +14215,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.58173907, y: 0.238}
   m_AnchorMax: {x: 0.76073915, y: 0.66}
-  m_AnchoredPosition: {x: 0.17099953, y: -0.919}
+  m_AnchoredPosition: {x: 0.17099762, y: -0.9189997}
   m_SizeDelta: {x: 1.0999985, y: 1.009552}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &716991197
@@ -14764,7 +14763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.7914928, y: 0.22330199}
   m_AnchorMax: {x: 0.93200004, y: 0.66}
-  m_AnchoredPosition: {x: 0.39999962, y: 0.19314003}
+  m_AnchoredPosition: {x: 0.40000153, y: 0.19314003}
   m_SizeDelta: {x: 2.0000324, y: -0.8004999}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &777238600
@@ -17119,7 +17118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6732464, y: 0.238}
   m_AnchorMax: {x: 0.84649277, y: 0.66728646}
-  m_AnchoredPosition: {x: -0.29999995, y: 0.55079997}
+  m_AnchoredPosition: {x: -0.30000305, y: 0.55079985}
   m_SizeDelta: {x: 0.5, y: 1.1016464}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902628282
@@ -24223,11 +24222,6 @@ Prefab:
       propertyPath: moneyManager
       value: 
       objectReference: {fileID: 1929893890}
-    - target: {fileID: 114451697899282720, guid: ba88c273675081c48a253e58d98f6f97,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 241225378}
     - target: {fileID: 114334641365327438, guid: ba88c273675081c48a253e58d98f6f97,
         type: 2}
       propertyPath: buttonObjectPool
@@ -24238,6 +24232,40 @@ Prefab:
       propertyPath: moneyManager
       value: 
       objectReference: {fileID: 1929893890}
+    - target: {fileID: 114451697899282720, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 241225378}
+    - target: {fileID: 1807188617835548, guid: ba88c273675081c48a253e58d98f6f97, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224536181630970520, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224635034678689504, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224635034678689504, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224221830010044982, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224221830010044982, guid: ba88c273675081c48a253e58d98f6f97,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba88c273675081c48a253e58d98f6f97, type: 2}
   m_IsPrefabParent: 0
@@ -35659,6 +35687,7 @@ MonoBehaviour:
   myFlagList: {fileID: 1332941407}
   myGoalList: {fileID: 2046030459}
   myRebirth: {fileID: 2055363779}
+  myAssetList: {fileID: 583140349}
   StockList: {fileID: 160836294}
   EndPanel: {fileID: 1525387811}
   PopupMenu:
@@ -45087,6 +45116,80 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: -0.7000036
       objectReference: {fileID: 0}
+    - target: {fileID: 1499313410006334, guid: 9b36269804945d84b8939abbc0f5691d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114211215085266402, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114211215085266402, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648150511787890, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114648150511787890, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660062682569436, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660062682569436, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808631167218708, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114808631167218708, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114232237101482248, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114232237101482248, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114653780042919958, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114653780042919958, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410285046594024, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_HorizontalOverflow
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114410285046594024, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_FontData.m_VerticalOverflow
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b36269804945d84b8939abbc0f5691d, type: 2}
   m_IsPrefabParent: 0
@@ -47195,7 +47298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.27, y: 0}
   m_AnchorMax: {x: 0.46637675, y: 0.5248665}
-  m_AnchoredPosition: {x: 0.52534604, y: -0.71949995}
+  m_AnchoredPosition: {x: 0.52534485, y: -0.7195015}
   m_SizeDelta: {x: -0.5999999, y: 2.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2055363779 stripped
