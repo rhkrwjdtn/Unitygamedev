@@ -35687,7 +35687,7 @@ MonoBehaviour:
   myFlagList: {fileID: 1332941407}
   myGoalList: {fileID: 2046030459}
   myRebirth: {fileID: 2055363779}
-  myAssetList: {fileID: 0}
+  myAssetList: {fileID: 583140349}
   StockList: {fileID: 160836294}
   EndPanel: {fileID: 1525387811}
   PopupMenu:

@@ -52,12 +52,12 @@ public class RebirthManager : MonoBehaviour {
                 Alramspoon[0].active = true;
 
             }
-            else if (totalrandum <= 8000 && totalrandum > 5000)
+            else if (totalrandum <= 7500 && totalrandum > 5000)
             {
                 plasticrebirth();
                 Alramspoon[1].active = true;
             }
-            else if (totalrandum <= 9200 && totalrandum > 8000)
+            else if (totalrandum <= 9200 && totalrandum > 7500)
             {
                 nokrebirth();
                 Alramspoon[2].active = true;
