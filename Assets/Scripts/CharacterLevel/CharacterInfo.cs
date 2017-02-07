@@ -284,7 +284,7 @@ public class CharacterInfo : MonoBehaviour {
             btn.enabled = true;
         }
 
-        NowClickWonTx.text = TouchMoney + "원 ->" + moneyu.touchspeed + "원";
+		NowClickWonTx.text = myTransMoney.strTransMoney(TouchMoney) + " → " + myTransMoney.strTransMoney(moneyu.touchspeed);
 
 
         LevelText.text = "둥신 LV" + JugallumLev;
@@ -329,7 +329,7 @@ public class CharacterInfo : MonoBehaviour {
             LevelText.text = "둥신 LV" + JugallumLev;
             LevelupbtnText.fontSize = 8;
 			LevelupbtnText.text = "비용:" + myTransMoney.strTransMoney(TwoNextLevelPrice) + "\n" + "+" + myTransMoney.strTransMoney(TouchMoneyPlus) + "/클릭";
-			NowClickWonTx.text = myTransMoney.strTransMoney(TouchMoney)+" -> "+myTransMoney.strTransMoney(moneyu.touchspeed);
+			NowClickWonTx.text = myTransMoney.strTransMoney(TouchMoney)+" → "+myTransMoney.strTransMoney(moneyu.touchspeed);
             BeforePrice = 1;
             AfterPrice = 1;
         }
