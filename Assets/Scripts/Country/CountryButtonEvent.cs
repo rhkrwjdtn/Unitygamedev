@@ -12,6 +12,7 @@ public class CountryButtonEvent : MonoBehaviour {
 	public GameObject countryPopup;
 
 	public TransMoney myTransMoney;
+	public HouseButtonEvent housebg;
 
 	public GameObject flagObj;
 	static ulong temp1000JO= 1000000000000000; //1000조
@@ -119,6 +120,7 @@ public class CountryButtonEvent : MonoBehaviour {
 	public void setBG (int btn){
 		countryMoneyEvent (btn);
 		countryAdd (btn);
+		CountryChangeBG (btn);
 		changeBuyEnable (btn);
 
 		//자산 housenowPrice 업데이트
@@ -141,6 +143,14 @@ public class CountryButtonEvent : MonoBehaviour {
 		GameObject flagObj = GameObject.Find("FlagFolder").transform.GetChild(sel).gameObject;
 		flagObj.SetActive (false);
 	}
+
+	public void CountryChangeBG(int sel){
+		//리소스에서 배경파일 로드
+		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+sel+7) as Sprite;
+		Debug.Log ("btn "+sel+"_onClick");
+		housebg.Selected_BG = sel+7; //저장을 위해...
+	}
+
 	public void changeBuyEnable(int sel){//구매한 경우 false로 표시 해줌
 		BuyList [sel] = !BuyList [sel];
 	}
