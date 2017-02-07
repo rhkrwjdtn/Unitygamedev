@@ -1,18 +1,20 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AssetsCS\AssetsEvent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Moneyupdate.cs">
     <Files>
       <File FileName="Assets\Scripts\GoalManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Spoon\spoonmanager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\qudtls_Animator.cs" Line="54" Column="20" />
-      <File FileName="Assets\Scripts\AssetsCS\AssetsEvent.cs" Line="135" Column="5" />
+      <File FileName="Assets\Scripts\qudtls_Animator.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\AssetsCS\AssetsEvent.cs" Line="38" Column="73" />
       <File FileName="Assets\Scripts\House\HouseButtonEvent.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\SaveManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Employment\EmploymentManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Employment\EmploymentManager.cs" Line="10" Column="2" />
       <File FileName="Assets\Scripts\Country\CountryButtonEvent.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Rebirth\RebirthManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\CharacterLevel\CharacterInfo.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\CharacterLevel\CharacterInfo.cs" Line="332" Column="67" />
       <File FileName="Assets\Scripts\IconManager\IconManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\TransMoney.cs" Line="8" Column="1" />
+      <File FileName="Assets\Scripts\Moneyupdate.cs" Line="31" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

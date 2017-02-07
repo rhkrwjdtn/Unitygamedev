@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CharacterInfo : MonoBehaviour {
 
+	public TransMoney myTransMoney; //connect MoneyManager
+
     public UnityEngine.UI.Button btn;
 	public ulong ClickMoney = 0;
     public int JugallumLev = 0;
@@ -282,11 +284,11 @@ public class CharacterInfo : MonoBehaviour {
             btn.enabled = true;
         }
 
-        NowClickWonTx.text = TouchMoney + "원 ->" + moneyu.touchspeed + "원";
+		NowClickWonTx.text = myTransMoney.strTransMoney(TouchMoney) + " → " + myTransMoney.strTransMoney(moneyu.touchspeed);
 
 
         LevelText.text = "둥신 LV" + JugallumLev;
-        LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + TouchMoneyPlus + "/클릭";
+		LevelupbtnText.text = "비용:" +  myTransMoney.strTransMoney(TwoNextLevelPrice) + "\n" + "+" + myTransMoney.strTransMoney(TouchMoneyPlus) + "/클릭";
 
 
     }
@@ -326,8 +328,8 @@ public class CharacterInfo : MonoBehaviour {
             moneyu.touchspeed = ulong.Parse(ToTalTransform);
             LevelText.text = "둥신 LV" + JugallumLev;
             LevelupbtnText.fontSize = 8;
-            LevelupbtnText.text = "비용:" + TwoNextLevelPrice + "\n" + "+" + TouchMoneyPlus + "/클릭";
-            NowClickWonTx.text = TouchMoney+"원 ->"+moneyu.touchspeed+"원";
+			LevelupbtnText.text = "비용:" + myTransMoney.strTransMoney(TwoNextLevelPrice) + "\n" + "+" + myTransMoney.strTransMoney(TouchMoneyPlus) + "/클릭";
+			NowClickWonTx.text = myTransMoney.strTransMoney(TouchMoney)+" → "+myTransMoney.strTransMoney(moneyu.touchspeed);
             BeforePrice = 1;
             AfterPrice = 1;
         }
