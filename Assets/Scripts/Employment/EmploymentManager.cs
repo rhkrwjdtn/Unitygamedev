@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class EmploymentManager : MonoBehaviour
 {
+
+	public TransMoney myTransMoney; //connect MoneyManager
+
     public Button[] btn = new Button[11];
 
     public ulong[] price = new ulong[11];
@@ -34,6 +37,7 @@ public class EmploymentManager : MonoBehaviour
 
     public bool[] btnClick = new bool[11];
     public bool chunsooruExist=false;
+
     // Use this for initialization
     void Start()
     {
@@ -99,7 +103,7 @@ public class EmploymentManager : MonoBehaviour
 
             }
             btn_text[i].fontSize = 8;
-            btn_text[i].text = "비용:" + TwoNextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
+			btn_text[i].text = "비용:" + myTransMoney.strTransMoney(TwoNextLevelPrice[i]) + "\n" + "초당:" + myTransMoney.strTransMoney(moneyspeed[i]);
             name_text[i].text = "" + EmployerLevel[i];
             btnClick[i] = false;
             if(EmployerLevel[i]>=10 && i!=10)
@@ -156,7 +160,7 @@ public class EmploymentManager : MonoBehaviour
                     moneyu.moneyspeed += moneyspeed[i];
 
                     btn_text[i].fontSize = 8;
-                    btn_text[i].text = "비용:" + TwoNextLevelPrice[i] + "\n" + "초당:" + moneyspeed[i] + "원";
+					btn_text[i].text = "비용:" + myTransMoney.strTransMoney(TwoNextLevelPrice[i]) + "\n" + "초당:" + myTransMoney.strTransMoney(moneyspeed[i]);
                     name_text[i].text = "" + EmployerLevel[i];
                     Employer[i].active = true;
                 }

@@ -23795,6 +23795,11 @@ Prefab:
       propertyPath: name_text.Array.data[10]
       value: 
       objectReference: {fileID: 1891334465}
+    - target: {fileID: 114686998628816518, guid: 20975a5ea85a7c147a9db449419e8f73,
+        type: 2}
+      propertyPath: myTransMoney
+      value: 
+      objectReference: {fileID: 1929893893}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20975a5ea85a7c147a9db449419e8f73, type: 2}
   m_IsPrefabParent: 0
@@ -44108,6 +44113,11 @@ Prefab:
       propertyPath: BackGraoud
       value: 
       objectReference: {fileID: 770430511}
+    - target: {fileID: 114859711298352440, guid: b7e77f6499bf71e41aa1b1fb1de6d64d,
+        type: 2}
+      propertyPath: myTransMoney
+      value: 
+      objectReference: {fileID: 1929893893}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b7e77f6499bf71e41aa1b1fb1de6d64d, type: 2}
   m_IsPrefabParent: 0
