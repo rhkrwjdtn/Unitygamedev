@@ -149,6 +149,7 @@ public class CountryButtonEvent : MonoBehaviour {
 		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+sel+7) as Sprite;
 		Debug.Log ("btn "+sel+"_onClick");
 		housebg.Selected_BG = sel+7; //저장을 위해...
+
 	}
 
 	public void changeBuyEnable(int sel){//구매한 경우 false로 표시 해줌
