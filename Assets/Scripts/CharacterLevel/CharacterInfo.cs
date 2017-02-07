@@ -161,9 +161,10 @@ public class CharacterInfo : MonoBehaviour {
                 //bntcm = (float)moneyu.touchspeed * GFgob[i];
                 GFBonus = GFgob[i];
                 bntcm = (float)TouchMoney * HouseBonus * NationBonus * GFBonus;
-                sosoodelete =(int) bntcm;
-                GFTransform = sosoodelete.ToString();
-                moneyu.touchspeed = ulong.Parse(GFTransform);
+                //sosoodelete =(int) bntcm;
+                //GFTransform = sosoodelete.ToString();
+                //moneyu.touchspeed = ulong.Parse(GFTransform);
+                moneyu.touchspeed = (ulong)bntcm;
                 GFTruetoFalse[i] = true;
                 noretry++;
                 GFBonusTx.text =""+GFbg[i]+"%";
@@ -177,9 +178,10 @@ public class CharacterInfo : MonoBehaviour {
                 Debug.Log(GFnonugi[0]);
                 GFBonus = 1.0f;
                 bntcm = (float)TouchMoney * HouseBonus * NationBonus * GFBonus;
-                sosoodelete = (int)bntcm;
-                GFTransform = sosoodelete.ToString();
-                moneyu.touchspeed = ulong.Parse(GFTransform);
+                //sosoodelete = (int)bntcm;
+                //GFTransform = sosoodelete.ToString();
+                //moneyu.touchspeed = ulong.Parse(GFTransform);
+                moneyu.touchspeed = (ulong)bntcm;
                 GFTruetoFalse[i] = false;
                 noretry--;
                 GFBonusTx.text = "0%";
@@ -204,9 +206,10 @@ public class CharacterInfo : MonoBehaviour {
                 }
                 bntcm = (float)TouchMoney * HouseBonus * GFBonus * NationBonus;
                 TotalHousePersent = TotalHousePersent + Hsbg[i];
-                sosoodelete = (int)bntcm;
-                HouseTransform = sosoodelete.ToString();
-                moneyu.touchspeed = ulong.Parse(HouseTransform);
+                //sosoodelete = (int)bntcm;
+                //HouseTransform = sosoodelete.ToString();
+                moneyu.touchspeed = (ulong)bntcm;
+               // moneyu.touchspeed = ulong.Parse(HouseTransform);
                 HouseTruetoFalse[i] = true;
                 noretryhouse[i]++;
                 HouseBonusTx.text = "" + TotalHousePersent+"%";
@@ -222,9 +225,10 @@ public class CharacterInfo : MonoBehaviour {
                 }
                 bntcm = (float)TouchMoney * HouseBonus * GFBonus * NationBonus;
                 TotalHousePersent = TotalHousePersent - Hsbg[i];
-                sosoodelete = (int)bntcm;
-                HouseTransform = sosoodelete.ToString();
-                moneyu.touchspeed = ulong.Parse(HouseTransform);
+                //sosoodelete = (int)bntcm;
+                //HouseTransform = sosoodelete.ToString();
+                //moneyu.touchspeed = ulong.Parse(HouseTransform);
+                moneyu.touchspeed = (ulong)bntcm;
                 HouseTruetoFalse[i] = false;
                 noretryhouse[i]--;
                 HouseBonusTx.text = "" + TotalHousePersent + "%";
@@ -249,9 +253,10 @@ public class CharacterInfo : MonoBehaviour {
                 }
                 bntcm = (float)TouchMoney * GFBonus * HouseBonus * NationBonus;
                 TotalNationPersent = TotalNationPersent + Nsbg[i];
-                sosoodelete = (int)bntcm;
-                NationTransform = sosoodelete.ToString();
-                moneyu.touchspeed = ulong.Parse(NationTransform);
+                //sosoodelete = (int)bntcm;
+                //NationTransform = sosoodelete.ToString();
+                //moneyu.touchspeed = ulong.Parse(NationTransform);
+                moneyu.touchspeed = (ulong)bntcm;
                 NationTruetoFalse[i] = true;
                 noretryNation[i]++;
                 NationBonusTx.text = "" + TotalNationPersent + "%";
@@ -268,9 +273,10 @@ public class CharacterInfo : MonoBehaviour {
                 //20억 넘어갈때 어케 되는지 알아봐야댐
                 bntcm = (float)TouchMoney * GFBonus * HouseBonus * NationBonus;
                 TotalNationPersent = TotalNationPersent - Nsbg[i];
-                sosoodelete = (int)bntcm;
-                NationTransform = sosoodelete.ToString();
-                moneyu.touchspeed = ulong.Parse(NationTransform);
+                //sosoodelete = (int)bntcm;
+                //NationTransform = sosoodelete.ToString();
+                //moneyu.touchspeed = ulong.Parse(NationTransform);
+                moneyu.touchspeed = (ulong)bntcm;
                 NationTruetoFalse[i] = false;
                 noretryNation[i]--;
                 NationBonusTx.text = "" + TotalNationPersent + "%";
@@ -316,14 +322,16 @@ public class CharacterInfo : MonoBehaviour {
         }
         AfterPrice = BeforePrice * 1.04f;
 
-        Secondsosoodelete = (int)BeforePrice;
-        BeforeString = Secondsosoodelete.ToString();
-        Secondsosoodelete = (int)AfterPrice;
-        AfterString = Secondsosoodelete.ToString();
+        //Secondsosoodelete = (int)BeforePrice;
+        //BeforeString = Secondsosoodelete.ToString();
+        //Secondsosoodelete = (int)AfterPrice;
+        //AfterString = Secondsosoodelete.ToString();
 
         
-        NextLevelPrice = BeforeLevelPrice+ulong.Parse(BeforeString);
-        TwoNextLevelPrice = BeforeLevelPrice+ulong.Parse(AfterString);
+        //NextLevelPrice = BeforeLevelPrice+ulong.Parse(BeforeString);
+        NextLevelPrice = BeforeLevelPrice+(ulong)BeforePrice;
+        //TwoNextLevelPrice = BeforeLevelPrice+ulong.Parse(AfterString);
+        TwoNextLevelPrice=BeforeLevelPrice+ (ulong)AfterPrice;
         BeforeLevelPrice = NextLevelPrice;
 
         if (moneyu.money > NextLevelPrice)
@@ -331,9 +339,12 @@ public class CharacterInfo : MonoBehaviour {
             moneyu.money=moneyu.money - NextLevelPrice;
             JugallumLev++;
             totalClickmoney = (float)TouchMoney * GFBonus*HouseBonus*NationBonus;//기업 인수 보너스 알바 보너스 추가 하기
-            sosoodelete = (int)totalClickmoney;
-            ToTalTransform = sosoodelete.ToString();
-            moneyu.touchspeed = ulong.Parse(ToTalTransform);
+                                                                                 //sosoodelete = (int)totalClickmoney;
+                                                                                 //ToTalTransform = sosoodelete.ToString();
+                                                                                 //moneyu.touchspeed = ulong.Parse(ToTalTransform);
+                                                                                 //주석 지우면안대
+
+            moneyu.touchspeed = (ulong)totalClickmoney;
             LevelText.text = "둥신 LV" + JugallumLev;
             LevelupbtnText.fontSize = 8;
 			LevelupbtnText.text = "비용:" + myTransMoney.strTransMoney(TwoNextLevelPrice) + "\n" + "+" + myTransMoney.strTransMoney(TouchMoneyPlus) + "/클릭";
