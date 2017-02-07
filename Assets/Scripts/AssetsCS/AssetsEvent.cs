@@ -194,7 +194,9 @@ public class AssetsEvent : MonoBehaviour {
 				//어둡게
 				Asset_houseObj [i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				//흑백
-				Asset_houseImgObj [i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/gray_bg"+i) as Sprite;//bg_icon/sel_bg_icon_" + i) as Sprite;
+				Asset_houseImgObj [i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//bg_icon/sel_bg_icon_" + i) as Sprite;
+				//이미지 어둡게
+				Asset_houseImgObj [i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				//버튼 비활성화
 				Asset_houseBtnObj [i].SetActive (false);
 				//배경 바꾸기 X
@@ -212,6 +214,9 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_countryObj [i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
 				Asset_countryBtnObj[i].SetActive(true);
+				//배경 바꾸기 O
+				Asset_countryImgObj[i].GetComponent<Button>().enabled = true;
+
 
 			}
 			//돈도 있고, 안샀다면,
@@ -221,6 +226,8 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_countryObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
 				Asset_countryBtnObj[i].SetActive(false);
+				//배경 바꾸기 X
+				Asset_countryImgObj[i].GetComponent<Button>().enabled = false;
 
 
 			}
@@ -291,10 +298,12 @@ public class AssetsEvent : MonoBehaviour {
 	public void Asset_HouseOnClick (int btn){
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
+	
 		MU.money += HE.BG_Price[btn]*2;
+		Asset_houseNowPrice [btn] = 0;
+
 		HE.changeBGBuyEnable (btn);
 
-		Asset_houseNowPrice [btn] = 0;
 		//기본배경으로 초기화
 		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg99") as Sprite;
 		HE.Selected_BG = (int)99;
@@ -304,12 +313,18 @@ public class AssetsEvent : MonoBehaviour {
 	public void Asset_CountryOnClick (int btn){
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		CountryButtonEvent CE= GameObject.Find("CountryManager").GetComponent<CountryButtonEvent>();
+		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
+	
 		MU.money += CE.Price[btn]*2;
-
 		Asset_countryNowPrice [btn] = 0;
 
 		CE.countryDel (btn);
 		CE.changeBuyEnable (btn);
+
+
+		//기본배경으로 초기화
+		GameObject.Find ("Background").GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg99") as Sprite;
+		HE.Selected_BG = (int)99;
 	}
 
 	//connect Button onClick event
