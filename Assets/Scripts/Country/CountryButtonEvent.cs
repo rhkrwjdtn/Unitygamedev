@@ -124,6 +124,8 @@ public class CountryButtonEvent : MonoBehaviour {
 		//자산 housenowPrice 업데이트
 		AssetsEvent myAssetList= GameObject.Find("AssetsManager").GetComponent<AssetsEvent>();
 		myAssetList.Asset_countryNowPrice[btn] = Price[btn];
+
+
 	}
 	public void countryMoneyEvent(int sel){
 		//MoneyManager에서 country의 가격에 따라 MoneyUpdate

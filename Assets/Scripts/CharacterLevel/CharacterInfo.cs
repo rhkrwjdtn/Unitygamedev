@@ -158,8 +158,9 @@ public class CharacterInfo : MonoBehaviour {
             if(gf.GFExist[i] == true&&noretry==0)
             {
 
-                bntcm = (float)moneyu.touchspeed * GFgob[i];
+                //bntcm = (float)moneyu.touchspeed * GFgob[i];
                 GFBonus = GFgob[i];
+                bntcm = (float)TouchMoney * HouseBonus * NationBonus * GFBonus;
                 sosoodelete =(int) bntcm;
                 GFTransform = sosoodelete.ToString();
                 moneyu.touchspeed = ulong.Parse(GFTransform);
@@ -172,9 +173,10 @@ public class CharacterInfo : MonoBehaviour {
             }
             else if(gf.GFExist[i]==false && GFTruetoFalse[i]==true)
             {
-                bntcm = (float)moneyu.touchspeed * GFnonugi[i];
+                //bntcm = (float)moneyu.touchspeed * GFnonugi[i];
                 Debug.Log(GFnonugi[0]);
-                GFBonus = 1;
+                GFBonus = 1.0f;
+                bntcm = (float)TouchMoney * HouseBonus * NationBonus * GFBonus;
                 sosoodelete = (int)bntcm;
                 GFTransform = sosoodelete.ToString();
                 moneyu.touchspeed = ulong.Parse(GFTransform);
@@ -190,7 +192,9 @@ public class CharacterInfo : MonoBehaviour {
         {
             if(house.BG_BuyList[i]==false&&noretryhouse[i]==0)
             {
-                bntcm = (float)moneyu.touchspeed * Housegob[i];
+
+                //bntcm = (float)moneyu.touchspeed * Housegob[i];
+                
                 if (HouseBonus != 1)
                 { HouseBonus = HouseBonus + Housegob[i]; }
 
@@ -198,8 +202,8 @@ public class CharacterInfo : MonoBehaviour {
                 {                            //update 함수에선 집사기에서 사자마자 퍼센트가 올라감
                     HouseBonus = Housegob[i];
                 }
+                bntcm = (float)TouchMoney * HouseBonus * GFBonus * NationBonus;
                 TotalHousePersent = TotalHousePersent + Hsbg[i];
-
                 sosoodelete = (int)bntcm;
                 HouseTransform = sosoodelete.ToString();
                 moneyu.touchspeed = ulong.Parse(HouseTransform);
@@ -210,12 +214,13 @@ public class CharacterInfo : MonoBehaviour {
             }
             else if(house.BG_BuyList[i]==true && HouseTruetoFalse[i]==true)
             {
-                bntcm = (float)moneyu.touchspeed * Housenonugi[i];
+                //bntcm = (float)moneyu.touchspeed * Housenonugi[i];
                 HouseBonus = HouseBonus - Housegob[i];
-                if(HouseBonus==0)
+                if(HouseBonus<=0)
                 {
-                    HouseBonus++;
+                    HouseBonus=1.0f;
                 }
+                bntcm = (float)TouchMoney * HouseBonus * GFBonus * NationBonus;
                 TotalHousePersent = TotalHousePersent - Hsbg[i];
                 sosoodelete = (int)bntcm;
                 HouseTransform = sosoodelete.ToString();
@@ -232,7 +237,8 @@ public class CharacterInfo : MonoBehaviour {
         {
             if(Country.BuyList[i]==false && noretryNation[i]==0)
             {
-                bntcm = (float)moneyu.touchspeed * Nationgob[i];
+                //bntcm = (float)moneyu.touchspeed * Nationgob[i];
+                
                 if(NationBonus!=1)
                 {
                     NationBonus = NationBonus + Nationgob[i];
@@ -241,7 +247,7 @@ public class CharacterInfo : MonoBehaviour {
                 {
                     NationBonus = Nationgob[i];
                 }
-                
+                bntcm = (float)TouchMoney * GFBonus * HouseBonus * NationBonus;
                 TotalNationPersent = TotalNationPersent + Nsbg[i];
                 sosoodelete = (int)bntcm;
                 NationTransform = sosoodelete.ToString();
@@ -253,12 +259,14 @@ public class CharacterInfo : MonoBehaviour {
             }
             else if(Country.BuyList[i]==true && NationTruetoFalse[i]==true)
             {
-                bntcm = (float)moneyu.touchspeed * Nationnonugi[i];
+                //bntcm = (float)moneyu.touchspeed * Nationnonugi[i];
                 NationBonus = NationBonus - Nationgob[i];
-                if(NationBonus==0)
+                if(NationBonus<=0)
                 {
-                    NationBonus++;
+                    NationBonus=1.0f;
                 }
+                //20억 넘어갈때 어케 되는지 알아봐야댐
+                bntcm = (float)TouchMoney * GFBonus * HouseBonus * NationBonus;
                 TotalNationPersent = TotalNationPersent - Nsbg[i];
                 sosoodelete = (int)bntcm;
                 NationTransform = sosoodelete.ToString();
