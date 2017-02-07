@@ -65,8 +65,8 @@ public class qudtls_Animator : MonoBehaviour {
 		dog.GetComponent<Image> ().sprite = dogAni [dogcount];
 		chunsuru.GetComponent<Image> ().sprite = chunsuruAni[chunsurucount];
 		hohyung.GetComponent<Image> ().sprite = hohyungAni [hohyungcount];
-		//yuSick.GetComponent<Image> ().sprite = yuSickAni[yuSickcount];
-		//myungsasu.GetComponent<Image> ().sprite = myungsasuAni [myungsasucount];
+		yuSick.GetComponent<Image> ().sprite = yuSickAni[yuSickcount];
+		myungsasu.GetComponent<Image> ().sprite = myungsasuAni [myungsasucount];
 		dungchi.GetComponent<Image> ().sprite = dungchiAni[dungchicount];
 		myulchi.GetComponent<Image> ().sprite = myulchiAni[myulchicount];
 		yapsap.GetComponent<Image> ().sprite = yapsapAni[yapsapcount];
@@ -170,11 +170,11 @@ public class qudtls_Animator : MonoBehaviour {
 		if(hohyung.activeSelf==true)
 		hohyung.GetComponent<Image> ().sprite = hohyungAni [hohyungcount];
 
-//		if(yuSick.activeSelf==true)
-//			yuSick.GetComponent<Image> ().sprite = yuSickAni[yuSickcount];
+		if(yuSick.activeSelf==true)
+			yuSick.GetComponent<Image> ().sprite = yuSickAni[yuSickcount];
 
-	//	if(myungsasu.activeSelf==true)
-	//		myungsasu.GetComponent<Image> ().sprite = myungsasuAni [myungsasucount];
+		if(myungsasu.activeSelf==true)
+			myungsasu.GetComponent<Image> ().sprite = myungsasuAni [myungsasucount];
 
 		if(dungchi.activeSelf==true)
 			dungchi.GetComponent<Image> ().sprite = dungchiAni[dungchicount];
