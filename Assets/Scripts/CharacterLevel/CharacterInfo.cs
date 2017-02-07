@@ -23,7 +23,7 @@ public class CharacterInfo : MonoBehaviour {
 
     public float bntcm = 0;
     public float GFBonus = 1;
-    public float HouseBonus = 1;
+    public float HouseBonus = 1.0f;
     public float NationBonus = 1;
     public float totalClickmoney = 0;
 
@@ -197,10 +197,10 @@ public class CharacterInfo : MonoBehaviour {
 
                 //bntcm = (float)moneyu.touchspeed * Housegob[i];
                 
-                if (HouseBonus != 1)
+                if (HouseBonus != 1.0f)
                 { HouseBonus = HouseBonus + Housegob[i]; }
 
-                else if (HouseBonus==1)      //본체 버튼 클릭할때 곱해줘서 보너스퍼센트가 초기화 되지 않게함 
+                else if (HouseBonus==1.0f)      //본체 버튼 클릭할때 곱해줘서 보너스퍼센트가 초기화 되지 않게함 
                 {                            //update 함수에선 집사기에서 사자마자 퍼센트가 올라감
                     HouseBonus = Housegob[i];
                 }
@@ -218,11 +218,14 @@ public class CharacterInfo : MonoBehaviour {
             else if(house.BG_BuyList[i]==true && HouseTruetoFalse[i]==true)
             {
                 //bntcm = (float)moneyu.touchspeed * Housenonugi[i];
+
                 HouseBonus = HouseBonus - Housegob[i];
-                if(HouseBonus<=0)
+
+                if((int)HouseBonus<=0)
                 {
                     HouseBonus=1.0f;
                 }
+
                 bntcm = (float)TouchMoney * HouseBonus * GFBonus * NationBonus;
                 TotalHousePersent = TotalHousePersent - Hsbg[i];
                 //sosoodelete = (int)bntcm;
@@ -266,7 +269,7 @@ public class CharacterInfo : MonoBehaviour {
             {
                 //bntcm = (float)moneyu.touchspeed * Nationnonugi[i];
                 NationBonus = NationBonus - Nationgob[i];
-                if(NationBonus<=0)
+                if((int)NationBonus<=0)
                 {
                     NationBonus=1.0f;
                 }
