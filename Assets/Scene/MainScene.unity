@@ -12896,6 +12896,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114039800227057130, guid: 0674373a9f1b8c542a5db32be7dec595,
+        type: 2}
+      propertyPath: m_Text
+      value: "\u203B \uBCF4\uC720 \uC790\uC0B0, \uACE8\uB4DC\uB294 \uC720\uC9C0\uB429\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0674373a9f1b8c542a5db32be7dec595, type: 2}
   m_IsPrefabParent: 0
@@ -35656,7 +35661,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b1ebeb3f8e8ab4140a5393f8ead3fc19, type: 3}
-    m_FontSize: 11
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -35664,12 +35669,11 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uCE90\uB9AD\uD130 \uB808\uBCA8\uACFC \n\uACE0\uC6A9\uD558\uAE30 \uB808\uBCA8\uC774
-    \uCD08\uAE30\uD654 \n\uB418\uACE0 \uC5EC\uC790\uCE5C\uAD6C\uB3C4 \uD5E4\uC5B4\uC9C4\n\uC0C1\uD0DC\uAC00
-    \uB429\uB2C8\uB2E4. "
+  m_Text: "\uCE90\uB9AD\uD130, \uACE0\uC6A9\uD558\uAE30 \uB808\uBCA8\uACFC \n\uC5EC\uC790\uCE5C\uAD6C
+    \uCD08\uAE30\uD654!"
 --- !u!222 &1422672112
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37047,19 +37051,19 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: b1ebeb3f8e8ab4140a5393f8ead3fc19, type: 3}
-    m_FontSize: 11
+    m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
+    m_MaxSize: 110
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "\uB300\uC2E0 \uCC98\uC74C\uBD80\uD130 \uD070 \uB3C8\uC744\n \uAC00\uC9C0\uACE0
-    \uC2DC\uC791\uD560 \uC218\uB3C4 \n\uC788\uC5B4\uC694\n"
+  m_Text: "\uD658\uC0DD\uB41C \uC218\uC800\uC5D0 \uB530\uB77C\uC11C,\n\uCD08, \uD074\uB9AD
+    \uB2F9 \uACE8\uB4DC \uBCC0\uACBD!"
 --- !u!222 &1507979178
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -48602,6 +48606,11 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114414797572839700, guid: 906ffda0b641f4942b18e52835cd4084,
+        type: 2}
+      propertyPath: m_Text
+      value: "\uD658\uC0DD \uD558\uC2E4\uAC74\uAC00\uC694?"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 906ffda0b641f4942b18e52835cd4084, type: 2}
