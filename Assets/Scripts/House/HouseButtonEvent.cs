@@ -95,6 +95,7 @@ public class HouseButtonEvent : MonoBehaviour {
 					houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 					//컬러아이콘
 					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//("bg_icon/bg_icon_" + i) as Sprite;
+					imgObj[i].GetComponent<Image> ().color = new Color (1f,1f,1f,1f);
 					//버튼 활성화
 					btnObj[i].SetActive(true);
 

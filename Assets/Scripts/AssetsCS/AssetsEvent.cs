@@ -301,7 +301,7 @@ public class AssetsEvent : MonoBehaviour {
 		Moneyupdate MU= GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
 		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
 	
-		MU.money += HE.BG_Price[btn]*2;
+		MU.money += Asset_houseNowPrice [btn];
 		Asset_houseNowPrice [btn] = 0;
 
 		HE.changeBGBuyEnable (btn);
@@ -317,7 +317,7 @@ public class AssetsEvent : MonoBehaviour {
 		CountryButtonEvent CE= GameObject.Find("CountryManager").GetComponent<CountryButtonEvent>();
 		HouseButtonEvent HE= GameObject.Find("HouseManager").GetComponent<HouseButtonEvent>();
 	
-		MU.money += CE.Price[btn]*2;
+		MU.money += Asset_countryNowPrice [btn];
 		Asset_countryNowPrice [btn] = 0;
 
 		CE.countryDel (btn);
