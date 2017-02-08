@@ -40,7 +40,6 @@ public class SaveManager : MonoBehaviour {
     public GameObject daejang = null;
     public GameObject chunsooru = null;
 
-	public ButtonEnable employment;
     public EmploymentManager Realemployment;
     public GrilFriendManager girlf;
     public IconManager icon;
