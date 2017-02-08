@@ -183,12 +183,15 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_houseObj[i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				//컬러아이콘
 				Asset_houseImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//("bg_icon/bg_icon_" + i) as Sprite;
+				//이미지 밝
+				Asset_houseImgObj [i].GetComponent<Image> ().color = new Color (1f, 1f, 1f, 1f);
+
 				//버튼 활성화
 				Asset_houseBtnObj[i].SetActive(true);
 				//배경 바꾸기 O
 				Asset_houseImgObj[i].GetComponent<Button>().enabled = true;
 			}
-			else {
+			else { //구매 안 한경우
 				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().text = "미구매";
 				Asset_houseObj [i].transform.GetChild (1).GetComponent<Text> ().alignment = TextAnchor.MiddleCenter;
 				//어둡게
@@ -213,6 +216,9 @@ public class AssetsEvent : MonoBehaviour {
 				Asset_countryObj[i].transform.GetChild(1).GetComponent<Text>().text =  "구매가:"+ myTransMoney.strTransMoney(myFlagList.Price[i])+"\n판매가:"+ myTransMoney.strTransMoney(Asset_countryNowPrice[i]);
 				Asset_countryObj [i].GetComponent<Image> ().color = new Color (154 / 255, 154 / 255, 154 / 255, 154 / 255);
 				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
+				//이미지 밝
+				Asset_countryImgObj[i].GetComponent<Image> ().color = new Color (1f, 1f, 1f, 1f);
+
 				Asset_countryBtnObj[i].SetActive(true);
 				//배경 바꾸기 O
 				Asset_countryImgObj[i].GetComponent<Button>().enabled = true;
