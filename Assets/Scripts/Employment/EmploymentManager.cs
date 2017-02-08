@@ -161,7 +161,7 @@ public class EmploymentManager : MonoBehaviour
 
                     btn_text[i].fontSize = 8;
 					btn_text[i].text = "비용:" + myTransMoney.strTransMoney(TwoNextLevelPrice[i]) + "\n" + "초당:" + myTransMoney.strTransMoney(moneyspeed[i]);
-                    name_text[i].text = names_text+"LV " + EmployerLevel[i];
+                    name_text[i].text = names_text[i]+"LV " + EmployerLevel[i];
                     Employer[i].active = true;
                 }
                 
