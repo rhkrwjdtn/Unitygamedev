@@ -41,6 +41,7 @@ public class RebirthManager : MonoBehaviour {
     }
     public void rebirthbtnClick()
     {
+		EmploymentManager employ = GameObject.Find ("EmployManager").GetComponent<EmploymentManager> ();
         IconManager potioncnt = GameObject.Find("IconManager").GetComponent<IconManager>();
 		RebirthCount++;
         if (potioncnt.rebirthpotion != 0)
@@ -52,40 +53,42 @@ public class RebirthManager : MonoBehaviour {
                 Alramspoon[0].active = true;
 
             }
-            else if (totalrandum <= 7500 && totalrandum > 5000)
+          else if (totalrandum <= 8000 && totalrandum > 5000)
             {
                 plasticrebirth();
                 Alramspoon[1].active = true;
             }
-            else if (totalrandum <= 9200 && totalrandum > 7500)
+            else if (totalrandum <= 9500 && totalrandum > 8000)
             {
                 nokrebirth();
                 Alramspoon[2].active = true;
             }
-            else if (totalrandum <= 9500 && totalrandum > 9200)
+            else if (totalrandum <= 9800 && totalrandum > 9500)
             {
                 dongrebirth();
                 Alramspoon[3].active = true;
             }
-            else if (totalrandum <= 9800 && totalrandum > 9500)
+            else if (totalrandum <= 9900 && totalrandum > 9800)
             {
                 silverrebirth();
                 Alramspoon[4].active = true;
             }
-            else if (totalrandum <= 9950 && totalrandum > 9800)
+            else if (totalrandum <= 9980 && totalrandum > 9900)
             {
                 goldrebirth();
                 Alramspoon[5].active = true;
             }
-            else if (totalrandum <= 10000 && totalrandum > 9950)
+            else if (totalrandum <= 10000 && totalrandum > 9980)
             {
 				diarebirth();
+
                 Alramspoon[6].active = true;
             }
             popup.active = false;
             potioncnt.rebirthpotion -= 1;
             AlramPopup.active = true;
 
+			employ.chunsooruExist = false;
 
         }
 
@@ -153,7 +156,7 @@ public class RebirthManager : MonoBehaviour {
         ckrandomnum = Random.Range(50000, 100000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
-        msmoneyspeed = ulong.Parse(msstring);
+        msmoneyspeed = ulong.Parse(msstring)*10;
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
@@ -166,7 +169,7 @@ public class RebirthManager : MonoBehaviour {
         ckrandomnum = Random.Range(100000, 500000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
-        msmoneyspeed = ulong.Parse(msstring)*10;
+        msmoneyspeed = ulong.Parse(msstring)*1000;
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;
@@ -180,7 +183,7 @@ public class RebirthManager : MonoBehaviour {
         ckrandomnum = Random.Range(500000, 1000000);
         msstring = msrandomnum.ToString();
         ckstring = ckrandomnum.ToString();
-        msmoneyspeed = ulong.Parse(msstring)*10;
+        msmoneyspeed = ulong.Parse(msstring)*1000;
         cktouchmoney = ulong.Parse(ckstring);
         moneyu.moneyspeed = msmoneyspeed;
         moneyu.touchspeed = cktouchmoney;

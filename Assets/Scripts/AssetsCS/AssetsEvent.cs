@@ -219,12 +219,14 @@ public class AssetsEvent : MonoBehaviour {
 
 
 			}
-			//돈도 있고, 안샀다면,
 			else {
 				//미구매 , 어둡게, 흑백아이콘, 버튼비활성화
 				Asset_countryObj [i].transform.GetChild (1).GetComponent<Text> ().text = "미구매";
 				Asset_countryObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
-				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
+				Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;
+				//이미지 어둡게
+				Asset_countryImgObj [i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
+				//Asset_countryImgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
 				Asset_countryBtnObj[i].SetActive(false);
 				//배경 바꾸기 X
 				Asset_countryImgObj[i].GetComponent<Button>().enabled = false;

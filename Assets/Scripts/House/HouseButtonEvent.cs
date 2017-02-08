@@ -119,7 +119,9 @@ public class HouseButtonEvent : MonoBehaviour {
 					//어둡게
 					houseObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 					//흑백아이콘
-					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/gray_bg"+i) as Sprite;//("bg_icon/sel_bg_icon_" + i) as Sprite;
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("bg_img/bg"+i) as Sprite;//gray_bg"+i) as Sprite;//("bg_icon/sel_bg_icon_" + i) as Sprite;
+					//이미지 어둡게
+					imgObj [i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 					//버튼 비활성화
 					btnObj[i].SetActive(false);
 				}	

@@ -23,11 +23,11 @@ public class spoonmanager : MonoBehaviour {
 		//100~1000만 : 2 녹
 		if (moneyu.moneyspeed <= myPow (100000, 10, 0)) 
 			spoonimage.GetComponent<Image> ().sprite = SpoonImg [0];
-		else if ((moneyu.moneyspeed >= myPow (100000, 10, 5))) //diamond
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 7))) //diamond
 			spoonimage.GetComponent<Image> ().sprite = SpoonImg [6];
-		else if ((moneyu.moneyspeed >= myPow (100000, 10, 4)))
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 6)))
 			spoonimage.GetComponent<Image> ().sprite = SpoonImg [5];
-		else if ((moneyu.moneyspeed >= myPow (100000, 10, 3)))
+		else if ((moneyu.moneyspeed >= myPow (100000, 10, 4)))
 			spoonimage.GetComponent<Image> ().sprite = SpoonImg [4];
 		else if ((moneyu.moneyspeed >= myPow (100000, 10, 2)))
 			spoonimage.GetComponent<Image> ().sprite = SpoonImg [3];

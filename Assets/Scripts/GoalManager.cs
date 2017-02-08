@@ -45,6 +45,7 @@ public class GoalManager : MonoBehaviour {
 	public ulong[] MoneyTmp;
 	public int EmployeesLvTmp;
 	public string[] Spoon_Text;
+	public int[] Spoon_PowInt;
 	/*
 	업적
 5단계(?)
@@ -62,6 +63,7 @@ public class GoalManager : MonoBehaviour {
 	public void Start(){
 		//MoneyTmp = new ulong[LevelSize] {100000, 500000, 1000000, 5000000, 10000000}; //10만 :녹수저
 		Spoon_Text = new string[LevelSize] {"녹","동","은","금","다이아"};
+		Spoon_PowInt = new int[LevelSize] {1,2,4,6,7};
 		for (int i = 0; i < SIZE; i++)
 			GoalObj[i] = null;
 	}
@@ -87,7 +89,7 @@ public class GoalManager : MonoBehaviour {
 					GoalObj[i].transform.FindChild ("Image").GetComponent<Image>().sprite = Resources.Load<Sprite> ("Goal_Img/spoon" + Goal_LV[i]) as Sprite;
 					GoalObj[i].transform.FindChild ("Text").GetComponent<Text> ().text = Spoon_Text [Goal_LV[i]] + "수저 달성";
 					//goal에서의 Spoon_Lv은 0인데, 금수저인 경우, 여러번 보상을 받아야 한다. 
-					if (MU.moneyspeed >= myPow((ulong)1000000, (ulong)10, Goal_LV[i]) ) 
+					if (MU.moneyspeed >= myPow((ulong)100000, (ulong)10, Spoon_PowInt[Goal_LV[i]]) ) 
 						GoalObj[i].transform.FindChild("Button").GetComponent<Button> ().interactable = true;
 				}
 				break;

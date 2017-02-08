@@ -40,11 +40,11 @@ public class GrilFriendManager : MonoBehaviour {
         {
             ClosePopup[2].active = false;
         }
-        if(moneyu.moneyspeed>100000000)
+        if(moneyu.moneyspeed>1000000000)
         {
             ClosePopup[3].active = false;
         }
-        if(moneyu.moneyspeed>1000000000)
+        if(moneyu.moneyspeed>1000000000000)
         {
             ClosePopup[4].active = false;
         }

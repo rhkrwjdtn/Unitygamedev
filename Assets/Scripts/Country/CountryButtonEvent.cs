@@ -34,7 +34,7 @@ public class CountryButtonEvent : MonoBehaviour {
 			if (i > 0)
 				Price [i] = (temp1000JO << i);// (1000000000000*5*(i+1));//5조~ 75조
 			else
-				Price [0] = 1818181818180000;
+				Price [0] = 1818000000000000;
 		}
 	}
 
@@ -109,7 +109,9 @@ public class CountryButtonEvent : MonoBehaviour {
 					//가격표기, 어둡게, 흑백아이콘, 버튼비활성화
 					countryObj [i].transform.GetChild (1).GetComponent<Text> ().text = myTransMoney.strTransMoney(Price[i]);
 					countryObj[i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
-					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/gray_flag ("+i+")") as Sprite;
+					imgObj[i].GetComponent<Image> ().sprite = Resources.Load<Sprite> ("Flag/flag ("+i+")") as Sprite;//gray_flag ("+i+")") as Sprite;
+					//이미지 어둡게
+					imgObj [i].GetComponent<Image> ().color = new Color (0.6f, 0.6f, 0.6f, 1);
 					btnObj[i].SetActive(false);
 				}	
 			}
