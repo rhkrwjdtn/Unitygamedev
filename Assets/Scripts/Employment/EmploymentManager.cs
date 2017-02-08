@@ -34,7 +34,7 @@ public class EmploymentManager : MonoBehaviour
     public ulong firstLevelprice = 10000;
     public Text[] btn_text = new Text[11];
     public Text[] name_text = new Text[11];
-
+    public string[] names_text = new string[11] { "몽실이", "멸치", "얍삽이", "덩치","명사수","이한위","현기증","내부인","우리형","대장님","천수르"};
     public bool[] btnClick = new bool[11];
     public bool chunsooruExist=false;
 
@@ -104,7 +104,7 @@ public class EmploymentManager : MonoBehaviour
             }
             btn_text[i].fontSize = 8;
 			btn_text[i].text = "비용:" + myTransMoney.strTransMoney(TwoNextLevelPrice[i]) + "\n" + "초당:" + myTransMoney.strTransMoney(moneyspeed[i]);
-            name_text[i].text = "" + EmployerLevel[i];
+            name_text[i].text = names_text[i]+"LV " + EmployerLevel[i];
             btnClick[i] = false;
             if(EmployerLevel[i]>=10 && i!=10)
             {
@@ -161,7 +161,7 @@ public class EmploymentManager : MonoBehaviour
 
                     btn_text[i].fontSize = 8;
 					btn_text[i].text = "비용:" + myTransMoney.strTransMoney(TwoNextLevelPrice[i]) + "\n" + "초당:" + myTransMoney.strTransMoney(moneyspeed[i]);
-                    name_text[i].text = "" + EmployerLevel[i];
+                    name_text[i].text = names_text+"LV " + EmployerLevel[i];
                     Employer[i].active = true;
                 }
                 
