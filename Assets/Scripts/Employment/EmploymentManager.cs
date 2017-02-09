@@ -26,6 +26,7 @@ public class EmploymentManager : MonoBehaviour
     public ulong[] StartLevelPrice = new ulong[11];
 
     public ulong[] gobsem = new ulong[11];
+    public ulong[] characterbalance = new ulong[11] { 200, 250, 300, 400, 500, 600, 700, 800, 900, 1000, 2000 };
     public Image[] BackgroundColor = new Image[11];
 
 
@@ -150,8 +151,8 @@ public class EmploymentManager : MonoBehaviour
 
                 plusmoney[i] = plusmoney[i] + EmployerLevel[i];
 
-                NextLevelPrice[i] = (10000 + (200 * (plusmoney[i]))) * gobsem[i];
-                TwoNextLevelPrice[i] = (10000 + (200 * (plusmoney[i]+(EmployerLevel[i]+1)))) * gobsem[i];
+                NextLevelPrice[i] = (10000 + (characterbalance[i] * (plusmoney[i]))) * gobsem[i];
+                TwoNextLevelPrice[i] = (10000 + (characterbalance[i] * (plusmoney[i]+(EmployerLevel[i]+1)))) * gobsem[i];
                 if (moneyu.money >= NextLevelPrice[i])
                 {
                     EmployerLevel[i]++;
@@ -168,8 +169,8 @@ public class EmploymentManager : MonoBehaviour
                 else if (moneyu.money < NextLevelPrice[i])
                 {
                     plusmoney[i] = plusmoney[i]- EmployerLevel[i];
-                    NextLevelPrice[i] = (10000 + 200 * (plusmoney[i])) * gobsem[i];
-                    TwoNextLevelPrice[i] = (10000 + (200 * (plusmoney[i] + (EmployerLevel[i] + 1)))) * gobsem[i];
+                    NextLevelPrice[i] = (10000 + characterbalance[i] * (plusmoney[i])) * gobsem[i];
+                    TwoNextLevelPrice[i] = (10000 + (characterbalance[i] * (plusmoney[i] + (EmployerLevel[i] + 1)))) * gobsem[i];
                 }
                 
 
