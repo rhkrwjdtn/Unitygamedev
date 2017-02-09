@@ -11,6 +11,7 @@ public class StartPopup : MonoBehaviour {
     public GameObject StartPopup2;
     public Button Prev;
     public Button Next;
+    public bool Firstpopup=false;
 
 	// Use this for initialization
 	void Start () {
@@ -35,10 +36,21 @@ public class StartPopup : MonoBehaviour {
         checkin++;
         if (checkin == 8)
         {
-            Thankspopup.active = true;
             StartPopup2.active = false;
-            icon.rebirthpotion++;
+            if(Firstpopup==false)
+            {
+                Thankspopup.active = true;
+                icon.rebirthpotion++;
+                Firstpopup = true;
+            }
 
+            for(int i=0;i<8;i++)
+            {
+                popup[i].active = false;
+            }
+            popup[0].active = true;
+            checkin = 0;
+           
         }
         else if (checkin != 8)
         {

@@ -48,6 +48,7 @@ public class SaveManager : MonoBehaviour {
     public IconManager icon;
     public CharacterInfo character;
 	public SoundManager soundmanager;
+    public StartPopup stpp;
 
 	public bool seestartpopup=true;
 
@@ -137,6 +138,7 @@ public class SaveManager : MonoBehaviour {
 		public bool effectsound;
 
 		public bool startpopup;
+        public bool Firstpopup;
     }
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -314,6 +316,8 @@ public class SaveManager : MonoBehaviour {
 
 		data.startpopup = seestartpopup;
 
+        data.Firstpopup = stpp.Firstpopup;
+
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
 		file.Close();
@@ -444,6 +448,7 @@ public class SaveManager : MonoBehaviour {
 
 					seestartpopup=data.startpopup;
 
+                    stpp.Firstpopup = data.Firstpopup;
 
 				}
 				catch(NullReferenceException NE){

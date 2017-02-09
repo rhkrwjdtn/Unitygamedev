@@ -3392,6 +3392,7 @@ MonoBehaviour:
   StartPopup2: {fileID: 305629515}
   Prev: {fileID: 493995267}
   Next: {fileID: 2115111271}
+  Firstpopup: 0
 --- !u!114 &112789019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6439,7 +6440,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &187832207
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36411,7 +36412,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1590082142}
+      - m_Target: {fileID: 305629515}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -51211,6 +51212,7 @@ MonoBehaviour:
   icon: {fileID: 1642078308}
   character: {fileID: 995890627}
   soundmanager: {fileID: 995209024}
+  stpp: {fileID: 112789018}
   seestartpopup: 1
   loadlen: 0
 --- !u!4 &1458599541
@@ -59172,7 +59174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uACC4\uAE09\uC124\uBA85"
+  m_Text: "\uC124\uBA85\uCC3D"
 --- !u!222 &1674672290
 CanvasRenderer:
   m_ObjectHideFlags: 0
