@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9997449, g: 0.9997449, b: 0.9997449, a: 1}
+  m_IndirectSpecularColor: {r: 0.9997447, g: 0.9997447, b: 0.9997447, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -7038,7 +7038,7 @@ Prefab:
     - target: {fileID: 224658914617708366, guid: 01778931a38b48343b143247f9448f39,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -0.35000038
+      value: -0.34999847
       objectReference: {fileID: 0}
     - target: {fileID: 224830653963438848, guid: 01778931a38b48343b143247f9448f39,
         type: 2}
@@ -7902,6 +7902,16 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 224792103800074812, guid: 01778931a38b48343b143247f9448f39,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.39999962
+      objectReference: {fileID: 0}
+    - target: {fileID: 224547311492058768, guid: 01778931a38b48343b143247f9448f39,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.024997711
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01778931a38b48343b143247f9448f39, type: 2}
@@ -8902,6 +8912,46 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 227624813}
+--- !u!1 &228228744
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 228228746}
+  - component: {fileID: 228228745}
+  m_Layer: 0
+  m_Name: GoogleadManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &228228745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228228744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a7ff4ebde9431748b96bd58c11956df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &228228746
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 228228744}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 125.252884, y: 201.74104, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 27
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &230779060
 GameObject:
   m_ObjectHideFlags: 0
@@ -10111,6 +10161,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1235265669}
         m_MethodName: daejangClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 228228745}
+        m_MethodName: emp2AdPopup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23088,7 +23149,7 @@ Prefab:
     - target: {fileID: 224079743182068070, guid: 0674373a9f1b8c542a5db32be7dec595,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.6000004
+      value: 0.5999985
       objectReference: {fileID: 0}
     - target: {fileID: 224079743182068070, guid: 0674373a9f1b8c542a5db32be7dec595,
         type: 2}
@@ -37826,6 +37887,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 228228745}
+        m_MethodName: stockAdPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1075000762
@@ -43751,6 +43823,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1235265669}
         m_MethodName: chunsooruClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 228228745}
+        m_MethodName: emp3AdPopup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -63021,6 +63104,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 228228745}
+        m_MethodName: emp1AdPopup
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &1792253206
@@ -67339,6 +67433,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1509034734}
     m_Modifications:
+    - target: {fileID: 114951418737331220, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224788842428340424, guid: 9b36269804945d84b8939abbc0f5691d,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -69354,6 +69453,31 @@ Prefab:
         type: 2}
       propertyPath: m_SizeDelta.y
       value: 14.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951418737331220, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951418737331220, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951418737331220, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 228228745}
+    - target: {fileID: 114951418737331220, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: charleverAdPopup
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951418737331220, guid: 9b36269804945d84b8939abbc0f5691d,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b36269804945d84b8939abbc0f5691d, type: 2}
