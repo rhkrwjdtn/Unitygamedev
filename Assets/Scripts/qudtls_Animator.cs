@@ -70,7 +70,7 @@ public class qudtls_Animator : MonoBehaviour {
 		dungchi.GetComponent<Image> ().sprite = dungchiAni[dungchicount];
 		myulchi.GetComponent<Image> ().sprite = myulchiAni[myulchicount];
 		yapsap.GetComponent<Image> ().sprite = yapsapAni[yapsapcount];
-		//byunghun2.GetComponent<Image> ().sprite = byunghun2Ani [byunghun2count];
+		byunghun2.GetComponent<Image> ().sprite = byunghun2Ani [byunghun2count];
 		hani.GetComponent<Image> ().sprite = haniAni[hanicount];
 		hyungwook.GetComponent<Image> ().sprite = hyungwookAni[hyungwookcount];
 
@@ -186,8 +186,8 @@ public class qudtls_Animator : MonoBehaviour {
 		if(yapsap.activeSelf==true)
 			yapsap.GetComponent<Image> ().sprite = yapsapAni[yapsapcount];
 
-	//	if(byunghun2.activeSelf==true)
-	//		byunghun2.GetComponent<Image> ().sprite = byunghun2Ani [byunghun2count];
+		if(byunghun2.activeSelf==true)
+			byunghun2.GetComponent<Image> ().sprite = byunghun2Ani [byunghun2count];
 
 		if(hani.activeSelf==true)
 			hani.GetComponent<Image> ().sprite = haniAni[hanicount];
@@ -196,7 +196,7 @@ public class qudtls_Animator : MonoBehaviour {
 		hyungwook.GetComponent<Image> ().sprite = hyungwookAni[hyungwookcount];
 
 		yield return new WaitForSeconds(delayTime);
-		StartCoroutine("QudtlsAnimation", 0.2);
+		StartCoroutine("QudtlsAnimation", 0.7);
 	}
 
 

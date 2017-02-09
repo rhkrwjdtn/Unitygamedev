@@ -10,8 +10,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: SKU
-  productName: "\uC8FC\uAC24\uB7FC \uAE08\uC218\uC800\uB9CC\uB4E4\uAE30"
+  companyName: JuKi
+  productName: "\uC8FC\uAC24\uB7FC \uD0A4\uC6B0\uAE30"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13333334, g: 0.17254902, b: 0.21176471, a: 1}

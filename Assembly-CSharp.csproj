@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\SoundManager.cs" />
      <Compile Include="Assets\Scripts\Spoon\spoonmanager.cs" />
      <Compile Include="Assets\Scripts\StartManager.cs" />
+     <Compile Include="Assets\Scripts\StartPopup\StartPopup.cs" />
      <Compile Include="Assets\Scripts\StockButton.cs" />
      <Compile Include="Assets\Scripts\TransMoney.cs" />
      <Compile Include="Assets\Scripts\qudtls_Animator.cs" />
@@ -93,6 +94,9 @@
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Purchasing">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityPurchasing/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
