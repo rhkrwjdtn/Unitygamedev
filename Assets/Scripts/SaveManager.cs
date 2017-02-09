@@ -261,7 +261,7 @@ public class SaveManager : MonoBehaviour {
 		data.skateis = skate.activeSelf;
 		data.godhis = godh.activeSelf;
         data.ramyun = ramyun.activeSelf;
-        data.ho = ramyun.activeSelf;
+        data.ho = ho.activeSelf;
         data.daejang = daejang.activeSelf;
         data.chunsooru = chunsooru.activeSelf;
         data.chunsooruExist = Realemployment.chunsooruExist;
