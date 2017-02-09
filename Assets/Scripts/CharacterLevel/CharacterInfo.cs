@@ -126,6 +126,10 @@ public class CharacterInfo : MonoBehaviour {
         {
             NationBonus = 1;
         }
+        if(TouchMoney==0)
+        {
+            TouchMoney = 5;
+        }
 
         GFBonusTx.text = "" + TotalgfPersent + "%";
         HouseBonusTx.text = "" + TotalHousePersent + "%";
