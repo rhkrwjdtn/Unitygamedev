@@ -63,7 +63,7 @@ public class AfrterBoxad : MonoBehaviour {
         {
             if(BoxClicked[i]==true)
             {
-                Texts[0].text = "짜잔~";
+                Texts[0].text = "       짜잔~";
                 for(int j=0;j<3;j++)
                 {
                     Randomnum[j] = Random.Range(0, 10);
@@ -139,23 +139,23 @@ public class AfrterBoxad : MonoBehaviour {
                             case 0:
 
                                 itemmanager.redbullcnt += Itemcnt;
-                                Texts[1].text = "드링크" + Itemcnt + "개~";
+                                Texts[1].text = "       드링크" + Itemcnt + "개~";
                                 break;
                             case 1:
                                 itemmanager.smallpizzacnt += Itemcnt;
-                                Texts[1].text = "작은피자" + Itemcnt + "조각~";
+                                Texts[1].text = "       작은피자" + Itemcnt + "조각~";
                                 break;
                             case 2:
                                 itemmanager.burncnt += Itemcnt;
-                                Texts[1].text = "슈퍼드링크" + Itemcnt + "개~";
+                                Texts[1].text = "       슈퍼드링크" + Itemcnt + "개~";
                                 break;
                             case 3:
                                 itemmanager.largepizzacnt += Itemcnt;
-                                Texts[1].text = "피자한판" + Itemcnt + "판~";
+                                Texts[1].text = "       피자한판" + Itemcnt + "판~";
                                 break;
                             case 4:
                                 itemmanager.rebirthpotion += Itemcnt;
-                                Texts[1].text = "환생물약" + Itemcnt + "개~";
+                                Texts[1].text = "       환생물약" + Itemcnt + "개~";
                                 break;
                         }
 

@@ -32,23 +32,39 @@ public class GrilFriendManager : MonoBehaviour {
         Moneyupdate moneyu = GameObject.Find("MoneyManager").GetComponent<Moneyupdate>();
         if(moneyu.moneyspeed>100000)
         { ClosePopup[0].active = false; }
+
         if(moneyu.moneyspeed>1000000)
         {
             ClosePopup[1].active = false;
+        }
+        else if(moneyu.moneyspeed<1000000)
+        {
+            ClosePopup[1].active = true;
         }
         if(moneyu.moneyspeed>10000000)
         {
             ClosePopup[2].active = false;
         }
+        else if(moneyu.moneyspeed< 10000000)
+        {
+            ClosePopup[2].active = true;
+        }
         if(moneyu.moneyspeed>1000000000)
         {
             ClosePopup[3].active = false;
+        }
+        else if(moneyu.moneyspeed< 1000000000)
+        {
+            ClosePopup[3].active = true;
         }
         if(moneyu.moneyspeed>1000000000000)
         {
             ClosePopup[4].active = false;
         }
-
+        else if(moneyu.moneyspeed< 1000000000000)
+        {
+            ClosePopup[4].active = true;
+        }
         for (int i = 0; i < 6; i++)
         {
             if (GFExist[i] == true)
