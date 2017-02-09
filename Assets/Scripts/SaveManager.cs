@@ -15,6 +15,7 @@ public class SaveManager : MonoBehaviour {
     const int GIRL_SIZE = 6;
 
 
+
 	public Moneyupdate myMoney;    //connect Moneyupdate
 	public ShopScrollList myStockList;       //connect MyStockList
 	public HouseButtonEvent myBGList; //connect HouseManager
@@ -40,13 +41,15 @@ public class SaveManager : MonoBehaviour {
     public GameObject daejang = null;
     public GameObject chunsooru = null;
 
+	public GameObject startpopup;
+
     public EmploymentManager Realemployment;
     public GrilFriendManager girlf;
     public IconManager icon;
     public CharacterInfo character;
 	public SoundManager soundmanager;
 
-    
+	public bool seestartpopup=true;
 
 	public int loadlen;
 	/// <summary>
@@ -132,6 +135,8 @@ public class SaveManager : MonoBehaviour {
 
 		public bool backgroundsound;
 		public bool effectsound;
+
+		public bool startpopup;
     }
 
 	[Serializable] //B 직렬화가능한 클래스
@@ -154,6 +159,11 @@ public class SaveManager : MonoBehaviour {
 
 	}
 
+	void Start(){
+		if (seestartpopup) {
+			startpopup.SetActive (true);
+		}
+	}
 
 		void Update () {
 			if(Input.GetKeyDown(KeyCode.Escape))
@@ -302,6 +312,8 @@ public class SaveManager : MonoBehaviour {
 		data.backgroundsound = soundmanager.backgroundsound;
 		data.effectsound = soundmanager.effectsound;
 
+		data.startpopup = seestartpopup;
+
 		//B 직렬화하여 파일에 담기
 		bf.Serialize(file, data);
 		file.Close();
@@ -430,6 +442,8 @@ public class SaveManager : MonoBehaviour {
 					soundmanager.backgroundsound = data.backgroundsound;
 					soundmanager.effectsound = data.effectsound;
 
+					seestartpopup=data.startpopup;
+
 
 				}
 				catch(NullReferenceException NE){
@@ -501,6 +515,8 @@ public class SaveManager : MonoBehaviour {
 
 	}
 
-
+	public void Startbutton(){
+		seestartpopup = false;
+	}
 
 }
