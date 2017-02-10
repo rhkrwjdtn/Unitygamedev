@@ -362,6 +362,8 @@ public class CharacterInfo : MonoBehaviour {
         else if(moneyu.money<NextLevelPrice)
         {
             TouchMoney = TouchMoney - 1;
+			BeforePrice = 1;
+			AfterPrice = 1;
 
         }
         //돈 없을때 버튼 클릭 안되게 해야댐 2/3일 ---완료
