@@ -29,9 +29,11 @@ public class GoogleAd : MonoBehaviour {
 	//			.AddTestDevice( AdRequest.TestDeviceSimulator )       // Simulator.
 	//			.AddTestDevice( "9EEDD46C3D7F555BE63F352D2ED8D737" )  // 2
 	//			.Build();
+			stockbutton.LoadAd( adRequest );
+
 			stockbutton.OnAdClosed += AdListener;
 			// 애드몹 전면 광고 로드
-			stockbutton.LoadAd( adRequest );
+		
 
 
 		}
@@ -40,12 +42,12 @@ public class GoogleAd : MonoBehaviour {
 			// 전면 광고 id 등록
 			emp1 = new InterstitialAd( "ca-app-pub-4459600216007127/4611730492" );
 
-		
+			emp1.LoadAd( adRequest );
+
 			
 			emp1.OnAdClosed += AdListener;
 
-			emp1.LoadAd( adRequest );
-
+		
 
 		}
 
@@ -54,10 +56,11 @@ public class GoogleAd : MonoBehaviour {
 			emp2 = new InterstitialAd( "ca-app-pub-4459600216007127/9321131694" );
 
 	
+			emp2.LoadAd( adRequest );
 
 			emp2.OnAdClosed += AdListener;
 
-			emp2.LoadAd( adRequest );
+	
 
 
 		}
@@ -68,9 +71,10 @@ public class GoogleAd : MonoBehaviour {
 
 	
 
+			emp3.LoadAd( adRequest );
+
 			emp3.OnAdClosed += AdListener;
 
-			emp3.LoadAd( adRequest );
 
 
 		}
@@ -79,12 +83,12 @@ public class GoogleAd : MonoBehaviour {
 			// 전면 광고 id 등록
 			charlever = new InterstitialAd( "ca-app-pub-4459600216007127/6062843696" );
 
-	
-			charlever.OnAdClosed += AdListener;
-
 			charlever.LoadAd( adRequest );
 
 
+			charlever.OnAdClosed += AdListener;
+
+	
 		}
 
 	}
