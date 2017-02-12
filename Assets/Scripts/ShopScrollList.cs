@@ -35,6 +35,8 @@ public class ShopScrollList : MonoBehaviour {
 	public string Stock = "종목을 선택해주세요";
 	public float gold = 0.0f;
 
+	public GameObject notbuypopup;
+	public GameObject notsellpopup;
 
 	// Use this for initialization
 	void Start () 
@@ -182,7 +184,7 @@ public class ShopScrollList : MonoBehaviour {
 					}
 
 				} else {
-
+					notbuypopup.SetActive (true);
 					// lack money
 				}
 
@@ -196,6 +198,7 @@ public class ShopScrollList : MonoBehaviour {
 
 		if (thisitem.count < num ) {
 			Debug.Log ("여기가 실ㅇ되야!@@@@@@@@@@");
+			notsellpopup.SetActive(true);
 			//popup error message
 
 		} else if (thisitem.count > num ) {
@@ -215,7 +218,6 @@ public class ShopScrollList : MonoBehaviour {
 			MyRemoveButtons ();
 			MyAddButtons ();
 		}
-
 
 
 		//RefreshDisplay();
